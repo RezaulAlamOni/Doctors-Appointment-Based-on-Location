@@ -159,9 +159,10 @@
         day = "0" + day;
     }
     today = now.getFullYear() + '-' + month + '-' + day;
-    //Make Appointment
-    $('#appointment-date').val(today);
 
+    //Make Appointment
+
+    $('#appointment-date').val(today);
     $('#slider-appointment-btn, #appointment-now, .myappointment-make-appointment a, .tt-block button').click(function () {
         $('#appointment').modal('show');
     });

@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="public/css/flexslider.css" />
     <!-- <link rel="stylesheet" href="public/css/style-blue.min.css"> -->
     <link rel="stylesheet" href="public/css/style-blue.min.css">
-    <!-- <link rel="stylesheet" href="public/css/style.css"> -->
+    <link rel="stylesheet" href="public/css/style.css">
 </head>
 <body>
 
@@ -33,13 +33,13 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 d-none d-sm-none d-md-none d-lg-block d-xl-block">
                     <div class="hdr-center-account text-left p-0">
-						<a href="{{ route('login1') }}" class="font-14 mr-4"><i class="fa fa-sign-in"></i>Login</a>
-                        <a href="{{ route('registration') }}" class="font-14"><i class="fa fa-user-o"></i>Register</a>
+						<a href="login.php" class="font-14 mr-4"><i class="fa fa-sign-in"></i>Login</a>
+                        <a href="register.php" class="font-14"><i class="fa fa-user-o"></i>Register</a>
                     </div>
                 </div>
                 <div class="col-lg-5">
 					<div class="text-center text-danger">
-						<a href="{{ route('index') }}"><h1>Choose Your Doctor</h1></a>
+						<a href="index.php"><h1>Choose Your Doctor</h1></a>
 					</div>
                     <!--<div class="hdr-center-logo text-center">-->
                         <!--<a href="index.html" class="d-inline-block"><img src="public/uploads/logo-blue.png" alt="Klinikal Health care"> </a>-->
@@ -68,45 +68,39 @@
                     <!-- Start Menu Section -->
                     <ul class="col menu text-left">
                         <li>
-                            <a href="{{ route('index') }}" id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a>
+                            <a href="doctors.php" id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a>
                         </li>
-						<li><a href="{{ route('service') }}" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>
-						<li><a href="{{ route('doctors') }}" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect">Doctors</a></li>
+						<li><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>
+						<li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect">Doctors</a></li>
 						<li>
                             <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Pages <i class="fa fa-chevron-down"></i></a>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-pages">
                                 <li class="mdl-menu__item">
-                                    <a href="{{ route('about') }}">About</a>
+                                    <a href="about.php">About</a>
                                 </li>
                                 <li class="mdl-menu__item">
-                                    <a href="{{ route('contact') }}">Contact</a>
+                                    <a href="contact.php">Contact</a>
                                 </li>
-                                {{--<li class="mdl-menu__item">--}}
-                                    {{--<a href="{{ route('login') }}">Login</a>--}}
-								{{--</li>--}}
-                                {{--<li class="mdl-menu__item">--}}
-                                    {{--<a href="{{ route('registration') }}">Register</a>--}}
-                                {{--</li>--}}
                                 <li class="mdl-menu__item">
-                               		 <a href="{{ route('gallery') }}">Gallery</a>
+                               		 <a href="gallery.php">Gallery</a>
                                 </li>
                             </ul>
                         </li>
 					</ul>
 
 					<ul class="col menu ">
-						<li><a href="{{ route('admin') }}" id="menu-admin" class="mdl-button mdl-js-button mdl-js-ripple-effect btn btn-success">Admin Panel</a></li>
+						<li><a href="admin" id="menu-admin" class="mdl-button mdl-js-button mdl-js-ripple-effect btn btn-success">Admin Panel</a></li>
                         <li>
                             <a id="menu-profile" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="fa fa-user-o color-white"> </i> Profile <i class="fa fa-chevron-down"></i></a>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-profile">
 								<li class="mdl-menu__item">
-                                    <a href="{{ route('login1') }}"><i class="fa fa-sign-in color-green"></i> Login</a>
+                                    <a href="login.php"><i class="fa fa-sign-in color-green"></i> Login</a>
                                 </li>
                                 <li class="mdl-menu__item">
-                                    <a href="{{ route('registration') }}"><i class="fa fa-user-o color-green"></i> Register</a>
+                                    <a href="register.php"><i class="fa fa-user-o color-green"></i> Register</a>
                                 </li>
                                 <li class="mdl-menu__item">
-                                    <a href="{{ route('forget.pass') }}"><i class="fa fa-key color-green"></i> Forgot Password</a>
+                                    <a href="forget_pass.php"><i class="fa fa-key color-green"></i> Forgot Password</a>
                                 </li>
 							</ul>
                         </li>
@@ -129,9 +123,7 @@
 					<p class="animated fadeInDown">We have created 30+ Pages, 70+ Components or Shortcodes, Popup for this template and more in future. #twitterhash, @facebooktag</p>
 
                 </div>
-                <div class="slider-backgroung-image" style="background-image: {{ asset('uploads/slider-1.jpg') }};">
-                    <img  style="height: 670px; width: 1500px;" src="{{ asset('uploads/slider-1.jpg') }}" alt="">
-                </div>
+                <div class="slider-backgroung-image" style="background-image: url(public/uploads/slider-1.jpg); ">7</div>
 
             </li>
 			<li>
@@ -139,11 +131,7 @@
 					<h2>A Complete Patient Data Management System</h2>
 					<p class="animated fadeInDown">This is tag line ipsum dolor sit amet, consectetur Nihil cupiditate. mollitia maiores elit#twitterhash, @facebooktag</p>
 				</div>
-                <div class="slider-backgroung-image" style="background-image: url(public/uploads/slider-3.jpg);">
-
-                    <img  style="height: 670px; width: 1500px" src="{{ asset('uploads/slider-3.jpg') }}" alt="">
-
-                </div>
+                <div class="slider-backgroung-image" style="background-image: url(public/uploads/slider-3.jpg);"></div>
 
             </li>
 			<li>
@@ -151,9 +139,7 @@
 					<h2>Get Appointment in any Hospital of Bangladesh </h2>
 					<p class="animated fadeInDown">Do not hesitate to contact us on our dedicated support forum. mollitia maiores temp fugit! consectetur adipisicing elit #twitterhash, @facebooktag</p>
 				</div>
-                <div class="slider-backgroung-image" style="background-image: url(public/uploads/slider-2.jpg);">
-                    <img  style="height: 670px; width: 1500px" src="{{ asset('uploads/slider-2.jpg') }}" alt="">
-                </div>
+                <div class="slider-backgroung-image" style="background-image: url(public/uploads/slider-2.jpg);"></div>
 
             </li>
 			<li>
@@ -161,9 +147,7 @@
 					<h2>Get Appointment Quickly & Nearest Hospital</h2>
 					<p class="animated fadeInDown">Do not hesitate to contact us on our dedicated support forum. mollitia maiores temp fugit! consectetur adipisicing elit #twitterhash, @facebooktag</p>
 				</div>
-                <div class="slider-backgroung-image" style="background-image: url(public/uploads/slider-3.jpg);">
-                    <img  style="height: 670px; width: 1500px" src="{{ asset('uploads/slider-3.jpg') }}" alt="">
-                </div>
+                <div class="slider-backgroung-image" style="background-image: url(public/uploads/slider-3.jpg);"></div>
 
             </li>
 		</ul>
@@ -224,7 +208,7 @@
 					</div>
 				</div>
 				<div class="col-md-5 animated animated-up fadeInUp">
-					<img class="img-thumbnail" src="uploads/hm-about.jpg" alt="">
+					<img class="img-thumbnail" src="public/uploads/hm-about.jpg" alt="">
 				</div>
 			</div>
 		</div>
@@ -471,23 +455,19 @@
 									<li>
 										<a href="contact.html?route=contact">Contact</a>
 									</li>
-									{{--<li>--}}
-										{{--<a href="gallery.html?route=gallery">Gallery</a>--}}
-									{{--</li>--}}
+
 									<li>
 										<a href="indexf419.html?route=privacy-policy">Privacy policy</a>
 									</li>
 									<li>
 										<a href="index91ac.html?route=terms-condition">Terms condition</a>
 									</li>
-									{{--<li>--}}
-										{{--<a href="indexdb94.html?route=faq">Faq</a>--}}
-									{{--</li>--}}
+
 								</ul>
 								<ul class="tbl-cell">
-									<li><a href="login.html?route=login">Login</a></li>
-									<li><a href="register.html?route=register">Register</a></li>
-									<li><a href="forget_pass.html?route=forgot">Forgot Password</a></li>
+									<li><a href="login.php">Login</a></li>
+									<li><a href="register.php">Register</a></li>
+									<li><a href="forget_pass.php">Forgot Password</a></li>
 								</ul>
 							</div>
 						</div>
@@ -512,26 +492,28 @@
 							</form>
 						</div>
 						<div class="social-list social-list-colored footer-social">
-							<li>
-								<a href="https://www.facebook.com/pepdevofficial" target="_blank" id="footer-facebook" class="fa fa-facebook"></a>
-								<span class="mdl-tooltip mdl-tooltip--top" for="footer-facebook">Facebook</span>
-							</li>
-							<li>
-								<a href="https://twitter.com/pepdevofficial" target="_blank" id="footer-twitter" class="fa fa-twitter"></a>
-								<span class="mdl-tooltip mdl-tooltip--top" for="footer-twitter">Twitter</span>
-							</li>
-							<li>
-								<a href="https://plus.google.com/110823961031348424693" target="_blank" id="footer-google" class="fa fa-google"></a>
-								<span class="mdl-tooltip mdl-tooltip--top" for="footer-google">Google</span>
-							</li>
-							<li>
-								<a href="https://www.instagram.com/pepdevofficial/" target="_blank" id="footer-instagram" class="fa fa-instagram"></a>
-								<span class="mdl-tooltip mdl-tooltip--top" for="footer-instagram">Instagram</span>
-							</li>
-							<li>
-								<a href="https://www.linkedin.com/" target="_blank" id="footer-linkedin" class="fa fa-linkedin"></a>
-								<span class="mdl-tooltip mdl-tooltip--top" for="footer-linkedin">Linkedin</span>
-							</li>
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/pepdevofficial" target="_blank" id="footer-facebook" class="fa fa-facebook"></a>
+                                    <span class="mdl-tooltip mdl-tooltip--top" for="footer-facebook">Facebook</span>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/pepdevofficial" target="_blank" id="footer-twitter" class="fa fa-twitter"></a>
+                                    <span class="mdl-tooltip mdl-tooltip--top" for="footer-twitter">Twitter</span>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com/110823961031348424693" target="_blank" id="footer-google" class="fa fa-google"></a>
+                                    <span class="mdl-tooltip mdl-tooltip--top" for="footer-google">Google</span>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/pepdevofficial/" target="_blank" id="footer-instagram" class="fa fa-instagram"></a>
+                                    <span class="mdl-tooltip mdl-tooltip--top" for="footer-instagram">Instagram</span>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/" target="_blank" id="footer-linkedin" class="fa fa-linkedin"></a>
+                                    <span class="mdl-tooltip mdl-tooltip--top" for="footer-linkedin">Linkedin</span>
+                                </li>
+                            </ul>
 						</div>
 					</div>
 				</div>
