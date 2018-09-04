@@ -1,0 +1,157 @@
+
+.badge {
+    padding: 0.4em .8em;
+    font-size: 100%;
+    letter-spacing: .5px;
+    vertical-align: baseline;
+    font-weight: 500;
+}
+
+.badge-default {
+    background: $colorE;
+}
+
+.badge-primary, .badge-appointment {
+    color: $colorF;
+    background-color: $color-primary;
+}
+
+.badge-secondary {
+    color: $colorF;
+    background-color: $color-secondary;
+}
+
+.badge-success, .badge-user {
+    color: $colorF;
+    background-color: $color-success;
+}
+
+.badge-warning, .badge-invoice {
+    background-color: $color-warning;
+}
+
+.badge-danger {
+    color: $colorF;
+    background-color: $color-danger;
+}
+
+.badge-info, .badge-request {
+    color: $colorF;
+    background-color: $color-info;
+}
+
+.badge-light {
+    color: $color3;
+    background-color: $color-light;
+}
+
+.badge-dark {
+    color: $colorF;
+    background-color: $color-dark;
+}
+
+.badge-sm {
+    font-size: 80%;
+}
+
+.progress-sm {
+    height: 5px;
+    border-radius: 2px;
+}
+
+.progress-md {
+    height: 10px;
+    border-radius: 4px;
+}
+
+.progress-lg {
+    height: 16px;
+    border-radius: 4px;
+}
+
+.progress-bar-primary {
+    background-color: $color-primary;
+}
+
+.progress-bar-warning {
+    background-color: $color-warning;
+}
+
+
+.progress-bar-success {
+    background-color: $color-success;
+}
+
+
+.progress-bar-danger {
+    background-color: $color-danger;
+}
+
+
+.progress-bar-info {
+    background-color: $color-info;
+}
+
+.bg-default {
+    background-color: #f8f8f8;
+}
+
+.bg-primary {
+    background-color: $color-primary !important;
+}
+
+.bg-secondary {
+    background-color: $color-secondary !important;
+}
+
+.bg-success {
+    background-color: $color-success !important;
+}
+
+.bg-warning {
+    background-color: $color-warning !important;
+}
+
+.bg-danger {
+    background-color: $color-danger !important;
+}
+
+.bg-info {
+    background-color: $color-info !important;
+}
+
+.text-primary {
+    color: $color-primary !important;
+}
+
+.text-secondary {
+    color: $color-secondary !important;
+}
+
+.text-success {
+    color: $color-success !important;
+}
+
+.text-danger {
+    color: $color-danger !important;
+}
+
+.text-warning {
+    color: $color-warning !important;
+}
+
+.text-info {
+    color: $color-info !important;
+}
+
+.text-light {
+    color: $color-light !important;
+}
+
+.text-dark {
+    color: $color-dark !important;
+}
+
+.text-muted {
+    color: #8d9ea7 !important;
+}

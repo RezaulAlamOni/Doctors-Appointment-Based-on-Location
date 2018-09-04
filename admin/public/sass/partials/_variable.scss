@@ -1,0 +1,116 @@
+
+//Font-Faimily
+$font: 'Montserrat', sans-serif;
+$font: 'Poppins', sans-serif;
+
+
+//Background Color
+$bodyColor : #F8F8F8;
+$layerColor: #3E5A63;
+
+//Theme Color
+//$colorPrimary : #32c1ce;
+$colorPrimary : #03a9f3;
+
+$color-primary-0: #A775D4;  // Main Primary color 
+$color-primary-1: #F7EFFE;  // Main Primary color Extra Light
+$color-primary-2: #D2B0F1;  // Main Primary color Light
+$color-primary-3: #7946A8;  // Main Primary color Dark
+$color-primary-4: #542A7B;  // Main Primary color Extra Dark 
+
+$colorRed: #cc5151;
+$colorBlue: #32C1CE;
+$colorOrange: #EfA752;
+$colorGreen: #54C798;
+$colorPurple: #A675D4;
+
+$color-primary: $colorPrimary;
+$color-default: #e7e7ea;
+$color-secondary: #4c5667;
+$color-warning: #fec107;
+$color-danger: #fb9678;
+$color-info: #03a9f3;
+$color-success: #00c292;
+$color-light: #f8f8f8;
+$color-dark: #555;
+
+$color-primary-0: #A775D4;  // Main Primary color 
+$color-primary-1: #F7EFFE;  // Main Primary color Extra Light
+$color-primary-2: #D2B0F1;  // Main Primary color Light
+$color-primary-3: #7946A8;  // Main Primary color Dark
+$color-primary-4: #542A7B;  // Main Primary color Extra Dark 
+
+$menu-background: #4F5467; 
+
+$color-primary: $color-primary-0;
+$color-default: #e7e7ea;
+$color-secondary: #4c5667;
+$color-warning: #fec107;
+$color-danger: #fb9678;
+$color-info: #03a9f3;
+$color-success: #00c292;
+$color-light: #f8f8f8;
+$color-dark: #555;
+
+
+$color-primary-rgba: rgba(3, 169, 243, .1);
+$color-secondary-rgba: rgba(68, 107, 214, .1);
+$color-success-rgba: rgba(11, 195, 110, .1);
+$color-warning-rgba: rgba(252, 193, 7, .1);
+$color-danger-rgba: rgba(251, 122, 83, .1);
+$color-info-rgba: rgba(15, 171, 241, .1);
+$color-light-rgba: rgba(238, 238, 238, .1);
+$color-dark-rgba: rgba(85, 85, 85, .1);
+
+$color-primary-rgba-60: rgba(3, 169, 243, .60);
+$color-secondary-rgba-60: rgba(68, 107, 214, .60);
+$color-success-rgba-60: rgba(11, 195, 110, .60);
+$color-warning-rgba-60: rgba(252, 193, 7, .60);
+$color-danger-rgba-60: rgba(251, 122, 83, .60);
+$color-info-rgba-60: rgba(15, 171, 241, .60);
+$color-light-rgba-60: rgba(238, 238, 238, .60);
+$color-dark-rgba-60: rgba(85, 85, 85, .60);
+
+$color-primary-rgb: rgba(3, 169, 243, 1);
+$color-secondary-rgb: rgba(68, 107, 214, 1);
+$color-success-rgb: rgba(11, 195, 110, 1);
+$color-warning-rgb: rgba(252, 193, 7, 1);
+$color-danger-rgb: rgba(251, 122, 83, 1);
+$color-info-rgb: rgba(15, 171, 241, 1);
+$color-light-rgb: rgba(238, 238, 238, 1);
+$color-dark-rgb: rgba(85, 85, 85, 1);
+
+//Theme Color
+$color-blue: #32C1CE;
+$color-green: #54C798;
+$color-orange: #EfA752;
+$color-purple: #A675D4;
+$color-red: #cc5151;
+
+
+// Color Code 
+$colorF: #FFF;
+$colorE: #EEE;
+$colorC: #CCC;
+$colorD: #DDD;
+$colorA: #AAA;
+$color9: #999;
+$color7: #777;
+$color5: #555;
+$color3: #333;
+
+$colorCancel: #F57F7F;
+$colorNew: #b87ce5;
+$colorProcess: #F09E72;
+$colorConfirm: #7FBC8E;
+$colorComplete: #32c1ce;
+
+$colorRed: #cc5151;
+
+
+// Font- Size 
+
+$smallFont: 12px;
+$sMediumFont: 14px;
+$mediumFont: 16px;
+$largeFont: 20px;
