@@ -1,3 +1,5 @@
+<?php include('include/db.php');?>
+
 <!DOCTYPE html>
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -50,9 +52,7 @@
                         <ul class="social-list social-list-white">
                           	<li><a href="" target="_blank" id="hdr-facebook" class="fa fa-facebook rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-facebook">Facebook</span></li>
                            	<li><a href="" target="_blank" id="hdr-twitter" class="fa fa-twitter rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-twitter">Twitter</span></li>
-                           	<li><a href="" target="_blank" id="hdr-google" class="fa fa-google rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-google">Google</span></li>
                            	<li><a href="" target="_blank" id="hdr-instagram" class="fa fa-instagram rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-instagram">Instagram</span></li>
-                           	<li><a href="" target="_blank" id="hdr-youtube" class="fa fa-youtube rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-youtube">Youtube</span></li>
                            	<li><a href="" target="_blank" id="hdr-linkedin" class="fa fa-linkedin rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-linkedin">Linkedin</span></li>
 <!--                           	<li><a href="" target="_blank" id="hdr-flickr" class="fa fa-flickr rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-flickr">Flickr</span></li>-->
 <!--                          	<li><a href="" target="_blank" id="hdr-rss" class="fa fa-rss rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-rss">Rss</span></li>-->
@@ -67,28 +67,36 @@
 
                     <!-- Start Menu Section -->
                     <ul class="col menu text-left">
-                        <li>
-                            <a href="doctors.php" id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a>
-                        </li>
-						<li><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>
+                        <li><a href="index.php" id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a></li>
 						<li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect">Doctors</a></li>
-						<li>
+                        <li><a href="hospitals.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Hospitals</a></li>
+                        <li><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>
+                        <li>
                             <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Pages <i class="fa fa-chevron-down"></i></a>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-pages">
-                                <li class="mdl-menu__item">
-                                    <a href="about.php">About</a>
-                                </li>
-                                <li class="mdl-menu__item">
-                                    <a href="contact.php">Contact</a>
-                                </li>
-                                <li class="mdl-menu__item">
-                               		 <a href="gallery.php">Gallery</a>
-                                </li>
+                                <li class="mdl-menu__item"><a href="about.php">About</a></li>
+                                <li class="mdl-menu__item"><a href="contact.php">Contact</a></li>
+                                <li class="mdl-menu__item"><a href="gallery.php">Gallery</a></li>
                             </ul>
                         </li>
+
 					</ul>
 
 					<ul class="col menu ">
+                        <li style="width:310px;height:25px;padding-bottom: 40px;">
+                            <div class="" style="">
+                                <form action="" method="post" style="">
+                                    <div class="input-group">
+                                        <input  name="search" type="text" class="form-control">
+                                        <span class="input-group-btn" style="">
+                                            <button class="btn btn-default" type="submit" name="submit">
+                                                <span class="fa fa-search"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
 						<li><a href="admin" id="menu-admin" class="mdl-button mdl-js-button mdl-js-ripple-effect btn btn-success">Admin Panel</a></li>
                         <li>
                             <a id="menu-profile" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="fa fa-user-o color-white"> </i> Profile <i class="fa fa-chevron-down"></i></a>
@@ -119,7 +127,7 @@
 		<ul class="slides">
 			<li>
 				<div class="slider-info">
-					<h1 class="animated fadeInDown">Appointment System Based on Patient Symptom</h1>
+					<h1 class="animated fadeInDown">Appointment System Based on Patient Area</h1>
 					<p class="animated fadeInDown">We have created 30+ Pages, 70+ Components or Shortcodes, Popup for this template and more in future. #twitterhash, @facebooktag</p>
 
                 </div>
@@ -153,7 +161,7 @@
 		</ul>
 
 			<div class="slider-appointment">
-				<a id="slider-appointment-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect animated fadeInUp" >Input Your Disease Symptom For Appointment</a><br>
+<!--				<a id="slider-appointment-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect animated fadeInUp" >Input Your Disease Symptom For Appointment</a><br>-->
 				<a id="slider-appointment-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect animated fadeInUp" >Make An Appointment</a>
 			</div>
 	</div>
@@ -332,7 +340,7 @@
 		<div class="layer-stretch">
 			<div class="layer-wrapper">
 				<div class="layer-ttl">
-					<h3 class="animated animated-down">Our Time Table</h3>
+					<h3 class="animated animated-down">Appointment Time Table</h3>
 				</div>
 				<div class="layer-container">
 					<div class="tt-block animated animated-up">
@@ -480,7 +488,7 @@
 					</div>
 					<div class="footer-container footer-c">
 						<div class="footer-subscribe">
-							<form action="http://pepdev.com/theme-preview/klinikal/index.php?route=subscribe" method="post">
+							<form action="" method="post">
 								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
 									<input class="mdl-textfield__input" name="email" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="subscribe-email">
 									<label class="mdl-textfield__label" for="subscribe-email">Email Address</label>

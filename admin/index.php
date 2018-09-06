@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Klinikal Admin Panel</title>
+    <title>Admin Panel</title>
     <link rel="icon" type="image/x-icon" href="public/images/favicon.png">
     <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,600"> -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500" rel="stylesheet">
@@ -44,7 +44,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="media-upload-container">
-                        <form action="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=upload" class="dropzone" id="media-dropzone" method="post" enctype="multipart/form-data">
+                        <form action="" class="dropzone" id="media-dropzone" method="post" enctype="multipart/form-data">
                             <div class="fallback">
                                 <input name="file" type="file" />
                             </div>
@@ -73,7 +73,7 @@
                         <a href="#"><img src="public/images/icon.png" alt=""></a>
                     </div>
                     <div class="tbl-cell">
-                        <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=dashboard"><img src="public/images/logo.png"></a>
+                        <a href=""><img src="public/images/logo.png"></a>
                     </div>
                 </div>
                 <div class="menu-user">
@@ -84,37 +84,37 @@
                         <div class="menu-user-dropdown">
                             <i class="fa fa-angle-double-down fa-2x" id="menu-user-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></i>
                             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="menu-user-drop">
-                                <li><a href="http://pepdev.com/theme-preview/klinikal/" target="_blank"><i class="icon-link"></i> Visit Website</a></li>
-                                <li><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=profile"><i class="icon-user"></i> Profile</a></li>
-                                <li><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=logout"><i class="icon-logout"></i> Logout</a></li>
+                                <li><a href="../index.php" target="_blank"><i class="icon-link"></i> Visit Website</a></li>
+                                <li><a href="profile.php"><i class="icon-user"></i> Profile</a></li>
+                                <li><a href=""><i class="icon-logout"></i> Logout</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <ul>
-                    <li id="dashboard-li"><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=dashboard"><i class="icon-screen-desktop"></i><span>Dashboard</span></a></li>
+                    <li id="dashboard-li"><a href="index.php"><i class="icon-screen-desktop"></i><span>Dashboard</span></a></li>
                     <li id="patient-li">
                         <a class="menu-dropdown active-danger">
                             <i class="icon-organization"></i><span>Patients</span><i class="fa fa-angle-down"></i>
                         </a>
                         <ul id="patient" class="sub-menu">
                             <li>
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=patient">
+                                <a href="patient.php">
                                     <i class="icon-people"></i><span>Patients</span>
                                 </a>
                             </li>
                             <li id="appointment">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment">
+                                <a href="appointment.php">
                                     <i class="icon-user-follow"></i><span>Appointments</span>
                                 </a>
                             </li>
                             <li id="invoice">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=invoice">
+                                <a href="invoice.php">
                                     <i class="icon-wallet"></i><span>Invoices</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=request">
+                                <a href="request.php">
                                     <i class="icon-envelope-open"></i><span>Requests</span>
                                 </a>
                             </li>
@@ -124,32 +124,32 @@
                         <a class="menu-dropdown"><i class="icon-cloud-upload"></i><span>Theme Options</span><i class="fa fa-angle-down"></i></a>
                         <ul id="themeoption" class="sub-menu">
                             <li id="info">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=info">
+                                <a href="">
                                     <i class="icon-info"></i><span>Clinic Info</span>
                                 </a>
                             </li>
                             <li id="department">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=themeoption/department">
+                                <a href="department.php">
                                     <i class="icon-layers"></i><span>Departments</span>
                                 </a>
                             </li>
                             <li id="doctor">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=themeoption/doctor">
+                                <a href="doctors.php">
                                     <i class="fa fa-user-md"></i><span>Doctors</span>
                                 </a>
                             </li>
                             <li id="facility">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=themeoption/facility">
+                                <a href="facility.php">
                                     <i class="icon-shield"></i><span>Facilities</span>
                                 </a>
                             </li>
                             <li id="service">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=themeoption/service">
+                                <a href="service.php">
                                     <i class="icon-briefcase"></i><span>Services</span>
                                 </a>
                             </li>
                             <li id="testimonial">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=themeoption/testimonial">
+                                <a href="testimonial.php">
                                     <i class="fa fa-quote-left"></i><span>Testimonials</span>
                                 </a>
                             </li>
@@ -158,41 +158,37 @@
                     <li id="page-li">
                         <a class="menu-dropdown"><i class="icon-globe-alt"></i><span>Website</span><i class="fa fa-angle-down"></i></a>
                         <ul id="page" class="sub-menu">
-                            <li id="menu_page">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=page/header"><i class="icon-menu"></i><span>Header</span></a>
-                            </li>
+
                             <li id="home_page">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=page/home"><i class="icon-home"></i><span>Home page</span></a>
+                                <a href="homepage.php"><i class="icon-home"></i><span>Home page</span></a>
                             </li>
                             <li id="service_page">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=page/service"><i class="icon-briefcase"></i><span>Service Page</span></a>
+                                <a href="servicepage.php"><i class="icon-briefcase"></i><span>Service Page</span></a>
                             </li>
                             <li id="doctor_page">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=page/doctor"><i class="fa fa-user-md"></i><span>Doctor Page</span></a>
+                                <a href="doctors.php"><i class="fa fa-user-md"></i><span>Doctor Page</span></a>
                             </li>
-                            <li id="blog_page">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=page/blog"><i class="icon-speech"></i><span>Blog Page</span></a>
-                            </li>
+
                             <li id="gallery_page">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=page/gallery"><i class="icon-picture"></i><span>Gallery Page</span></a>
+                                <a href=""><i class="icon-picture"></i><span>Gallery Page</span></a>
                             </li>
                             <li id="about_page">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=page/about"><i class="icon-info"></i><span>About Page</span></a>
+                                <a href=""><i class="icon-info"></i><span>About Page</span></a>
                             </li>
                             <li id="contact_page">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=page/contact"><i class="icon-envelope"></i><span>Contact Page</span></a>
+                                <a href=""><i class="icon-envelope"></i><span>Contact Page</span></a>
                             </li>
                             <li id="privacy_page">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=page/privacy"><i class="icon-lock-open"></i><span>Privacy policy</span></a>
+                                <a href=" "><i class="icon-lock-open"></i><span>Privacy policy</span></a>
                             </li>
                             <li id="terms_page">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=page/terms"><i class="icon-eye"></i><span>T &#38; C Page</span></a>
+                                <a href=" "><i class="icon-eye"></i><span>T &#38; C Page</span></a>
                             </li>
                             <li id="faq_page">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=page/faq"><i class="icon-question"></i><span>Faq</span></a>
+                                <a href=" "><i class="icon-question"></i><span>Faq</span></a>
                             </li>
                             <li id="footer_page">
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=page/footer"><i class="fa fa-copyright"></i><span>Footer</span></a>
+                                <a href=" "><i class="fa fa-copyright"></i><span>Footer</span></a>
                             </li>
                         </ul>
                     </li>
@@ -200,30 +196,30 @@
                         <a class="menu-dropdown"><i class="icon-speech"></i><span>Blog</span><i class="fa fa-angle-down"></i></a>
                         <ul id="blog" class="sub-menu">
                             <li>
-                                <a class="menu-dropdown" href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=blog"><i class="icon-list"></i><span>Blog List</span></a>
+                                <a class="menu-dropdown" href=" "><i class="icon-list"></i><span>Blog List</span></a>
                             </li>
                             <li>
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=category"><i class="icon-folder-alt"></i><span>Category</span></a>
+                                <a href=" "><i class="icon-folder-alt"></i><span>Category</span></a>
                             </li>
                             <li>
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=comment"><i class="icon-bubbles"></i><span>Comments</span></a>
+                                <a href=" "><i class="icon-bubbles"></i><span>Comments</span></a>
                             </li>
                         </ul>
                     </li>
                     <li id="pharmacy-li">
-                        <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=pharmacy"><i class="icon-basket-loaded"></i><span>Pharmacy</span></a>
+                        <a href=" "><i class="icon-basket-loaded"></i><span>Pharmacy</span></a>
                     </li>
                     <li id="review-li">
-                        <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=review"><i class="icon-star"></i><span>Review</span></a>
+                        <a href=" "><i class="icon-star"></i><span>Review</span></a>
                     </li>
                     <li id="user-li">
                         <a class="menu-dropdown"><i class="icon-people"></i><span>Users</span><i class="fa fa-angle-down"></i></a>
                         <ul id="user" class="sub-menu">
                             <li>
-                                <a class="menu-dropdown" href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=user"><i class="icon-people"></i><span>Users</span></a>
+                                <a class="menu-dropdown" href="user.php "><i class="icon-people"></i><span>Users</span></a>
                             </li>
                             <li>
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=subscriber"><i class="icon-user-following"></i><span>Subscribers</span></a>
+                                <a href=""><i class="icon-user-following"></i><span>Subscribers</span></a>
                             </li>
                         </ul>
                     </li>
@@ -231,25 +227,25 @@
                         <a class="menu-dropdown"><i class="icon-settings"></i><span>Settings</span><i class="fa fa-angle-down"></i></a>
                         <ul id="setting" class="sub-menu">
                             <li>
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=setting/generalsetting"><i class="icon-settings"></i><span>General Setting</span></a>
+                                <a href=" "><i class="icon-settings"></i><span>General Setting</span></a>
                             </li>
                             <li>
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=tax"><i class="icon-settings"></i><span>Finance Setting</span></a>
+                                <a href=" "><i class="icon-settings"></i><span>Finance Setting</span></a>
                             </li>
                             <li>
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=setting/analytics"><i class="icon-settings"></i><span>Google Analytics</span></a>
+                                <a href=" "><i class="icon-settings"></i><span>Google Analytics</span></a>
                             </li>
                             <li>
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=setting/customcss"><i class="fa fa-css3"></i><span>Custom Css</span></a>
+                                <a href=" "><i class="fa fa-css3"></i><span>Custom Css</span></a>
                             </li>
                             <li>
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=icon"><i class="icon-flag"></i><span>Icon Set</span></a>
+                                <a href=" "><i class="icon-flag"></i><span>Icon Set</span></a>
                             </li>
                             <li>
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=errorlog"><i class="icon-exclamation"></i><span>Error Log</span></a>
+                                <a href=" "><i class="icon-exclamation"></i><span>Error Log</span></a>
                             </li>
                             <li>
-                                <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=permission"><i class="icon-bell"></i><span>Permission</span></a>
+                                <a href=" "><i class="icon-bell"></i><span>Permission</span></a>
                             </li>
                         </ul>
                     </li>  
@@ -271,43 +267,43 @@
                     <div class="nav-dropdown-body">
                                                 <div class="recently-block text-left">
                             <span class="badge badge-sm badge-appointment badge-pill">Appointment</span>
-                            <div class="recently-name"><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/edit&id=1000" target="_blank">chgyyyhv</a>
+                            <div class="recently-name"><a href=" ">chgyyyhv</a>
                             </div>
                             <span class="recently-date">28 Aug 2018</span>
                         </div>
                                                 <div class="recently-block text-left">
                             <span class="badge badge-sm badge-appointment badge-pill">Appointment</span>
-                            <div class="recently-name"><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/edit&id=999" target="_blank">pd</a>
+                            <div class="recently-name"><a href=" " target="_blank">pd</a>
                             </div>
                             <span class="recently-date">28 Aug 2018</span>
                         </div>
                                                 <div class="recently-block text-left">
                             <span class="badge badge-sm badge-appointment badge-pill">Appointment</span>
-                            <div class="recently-name"><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/edit&id=998" target="_blank">sanju</a>
+                            <div class="recently-name"><a href=" " target="_blank">sanju</a>
                             </div>
                             <span class="recently-date">27 Aug 2018</span>
                         </div>
                                                 <div class="recently-block text-left">
                             <span class="badge badge-sm badge-appointment badge-pill">Appointment</span>
-                            <div class="recently-name"><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/edit&id=997" target="_blank">abcdefg</a>
+                            <div class="recently-name"><a href=" " target="_blank">abcdefg</a>
                             </div>
                             <span class="recently-date">27 Aug 2018</span>
                         </div>
                                                 <div class="recently-block text-left">
                             <span class="badge badge-sm badge-appointment badge-pill">Appointment</span>
-                            <div class="recently-name"><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/edit&id=996" target="_blank">tester</a>
+                            <div class="recently-name"><a href=" " target="_blank">tester</a>
                             </div>
                             <span class="recently-date">27 Aug 2018</span>
                         </div>
                                                 <div class="recently-block text-left">
                             <span class="badge badge-sm badge-appointment badge-pill">Appointment</span>
-                            <div class="recently-name"><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/edit&id=995" target="_blank">zdsdasd</a>
+                            <div class="recently-name"><a href=" " target="_blank">zdsdasd</a>
                             </div>
                             <span class="recently-date">27 Aug 2018</span>
                         </div>
                                                 <div class="recently-block text-left">
                             <span class="badge badge-sm badge-appointment badge-pill">Appointment</span>
-                            <div class="recently-name"><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/edit&id=994" target="_blank">JOkin</a>
+                            <div class="recently-name"><a href=" " target="_blank">JOkin</a>
                             </div>
                             <span class="recently-date">27 Aug 2018</span>
                         </div>
@@ -322,13 +318,13 @@
                         <div class="tbl">
                             <div class="tbl-row">
                                 <div class="tbl-cell">
-                                    <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=patient/add">
+                                    <a href=" patientadd.php">
                                         <i class="icon-user-follow text-primary"></i>
                                         <span>Add Patient</span>
                                     </a>
                                 </div>
                                 <div class="tbl-cell">
-                                    <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/add">
+                                    <a href="appointmentadd.phpp">
                                         <i class="icon-calendar text-primary"></i>
                                         <span>Add Appointment</span>
                                     </a>
@@ -336,13 +332,13 @@
                             </div>
                             <div class="tbl-row">
                                 <div class="tbl-cell">
-                                    <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=invoice/add&id=0">
+                                    <a href="">
                                         <i class="icon-wallet text-warning"></i>
                                         <span>Add Invoice</span>
                                     </a>
                                 </div>
                                 <div class="tbl-cell">
-                                    <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=request/add">
+                                    <a href="">
                                         <i class="icon-user-follow text-danger"></i>
                                         <span>Add Request</span>
                                     </a>
@@ -350,13 +346,13 @@
                             </div>
                             <div class="tbl-row">
                                 <div class="tbl-cell">
-                                    <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=blog/add">
+                                    <a href="">
                                         <i class="icon-user-follow text-success"></i>
                                         <span>Add Blog</span>
                                     </a>
                                 </div>
                                 <div class="tbl-cell">
-                                    <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=setting/generalsetting">
+                                    <a href="">
                                         <i class="icon-settings text-secondary"></i>
                                         <span>General Setting</span>
                                     </a>
@@ -580,7 +576,7 @@
         <input type="hidden" value="{&quot;id&quot;:4,&quot;name&quot;:&quot;Cheri Aria&quot;,&quot;department_id&quot;:3,&quot;weekly&quot;:&quot;[\&quot;5\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-03-07, 2017-03-14, 2017-03-20, 2017-03-26\&quot;&quot;,&quot;department&quot;:&quot;Dermatologist&quot;}" class="doctor-id-4 department-id-Dermatologist" >
         <input type="hidden" value="{&quot;id&quot;:6,&quot;name&quot;:&quot;Theodore Bennett&quot;,&quot;department_id&quot;:4,&quot;weekly&quot;:&quot;[\&quot;0\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-02-15, 2017-02-16, 2017-03-07, 2017-03-15, 2017-03-23, 2017-03-31\&quot;&quot;,&quot;department&quot;:&quot;Anaesthesia&quot;}" class="doctor-id-6 department-id-Anaesthesia" >
         <input type="hidden" value="{&quot;id&quot;:10,&quot;name&quot;:&quot;Vedhraj Jain&quot;,&quot;department_id&quot;:5,&quot;weekly&quot;:&quot;[\&quot;6\&quot;,\&quot;0\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25\&quot;&quot;,&quot;department&quot;:&quot;Ayurvedic&quot;}" class="doctor-id-10 department-id-Ayurvedic" >
-        <form action="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/dashboardappointment" method="post">
+        <form action="" method="post">
         <div class="sidenav-bdy">
             <div class="apntinfo-block">
                 <div class="apntinfo-block-ttl">Appointment Info</div>
@@ -600,15 +596,15 @@
                         <label><text>*</text>Doctor :</label>
                         <select id="apntinfo-doctor" name="doctor" class="appointment-doctor form-control">
                             <option value="">Select Doctor</option>
-                                                        <option value="3">Melissa Bates( Gynaecology )</option>
-                                                        <option value="8">Linda Adams( Gynaecology )</option>
-                                                        <option value="1">Daniel Barnes( Orthology )</option>
-                                                        <option value="5">Steve Soeren( Orthology )</option>
-                                                        <option value="7">Barbara Baker( Orthology )</option>
-                                                        <option value="4">Cheri Aria( Dermatologist )</option>
-                                                        <option value="6">Theodore Bennett( Anaesthesia )</option>
-                                                        <option value="10">Vedhraj Jain( Ayurvedic )</option>
-                                                    </select>
+                                <option value="3">Melissa Bates( Gynaecology )</option>
+                                <option value="8">Linda Adams( Gynaecology )</option>
+                                <option value="1">Daniel Barnes( Orthology )</option>
+                                <option value="5">Steve Soeren( Orthology )</option>
+                                <option value="7">Barbara Baker( Orthology )</option>
+                                <option value="4">Cheri Aria( Dermatologist )</option>
+                                <option value="6">Theodore Bennett( Anaesthesia )</option>
+                                <option value="10">Vedhraj Jain( Ayurvedic )</option>
+                        </select>
                         <input type="hidden" class="appointment-department" name="department" value=""> 
                     </div>
                     <div class="content-input">
