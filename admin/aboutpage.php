@@ -22,13 +22,13 @@
     <script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="public/js/popper.min.js"></script>
     <script type="text/javascript" src="public/js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="public/js/jquery-ui.multidatespicker.min.js" /></script>
+    <script type="text/javascript" src="public/js/jquery-ui.multidatespicker.min.js" ></script>
     <script type="text/javascript" src="public/js/datatables.min.js"></script>
     <script type="text/javascript" src="public/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="public/js/fullcalendar.min.js"></script>
     <script type="text/javascript" src="public/js/Chart.min.js"></script>
     <script type="text/javascript" src="public/js/dropzone.min.js"></script>
-    <script type="text/javascript" src="public/js/jquery-scrolltofixed.min.js" /></script>
+    <script type="text/javascript" src="public/js/jquery-scrolltofixed.min.js"></script>
     <script type="text/javascript" src="public/js/admin.js"></script>
 </head>
 <body>
@@ -258,7 +258,7 @@
         <div class="page-container"><!-- About page start -->
 <script>
 	$('#page').show();
-	$('#page-li>a').addClass('active');</script>
+	$('#page-li>a').addClass('active');
 </script>
 
 <form action="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=page/action" method="post" enctype="multipart/form-data">

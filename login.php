@@ -158,8 +158,9 @@
                         <i class="fa fa-question"></i>
                         <input class="mdl-textfield__input" type="number" name="bot-check" id="login-bot">
 
-                        <input type="hidden" name="n" value="<?php echo $n=rand(1,9); ?>">
-                        <input type="hidden" name="m" value="<?php echo $m=rand(1,10); ?>">
+                        <input type="hidden" name="n" value="<?php echo $n=rand(1,10); ?>">
+                        <input type="hidden" name="m" value="<?php echo $m=rand(10,20); ?>">
+
                         <label class="mdl-textfield__label" for="login-bot">What is <?php echo $n; ?> plus <?php echo $m; ?> = <em> *</em></label>
                         <span class="mdl-textfield__error">Please Enter Correct Value!</span>
                     </div>

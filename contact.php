@@ -1,10 +1,8 @@
-@extends('layouts.apps')
+<?php include('include/header.php');?>
 
-@section('content')
-
+<body>
     <!-- Header Start -->
     <header id="header">
-
         <div id="hdr-top-wrapper">
             <div class="layer-stretch hdr-top">
                 <div class="hdr-top-block hidden-xs">
@@ -15,17 +13,16 @@
                             <li><a href="https://twitter.com/pepdevofficial" target="_blank" id="hdr-twitter" ><i class="fa fa-twitter" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-twitter">Twitter</span></li>
                             <li><a href="https://plus.google.com/110823961031348424693" target="_blank" id="hdr-google" ><i class="fa fa-google" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-google">Google</span></li>
                             <li><a href="https://www.instagram.com/pepdevofficial/" target="_blank" id="hdr-instagram" ><i class="fa fa-instagram" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-instagram">Instagram</span></li>
-                            <li><a href="https://www.youtube.com/channel/UCRuPHwjNznZilEvlGIr1Y1Q" target="_blank" id="hdr-youtube" ><i class="fa fa-youtube" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-youtube">Youtube</span></li>
-                            {{--<li><a href="https://www.linkedin.com/" target="_blank" id="hdr-linkedin" ><i class="fa fa-linkedin" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-linkedin">Linkedin</span></li>--}}
+                            <li><a href="https://www.linkedin.com/" target="_blank" id="hdr-linkedin" ><i class="fa fa-linkedin" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-linkedin">Linkedin</span></li>
                         </ul>
                     </div>
                 </div>
-                {{--<div class="hdr-top-line hidden-xs"></div>--}}
-                {{--<div class="hdr-top-block hdr-number">--}}
-                {{--<div class="font-13">--}}
-                {{--<i class="fa fa-mobile font-20 tbl-cell"> </i> <span class="hidden-xs tbl-cell"> Emergency Number : </span> <span class="tbl-cell">1800000000</span>--}}
-                {{--</div>--}}
-                {{--</div>--}}
+<!--                {{--<div class="hdr-top-line hidden-xs"></div>--}}-->
+<!--                {{--<div class="hdr-top-block hdr-number">--}}-->
+<!--                {{--<div class="font-13">--}}-->
+<!--                {{--<i class="fa fa-mobile font-20 tbl-cell"> </i> <span class="hidden-xs tbl-cell"> Emergency Number : </span> <span class="tbl-cell">1800000000</span>--}}-->
+<!--                {{--</div>--}}-->
+<!--                {{--</div>--}}-->
                 <div class="hdr-top-line"></div>
                 <div class="hdr-top-block">
                     <div class="theme-dropdown">
@@ -33,17 +30,15 @@
                             <i class="fa fa-user-o color-black"></i> My Account                        </a>
                         <ul id="hdr-user-menu-dd" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="profile-menu">
                             <li class="mdl-menu__item">
-                                <a href="{{ route('login1') }}"><i class="fa fa-sign-in"></i>Login</a>
+                                <a href="login.php"><i class="fa fa-sign-in"></i>Login</a>
                             </li>
                             <li class="mdl-menu__item">
-                                <a href="{{ route('registration') }}"><i class="fa fa-user-o"></i>Register</a>
+                                <a href="register.php"><i class="fa fa-user-o"></i>Register</a>
                             </li>
                             <li class="mdl-menu__item">
-                                <a href="{{ route('forget.pass') }}"><i class="fa fa-key"></i>Forgot Password</a>
+                                <a href="forget_pass.php"><i class="fa fa-key"></i>Forgot Password</a>
                             </li>
-                            {{--<li class="mdl-menu__item">--}}
-                            {{--<a href="about.blade.php?route=about"><i class="fa fa-info"></i>Help</a>--}}
-                            {{--</li>--}}
+
                         </ul>
                     </div>
                 </div>
@@ -51,22 +46,18 @@
         </div>
         <div id="hdr-wrapper">
             <div class="layer-stretch hdr">
-                {{--<div class="tbl-cell hdr-logo">--}}
-                {{--<a href="index2378.html?route=home">--}}
-                {{--<img src="public/uploads/logo-purple.png" alt="Klinikal Health care">--}}
-                {{--</a>--}}
-                {{--</div>--}}
-
                 <div class="row align-items-center justify-content-end">
-                    <a href="{{ route('index') }}" style="padding-left: 60px" class="text-primary"><h1>Choose Your Doctor</h1></a>
+                    <a href="index.php" style="padding-left: 60px" class="text-primary"><h1 style="font-family: 'Harlow Solid Italic'">AppointmentBD</h1></a>
 
                     <!-- Start Menu Section -->
                     <ul class="col menu">
                         <li>
-                            <a href="{{ route('index') }}" id="" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a>
+                            <a href="index.php" id="" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a>
                         </li>
-                        <li><a href="{{ route('service') }}" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>
-                        <li><a href="{{ route('doctors') }}" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Doctors</a></li>
+                        <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Doctors</a></li>
+                        <li><a href="hospital.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Hospitals</a></li>
+
+                        <li><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>
                         <li>
                             <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect active">Pages <i class="fa fa-chevron-down"></i></a>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-pages">
@@ -76,12 +67,6 @@
                                 <li class="mdl-menu__item">
                                     <a href="{{ route('contact') }}">Contact</a>
                                 </li>
-                                {{--<li class="mdl-menu__item">--}}
-                                    {{--<a href="{{ route('login') }}">Login</a>--}}
-                                {{--</li>--}}
-                                {{--<li class="mdl-menu__item">--}}
-                                    {{--<a href="{{ route('registration') }}">Register</a>--}}
-                                {{--</li>--}}
                                 <li class="mdl-menu__item">
                                     <a href="{{ route('gallery') }}">Gallery</a>
                                 </li>
@@ -364,8 +349,4 @@
 			</div>
 		</div>
 	</div><!-- End Make an Appointment Section -->
-	<!-- Start of Time Table Section -->
-	<div id="tt" class="animated-wrapper"></div><!-- End of Time Table Section -->
-
-
-    @endsection
+    <?php include('include/footer.php');?>
