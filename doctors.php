@@ -49,8 +49,6 @@
 
                 <div class="row align-items-center justify-content-end">
                     <a href="index.php" style="padding-left: 60px" class="text-primary"><h1 style="font-family: 'Harlow Solid Italic'">AppointmentBD</h1></a>
-
-
                     <!-- Start Menu Section -->
                     <ul class="col menu">
                         <li>

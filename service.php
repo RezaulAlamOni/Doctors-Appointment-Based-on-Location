@@ -1,7 +1,7 @@
-@extends('layouts.apps')
+<?php include('include/header.php');?>
+<body>
 
-@section('content')
-    <!-- Header Start -->
+<!-- Header Start -->
     <header id="header">
         <div id="hdr-top-wrapper">
             <div class="layer-stretch hdr-top">
@@ -11,9 +11,7 @@
 							<li><a class="width-auto font-14">Follow Us : </a></li>
 							<li><a href="" target="_blank" id="hdr-facebook" class="fa fa-facebook rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-facebook">Facebook</span></li>
 							<li><a href="" target="_blank" id="hdr-twitter" class="fa fa-twitter rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-twitter">Twitter</span></li>
-							<li><a href="" target="_blank" id="hdr-google" class="fa fa-google rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-google">Google</span></li>
 							<li><a href="" target="_blank" id="hdr-instagram" class="fa fa-instagram rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-instagram">Instagram</span></li>
-							<li><a href="" target="_blank" id="hdr-youtube" class="fa fa-youtube rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-youtube">Youtube</span></li>
 							<li><a href="" target="_blank" id="hdr-linkedin" class="fa fa-linkedin rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-linkedin">Linkedin</span></li>
 						</ul>
                     </div>
@@ -21,77 +19,79 @@
                 <div class="hdr-top-line hidden-xs"></div>
                 <div class="hdr-top-block hdr-number">
                     <div class="font-13">
-                        <i class="fa fa-mobile font-20 tbl-cell"> </i> <span class="hidden-xs tbl-cell"> Emergency Number : </span> <span class="tbl-cell">1800000000</span>
+                        <i class="fa fa-mobile font-20 tbl-cell"> </i> <span class="hidden-xs tbl-cell"> Emergency Number : </span> <span class="tbl-cell">8795</span>
                     </div>
                 </div>
-                <div class="hdr-top-line"></div>
-                <div class="hdr-top-block">
-                    <div class="theme-dropdown">
-                        <a id="profile-menu" class="mdl-button mdl-js-button mdl-js-ripple-effect font-13">
-                            <i class="fa fa-user-o color-black"></i> My Account</a>
-
-                        <ul id="hdr-user-menu-dd" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="profile-menu">
-                            <li class="mdl-menu__item">
-                                <a href="{{ route('login') }}"><i class="fa fa-sign-in"></i>Login</a>
-                            </li>
-                            <li class="mdl-menu__item">
-                                <a href="{{ route('registration') }}"><i class="fa fa-user-o"></i>Register</a>
-                            </li>
-                            <li class="mdl-menu__item">
-                                <a href="{{ route('forget.pass') }}"><i class="fa fa-key"></i>Forgot Password</a>
-                            </li>
-                            <li class="mdl-menu__item">
-                                <a href="{{ route('about') }}"><i class="fa fa-info"></i>Help</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+<!--                <div class="hdr-top-line"></div>-->
+<!--                <div class="hdr-top-block">-->
+<!--                    <div class="theme-dropdown">-->
+<!--                        <a id="profile-menu" class="mdl-button mdl-js-button mdl-js-ripple-effect font-13">-->
+<!--                            <i class="fa fa-user-o color-black"></i> My Account</a>-->
+<!---->
+<!--                        <ul id="hdr-user-menu-dd" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="profile-menu">-->
+<!--                            <li class="mdl-menu__item">-->
+<!--                                <a href="{{ route('login') }}"><i class="fa fa-sign-in"></i>Login</a>-->
+<!--                            </li>-->
+<!--                            <li class="mdl-menu__item">-->
+<!--                                <a href="{{ route('registration') }}"><i class="fa fa-user-o"></i>Register</a>-->
+<!--                            </li>-->
+<!--                            <li class="mdl-menu__item">-->
+<!--                                <a href="{{ route('forget.pass') }}"><i class="fa fa-key"></i>Forgot Password</a>-->
+<!--                            </li>-->
+<!--                            <li class="mdl-menu__item">-->
+<!--                                <a href="{{ route('about') }}"><i class="fa fa-info"></i>Help</a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
         <div id="hdr-wrapper">
-            <div class="layer-stretch hdr" >
-                <div class="row align-items-center justify-content-end">
-                    <a href="{{ route('index') }}" style="padding-left: 60px" class="text-primary"><h1>Choose Your Doctor</h1></a>
+            <div class="layer-stretch hdr">
+                <!--                {{--<div class="tbl-cell hdr-logo">--}}-->
+                <!--                    {{--<a href="index2378.html?route=home">--}}-->
+                <!--                        {{--<img src="public/uploads/logo-purple.png" alt="Klinikal Health care">--}}-->
+                <!--                    {{--</a>--}}-->
+                <!--                {{--</div>--}}-->
 
+                <div class="row align-items-center justify-content-end">
+                    <a href="index.php" style="padding-left: 60px" class="text-primary"><h1 style="font-family: 'Harlow Solid Italic'">AppointmentBD</h1></a>
                     <!-- Start Menu Section -->
                     <ul class="col menu">
                         <li>
-                            <a href="{{ route('index') }}" id="" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a>
+                            <a href="index.php" id="" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a>
                         </li>
-                        <li><a href="{{ route('service') }}" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect active">Our Service</a></li>
-                        <li><a href="{{ route('doctors') }}" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect">Doctors</a></li>
+                        <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Doctors</a></li>
+                        <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Hospitals</a></li>
+
+                        <li><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect active">Our Service</a></li>
                         <li>
                             <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Pages <i class="fa fa-chevron-down"></i></a>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-pages">
                                 <li class="mdl-menu__item">
-                                    <a href="{{ route('about') }}">About</a>
+                                    <a href="about.php">About</a>
                                 </li>
                                 <li class="mdl-menu__item">
-                                    <a href="{{ route('contact') }}">Contact</a>
+                                    <a href="contact.php">Contact</a>
                                 </li>
-                                {{--<li class="mdl-menu__item">--}}
-                                    {{--<a href="{{ route('login') }}">Login</a>--}}
-                                {{--</li>--}}
-                                {{--<li class="mdl-menu__item">--}}
-                                    {{--<a href="{{ route('registration') }}">Register</a>--}}
-                                {{--</li>--}}
-								<li class="mdl-menu__item">
-									<a href="{{ route('gallery') }}">Gallery</a>
-								</li>
+
+                                <li class="mdl-menu__item">
+                                    <a href="gallery.php">Gallery</a>
+                                </li>
                             </ul>
                         </li>
-                        <li><a href="admin/index.php" id="menu-admin" class="text-success mdl-button mdl-js-button mdl-js-ripple-effect ">Admin Panel</a></li>
+                        <li><a href="admin" id="menu-admin" class="text-success mdl-button mdl-js-button mdl-js-ripple-effect ">Admin Panel</a></li>
                         <li>
                             <a id="menu-profile" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="fa fa-user-o color-white"> </i> Profile <i class="fa fa-chevron-down"></i></a>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-profile">
                                 <li class="mdl-menu__item">
-                                    <a href="{{ route('login') }}"><i class="fa fa-sign-in color-green"></i> Login</a>
+                                    <a href="login.php"><i class="fa fa-sign-in color-green"></i> Login</a>
                                 </li>
                                 <li class="mdl-menu__item">
-                                    <a href="{{ route('registration') }}"><i class="fa fa-user-o color-green"></i> Register</a>
+                                    <a href="register.php"><i class="fa fa-user-o color-green"></i> Register</a>
                                 </li>
                                 <li class="mdl-menu__item">
-                                    <a href="{{ route('forget.pass') }}"><i class="fa fa-key color-green"></i> Forgot Password</a>
+                                    <a href="forget_pass.php"><i class="fa fa-key color-green"></i> Forgot Password</a>
                                 </li>
                             </ul>
                         </li>
@@ -111,7 +111,7 @@
 			</div>
 			<div class="page-ttl-name">
 				<h1>Services</h1>
-				<p><a href="index2378.html?route=home">Home</a> > Service</p>
+				<p><a href="index.php">Home</a> > Service</p>
 			</div>
 		</div>
 	</div>
@@ -122,9 +122,9 @@
 		<div class="row text-center">
 			<div class="col-md-8">
 				<div class="row">
-										<div class="col-sm-6">
+                    <div class="col-sm-6">
 						<div class="theme-block animated animated-up">
-		<div class="theme-block-picture">
+		                    <div class="theme-block-picture">
 		<img src="public/uploads/service-1.jpg" alt="Cardiovascular centre">
 	</div>
 	<div class="theme-block-data service-block-data">
@@ -654,83 +654,4 @@ Dermatologists have been leaders in the field of cosmetic surgery. Some dermatol
 			</div>
 		</div>
 	</div><!-- End Make an Appointment Section -->
-	<!-- Start of Time Table Section -->
-	<div id="tt" class="animated-wrapper">
-		<div class="layer-stretch">
-			<div class="layer-wrapper">
-				<div class="layer-ttl">
-					<h3 class="animated animated-down">Our Time Table</h3>
-				</div>
-				<div class="layer-container">
-										<div class="tt-block animated animated-up">
-						<p><i class="fa fa-calendar"></i><a>Sun</a></p>
-						<p>
-							<i class="fa fa-hourglass-1"></i><a>09:00 AM - 01:00 PM</a>
-						</p>
-						<p>
-							<button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>
-						</p>
-					</div>
-										<div class="tt-block animated animated-up">
-						<p><i class="fa fa-calendar"></i><a>Mon</a></p>
-						<p>
-							<i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>
-						</p>
-						<p>
-							<button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>
-						</p>
-					</div>
-										<div class="tt-block animated animated-up">
-						<p><i class="fa fa-calendar"></i><a>Tue</a></p>
-						<p>
-							<i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>
-						</p>
-						<p>
-							<button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>
-						</p>
-					</div>
-										<div class="tt-block animated animated-up">
-						<p><i class="fa fa-calendar"></i><a>Wed</a></p>
-						<p>
-							<i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>
-						</p>
-						<p>
-							<button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>
-						</p>
-					</div>
-										<div class="tt-block animated animated-up">
-						<p><i class="fa fa-calendar"></i><a>Thu</a></p>
-						<p>
-							<i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>
-						</p>
-						<p>
-							<button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>
-						</p>
-					</div>
-										<div class="tt-block animated animated-up">
-						<p><i class="fa fa-calendar"></i><a>Fri</a></p>
-						<p>
-							<i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>
-						</p>
-						<p>
-							<button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>
-						</p>
-					</div>
-										<div class="tt-block animated animated-up">
-						<p><i class="fa fa-calendar"></i><a>Sat</a></p>
-						<p>
-							<i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>
-						</p>
-						<p>
-							<button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>
-						</p>
-					</div>
-									</div>
-			</div>
-		</div>
-	</div><!-- End of Time Table Section -->
-
-
-
-
-@endsection
+<?php include('include/footer.php');?>
