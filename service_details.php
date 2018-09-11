@@ -1,33 +1,52 @@
 <?php include('include/header.php');?>
-
 <body>
+
     <!-- Header Start -->
     <header id="header">
         <div id="hdr-top-wrapper">
             <div class="layer-stretch hdr-top">
-                <div class="hdr-top-block hidden-xs">
+                <div class="hdr-top-block hidden-xs ">
                     <div id="hdr-social">
                         <ul class="social-list social-list-sm">
-                            <li><a class="width-auto font-13">Follow Us : </a></li>
-                            <li><a href="https://www.facebook.com/" target="_blank" id="hdr-facebook" ><i class="fa fa-facebook" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-facebook">Facebook</span></li>
-                            <li><a href="https://twitter.com/" target="_blank" id="hdr-twitter" ><i class="fa fa-twitter" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-twitter">Twitter</span></li>
-                            <li><a href="https://www.instagram.com/" target="_blank" id="hdr-instagram" ><i class="fa fa-instagram" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-instagram">Instagram</span></li>
-                            <li><a href="https://www.linkedin.com/" target="_blank" id="hdr-linkedin" ><i class="fa fa-linkedin" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-linkedin">Linkedin</span></li>--}}
+                            <li><a class="width-auto font-14">Follow Us : </a></li>
+                            <li><a href="" target="_blank" id="hdr-facebook" class="fa fa-facebook rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-facebook">Facebook</span></li>
+                            <li><a href="" target="_blank" id="hdr-twitter" class="fa fa-twitter rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-twitter">Twitter</span></li>
+                            <li><a href="" target="_blank" id="hdr-instagram" class="fa fa-instagram rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-instagram">Instagram</span></li>
+                            <li><a href="" target="_blank" id="hdr-linkedin" class="fa fa-linkedin rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-linkedin">Linkedin</span></li>
                         </ul>
                     </div>
                 </div>
                 <div class="hdr-top-line hidden-xs"></div>
                 <div class="hdr-top-block hdr-number">
                     <div class="font-13">
-                        <i class="fa fa-mobile font-20 tbl-cell"> </i> <span class="hidden-xs tbl-cell"> Emergency Number : </span> <span class="tbl-cell">1800000000</span>--}}
+                        <i class="fa fa-mobile font-20 tbl-cell"> </i> <span class="hidden-xs tbl-cell"> Emergency Number : </span> <span class="tbl-cell">8795</span>
                     </div>
                 </div>
-                <div class="hdr-top-line"></div>
-                <div class="hdr-top-block"></div>
+                <!--                <div class="hdr-top-line"></div>-->
+                <!--                <div class="hdr-top-block">-->
+                <!--                    <div class="theme-dropdown">-->
+                <!--                        <a id="profile-menu" class="mdl-button mdl-js-button mdl-js-ripple-effect font-13">-->
+                <!--                            <i class="fa fa-user-o color-black"></i> My Account</a>-->
+                <!---->
+                <!--                        <ul id="hdr-user-menu-dd" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="profile-menu">-->
+                <!--                            <li class="mdl-menu__item">-->
+                <!--                                <a href="{{ route('login') }}"><i class="fa fa-sign-in"></i>Login</a>-->
+                <!--                            </li>-->
+                <!--                            <li class="mdl-menu__item">-->
+                <!--                                <a href="{{ route('registration') }}"><i class="fa fa-user-o"></i>Register</a>-->
+                <!--                            </li>-->
+                <!--                            <li class="mdl-menu__item">-->
+                <!--                                <a href="{{ route('forget.pass') }}"><i class="fa fa-key"></i>Forgot Password</a>-->
+                <!--                            </li>-->
+                <!--                            <li class="mdl-menu__item">-->
+                <!--                                <a href="{{ route('about') }}"><i class="fa fa-info"></i>Help</a>-->
+                <!--                            </li>-->
+                <!--                        </ul>-->
+                <!--                    </div>-->
+                <!--                </div>-->
             </div>
         </div>
         <div id="hdr-wrapper">
-
             <div class="layer-stretch hdr">
                 <!--                {{--<div class="tbl-cell hdr-logo">--}}-->
                 <!--                    {{--<a href="index2378.html?route=home">--}}-->
@@ -42,10 +61,10 @@
                         <li>
                             <a href="index.php" id="" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a>
                         </li>
-                        <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect active">Doctors</a></li>
+                        <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Doctors</a></li>
                         <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Hospitals</a></li>
 
-                        <li><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>
+                        <li><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect active">Our Service</a></li>
                         <li>
                             <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Pages <i class="fa fa-chevron-down"></i></a>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-pages">
@@ -81,86 +100,105 @@
                     <div id="menu-bar" class="col-2 col-md-auto"><a><i class="fa fa-bars color-white"></i></a></div>
                 </div>
             </div>
-
         </div>
     </header>
     <!-- Header End --><!-- Start Page Title Section -->
 <div class="page-ttl">
-    <div class="layer-stretch">
-        <div class="page-ttl-container">
-            <div class="page-ttl-icon">
-                <i class="fa fa-user"></i>
-            </div>
-            <div class="page-ttl-name">
-                <h1>Register</h1>
-                <p><a href="index2378.html?route=home">Home</a> > Register</p>
-            </div>
-        </div>
-    </div>
+	<div class="layer-stretch">
+		<div class="page-ttl-container">
+			<div class="page-ttl-icon">
+				<i class="fa fa-certificate"></i>
+			</div>
+			<div class="page-ttl-name">
+				<h1>Mammography</h1>
+				<p><a href="index2378.html?route=home">Home</a> / <a href="index115b.html?route=services">Services</a> / Mammography</p>
+			</div>
+		</div>
+	</div>
 </div><!-- End Page Title Section -->
-<!-- Start Register Section -->
-<div id="login-page">
-    <div class="layer-stretch">
-        <div class="layer-wrapper">
-            <div class="layer-container">
-                <form class="form-container" action="http://pepdev.com/theme-preview/klinikal/index.php?route=register" method="post" enctype="multipart/form-data">
-                                        <input type="hidden" name="_token" value="15276e55e6cdfa6911f440f75f64501dc97cc6f4a19102dddb4c47f0c4dd1523ad639943996afef209d6a358056f3b3389a9bcb175b7413ef3547589673a2b7d">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
-                        <i class="fa fa-user-o"></i>
-                        <input class="mdl-textfield__input" type="text" name="firstname" pattern="[A-Z,a-z, ]*" id="register-first-name">
-                        <label class="mdl-textfield__label" for="register-first-name">First Name <em> *</em></label>
-                        <span class="mdl-textfield__error">Please Enter Valid Name!</span>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
-                        <i class="fa fa-user-o"></i>
-                        <input class="mdl-textfield__input" type="text" name="lastname" pattern="[A-Z,a-z, ]*" id="register-last-name">
-                        <label class="mdl-textfield__label" for="register-last-name">Last Name <em> *</em></label>
-                        <span class="mdl-textfield__error">Please Enter Valid Name!</span>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
-                        <i class="fa fa-envelope-o"></i>
-                        <input class="mdl-textfield__input" type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="register-email">
-                        <label class="mdl-textfield__label" for="register-email">Email Address <em> *</em></label>
-                        <span class="mdl-textfield__error">Please Enter Valid Email Address!</span>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
-                    <i class="fa fa-phone"></i>
-                        <input class="mdl-textfield__input" type="text" name="mobile" pattern="[0-9]*" id="register-mobile">
-                        <label class="mdl-textfield__label" for="register-mobile">Mobile Number <em> *</em></label>
-                        <span class="mdl-textfield__error">Please Enter Valid Mobile Number!</span>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
-                        <i class="fa fa-key"></i> 
-                        <input class="mdl-textfield__input" type="password" name="password" id="register-password">
-                        <label class="mdl-textfield__label" for="register-password">Password <em> *</em></label>
-                        <span class="mdl-textfield__error">Please Enter Valid Password(Min 6 Character)!</span>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
-                        <i class="fa fa-key"></i>
-                        <input class="mdl-textfield__input" type="password" name="confirmpassword" id="register-confirm-password">
-                        <label class="mdl-textfield__label" for="register-confirm-password">Confirm Password <em> *</em></label>
-                        <span class="mdl-textfield__error">Please Enter Valid Password(Min 6 Character)!</span>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon form-bot-check">
-                        <i class="fa fa-question"></i>
-                        <input class="mdl-textfield__input" type="number" name="bot-check" id="register-bot">
-                        <label class="mdl-textfield__label" for="register-bot">What is 3 plus 10 = <em> *</em></label>
-                        <span class="mdl-textfield__error">Please Enter Correct Value!</span>
-                    </div>
-                    <div class="login-condition">By clicking Creat Account you aggree to our<br /><a href="index91ac.html?route=terms-condition">Terms & Condition</a></div>
-                    <div class="form-submit">
-                        <button type="submit" id="register-submit" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised mdl-button--raised button button-primary button-pill" name="register">Create Account</button>
-                    </div>
-                    <div class="login-link">
-                        <span class="paragraph-small">Already have an account?</span>
-                        <a href="{{ route('login') }}">Login</a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Register Section -->
+
+<!-- Start Service List Section -->
+<div class="layer-stretch">
+	<div class="row layer-wrapper">
+		<div class="col-md-8 text-left">
+						<div class="theme-material-card">
+				<div class="blog"></div>
+				<div class="theme-img blog-picture theme-img-scalerotate text-center">
+					<img src="public/uploads/service-6.jpg" alt="Mammography">
+				</div>
+				<p></p>
+				<p class="paragraph-medium paragraph-black text-left">
+					Magnetic Resonance Imaging (MRI) is a medical imaging technique which produces detailed images of organs, soft tissues, bone and virtually all other internal body structures. MRI provides a stark contrast between the different soft tissues of the body making it especially useful in neurological (brain), musculoskeletal, cardiovascular				</p>
+				<div class="paragraph-medium paragraph-black text-left">
+					<p><b>Magnetic Resonance Imaging</b>&nbsp;(MRI) is a medical imaging technique which produces detailed images of organs, soft tissues, bone and virtually all other internal body structures. MRI provides a stark contrast between the different soft tissues of the body making it especially useful in neurological (brain), musculoskeletal, cardiovascular, and oncological (cancer) imaging.</p><p><b>Mammography</b>&nbsp;(also called mastography) is the process of using low-energy X-rays (usually around 30 kVp) to examine the human breast, which is used as a diagnostic and screening tool. The goal of mammography is the early detection of breast cancer, typically through detection of characteristic masses and/or microcalcifications</p><p>The use of <b>mammography </b>as a screening tool for the detection of early breast cancer in otherwise healthy women without symptoms is controversial.</p><h4>Sub Heading</h4><p><span style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas eligendi perferendis ducimus sed aliquid natus enim, beatae velit reiciendis, inventore molestiae, neque sapiente temporibus architecto dicta, vero quaerat sequi quos. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</span><span style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas eligendi perferendis ducimus sed aliquid natus enim, beatae velit reiciendis, inventore molestiae, neque sapiente temporibus architecto dicta, vero quaerat sequi quos. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</span><br></p><ol><li><span style="text-align: center;">At vero eos et accusamus et iusto odio dignissimos</span></li><li><span style="text-align: center;">ducimus qui blanditiis praesentium voluptatum deleniti</span></li><li><span style="text-align: center;">atque corrupti quos dolores et quas molestias excepturi</span></li><li><span style="text-align: center;">sint occaecati cupiditate non provident, similique&nbsp;</span><br></li></ol><p><b><span style="text-align: center;">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique suntasdadsada</span><span style="text-align: center;">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique suntasdadsada</span><span style="text-align: center;">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique suntasdadsada</span></b><span style="text-align: center;"><b>At vero eos et accusamus e</b>t iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique suntasdadsada</span><span style="text-align: center;">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique suntasd</span></p><div><span style="text-align: center;"><br></span></div>				</div>
+			</div>
+			<div class="theme-material-card">
+				<div class="sub-ttl">Reviews (0)</div>
+				<ul class="comment-list">
+										<li class="text-center font-18">No Review Found !!!</li>
+									</ul>
+			</div>
+			<div class="theme-material-card text-center">
+				<div class="sub-ttl layer-ttl-white">Write A Review</div>
+								<p class="font-16">You must be registered and logged in to Review</p>
+				<a href="index51d2.html?route=login" class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary">Login</a>
+							</div>
+		</div>
+		<div class="col-md-4 service-page-left text-center visible-md visible-lg">
+			<div class="theme-material-card">
+				<div class="sub-ttl">Our Services</div>
+				<ul class="category-list">
+										<li>
+												<a href="index426b.html?route=service&amp;id=1/Cardiovascular-centre">
+							<i class="fa fa-stethoscope"></i>Cardiovascular centre						</a>
+					</li>
+										<li>
+												<a href="index3610.html?route=service&amp;id=2/Childbirth-Center">
+							<i class="fa fa-child"></i>Childbirth Center						</a>
+					</li>
+										<li>
+												<a href="index7c9d.html?route=service&amp;id=3/Cardiology">
+							<i class="fa fa-heartbeat"></i>Cardiology						</a>
+					</li>
+										<li>
+												<a href="index923b.html?route=service&amp;id=4/Skin-Care">
+							<i class="fa fa-wheelchair-alt"></i>Skin Care						</a>
+					</li>
+										<li>
+												<a href="index5737.html?route=service&amp;id=5/Laboratory-Services">
+							<i class="fa fa-flask"></i>Laboratory Services						</a>
+					</li>
+										<li>
+												<a href="indexe51c.html?route=service&amp;id=6/Mammography">
+							<i class="fa fa-certificate"></i>Mammography						</a>
+					</li>
+										<li>
+												<a href="index6322.html?route=service&amp;id=9/Dermatologist">
+							<i class="fa fa-h-square"></i>Dermatologist						</a>
+					</li>
+										<li>
+												<a href="indexacc2.html?route=service&amp;id=10/Anesthesiology">
+							<i class="fa fa-glass"></i>Anesthesiology						</a>
+					</li>
+										<li>
+												<a href="index7df0.html?route=service&amp;id=11/Paediatrics">
+							<i class="fa fa-stethoscope"></i>Paediatrics						</a>
+					</li>
+										<li>
+												<a href="index011b.html?route=service&amp;id=12/Eye-Care">
+							<i class="fa fa-eye"></i>Eye Care						</a>
+					</li>
+										<li>
+												<a href="index9b9d.html?route=service&amp;id=13/Radiology-Center">
+							<i class="fa fa-bullhorn"></i>Radiology Center						</a>
+					</li>
+									</ul>
+			</div>
+		</div>
+	</div>
+</div><!-- End Service List Section -->
+<!-- Start Facility List Section -->
+
 	<!-- Start Make an Appointment Modal -->
 	<div id="appointment" class="modal fade" role="dialog">
 		<div class="modal-dialog">

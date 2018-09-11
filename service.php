@@ -136,11 +136,12 @@
 	<div class="theme-block-hidden service-hidden-block">
 		<i class="fa fa-stethoscope"></i>
 		<h4>
-			<a href="index426b.html?route=service&amp;id=1/Cardiovascular-centre">Cardiovascular centre</a>
+			<a href="service_details.php">Cardiovascular centre</a>
 		</h4>
 		<p class="service-description paragraph-small paragraph-black">
 			<span>When you're facing heart or vascular issues, the last thing on your mind should be how to navigate your care. Overlake's David and Shelley Hovind Heart &amp; Vascular Center brings cardiac and vascular services together in one location. Our new 19,200-square-foot facility features the most advanced cardiovascular equipment and technology available on the Eastside.</span>
-			<a href="index426b.html?route=service&amp;id=1/Cardiovascular-centre">(Read More)</a>
+<!--			<a href="index426b.html?route=service&amp;id=1/Cardiovascular-centre">(Read More)</a>-->
+			<a href="service_details.php">(Read More)</a>
 		</p>
 	</div>
 </div>					</div>

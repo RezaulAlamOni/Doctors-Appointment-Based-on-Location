@@ -46,44 +46,50 @@
         </div>
         <div id="hdr-wrapper">
             <div class="layer-stretch hdr">
+                <!--                {{--<div class="tbl-cell hdr-logo">--}}-->
+                <!--                    {{--<a href="index2378.html?route=home">--}}-->
+                <!--                        {{--<img src="public/uploads/logo-purple.png" alt="Klinikal Health care">--}}-->
+                <!--                    {{--</a>--}}-->
+                <!--                {{--</div>--}}-->
+
                 <div class="row align-items-center justify-content-end">
                     <a href="index.php" style="padding-left: 60px" class="text-primary"><h1 style="font-family: 'Harlow Solid Italic'">AppointmentBD</h1></a>
-
                     <!-- Start Menu Section -->
                     <ul class="col menu">
                         <li>
                             <a href="index.php" id="" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a>
                         </li>
-                        <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Doctors</a></li>
-                        <li><a href="hospital.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Hospitals</a></li>
+                        <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect active">Doctors</a></li>
+                        <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Hospitals</a></li>
 
                         <li><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>
                         <li>
-                            <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect active">Pages <i class="fa fa-chevron-down"></i></a>
+                            <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Pages <i class="fa fa-chevron-down"></i></a>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-pages">
                                 <li class="mdl-menu__item">
-                                    <a href="{{ route('about') }}">About</a>
+                                    <a href="about.php">About</a>
                                 </li>
                                 <li class="mdl-menu__item">
-                                    <a href="{{ route('contact') }}">Contact</a>
+                                    <a href="contact.php">Contact</a>
                                 </li>
+
                                 <li class="mdl-menu__item">
-                                    <a href="{{ route('gallery') }}">Gallery</a>
+                                    <a href="gallery.php">Gallery</a>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="{{ route('admin') }}" id="menu-admin" class="text-success mdl-button mdl-js-button mdl-js-ripple-effect ">Admin Panel</a></li>
+                        <li><a href="admin" id="menu-admin" class="text-success mdl-button mdl-js-button mdl-js-ripple-effect ">Admin Panel</a></li>
                         <li>
                             <a id="menu-profile" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="fa fa-user-o color-white"> </i> Profile <i class="fa fa-chevron-down"></i></a>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-profile">
                                 <li class="mdl-menu__item">
-                                    <a href="{{ route('login1') }}"><i class="fa fa-sign-in color-green"></i> Login</a>
+                                    <a href="login.php"><i class="fa fa-sign-in color-green"></i> Login</a>
                                 </li>
                                 <li class="mdl-menu__item">
-                                    <a href="{{ route('registration') }}"><i class="fa fa-user-o color-green"></i> Register</a>
+                                    <a href="register.php"><i class="fa fa-user-o color-green"></i> Register</a>
                                 </li>
                                 <li class="mdl-menu__item">
-                                    <a href="{{ route('forget.pass') }}"><i class="fa fa-key color-green"></i> Forgot Password</a>
+                                    <a href="forget_pass.php"><i class="fa fa-key color-green"></i> Forgot Password</a>
                                 </li>
                             </ul>
                         </li>
