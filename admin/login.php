@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,6 @@
     <link rel="stylesheet" href="https://css.zohostatic.com/salesiq/Sep_10_2018_2_https/styles/floatbutton.css">
     <script src="https://js.zohostatic.com/salesiq/Sep_10_2018_2_https/js/floatbutton.js"></script>
 </head>
-
 <body>
 
 <div class="lgn-wrapper">
@@ -23,7 +23,7 @@
         <a href="../"><img src="public/images/logo.png" alt="Clinical"></a>
     </div>
     <div id="login-form" class="lgn-form ">
-        <form class="form-vertical" action="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=login" method="post" siq_id="autopick_8519">
+        <form class="form-vertical" action="include/verify_user.php" method="post" siq_id="autopick_8519">
             <input type="hidden" name="_token" value="413ccea5ca6b8ce59e0da0d74a15110a305317f742542dcc5f09cc85ddf4f25288776a66377494dbf3154612b21c29b49cdcd6ee235b8ea2b77355d52eef0188">
             <div class="lgn-input form-group">
                 <label class="control-label col-sm-12">Username</label>
@@ -37,10 +37,16 @@
                     <input type="password" name="password" id="lgn-pass" class="form-control" placeholder="Enter your Password" autocomplete="off">
                 </div>
             </div>
+            <?php
+                $a = rand(1,9);
+                $b = rand(1,10);
+            ?>
             <div class="lgn-input form-group">
-                <label class="control-label col-sm-12">What is 4 plus 13 =</label>
+                <label class="control-label col-sm-12">What is <?php echo $a;?> plus <?php echo $b;?> =</label>
                 <div class="col-sm-12">
-                    <input type="text" id="lgn-bot" class="form-control" placeholder="Answer" autocomplete="off">
+                    <input name="sum" type="text" id="lgn-bot" class="form-control" placeholder="Answer" autocomplete="off">
+                    <input type="hidden" name="a" value="<?php echo $a;?>">
+                    <input type="hidden" name="b"  value="<?php echo $b;?>">
                 </div>
             </div>
             <div class="lgn-forgot">
@@ -55,26 +61,5 @@
         </form>
     </div>
 </div>
-<script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-93901876-1', 'auto');
-    ga('send', 'pageview');</script>
-
-
-
-
-<script type="text/javascript">
-    var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq ||
-        {widgetcode:"b0707d67168a123a4b74ffaaa713d80d766a387e66055ee6c3b075720a1e3e1b", values:{},ready:function(){}};
-    var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;
-    s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");
-</script><div id="zsiqwidget"></div>
-
-
-
-
 </body>
 </html>

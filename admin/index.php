@@ -47,14 +47,14 @@
             <div class="menu-user">
                 <div class="menu-user-icon"><i class="fa fa-user-circle"></i></div>
                 <div class="menu-user-info">
-                    <p>Pep dev</p>
+                    <p><?php echo $_SESSION['name'];?></p>
                     <p>Dean</p>
                     <div class="menu-user-dropdown">
                         <i class="fa fa-angle-double-down fa-2x" id="menu-user-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></i>
                         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="menu-user-drop">
-                            <li><a href="http://pepdev.com/theme-preview/klinikal/" target="_blank"><i class="icon-link"></i> Visit Website</a></li>
-                            <li><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=profile"><i class="icon-user"></i> Profile</a></li>
-                            <li><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=logout"><i class="icon-logout"></i> Logout</a></li>
+                            <li><a href="../index.php" target="_blank"><i class="icon-link"></i> Visit Website</a></li>
+                            <li><a href="include"><i class="icon-user"></i> Profile</a></li>
+                            <li><a href="include/logout.php"><i class="icon-logout"></i> Logout</a></li>
                         </ul>
                     </div>
                 </div>
