@@ -9,8 +9,19 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 d-none d-sm-none d-md-none d-lg-block d-xl-block">
                     <div class="hdr-center-account text-left p-0">
-						<a href="login.php" class="font-14 mr-4"><i class="fa fa-sign-in"></i>Login</a>
-                        <a href="register.php" class="font-14"><i class="fa fa-user-o"></i>Register</a>
+                        <?php
+                        session_start();
+                        if (isset($_SESSION['admin_name'])){
+                            ?>
+                            <a href="admin" class="font-20 text-uppercase"><b>Welcome TO Admin</b></a>
+                            <?php
+                        }else {
+                            ?>
+                            <a href="login.php" class="font-14 mr-4"><i class="fa fa-sign-in"></i>Login</a>
+                            <a href="register.php" class="font-14"><i class="fa fa-user-o"></i>Register</a>
+                            <?php
+                        }
+                            ?>
                     </div>
                 </div>
                 <div class="col-lg-5">

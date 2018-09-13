@@ -1,6 +1,5 @@
 <?php include('include/header.php');?>
 <body>
-
 <!-- Header Start -->
     <header id="header">
         <div id="hdr-top-wrapper">
