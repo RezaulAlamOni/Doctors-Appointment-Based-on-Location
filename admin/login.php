@@ -45,8 +45,8 @@
                 <label class="control-label col-sm-12">What is <?php echo $a;?> plus <?php echo $b;?> =</label>
                 <div class="col-sm-12">
                     <input name="sum" type="text" id="lgn-bot" class="form-control" placeholder="Answer" autocomplete="off">
-                    <input type="hidden" name="a" value="<?php echo $a;?>">
-                    <input type="hidden" name="b"  value="<?php echo $b;?>">
+<!--                    <input type="hidden" name="a" value="--><?php //echo $a;?><!--">-->
+<!--                    <input type="hidden" name="b"  value="--><?php //echo $b;?><!--">-->
                 </div>
             </div>
             <div class="lgn-forgot">
