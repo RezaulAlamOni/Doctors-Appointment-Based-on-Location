@@ -53,9 +53,9 @@
                 <a href="../forget_pass.php">Forgotten Password?</a>
             </div>
             <div class="lgn-submit">
-                <a href="../" style="color: black;background: #a94442" class="btn btn-primary btn-lg" name="login">Home</a>
+                <a href="../" style="color: black;background: #a94442" class="btn btn-primary btn-lg col-5" name="login">Home</a>
 
-                <button type="submit" id="lgn-submit" class="btn btn-primary btn-lg" name="login">Login</button>
+                <button type="submit" id="lgn-submit" class="btn btn-primary btn-lg col-5" name="login">Login</button>
 
             </div>
         </form>

@@ -1,6 +1,7 @@
-<?php //ob_start(); ?>
-<?php //include ("cms_function.php"); ?>
-
+<?php ob_start(); ?>
+<?php include ("db.php"); ?>
+<?php include ("function.php"); ?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />

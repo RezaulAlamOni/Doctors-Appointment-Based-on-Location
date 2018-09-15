@@ -13,9 +13,12 @@
         </div>
 	</div>
 </div>
+
+
+    <center><img src="public/images/<?php echo $_SESSION['admin_img'];?>" style="height: 150px;" alt=""></center>
 <div class="content">
 	<div class="row">
-		<form class="col-sm-7" action="index.php?route=profile/action" method="post">
+		<form class="col-sm-7" action="profile.php?route=profile" method="post">
 			<div class="content-block content-block-horizantal">
 				<div class="content-block-ttl">Basic Info</div>
 				<div class="content-block-main">
@@ -29,23 +32,23 @@
 					<div class="row content-input">
 						<div class="col-sm-6">
 							<label><text>*</text>First Name : </label>
-							<input type="text" class="input-text" name="firstname" value="Pep" placeholder="First Name">
+							<input type="text" class="input-text" name="firstname" value="<?php echo $_SESSION['admin_first_name'];?>" placeholder="First Name">
 							<p class="content-input-error-name">Please enter first name!</p>
 						</div>
 						<div class="col-sm-6">
 							<label>Last Name : </label>
-							<input type="text" class="input-text" name="lastname" value="dev" placeholder="Last Name">
+							<input type="text" class="input-text" name="lastname" value="<?php echo $_SESSION['admin_last_name'];?>" placeholder="Last Name">
 							<p class="content-input-error-name">Please enter last name!</p>
 						</div>
 					</div>
 					<div class="row content-input">
 						<div class="col-sm-6">
 							<label>Email : </label>
-							<input type="text" name="email" value="pepdevofficial@gmail.com" placeholder="Email" readonly >
+							<input type="text" name="email" value="<?php echo $_SESSION['admin_email'];?>" placeholder="Email" readonly >
 						</div>
 						<div class="col-sm-6">
 							<label><text>*</text>Mobile : </label>
-							<input type="number" class="input-mobile" name="mobile" value="8975383539"  pattern=".{6,}" placeholder="Mobile">
+							<input type="number" class="input-mobile" name="mobile" value="<?php echo $_SESSION['admin_phone'];?>"  pattern=".{6,}" placeholder="Mobile">
 							<p class="content-input-error-name">Please enter mobile number!</p>
 						</div>
 					</div>

@@ -45,10 +45,13 @@
                 </div>
             </div>
             <div class="menu-user">
-                <div class="menu-user-icon"><i class="fa fa-user-circle"></i></div>
+                <div class="menu-user-icon"><!--<i class="fa fa-user-circle"></i>-->
+                    <img src="public/images/<?php echo $_SESSION['admin_img']?>" style="height: 50px" alt="">
+                </div>
                 <div class="menu-user-info">
                     <p><?php echo $_SESSION['admin_name'];?></p>
-<p>Dean</p>
+                    <p><?php echo $_SESSION['admin_first_name'];
+                    echo $_SESSION['admin_last_name'];?></p>
 <div class="menu-user-dropdown">
     <i class="fa fa-angle-double-down fa-2x" id="menu-user-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></i>
     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="menu-user-drop">

@@ -9,7 +9,7 @@ if (isset($_REQUEST['login']) ){
     $password   = $_REQUEST['password'];
     $username   = mysqli_real_escape_string($con,$username);
     $password   = mysqli_real_escape_string($con,$password);
-    $sql        = "SELECT * FROM admins where name = '{$username}'";
+    $sql        = "SELECT * FROM admins where user_name = '{$username}'";
     $rslt       = mysqli_query($con,$sql);
 
     $row = mysqli_fetch_array($rslt);
@@ -20,8 +20,11 @@ if (isset($_REQUEST['login']) ){
 
         while ($row) {
             $pass = $row['password'];
-            $name = $row['name'];
+            $first_name = $row['first_name'];
+            $last_name = $row['last_name'];
+            $user_name = $row['user_name'];
             $mail = $row['email'];
+            $phone = $row['phone'];
             $pic = $row['pic'];
             $id = mysqli_real_escape_string($con, $row['admin_id']);
 
@@ -30,8 +33,11 @@ if (isset($_REQUEST['login']) ){
 //           if(password_verify($password,$pass)){
             if ($password == $pass) {
 
-                $_SESSION['admin_name'] = $name;
+                $_SESSION['admin_first_name'] = $first_name;
+                $_SESSION['admin_last_name'] = $last_name;
+                $_SESSION['admin_name'] = $user_name;
                 $_SESSION['admin_email'] = $mail;
+                $_SESSION['admin_phone'] = $phone;
                 $_SESSION['admin_id'] = $id;
                 $_SESSION['admin_img'] = $pic;
 
