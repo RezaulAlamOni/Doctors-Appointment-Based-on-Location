@@ -15,15 +15,20 @@
 </div>
 
 
-    <center><img src="public/images/<?php echo $_SESSION['admin_img'];?>" style="height: 150px;" alt=""></center>
-<div class="content">
+
+    <div class="content">
 	<div class="row">
-		<form class="col-sm-7" action="profile.php?route=profile" method="post">
+		<form class="col-sm-7" action="profile.php" method="post">
+
+            <center>
+                <img src="public/images/<?php echo $_SESSION['admin_img'];?>" style="height: 150px;" alt="">
+                <input type="file" name="img">
+            </center>
 			<div class="content-block content-block-horizantal">
 				<div class="content-block-ttl">Basic Info</div>
 				<div class="content-block-main">
 					<input type="hidden" name="_token" value="413ccea5ca6b8ce59e0da0d74a15110a305317f742542dcc5f09cc85ddf4f25288776a66377494dbf3154612b21c29b49cdcd6ee235b8ea2b77355d52eef0188">
-					<input type="hidden" value="97" name="id" >
+					<input type="hidden" value="<?php echo $_SESSION['admin_id'];?>" name="id" >
 					<div class="content-input">
 						<label><text>*</text>User Name : </label>
 						<input type="text" class="input-text" name="username" value="<?php echo $_SESSION['admin_name'];?>" placeholder="User Name" required>

@@ -2,7 +2,6 @@
 <?php include('include/header.php');?>
 
 <body>
-
     <!-- Start Header Section -->
     <header id="header-transparent">
         <div class="layer-stretch hdr-center pt-4 pb-4">
@@ -83,10 +82,21 @@
                             </div>
                         </li>
 						<li><a href="admin" id="menu-admin" class="mdl-button mdl-js-button mdl-js-ripple-effect btn btn-success">Admin Panel</a></li>
+
                         <li>
                             <a id="menu-profile" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="fa fa-user-o color-white"> </i> Profile <i class="fa fa-chevron-down"></i></a>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-profile">
-								<li class="mdl-menu__item">
+                                <?php
+                                    if (isset($_SESSION['admin_name']) || isset($_SESSION['user_name'])){
+
+
+
+
+
+
+                                    }
+                                ?>
+                                <li class="mdl-menu__item">
                                     <a href="login.php"><i class="fa fa-sign-in color-green"></i> Login</a>
                                 </li>
                                 <li class="mdl-menu__item">
@@ -95,8 +105,11 @@
                                 <li class="mdl-menu__item">
                                     <a href="forget_pass.php"><i class="fa fa-key color-green"></i> Forgot Password</a>
                                 </li>
+
 							</ul>
                         </li>
+
+
                         <li class="mobile-menu-close"><i class="fa fa-times"></i></li>
                     </ul>
                     <div id="menu-bar" class="col-2 col-md-auto"><a><i class="fa fa-bars color-white"></i></a></div>

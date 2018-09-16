@@ -45,8 +45,11 @@
                 </div>
             </div>
             <div class="menu-user">
+
                 <div class="menu-user-icon"><!--<i class="fa fa-user-circle"></i>-->
-                    <img src="public/images/<?php echo $_SESSION['admin_img']?>" style="height: 50px" alt="">
+                    <a href="profile.php">
+                        <img src="public/images/<?php echo $_SESSION['admin_img']?>" style="height: 50px" alt="">
+                    </a>
                 </div>
                 <div class="menu-user-info">
                     <p><?php echo $_SESSION['admin_name'];?></p>
@@ -84,6 +87,11 @@
                     <i class="icon-user-follow"></i><span>Add Patient</span>
                 </a>
             </li>
+            <li id="appointment">
+                <a href="patient_edite.php">
+                    <i class="icon-user-follow"></i><span>Update Patient</span>
+                </a>
+            </li>
             <li>
                 <a href="invoice.php">
                     <i class="icon-envelope"></i><span>Invoice</span>
@@ -117,7 +125,7 @@
                 </a>
             </li>
             <li id="service">
-                <a href="">
+                <a href="appointmentedit.php">
                     <i class="icon-briefcase"></i><span>Update Appointment </span>
                 </a>
             </li>
