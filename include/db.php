@@ -14,4 +14,3 @@
 //    if ($con){
 //        echo "<h1>we are connected</h1>";
 //    }
-//session_start();
