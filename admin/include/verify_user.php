@@ -13,25 +13,27 @@ if (isset($_REQUEST['login']) ){
     $password   = $_REQUEST['password'];
 //    $username   = mysqli_real_escape_string($con,$username);
 //    $password   = mysqli_real_escape_string($con,$password);
-
-    $sql        = "SELECT * FROM admins where user_name = '{$username}'";
-
+//    $sql        = "SELECT * FROM admins where user_name = '{$username}'";
 //    $rslt       = mysqli_query($con,$sql);
 
-//    $sql        = "SELECT * FROM admins where user_name = ?'";
-//    $result = $pdo->prepare($sql);
-//    $result->execute([$username ]);
-//    $admins = $result->fetchAll();
-//    foreach ($admins as $admin){
-//        echo $admin->user_name;
-//    }
+    $sql = "SELECT * FROM admins where user_name = :name";
+    $result = $pdo->prepare($sql);
+    $result->execute(['name'=>$username]);
+    $admins = $result->fetchAll(); // default value PDO::FETCH_ASSOC
 
-    $result = $pdo->query($sql);
+//    foreach ($admins as $admin){
+////    echo $admin->user_name;
+//        echo $admin['user_name'];
+//    }
+//    $result = $pdo->query($sql);
 
 //    if (mysqli_num_rows($rslt)>0) {
     if ($result->rowCount()>0) {
 
-        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+//        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+
+        foreach ($admins as $row){
+
             $pass = $row['password'];
             $first_name = $row['first_name'];
             $last_name = $row['last_name'];
@@ -54,6 +56,7 @@ if (isset($_REQUEST['login']) ){
                 $_SESSION['admin_phone'] = $phone;
                 $_SESSION['admin_id'] = $id;
                 $_SESSION['admin_img'] = $pic;
+
 
                 header("Location: ../index.php");
             } else {

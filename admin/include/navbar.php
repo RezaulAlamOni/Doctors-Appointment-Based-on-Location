@@ -83,7 +83,7 @@
             </li>
 
             <li id="appointment">
-                <a href="appointmentadd.php">
+                <a href="patient_add.php">
                     <i class="icon-user-follow"></i><span>Add Patient</span>
                 </a>
             </li>

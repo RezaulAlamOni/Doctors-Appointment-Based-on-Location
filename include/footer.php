@@ -2,76 +2,76 @@
 <!-- Start of Time Table Section -->
 <div id="tt" class="animated-wrapper">
     <div class="layer-stretch">
-        <div class="layer-wrapper">
-            <div class="layer-ttl">
-                <h3 class="animated animated-down">Appointment Time Table</h3>
-            </div>
-            <div class="layer-container">
-                <div class="tt-block animated animated-up">
-                    <p><i class="fa fa-calendar"></i><a>Sun</a></p>
-                    <p>
-                        <i class="fa fa-hourglass-1"></i><a>09:00 AM - 01:00 PM</a>
-                    </p>
-                    <p>
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>
-                    </p>
-                </div>
-                <div class="tt-block animated animated-up">
-                    <p><i class="fa fa-calendar"></i><a>Mon</a></p>
-                    <p>
-                        <i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>
-                    </p>
-                    <p>
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>
-                    </p>
-                </div>
-                <div class="tt-block animated animated-up">
-                    <p><i class="fa fa-calendar"></i><a>Tue</a></p>
-                    <p>
-                        <i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>
-                    </p>
-                    <p>
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>
-                    </p>
-                </div>
-                <div class="tt-block animated animated-up">
-                    <p><i class="fa fa-calendar"></i><a>Wed</a></p>
-                    <p>
-                        <i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>
-                    </p>
-                    <p>
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>
-                    </p>
-                </div>
-                <div class="tt-block animated animated-up">
-                    <p><i class="fa fa-calendar"></i><a>Thu</a></p>
-                    <p>
-                        <i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>
-                    </p>
-                    <p>
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>
-                    </p>
-                </div>
-                <div class="tt-block animated animated-up">
-                    <p><i class="fa fa-calendar"></i><a>Fri</a></p>
-                    <p>
-                        <i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>
-                    </p>
-                    <p>
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>
-                    </p>
-                </div>
-                <div class="tt-block animated animated-up">
-                    <p><i class="fa fa-calendar"></i><a>Sat</a></p>
-                    <p>
-                        <i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>
-                    </p>
-                    <p>
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>
-                    </p>
-                </div>
-            </div>
-        </div>
+<!--        <div class="layer-wrapper">-->
+<!--            <div class="layer-ttl">-->
+<!--                <h3 class="animated animated-down">Appointment Time Table</h3>-->
+<!--            </div>-->
+<!--            <div class="layer-container">-->
+<!--                <div class="tt-block animated animated-up">-->
+<!--                    <p><i class="fa fa-calendar"></i><a>Sun</a></p>-->
+<!--                    <p>-->
+<!--                        <i class="fa fa-hourglass-1"></i><a>09:00 AM - 01:00 PM</a>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--                <div class="tt-block animated animated-up">-->
+<!--                    <p><i class="fa fa-calendar"></i><a>Mon</a></p>-->
+<!--                    <p>-->
+<!--                        <i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--                <div class="tt-block animated animated-up">-->
+<!--                    <p><i class="fa fa-calendar"></i><a>Tue</a></p>-->
+<!--                    <p>-->
+<!--                        <i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--                <div class="tt-block animated animated-up">-->
+<!--                    <p><i class="fa fa-calendar"></i><a>Wed</a></p>-->
+<!--                    <p>-->
+<!--                        <i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--                <div class="tt-block animated animated-up">-->
+<!--                    <p><i class="fa fa-calendar"></i><a>Thu</a></p>-->
+<!--                    <p>-->
+<!--                        <i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--                <div class="tt-block animated animated-up">-->
+<!--                    <p><i class="fa fa-calendar"></i><a>Fri</a></p>-->
+<!--                    <p>-->
+<!--                        <i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--                <div class="tt-block animated animated-up">-->
+<!--                    <p><i class="fa fa-calendar"></i><a>Sat</a></p>-->
+<!--                    <p>-->
+<!--                        <i class="fa fa-hourglass-1"></i><a>09:00 AM - 05:00 PM</a>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Make An Appointment</button>-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </div><!-- End of Time Table Section -->
 
