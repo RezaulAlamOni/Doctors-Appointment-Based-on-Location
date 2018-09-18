@@ -1,14 +1,9 @@
 <?php ob_start(); ?>
 <?php include "../include/db.php"; ?>
-<?php include ("admin_function.php"); ?>
-
 <?php session_start();
-
 if (!isset($_SESSION['admin_name'])){
-
     header("Location: login.php");
 }
-
 ?>
 
 

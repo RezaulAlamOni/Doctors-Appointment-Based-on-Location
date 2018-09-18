@@ -1,6 +1,5 @@
 
 <?php //include("db.php"); ?>
-<?php include ("admin_function.php"); ?>
 <?php session_start(); ?>
 <?php
 //global $con;

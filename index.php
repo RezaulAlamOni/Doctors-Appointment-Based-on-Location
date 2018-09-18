@@ -38,8 +38,6 @@
                            	<li><a href="" target="_blank" id="hdr-twitter" class="fa fa-twitter rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-twitter">Twitter</span></li>
                            	<li><a href="" target="_blank" id="hdr-instagram" class="fa fa-instagram rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-instagram">Instagram</span></li>
                            	<li><a href="" target="_blank" id="hdr-linkedin" class="fa fa-linkedin rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-linkedin">Linkedin</span></li>
-<!--                           	<li><a href="" target="_blank" id="hdr-flickr" class="fa fa-flickr rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-flickr">Flickr</span></li>-->
-<!--                          	<li><a href="" target="_blank" id="hdr-rss" class="fa fa-rss rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-rss">Rss</span></li>-->
                        	</ul>
                     </div>
                 </div>
@@ -67,45 +65,71 @@
 					</ul>
 
 					<ul class="col menu ">
-                        <li style="width:310px;height:25px;padding-bottom: 40px;">
-                            <div class="" style="">
-                                <form action="" method="post" style="">
-                                    <div class="input-group">
-                                        <input  name="search" type="text" class="form-control">
-                                        <span class="input-group-btn" style="">
-                                            <button class="btn btn-default" type="submit" name="submit">
-                                                <span class="fa fa-search"></span>
-                                            </button>
-                                        </span>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
+<!--                        <li style="width:310px;height:25px;padding-bottom: 40px;">-->
+<!--                            <div class="" style="">-->
+<!--                                <form action="" method="post" style="">-->
+<!--                                    <div class="input-group">-->
+<!--                                        <input  name="search" type="text" class="form-control">-->
+<!--                                        <span class="input-group-btn" style="">-->
+<!--                                            <button class="btn btn-default" type="submit" name="submit">-->
+<!--                                                <span class="fa fa-search"></span>-->
+<!--                                            </button>-->
+<!--                                        </span>-->
+<!--                                    </div>-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                        </li>-->
 						<li><a href="admin" id="menu-admin" class="mdl-button mdl-js-button mdl-js-ripple-effect btn btn-success">Admin Panel</a></li>
 
                         <li>
                             <a id="menu-profile" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="fa fa-user-o color-white"> </i> Profile <i class="fa fa-chevron-down"></i></a>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-profile">
                                 <?php
-                                    if (isset($_SESSION['admin_name']) || isset($_SESSION['user_name'])){
+                                    if (isset($_SESSION['admin_name'])){
+                                        ?>
+                                        <li class="mdl-menu__item">
+                                            <a href="admin/profile.php"> <i class="fa fa-user-circle-o color-green"> </i> Profile</a>
+                                        </li>
+                                        <li class="mdl-menu__item">
+                                            <a href="admin/include/logout.php"><i class="fa fa-sign-out color-green"> </i> Logout</a>
+                                        </li>
+                                        <li class="mdl-menu__item">
+                                            <a href="forget_pass.php"><i class="fa fa-key color-green" > </i> Forgot Password</a>
+                                        </li>
+
+                                        <?php }
+
+                                        if (isset($_SESSION['patient_name'])) { ?>
+                                            <li class="mdl-menu__item">
+                                                <a href="profile.php"> <i class="fa fa-user-circle-o color-green"> </i> Profile</a>
+                                            </li>
+                                            <li class="mdl-menu__item">
+                                                <a href="include/logout.php"><i class="fa fa-sign-out color-green"> </i> Logout</a>
+                                            </li>
+                                            <li class="mdl-menu__item">
+                                                <a href="forget_pass.php"><i class="fa fa-key color-green" > </i> Forgot Password</a>
+                                            </li>
+
+                                            <?php
+                                        }
+//                                        if (!isset()){
+
+                                            ?>
 
 
-
-
-
-
-                                    }
-                                ?>
-                                <li class="mdl-menu__item">
-                                    <a href="login.php"><i class="fa fa-sign-in color-green"></i> Login</a>
-                                </li>
-                                <li class="mdl-menu__item">
-                                    <a href="register.php"><i class="fa fa-user-o color-green"></i> Register</a>
-                                </li>
-                                <li class="mdl-menu__item">
-                                    <a href="forget_pass.php"><i class="fa fa-key color-green"></i> Forgot Password</a>
-                                </li>
-
+                                            <li class="mdl-menu__item">
+                                                <a href="login.php"><i class="fa fa-sign-in color-green"></i> Login</a>
+                                            </li>
+                                            <li class="mdl-menu__item">
+                                                <a href="register.php"><i class="fa fa-user-o color-green"></i> Register</a>
+                                            </li>
+                                            <li class="mdl-menu__item">
+                                                <a href="forget_pass.php"><i class="fa fa-key color-green"></i> Forgot
+                                                    Password</a>
+                                            </li>
+                                            <?php
+//                                        }
+                                            ?>
 							</ul>
                         </li>
 

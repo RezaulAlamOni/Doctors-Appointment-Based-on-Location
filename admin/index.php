@@ -74,13 +74,13 @@
                                 <div class="tbl">
                                     <div class="tbl-row">
                                         <div class="tbl-cell">
-                                            <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=patient/add">
+                                            <a href="patient_add.php">
                                                 <i class="icon-user-follow text-primary"></i>
                                                 <span>Add Patient</span>
                                             </a>
                                         </div>
                                         <div class="tbl-cell">
-                                            <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/add">
+                                            <a href="appointment_add.php">
                                                 <i class="icon-calendar text-primary"></i>
                                                 <span>Add Appointment</span>
                                             </a>
@@ -88,13 +88,13 @@
                                     </div>
                                     <div class="tbl-row">
                                         <div class="tbl-cell">
-                                            <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=invoice/add&id=0">
+                                            <a href="add_user.php">
                                                 <i class="icon-user text-warning"></i>
                                                 <span>Add User</span>
                                             </a>
                                         </div>
                                         <div class="tbl-cell">
-                                            <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=request/add">
+                                            <a href="add_hospital.php">
                                                 <i class="icon-user-follow text-danger"></i>
                                                 <span>Add Hospital</span>
                                             </a>
@@ -102,13 +102,13 @@
                                     </div>
                                     <div class="tbl-row">
                                         <div class="tbl-cell">
-                                            <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=blog/add">
+                                            <a href="add_doctors.php">
                                                 <i class="icon-user-follow text-success"></i>
                                                 <span>Add Doctors</span>
                                             </a>
                                         </div>
                                         <div class="tbl-cell">
-                                            <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=setting/generalsetting">
+                                            <a href="xcvz">
                                                 <i class="icon-settings text-secondary"></i>
                                                 <span>General Setting</span>
                                             </a>
@@ -135,16 +135,16 @@
                             <div class="icon-widget">
                                 <h5 class="icon-widget-heading">Patients</h5>
                                 <div class="icon-widget-body tbl">
-                                    <p class="tbl-cell"><i class="icon-people text-success"></i></p>
+                                    <p class="tbl-cell"><i class="fa fa-wheelchair" style="color: #3d0089"></i></p>
                                     <p class="tbl-cell text-right">146</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3 col-lg-12">
                             <div class="icon-widget">
-                                <h5 class="icon-widget-heading">User</h5>
+                                <h5 class="icon-widget-heading">Users</h5>
                                 <div class="icon-widget-body tbl">
-                                    <p class="tbl-cell"><i class="icon-user text-success"></i></p>
+                                    <p class="tbl-cell"><i class="fa fa-users text-success"></i></p>
                                     <p class="tbl-cell text-right">346</p>
                                 </div>
                             </div>
@@ -154,7 +154,7 @@
                             <div class="icon-widget">
                                 <h5 class="icon-widget-heading">Appointments</h5>
                                 <div class="icon-widget-body tbl">
-                                    <p class="tbl-cell"><i class="icon-user-follow text-primary"></i></p>
+                                    <p class="tbl-cell"><i class="fa fa-calendar-minus-o text-primary"></i></p>
                                     <p class="tbl-cell text-right">323</p>
                                 </div>
                             </div>
@@ -163,7 +163,7 @@
                             <div class="icon-widget">
                                 <h5 class="icon-widget-heading">Doctors</h5>
                                 <div class="icon-widget-body tbl">
-                                    <p class="tbl-cell"><i class="icon-user text-warning"></i></p>
+                                    <p class="tbl-cell"><i class="fa fa-user-md text-info"></i></p>
                                     <p class="tbl-cell text-right">34</p>
                                 </div>
                             </div>
@@ -172,7 +172,7 @@
                             <div class="icon-widget">
                                 <h5 class="icon-widget-heading">Hospital</h5>
                                 <div class="icon-widget-body tbl">
-                                    <p class="tbl-cell"><i class="icon-home text-danger"></i></p>
+                                    <p class="tbl-cell"><i class="fa fa-hospital-o text-danger"></i></p>
                                     <p class="tbl-cell text-right">63</p>
                                 </div>
                             </div>

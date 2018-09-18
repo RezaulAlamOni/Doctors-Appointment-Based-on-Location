@@ -72,7 +72,7 @@
 
     <li id="patient-li">
         <a class="menu-dropdown active-danger">
-            <i class="icon-organization"></i><span>Patients</span><i class="fa fa-angle-down"></i>
+            <i class="fa fa-wheelchair"></i><span>Patients</span><i class="fa fa-angle-down"></i>
         </a>
         <ul id="patient" class="sub-menu">
 
@@ -119,13 +119,13 @@
                 </a>
             </li>
             <li id="department">
-                <a href="appointmentadd.php">
+                <a href="appointment_add.php">
                     <i class="icon-user-follow"></i>
                     <span>Add Appointments</span>
                 </a>
             </li>
             <li id="service">
-                <a href="appointmentedit.php">
+                <a href="appointment_edit.php">
                     <i class="icon-briefcase"></i><span>Update Appointment </span>
                 </a>
             </li>
@@ -134,58 +134,58 @@
                     <i class="icon-briefcase"></i><span>Hospitals Appointment </span>
                 </a>
             </li>
-            <!--                        <li id="testimonial">-->
-            <!--                            <a href="">-->
-            <!--                                <i class="fa fa-quote-left"></i><span>Testimonials</span>-->
-            <!--                            </a>-->
-            <!--                        </li>-->
+
         </ul>
     </li>
     <li id="doctor-li">
-        <a class="menu-dropdown"><i class="icon-globe-alt"></i>
+        <a class="menu-dropdown"><i class="fa fa-user-md"></i>
             <span>Doctors</span><i class="fa fa-angle-down"></i></a>
         <ul id="page" class="sub-menu">
             <li id="menu_page">
                 <a href="doctors.php"><i class="icon-people"></i><span>All Doctors</span></a>
             </li>
             <li id="home_page">
-                <a href=""><i class="icon-user-follow"></i><span>Add Doctors</span></a>
+                <a href="add_doctors.php"><i class="fa fa-user-plus"></i><span>Add Doctors</span></a>
             </li>
             <li id="service_page">
-                <a href=""><i class="icon-briefcase"></i><span>Update Page</span></a>
+                <a href="doctors.php"><i class="fa fa-edit"></i><span>Update Doctors</span></a>
             </li>
 
         </ul>
     </li>
     <li id="hospital-li">
-        <a class="menu-dropdown"><i class="icon-home"></i>
+        <a class="menu-dropdown"><i class="fa fa-hospital-o"></i>
             <span>Hospitals</span><i class="fa fa-angle-down"></i></a>
         <ul id="page" class="sub-menu">
             <li id="menu_page">
-                <a href=""><i class="icon-home"></i><span>All Hospitals</span></a>
+                <a href="hospital.php"><i class="fa fa-list-alt"></i><span>All Hospitals</span></a>
             </li>
             <li id="home_page">
-                <a href=""><i class="icon-home"></i><span>Add Hospital</span></a>
+                <a href="hospital_add.php"><i class="fa fa-home"></i><span>Add Hospital</span></a>
             </li>
-            <li id="service_page">
-                <a href=""><i class="icon-briefcase"></i><span>Update Hospital</span></a>
-            </li>
-            <li id="doctor_page">
-                <a href=""><i class="fa fa-user-md"></i><span>Departments </span></a>
-            </li>
-            <!--                        <li id="blog_page">-->
-            <!--                            <a href=""><i class="icon-speech"></i><span>Blog Page</span></a>-->
-            <!--                        </li>-->
-            <!---->
-            <!--                        <li id="about_page">-->
-            <!--                            <a href=""><i class="icon-info"></i><span>About Page</span></a>-->
-            <!--                        </li>-->
 
         </ul>
     </li>
-    <li id="blog-li">
-        <a class="menu-dropdown"><i class="icon-map"></i><span>Areas</span><i class="fa fa-angle-down"></i></a>
-        <ul id="blog" class="sub-menu">
+    <li id="department-li">
+        <a class="menu-dropdown"><i class="fa fa-building"></i>
+            <span>Departments</span><i class="fa fa-angle-down"></i></a>
+        <ul id="page" class="sub-menu">
+            <li id="menu_page">
+                <a href="department.php"><i class="icon-home"></i><span>All Departments</span></a>
+            </li>
+            <li id="home_page">
+                <a href="department_add.php"><i class="icon-home"></i><span>Add Department</span></a>
+            </li>
+            <li id="service_page">
+                <a href="edit_department.php"><i class="icon-briefcase"></i><span>Update Department</span></a>
+            </li>
+        </ul>
+
+    </li>
+    <li id="area-li">
+        <a class="menu-dropdown"><i class="fa fa-map-marker"></i>
+            <span>Areas</span><i class="fa fa-angle-down"></i></a>
+        <ul id="area" class="sub-menu">
             <li>
                 <a class="menu-dropdown" href=""><i class="icon-list"></i><span>Area List</span></a>
             </li>
