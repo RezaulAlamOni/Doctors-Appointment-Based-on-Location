@@ -82,7 +82,14 @@
 						<li><a href="admin" id="menu-admin" class="mdl-button mdl-js-button mdl-js-ripple-effect btn btn-success">Admin Panel</a></li>
 
                         <li>
-                            <a id="menu-profile" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="fa fa-user-o color-white"> </i> Profile <i class="fa fa-chevron-down"></i></a>
+                            <a id="menu-profile" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="fa fa-user-o color-white"></i>
+
+                                <?php
+                                if (isset($_SESSION['admin_name'])){
+                                    echo $_SESSION['admin_name'];
+                                }else { ?> Profile <?php } ?>
+
+                                <i class="fa fa-chevron-down"></i></a>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-profile">
                                 <?php
                                     if (isset($_SESSION['admin_name'])){
@@ -99,7 +106,7 @@
 
                                         <?php }
 
-                                        if (isset($_SESSION['patient_name'])) { ?>
+                                        else if (isset($_SESSION['patient_name'])) { ?>
                                             <li class="mdl-menu__item">
                                                 <a href="profile.php"> <i class="fa fa-user-circle-o color-green"> </i> Profile</a>
                                             </li>
@@ -111,8 +118,7 @@
                                             </li>
 
                                             <?php
-                                        }
-//                                        if (!isset()){
+                                        }else{
 
                                             ?>
 
@@ -124,11 +130,10 @@
                                                 <a href="register.php"><i class="fa fa-user-o color-green"></i> Register</a>
                                             </li>
                                             <li class="mdl-menu__item">
-                                                <a href="forget_pass.php"><i class="fa fa-key color-green"></i> Forgot
-                                                    Password</a>
+                                                <a href="forget_pass.php"><i class="fa fa-key color-green"></i> Forgot Password</a>
                                             </li>
                                             <?php
-//                                        }
+                                        }
                                             ?>
 							</ul>
                         </li>

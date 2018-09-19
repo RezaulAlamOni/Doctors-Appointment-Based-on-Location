@@ -1,115 +1,12 @@
 <?php include('include/header.php');?>
-<body>
-<!-- Header Start -->
-    <header id="header">
-        <div id="hdr-top-wrapper">
-            <div class="layer-stretch hdr-top">
-                <div class="hdr-top-block hidden-xs ">
-                    <div id="hdr-social">
-                        <ul class="social-list social-list-sm">
-							<li><a class="width-auto font-14">Follow Us : </a></li>
-							<li><a href="" target="_blank" id="hdr-facebook" class="fa fa-facebook rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-facebook">Facebook</span></li>
-							<li><a href="" target="_blank" id="hdr-twitter" class="fa fa-twitter rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-twitter">Twitter</span></li>
-							<li><a href="" target="_blank" id="hdr-instagram" class="fa fa-instagram rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-instagram">Instagram</span></li>
-							<li><a href="" target="_blank" id="hdr-linkedin" class="fa fa-linkedin rounded"></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-linkedin">Linkedin</span></li>
-						</ul>
-                    </div>
-                </div>
-                <div class="hdr-top-line hidden-xs"></div>
-                <div class="hdr-top-block hdr-number">
-                    <div class="font-13">
-                        <i class="fa fa-mobile font-20 tbl-cell"> </i> <span class="hidden-xs tbl-cell"> Emergency Number : </span> <span class="tbl-cell">8795</span>
-                    </div>
-                </div>
-<!--                <div class="hdr-top-line"></div>-->
-<!--                <div class="hdr-top-block">-->
-<!--                    <div class="theme-dropdown">-->
-<!--                        <a id="profile-menu" class="mdl-button mdl-js-button mdl-js-ripple-effect font-13">-->
-<!--                            <i class="fa fa-user-o color-black"></i> My Account</a>-->
-<!---->
-<!--                        <ul id="hdr-user-menu-dd" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="profile-menu">-->
-<!--                            <li class="mdl-menu__item">-->
-<!--                                <a href="{{ route('login') }}"><i class="fa fa-sign-in"></i>Login</a>-->
-<!--                            </li>-->
-<!--                            <li class="mdl-menu__item">-->
-<!--                                <a href="{{ route('registration') }}"><i class="fa fa-user-o"></i>Register</a>-->
-<!--                            </li>-->
-<!--                            <li class="mdl-menu__item">-->
-<!--                                <a href="{{ route('forget.pass') }}"><i class="fa fa-key"></i>Forgot Password</a>-->
-<!--                            </li>-->
-<!--                            <li class="mdl-menu__item">-->
-<!--                                <a href="{{ route('about') }}"><i class="fa fa-info"></i>Help</a>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                </div>-->
-            </div>
-        </div>
-        <div id="hdr-wrapper">
-            <div class="layer-stretch hdr">
-                <!--                {{--<div class="tbl-cell hdr-logo">--}}-->
-                <!--                    {{--<a href="index2378.html?route=home">--}}-->
-                <!--                        {{--<img src="public/uploads/logo-purple.png" alt="Klinikal Health care">--}}-->
-                <!--                    {{--</a>--}}-->
-                <!--                {{--</div>--}}-->
+<?php include('include/nav.php');?>
 
-                <div class="row align-items-center justify-content-end">
-                    <a href="index.php" style="padding-left: 60px" class="text-primary"><h1 style="font-family: 'Harlow Solid Italic'">AppointmentBD</h1></a>
-                    <!-- Start Menu Section -->
-                    <ul class="col menu">
-                        <li>
-                            <a href="index.php" id="" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a>
-                        </li>
-                        <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Doctors</a></li>
-                        <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Hospitals</a></li>
-
-                        <li><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect active">Our Service</a></li>
-                        <li>
-                            <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Pages <i class="fa fa-chevron-down"></i></a>
-                            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-pages">
-                                <li class="mdl-menu__item">
-                                    <a href="about.php">About</a>
-                                </li>
-                                <li class="mdl-menu__item">
-                                    <a href="contact.php">Contact</a>
-                                </li>
-
-                                <li class="mdl-menu__item">
-                                    <a href="gallery.php">Gallery</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="admin" id="menu-admin" class="text-success mdl-button mdl-js-button mdl-js-ripple-effect ">Admin Panel</a></li>
-                        <li>
-                            <a id="menu-profile" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="fa fa-user-o color-white"> </i> Profile <i class="fa fa-chevron-down"></i></a>
-                            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-profile">
-                                <li class="mdl-menu__item">
-                                    <a href="login.php"><i class="fa fa-sign-in color-green"></i> Login</a>
-                                </li>
-                                <li class="mdl-menu__item">
-                                    <a href="register.php"><i class="fa fa-user-o color-green"></i> Register</a>
-                                </li>
-                                <li class="mdl-menu__item">
-                                    <a href="forget_pass.php"><i class="fa fa-key color-green"></i> Forgot Password</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="mobile-menu-close"><i class="fa fa-times"></i></li>
-                    </ul>
-                    <div id="menu-bar" class="col-2 col-md-auto"><a><i class="fa fa-bars color-white"></i></a></div>
-                </div>
-            </div>
-        </div>
-    </header>
     <!-- Header End --><!-- Start Page Title Section -->
-<div class="page-ttl">
+<div class="page-ttl " style="height: 150px">
 	<div class="layer-stretch">
 		<div class="page-ttl-container">
-			<div class="page-ttl-icon">
-				<i class="fa fa-medkit"></i>
-			</div>
 			<div class="page-ttl-name">
-				<h1>Services</h1>
+				<h1><i class="fa fa-medkit color-white"></i>  Services</h1>
 				<p><a href="index.php">Home</a> > Service</p>
 			</div>
 		</div>
@@ -124,59 +21,64 @@
                     <div class="col-sm-6">
 						<div class="theme-block animated animated-up">
 		                    <div class="theme-block-picture">
-		<img src="public/uploads/service-1.jpg" alt="Cardiovascular centre">
-	</div>
-	<div class="theme-block-data service-block-data">
-		<div class="service-icon">
-			<i class="fa fa-stethoscope"></i>
-		</div>
-		<h4><a>Cardiovascular centre</a></h4>
-	</div>
-	<div class="theme-block-hidden service-hidden-block">
-		<i class="fa fa-stethoscope"></i>
-		<h4>
-			<a href="service_details.php">Cardiovascular centre</a>
-		</h4>
-		<p class="service-description paragraph-small paragraph-black">
-			<span>When you're facing heart or vascular issues, the last thing on your mind should be how to navigate your care. Overlake's David and Shelley Hovind Heart &amp; Vascular Center brings cardiac and vascular services together in one location. Our new 19,200-square-foot facility features the most advanced cardiovascular equipment and technology available on the Eastside.</span>
-<!--			<a href="index426b.html?route=service&amp;id=1/Cardiovascular-centre">(Read More)</a>-->
-			<a href="service_details.php">(Read More)</a>
-		</p>
-	</div>
-</div>					</div>
-										<div class="col-sm-6">
+		                        <img src="public/uploads/service-1.jpg" alt="Cardiovascular centre">
+	                        </div>
+                            <div class="theme-block-data service-block-data">
+                                <div class="service-icon">
+                                    <i class="fa fa-stethoscope"></i>
+                                </div>
+                                <h4><a>Cardiovascular centre</a></h4>
+                            </div>
+                            <div class="theme-block-hidden service-hidden-block">
+                                <i class="fa fa-stethoscope"></i>
+                                <h4>
+                                    <a href="service_details.php">Cardiovascular centre</a>
+                                </h4>
+                                <p class="service-description paragraph-small paragraph-black">
+                                    <span>When you're facing heart or vascular issues, the last thing on your mind should be how to navigate your care. Overlake's David and Shelley Hovind Heart &amp; Vascular Center brings cardiac and vascular services together in one location. Our new 19,200-square-foot facility features the most advanced cardiovascular equipment and technology available on the Eastside.</span>
+                        <!--			<a href="index426b.html?route=service&amp;id=1/Cardiovascular-centre">(Read More)</a>-->
+                                    <a href="service_details.php">(Read More)</a>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="theme-block animated animated-up">
+                            <div class="theme-block-picture">
+                                <img src="public/uploads/service-2.jpg" alt="Childbirth Center">
+                            </div>
+                            <div class="theme-block-data service-block-data">
+                                <div class="service-icon">
+                                    <i class="fa fa-child"></i>
+                                </div>
+                                <h4><a>Childbirth Center</a></h4>
+                            </div>
+                            <div class="theme-block-hidden service-hidden-block">
+                                <i class="fa fa-stethoscope"></i>
+                                <h4>
+                                    <a href="index3610.html?route=service&amp;id=2/Childbirth-Center">Childbirth Center</a>
+                                </h4>
+                                <p class="service-description paragraph-small paragraph-black">
+                                    <span>We believe that childbirth is a natural event not a medical procedure and believe in women and their ability to birth their babies in a way that is right for them. Childbirth is a beautiful experience and we support and encourage our patients to enjoy their journey. To do this we build a supportive environment for both family members and birth workers to be their to support mothers and babies through this amazing event.</span>
+                                    <a href="index3610.html?route=service&amp;id=2/Childbirth-Center">(Read More)</a>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
 						<div class="theme-block animated animated-up">
-		<div class="theme-block-picture">
-		<img src="public/uploads/service-2.jpg" alt="Childbirth Center">
-	</div>
-	<div class="theme-block-data service-block-data">
-		<div class="service-icon">
-			<i class="fa fa-child"></i>
-		</div>
-		<h4><a>Childbirth Center</a></h4>
-	</div>
-	<div class="theme-block-hidden service-hidden-block">
-		<i class="fa fa-stethoscope"></i>
-		<h4>
-			<a href="index3610.html?route=service&amp;id=2/Childbirth-Center">Childbirth Center</a>
-		</h4>
-		<p class="service-description paragraph-small paragraph-black">
-			<span>We believe that childbirth is a natural event not a medical procedure and believe in women and their ability to birth their babies in a way that is right for them. Childbirth is a beautiful experience and we support and encourage our patients to enjoy their journey. To do this we build a supportive environment for both family members and birth workers to be their to support mothers and babies through this amazing event.</span>
-			<a href="index3610.html?route=service&amp;id=2/Childbirth-Center">(Read More)</a>
-		</p>
-	</div>
-</div>					</div>
-										<div class="col-sm-6">
-						<div class="theme-block animated animated-up">
-		<div class="theme-block-picture">
-		<img src="public/uploads/service-3.jpg" alt="Cardiology">
-	</div>
-	<div class="theme-block-data service-block-data">
-		<div class="service-icon">
-			<i class="fa fa-heartbeat"></i>
-		</div>
-		<h4><a>Cardiology</a></h4>
-	</div>
+                            <div class="theme-block-picture">
+                                <img src="public/uploads/service-3.jpg" alt="Cardiology">
+                            </div>
+                            <div class="theme-block-data service-block-data">
+                                <div class="service-icon">
+                                    <i class="fa fa-heartbeat"></i>
+                                </div>
+                                <h4><a>Cardiology</a></h4>
+                            </div>
 	<div class="theme-block-hidden service-hidden-block">
 		<i class="fa fa-stethoscope"></i>
 		<h4>
@@ -368,113 +270,67 @@ Dermatologists have been leaders in the field of cosmetic surgery. Some dermatol
 										</div>
 				</div>
 			</div>
-			<div class="col-md-4">
+
+            <div class="col-md-4">
 				<div class="theme-material-card text-center">
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
 						<input class="mdl-textfield__input" type="text" id="search-services">
 						<label class="mdl-textfield__label" for="search-services">Search Services by Name</label>
 						<button class="fa fa-search search-button"></button>
 					</div>
-</div>
-<div class="theme-material-card">
-	<div class="sub-ttl">Our Team</div>
-	<div class="flexslider theme-flexslider">
-		<ul class="slides">
-			<li>
-				<div class="theme-flexslider-container">
-					<img src="public/uploads/doctor-1.jpg" />
-					<h4>Daniel Barnes</h4>
-					<p>Orthologist</p>
-				</div>
-			</li>
-			<li>
-				<div class="theme-flexslider-container">
-					<img src="public/uploads/doctor-2.jpg" />
-					<h4>Melissa Bates</h4>
-					<p>Gynocologist</p>
-				</div>
-			</li>
-			<li>
-				<div class="theme-flexslider-container">
-					<img src="public/uploads/doctor-4.jpg" />
-					<h4>Cheri Aria</h4>
-					<p>Dermatologist</p>
-				</div>
-			</li>
-			<li>
-				<div class="theme-flexslider-container">
-					<img src="public/uploads/doctor-3.jpg" />
-					<h4>Steve Soeren</h4>
-					<p>Orthologist</p>
-				</div>
-			</li>
-			<li>
-				<div class="theme-flexslider-container">
-					<img src="public/uploads/doctor-6.jpg" />
-					<h4>Theodore Bennett</h4>
-					<p>Anesthesiologist</p>
-				</div>
-			</li>
-			<li>
-				<div class="theme-flexslider-container">
-					<img src="public/uploads/doctor-8.jpg" />
-					<h4>Barbara Baker</h4>
-					<p>Surgeon</p>
-				</div>
-			</li>
-		</ul>
-	</div>
-</div>
-<div class="theme-material-card">
-	<div class="sub-ttl">Recent Post</div>
-			<a href="index4c29.html?route=blog-page&amp;id=13/Bladder-Weakness-%e2%80%93-What,-Why-and-Natural-Remedies" class="row blog-recent">
-			<div class="col-4 blog-recent-img">
-				<img class="img-responsive img-thumbnail" src="public/uploads/blog-2.jpg" alt="">
-			</div>
-			<div class="col-8 blog-recent-post">
-				<h4>Bladder Weakness – What, Why and Natural Remedies</h4>
-				<p>08 Oct 2017</p>
-			</div>
-		</a>
-				<a href="indexcf96.html?route=blog-page&amp;id=12/Breast-Cancer-%e2%80%93-7-Tips-to-Avoid-This" class="row blog-recent">
-			<div class="col-4 blog-recent-img">
-				<img class="img-responsive img-thumbnail" src="public/uploads/blog-9.jpg" alt="">
-			</div>
-			<div class="col-8 blog-recent-post">
-				<h4>Breast Cancer – 7 Tips to Avoid This</h4>
-				<p>08 Oct 2017</p>
-			</div>
-		</a>
-				<a href="index37df.html?route=blog-page&amp;id=11/Why-Food-Poisoning-happened-and-How-To-%e2%80%93-Home-Remedy" class="row blog-recent">
-			<div class="col-4 blog-recent-img">
-				<img class="img-responsive img-thumbnail" src="public/uploads/blog-1.jpg" alt="">
-			</div>
-			<div class="col-8 blog-recent-post">
-				<h4>Why Food Poisoning happened and How To  – Home Remedy</h4>
-				<p>08 Jun 2017</p>
-			</div>
-		</a>
-				<a href="indexe990.html?route=blog-page&amp;id=10/All-you-need-to-know-about-Chinese-Food,-Is-it-good-or-bad?" class="row blog-recent">
-			<div class="col-4 blog-recent-img">
-				<img class="img-responsive img-thumbnail" src="public/uploads/blog-2.jpg" alt="">
-			</div>
-			<div class="col-8 blog-recent-post">
-				<h4>All you need to know about Chinese Food, Is it good or bad?</h4>
-				<p>05 Jun 2017</p>
-			</div>
-		</a>
-				<a href="index039b.html?route=blog-page&amp;id=9/Keep-it-Clean:-Make-Sure-Your-Fruits-and-Veggies-Are-Safe-and-Healthy" class="row blog-recent">
-			<div class="col-4 blog-recent-img">
-				<img class="img-responsive img-thumbnail" src="public/uploads/blog-3.jpg" alt="">
-			</div>
-			<div class="col-8 blog-recent-post">
-				<h4>Keep it Clean: Make Sure Your Fruits and Veggies Are Safe and Healthy</h4>
-				<p>27 Apr 2017</p>
-			</div>
-		</a>
 
+                </div>
+                <div class="theme-material-card">
+                    <div class="sub-ttl">Our Team</div>
+                    <div class="flexslider theme-flexslider">
+                        <ul class="slides">
+                            <li>
+                                <div class="theme-flexslider-container">
+                                    <img src="public/uploads/doctor-1.jpg" />
+                                    <h4>Daniel Barnes</h4>
+                                    <p>Orthologist</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="theme-flexslider-container">
+                                    <img src="public/uploads/doctor-2.jpg" />
+                                    <h4>Melissa Bates</h4>
+                                    <p>Gynocologist</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="theme-flexslider-container">
+                                    <img src="public/uploads/doctor-4.jpg" />
+                                    <h4>Cheri Aria</h4>
+                                    <p>Dermatologist</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="theme-flexslider-container">
+                                    <img src="public/uploads/doctor-3.jpg" />
+                                    <h4>Steve Soeren</h4>
+                                    <p>Orthologist</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="theme-flexslider-container">
+                                    <img src="public/uploads/doctor-6.jpg" />
+                                    <h4>Theodore Bennett</h4>
+                                    <p>Anesthesiologist</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="theme-flexslider-container">
+                                    <img src="public/uploads/doctor-8.jpg" />
+                                    <h4>Barbara Baker</h4>
+                                    <p>Surgeon</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
 
-				</div>
+                </div>
+
 			</div>
 		</div>
 	</div>
@@ -655,3 +511,7 @@ Dermatologists have been leaders in the field of cosmetic surgery. Some dermatol
 		</div>
 	</div><!-- End Make an Appointment Section -->
 <?php include('include/footer.php');?>
+<script>
+
+    $('#service>a').addClass('active');
+</script>

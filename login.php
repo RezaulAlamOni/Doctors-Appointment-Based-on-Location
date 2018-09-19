@@ -1,100 +1,13 @@
 
 <?php include('include/header.php');?>
+<?php include('include/nav.php');?>
 
-<body onload="startTime()">
-    <!-- Header Start -->
-    <header id="header">
-        <div id="hdr-top-wrapper">
-            <div class="layer-stretch hdr-top">
-                <div class="hdr-top-block hidden-xs">
-                    <div id="hdr-social">
-                        <ul class="social-list social-list-sm">
-                            <li><a class="width-auto font-13">Follow Us : </a></li>
-                            <li><a href="https://www.facebook.com/" target="_blank" id="hdr-facebook" ><i class="fa fa-facebook" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-facebook">Facebook</span></li>
-                            <li><a href="https://twitter.com/" target="_blank" id="hdr-twitter" ><i class="fa fa-twitter" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-twitter">Twitter</span></li>
-                            <li><a href="https://www.instagram.com/" target="_blank" id="hdr-instagram" ><i class="fa fa-instagram" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-instagram">Instagram</span></li>
-                            <li><a href="https://www.linkedin.com/" target="_blank" id="hdr-linkedin" ><i class="fa fa-linkedin" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-linkedin">Linkedin</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="hdr-top-line hidden-xs"></div>
-                <div class="hdr-top-block hdr-number">
-                    <div class="font-13">
-                        <i class="fa fa-mobile font-20 tbl-cell"> </i> <span class="hidden-xs tbl-cell"> Emergency Number : </span> <span class="tbl-cell">1800000000</span>
-                    </div>
-                </div>
-                <div class="hdr-top-line"></div>
-                <div class="hdr-top-block"></div>
-            </div>
-        </div>
-        <div id="hdr-wrapper">
-
-            <div class="layer-stretch hdr">
-                <!--                {{--<div class="tbl-cell hdr-logo">--}}-->
-                <!--                    {{--<a href="index2378.html?route=home">--}}-->
-                <!--                        {{--<img src="public/uploads/logo-purple.png" alt="Klinikal Health care">--}}-->
-                <!--                    {{--</a>--}}-->
-                <!--                {{--</div>--}}-->
-
-                <div class="row align-items-center justify-content-end">
-                    <a href="index.php" style="padding-left: 60px" class="text-primary"><h1 style="font-family: 'Harlow Solid Italic'">AppointmentBD</h1></a>
-                    <!-- Start Menu Section -->
-                    <ul class="col menu">
-                        <li>
-                            <a href="index.php" id="" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a>
-                        </li>
-                        <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect active">Doctors</a></li>
-                        <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Hospitals</a></li>
-
-                        <li><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>
-                        <li>
-                            <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Pages <i class="fa fa-chevron-down"></i></a>
-                            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-pages">
-                                <li class="mdl-menu__item">
-                                    <a href="about.php">About</a>
-                                </li>
-                                <li class="mdl-menu__item">
-                                    <a href="contact.php">Contact</a>
-                                </li>
-
-                                <li class="mdl-menu__item">
-                                    <a href="gallery.php">Gallery</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="admin" id="menu-admin" class="text-success mdl-button mdl-js-button mdl-js-ripple-effect ">Admin Panel</a></li>
-                        <li>
-                            <a id="menu-profile" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="fa fa-user-o color-white"> </i> Profile <i class="fa fa-chevron-down"></i></a>
-                            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-profile">
-                                <li class="mdl-menu__item">
-                                    <a href="login.php"><i class="fa fa-sign-in color-green"></i> Login</a>
-                                </li>
-                                <li class="mdl-menu__item">
-                                    <a href="register.php"><i class="fa fa-user-o color-green"></i> Register</a>
-                                </li>
-                                <li class="mdl-menu__item">
-                                    <a href="forget_pass.php"><i class="fa fa-key color-green"></i> Forgot Password</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="mobile-menu-close"><i class="fa fa-times"></i></li>
-                    </ul>
-                    <div id="menu-bar" class="col-2 col-md-auto"><a><i class="fa fa-bars color-white"></i></a></div>
-                </div>
-            </div>
-
-        </div>
-    </header>
     <!-- Header End --><!-- Start page Title Section -->
-<div class="page-ttl">
+<div class="page-ttl" style="height: 120px">
     <div class="layer-stretch">
         <div class="page-ttl-container">
-            <div class="page-ttl-icon">
-                <i class="fa fa-sign-in"></i>
-            </div>
             <div class="page-ttl-name">
-                <h1>Login</h1>
-                <p><a href="login.php">Home</a> > Login</p>
+                <h1><i class="fa fa-sign-in color-white"></i> Login</h1>
             </div>
         </div>
     </div>
@@ -248,3 +161,4 @@
 		</div>
 	</div><!-- End Make an Appointment Section -->
 <?php include('include/footer.php');?>
+

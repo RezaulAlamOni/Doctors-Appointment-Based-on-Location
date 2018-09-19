@@ -1,133 +1,154 @@
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="font-size: 16px">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header" style="padding-top: 8PX">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.php" style="color: #feffa6;font-family: SansSerif;font-size: 20px">Find Your Course</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
+<body>
+<?php session_start();?>
+<!-- Header Start -->
+<header id="header">
+    <div id="hdr-top-wrapper">
+        <div class="layer-stretch hdr-top">
+            <div class="hdr-top-block hidden-xs">
+                <div id="hdr-social">
+                    <ul class="social-list social-list-sm">
+                        <li><a class="width-auto font-13">Follow Us : </a></li>
+                        <li><a href="https://www.facebook.com/" target="_blank" id="hdr-facebook" ><i class="fa fa-facebook" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-facebook">Facebook</span></li>
+                        <li><a href="https://twitter.com/" target="_blank" id="hdr-twitter" ><i class="fa fa-twitter" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-twitter">Twitter</span></li>
+                        <li><a href="https://plus.google.com/" target="_blank" id="hdr-google" ><i class="fa fa-google" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-google">Google</span></li>
+                        <li><a href="https://www.instagram.com/" target="_blank" id="hdr-instagram" ><i class="fa fa-instagram" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-instagram">Instagram</span></li>
+                        <li><a href="https://www.youtube.com/" target="_blank" id="hdr-youtube" ><i class="fa fa-youtube" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-youtube">Youtube</span></li>
+                    </ul>
+                </div>
+            </div>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav" style="padding-top: 8px">
+            <div class="hdr-top-line"></div>
+            <div class="hdr-top-block" id="profile">
+                <div class="theme-dropdown"  id="profile-li">
+                    <?php if (isset($_SESSION['admin_name'])){ ?>
 
-                <?php
-                session_start();
-                if (isset($_SESSION['username'])){
-                    $sql= "SELECT * FROM `categories`";
-                    $result = mysqli_query($con,$sql);
-//                        = $con->query($sql);
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $cat_title = $row['cat_title'];
-                        $cat_class = '';
-                            if (isset($_GET['cat'])){
-                                if ($_GET['cat']==$cat_title){
-                                    $cat_class='active';
-                                }
-                            }
-                            echo "<li class='$cat_class'><a href=\"category.php?cat={$cat_title}\">{$cat_title}</a></li>";
-                        }
-                    }
-                ?>
-                <!---->         </ul>
-            <ul class="nav navbar-nav navbar-right">
-
-                <li style="padding-top: -5px">
-
-                </li>
-                <li class="text-uppercase" style="padding-top: 8px;">
-                    <a style=" color:#d5de5f;font-family: SansSerif;" href="contact.php">Contact</a>
-                </li>
-
-                <li style="padding-top:20px">
-<!--                    <a href="" style="">--><?php
-//                        date_default_timezone_set("Asia/Dhaka");
-////                        echo date("Y-m-d ")." ";
-//                        $d=strtotime("+3 Months");
-//                        echo date("h:i:a", $d) . "<br>";
-//                        ?><!--</a>-->
-                    <div id="txt" class="glyphicon" style="color: #5bc0de;font-size: 20px">  </div>
-                </li>
-
-
-                <?php if (isset($_SESSION['role'])) {
-                    if ($_SESSION['role'] == 'admin') {
-                        ?>
-                        <li style="padding-top: -5px; ">
-                            <a href="admin">
-                                <button class="btn btn-info">ADMIN</button>
-                            </a>
-                        </li>
-
-                    <?php }
-                }
-                ?>
-
-                <li class="dropdown" style="padding-top: -5px">
-                    <?php if (isset($_SESSION['username'])){ ?>
-
-                        <a style="padding-top:15px; color: #bce7dc;" href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <h4><i class="text-primary fa fa-fw fa-user"></i> <?php echo $_SESSION['username'];?>
-                                <b class="caret"></b>
-                            </h4>
-                        </a>
-                        <ul class="dropdown-menu" style="background-color: #e9a294">
-
-
-                            <li>
-                                <?php
-                                if (isset($_SESSION['role'])){
-                                    $user = $_SESSION['username'];
-                                    if ($_SESSION['role']=='admin'){
-
-                                        ?>
-                                        <a href="profile.php?p_author=<?php echo $user;?>"><i class="text-primary fa fa-fw fa-user"></i> Profile</a>
-
-                                       <?php
-                                    } else{ ?>
-
-                                    <a href="profile.php?p_author=<?php echo $user;?>"><i class="text-primary fa fa-fw fa-user"></i> Profile</a>
-
-                                <?php } }?>
+                        <a id="profile-menu" class="mdl-button mdl-js-button mdl-js-ripple-effect font-13">
+                            <i class="fa fa-user-o color-black mdl-color-text--green"></i> <?php echo $_SESSION['admin_name'];?></a>
+                        <ul id="hdr-user-menu-dd" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="profile-menu">
+                            <li class="mdl-menu__item">
+                                <a href="admin/profile.php"><i class="fa fa-sign-in mdl-color-text--green"></i> Profile</a>
                             </li>
-                            <li class="divider"></li>
-                            <li>
-                                <?php
-                                if (isset($_SESSION['role'])){
-                                    if ($_SESSION['role']=='admin'){
-                                        ?>
-                                        <a href="admin/profile_update.php"><i class="text-primary fa fa-fw fa-edit"></i> Edit Profile</a>
-
-                                        <?php
-                                    } else{ ?>
-
-                                        <a href="user_profile_update.php"><i class="text-primary fa fa-fw fa-edit"></i> Edit Profile</a>
-
-                                    <?php } }?>
+                            <li class="mdl-menu__item">
+                                <a href="admin/include/logout.php"><i class="fa fa-user-o mdl-color-text--green"></i> Logout</a>
                             </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="include/logout.php"><i class="text-info fa fa-fw fa-power-off"></i> Log Out</a>
+                            <li class="mdl-menu__item">
+                                <a href="admin/include/forget_pass.php"><i class="fa fa-key mdl-color-text--green"></i> Forgot Password</a>
                             </li>
-                         </ul>
+                        </ul>
+
+                    <?php }else if (isset($_SESSION[''])){ ?>
+
+                        <a id="profile-menu" class="mdl-button mdl-js-button mdl-js-ripple-effect font-13">
+                            <i class="fa fa-user-o color-black mdl-color-text--green"></i> <?php echo $_SESSION[''];?></a>
+                        <ul id="hdr-user-menu-dd" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="profile-menu">
+                            <li class="mdl-menu__item">
+                                <a href="admin/profile.php"><i class="fa fa-sign-in mdl-color-text--green"></i> Profile</a>
+                            </li>
+                            <li class="mdl-menu__item">
+                                <a href="my_appointment.php"><i class="fa fa-user-o mdl-color-text--green"></i> My Appointment</a>
+                            </li>
+                            <li class="mdl-menu__item">
+                                <a href="update_profile.php"><i class="fa fa-user-o mdl-color-text--green"></i> Update Profile</a>
+                            </li>
+                            <li class="mdl-menu__item">
+                                <a href="my_invoice.php"><i class="fa fa-user-o mdl-color-text--green"></i> My Invoice</a>
+                            </li>
+                            <li class="mdl-menu__item">
+                                <a href="my_request.php"><i class="fa fa-user-o mdl-color-text--green"></i> My Request</a>
+                            </li>
+                            <li class="mdl-menu__item">
+                                <a href="include/logout.php"><i class="fa fa-user-o mdl-color-text--green"></i> Logout</a>
+                            </li>
+                            <li class="mdl-menu__item">
+                                <a href="forget_pass.php"><i class="fa fa-key mdl-color-text--green"></i> Forgot Password</a>
+                            </li>
+                        </ul>
+
 
                     <?php } else { ?>
 
+                        <a id="profile-menu" class="mdl-button mdl-js-button mdl-js-ripple-effect font-13">
+                            <i class="fa fa-user color-green"> </i> My Account</a>
+                        <ul id="hdr-user-menu-dd" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="profile-menu">
+                            <li class="mdl-menu__item">
+                                <a href="login.php"><i class="fa fa-sign-in mdl-color-text--green" ></i>Login</a>
+                            </li>
+                            <li class="mdl-menu__item">
+                                <a href="register.php"><i class="fa fa-user-o mdl-color-text--green"></i>Register</a>
+                            </li>
+                            <li class="mdl-menu__item">
+                                <a href="forget_pass.php"><i class="fa fa-key mdl-color-text--green"></i>Forgot Password</a>
+                            </li>
 
-                <li style="padding-top: -5px; ">
-                    <a href="index.php"><button class="btn btn-success">Login Please</button></a>
-                </li>
+                        </ul>
 
-                <?php } ?>
+                    <?php } ?>
 
-            </ul>
+                </div>
+            </div>
         </div>
-        <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container -->
-</nav>
+    <div id="hdr-wrapper">
+        <div class="layer-stretch hdr">
+            <!--                {{--<div class="tbl-cell hdr-logo">--}}-->
+            <!--                    {{--<a href="index2378.html?route=home">--}}-->
+            <!--                        {{--<img src="public/uploads/logo-purple.png" alt="Klinikal Health care">--}}-->
+            <!--                    {{--</a>--}}-->
+            <!--                {{--</div>--}}-->
+
+            <div class="row align-items-center justify-content-end">
+                <a href="index.php" style="padding-left: 60px" class="text-primary"><h1 style="font-family: 'Harlow Solid Italic'">AppointmentBD</h1></a>
+                <!-- Start Menu Section -->
+                <ul class="col menu">
+                    <li >
+                        <a href="index.php" id="" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a>
+                    </li>
+                    <li id="doctor"><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Doctors</a></li>
+                    <li id="hospital"><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Hospitals</a></li>
+
+                    <li id="service"><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>
+                    <li id="page">
+                        <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Pages <i class="fa fa-chevron-down"></i></a>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-pages">
+                            <li class="mdl-menu__item">
+                                <a href="about.php">About</a>
+                            </li>
+                            <li class="mdl-menu__item">
+                                <a href="contact.php">Contact</a>
+                            </li>
+
+                            <li class="mdl-menu__item">
+                                <a href="gallery.php">Gallery</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <?php if (isset($_SESSION['admin_name']) || empty($_SESSION)) { ?>
+
+                        <li><a href="admin" id="menu-admin"
+                               class="mdl-button mdl-js-button mdl-js-ripple-effect btn btn-facebook mdl-color-text--black"><b>Admin
+                                    Panel</b></a></li>
+                        <?php
+                    }
+                    ?>
+                    <!--<li id="profile">-->
+<!--                        <a id="menu-profile" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="fa fa-user-o color-white"> </i> Profile <i class="fa fa-chevron-down"></i></a>-->
+<!--                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-profile">-->
+<!--                            <li class="mdl-menu__item">-->
+<!--                                <a href="login.php"><i class="fa fa-sign-in color-green"></i> Login</a>-->
+<!--                            </li>-->
+<!--                            <li class="mdl-menu__item">-->
+<!--                                <a href="register.php"><i class="fa fa-user-o color-green"></i> Register</a>-->
+<!--                            </li>-->
+<!--                            <li class="mdl-menu__item">-->
+<!--                                <a href="forget_pass.php"><i class="fa fa-key color-green"></i> Forgot Password</a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+                    <li class="mobile-menu-close"><i class="fa fa-times"></i></li>
+                </ul>
+                <div id="menu-bar" class="col-2 col-md-auto"><a><i class="fa fa-bars color-white"></i></a></div>
+            </div>
+        </div>
+    </div>
+</header>

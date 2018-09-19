@@ -5,4 +5,4 @@ session_start();
         $_SESSION['password']=null;
         $_SESSION['pic']=null;
 session_destroy();
-header('Location: ../login.php');
+header('Location: ../../');

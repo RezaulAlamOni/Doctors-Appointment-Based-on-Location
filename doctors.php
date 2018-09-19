@@ -1,121 +1,28 @@
 <?php include('include/header.php');?>
-<body>
+<?php include('include/nav.php');?>
 
-<!-- Header Start -->
-    <header id="header">
-        <div id="hdr-top-wrapper">
-            <div class="layer-stretch hdr-top">
-                <div class="hdr-top-block hidden-xs">
-                    <div id="hdr-social">
-                        <ul class="social-list social-list-sm">
-                            <li><a class="width-auto font-13">Follow Us : </a></li>
-                            <li><a href="https://www.facebook.com/pepdevofficial" target="_blank" id="hdr-facebook" ><i class="fa fa-facebook" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-facebook">Facebook</span></li>
-                            <li><a href="https://twitter.com/pepdevofficial" target="_blank" id="hdr-twitter" ><i class="fa fa-twitter" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-twitter">Twitter</span></li>
-                            <li><a href="https://plus.google.com/110823961031348424693" target="_blank" id="hdr-google" ><i class="fa fa-google" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-google">Google</span></li>
-                            <li><a href="https://www.instagram.com/pepdevofficial/" target="_blank" id="hdr-instagram" ><i class="fa fa-instagram" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-instagram">Instagram</span></li>
-                            <li><a href="https://www.youtube.com/channel/UCRuPHwjNznZilEvlGIr1Y1Q" target="_blank" id="hdr-youtube" ><i class="fa fa-youtube" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-youtube">Youtube</span></li>
-                        </ul>
-                    </div>
-                </div>
 
-                <div class="hdr-top-line"></div>
-                <div class="hdr-top-block">
-                    <div class="theme-dropdown">
-                        <a id="profile-menu" class="mdl-button mdl-js-button mdl-js-ripple-effect font-13">
-                            <i class="fa fa-user-o color-black"></i> My Account                        </a>
-                                                <ul id="hdr-user-menu-dd" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="profile-menu">
-                            <li class="mdl-menu__item">
-                                <a href="login.php"><i class="fa fa-sign-in"></i>Login</a>
-                            </li>
-                            <li class="mdl-menu__item">
-                                <a href="register.php"><i class="fa fa-user-o"></i>Register</a>
-                            </li>
-                            <li class="mdl-menu__item">
-                                <a href="forget_pass.php"><i class="fa fa-key"></i>Forgot Password</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="hdr-wrapper">
-            <div class="layer-stretch hdr">
-<!--                {{--<div class="tbl-cell hdr-logo">--}}-->
-<!--                    {{--<a href="index2378.html?route=home">--}}-->
-<!--                        {{--<img src="public/uploads/logo-purple.png" alt="Klinikal Health care">--}}-->
-<!--                    {{--</a>--}}-->
-<!--                {{--</div>--}}-->
-
-                <div class="row align-items-center justify-content-end">
-                    <a href="index.php" style="padding-left: 60px" class="text-primary"><h1 style="font-family: 'Harlow Solid Italic'">AppointmentBD</h1></a>
-                    <!-- Start Menu Section -->
-                    <ul class="col menu">
-                        <li>
-                            <a href="index.php" id="" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a>
-                        </li>
-                        <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect active">Doctors</a></li>
-                        <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Hospitals</a></li>
-
-                        <li><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>
-                        <li>
-                            <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Pages <i class="fa fa-chevron-down"></i></a>
-                            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-pages">
-                                <li class="mdl-menu__item">
-                                    <a href="about.php">About</a>
-                                </li>
-                                <li class="mdl-menu__item">
-                                    <a href="contact.php">Contact</a>
-                                </li>
-
-								<li class="mdl-menu__item">
-									<a href="gallery.php">Gallery</a>
-								</li>
-                            </ul>
-                        </li>
-                        <li><a href="admin" id="menu-admin" class="text-success mdl-button mdl-js-button mdl-js-ripple-effect ">Admin Panel</a></li>
-                        <li>
-                            <a id="menu-profile" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="fa fa-user-o color-white"> </i> Profile <i class="fa fa-chevron-down"></i></a>
-                            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-profile">
-                                <li class="mdl-menu__item">
-                                    <a href="login.php"><i class="fa fa-sign-in color-green"></i> Login</a>
-                                </li>
-                                <li class="mdl-menu__item">
-                                    <a href="register.php"><i class="fa fa-user-o color-green"></i> Register</a>
-                                </li>
-                                <li class="mdl-menu__item">
-                                    <a href="forget_pass.php"><i class="fa fa-key color-green"></i> Forgot Password</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="mobile-menu-close"><i class="fa fa-times"></i></li>
-                    </ul>
-                    <div id="menu-bar" class="col-2 col-md-auto"><a><i class="fa fa-bars color-white"></i></a></div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header End --><!-- Start Page Title Section -->
-<div class="page-ttl">
+<!-- Header End --><!-- Start Page Ti8tle Section -->
+<div class="page-ttl" style="height: 150px">
 	<div class="layer-stretch">
 		<div class="page-ttl-container">
-			<div class="page-ttl-icon">
-				<i class="fa fa-user-md"></i>
-			</div>
 			<div class="page-ttl-name">
-				<h1>Doctors</h1>
+				<h1><i class="fa fa-user-md color-white"></i> Doctors</h1>
 				<p><a href="index.php">Home</a> > doctor</p>
 			</div>
 		</div>
 	</div>
 </div><!-- End Page Title Section -->
-<!-- Start Doctor List Section -->
+
+
+
+    <!-- Start Doctor List Section -->
 <div class="layer-stretch animated-wrapper" style="opacity: 1;">
     <div class="layer-wrapper layer-bottom-0">
         <div class="row text-center">
             <div class="col-md-8">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                             <div class="theme-block-picture">
                                 <img src="public/uploads/doctor-1.jpg" alt="Daniel Barnes">
@@ -143,7 +50,7 @@
                                 </ul>
                             </div>
                         </div>					</div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                             <div class="theme-block-picture">
                                 <img src="public/uploads/doctor-2.jpg" alt="Melissa Bates">
@@ -171,7 +78,7 @@
                                 </ul>
                             </div>
                         </div>					</div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                             <div class="theme-block-picture">
                                 <img src="public/uploads/doctor-4.jpg" alt="Cheri Aria">
@@ -199,7 +106,7 @@
                                 </ul>
                             </div>
                         </div>					</div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                             <div class="theme-block-picture">
                                 <img src="public/uploads/doctor-3.jpg" alt="Steve Soeren">
@@ -227,7 +134,7 @@
                                 </ul>
                             </div>
                         </div>					</div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                             <div class="theme-block-picture">
                                 <img src="public/uploads/doctor-6.jpg" alt="Theodore Bennett">
@@ -255,7 +162,7 @@
                                 </ul>
                             </div>
                         </div>					</div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                             <div class="theme-block-picture">
                                 <img src="public/uploads/doctor-8.jpg" alt="Barbara Baker">
@@ -283,7 +190,7 @@
                                 </ul>
                             </div>
                         </div>					</div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                             <div class="theme-block-picture">
                                 <img src="public/uploads/doctor-10.jpg" alt="Linda Adams">
@@ -311,7 +218,7 @@
                                 </ul>
                             </div>
                         </div>					</div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                             <div class="theme-block-picture">
                                 <img src="public/uploads/doctor-9.jpg" alt="Janet Collins">
@@ -339,7 +246,7 @@
                                 </ul>
                             </div>
                         </div>					</div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                             <div class="theme-block-picture">
                                 <img src="public/uploads/doctor-11.jpg" alt="Vedhraj Jain">
@@ -367,7 +274,7 @@
                                 </ul>
                             </div>
                         </div>					</div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                             <div class="theme-block-picture">
                                 <img src="public/uploads/doctor-5.jpg" alt="Emily Rasberry">
@@ -395,7 +302,7 @@
                                 </ul>
                             </div>
                         </div>					</div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                             <div class="theme-block-picture">
                                 <img src="public/uploads/doctor-12.jpg" alt="Nancy Allen">
@@ -426,13 +333,16 @@
                 </div>
             </div>
             <div class="col-md-4">
+
                 <div class="theme-material-card text-center">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input is-upgraded" data-upgraded=",MaterialTextfield">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input ">
                         <input class="mdl-textfield__input" type="text" id="search-doctors">
                         <label class="mdl-textfield__label" for="search-doctors">Search Doctor by Name</label>
                         <button class="fa fa-search search-button"></button>
                     </div>
                 </div>
+
+
                 <div class="theme-material-card">
                     <div class="sub-ttl">Our Services</div>
                     <div class="flexslider theme-flexslider">
@@ -494,54 +404,8 @@
                                     </div>
                                 </li></ul></div><ol class="flex-control-nav flex-control-paging"><li><a href="#" class="flex-active">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li><a href="#">5</a></li><li><a href="#">6</a></li></ol><ul class="flex-direction-nav"><li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li><li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li></ul></div>
                 </div>
-                <div class="theme-material-card">
-                    <div class="sub-ttl">Recent Post</div>
-                    <a href="http://pepdev.com/theme-preview/klinikal/index.php?route=blog-page&amp;id=13/Bladder-Weakness-–-What,-Why-and-Natural-Remedies" class="row blog-recent">
-                        <div class="col-4 blog-recent-img">
-                            <img class="img-responsive img-thumbnail" src="public/uploads/blog-2.jpg" alt="">
-                        </div>
-                        <div class="col-8 blog-recent-post">
-                            <h4>Bladder Weakness – What, Why and Natural Remedies</h4>
-                            <p>08 Oct 2017</p>
-                        </div>
-                    </a>
-                    <a href="http://pepdev.com/theme-preview/klinikal/index.php?route=blog-page&amp;id=12/Breast-Cancer-–-7-Tips-to-Avoid-This" class="row blog-recent">
-                        <div class="col-4 blog-recent-img">
-                            <img class="img-responsive img-thumbnail" src="public/uploads/blog-9.jpg" alt="">
-                        </div>
-                        <div class="col-8 blog-recent-post">
-                            <h4>Breast Cancer – 7 Tips to Avoid This</h4>
-                            <p>08 Oct 2017</p>
-                        </div>
-                    </a>
-                    <a href="http://pepdev.com/theme-preview/klinikal/index.php?route=blog-page&amp;id=11/Why-Food-Poisoning-happened-and-How-To-–-Home-Remedy" class="row blog-recent">
-                        <div class="col-4 blog-recent-img">
-                            <img class="img-responsive img-thumbnail" src="public/uploads/blog-1.jpg" alt="">
-                        </div>
-                        <div class="col-8 blog-recent-post">
-                            <h4>Why Food Poisoning happened and How To  – Home Remedy</h4>
-                            <p>08 Jun 2017</p>
-                        </div>
-                    </a>
-                    <a href="http://pepdev.com/theme-preview/klinikal/index.php?route=blog-page&amp;id=10/All-you-need-to-know-about-Chinese-Food,-Is-it-good-or-bad?" class="row blog-recent">
-                        <div class="col-4 blog-recent-img">
-                            <img class="img-responsive img-thumbnail" src="public/uploads/blog-2.jpg" alt="">
-                        </div>
-                        <div class="col-8 blog-recent-post">
-                            <h4>All you need to know about Chinese Food, Is it good or bad?</h4>
-                            <p>05 Jun 2017</p>
-                        </div>
-                    </a>
-                    <a href="http://pepdev.com/theme-preview/klinikal/index.php?route=blog-page&amp;id=9/Keep-it-Clean:-Make-Sure-Your-Fruits-and-Veggies-Are-Safe-and-Healthy" class="row blog-recent">
-                        <div class="col-4 blog-recent-img">
-                            <img class="img-responsive img-thumbnail" src="public/uploads/blog-3.jpg" alt="">
-                        </div>
-                        <div class="col-8 blog-recent-post">
-                            <h4>Keep it Clean: Make Sure Your Fruits and Veggies Are Safe and Healthy</h4>
-                            <p>27 Apr 2017</p>
-                        </div>
-                    </a>
-                </div>			</div>
+                <div class="theme-material-card"></div>
+            </div>
         </div>
     </div>
 </div>
@@ -706,3 +570,7 @@
 		</div>
 	</div><!-- End Make an Appointment Section -->
 <?php include('include/footer.php');?>
+<script>
+
+    $('#doctor>a').addClass('active');
+</script>
