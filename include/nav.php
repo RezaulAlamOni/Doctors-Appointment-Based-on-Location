@@ -17,9 +17,10 @@
                 </div>
             </div>
 
+
             <div class="hdr-top-line"></div>
-            <div class="hdr-top-block" id="profile">
-                <div class="theme-dropdown"  id="profile-li">
+            <div class="hdr-top-block col-sm-1" id="profile">
+                <div class="theme-dropdown text-left"  id="profile-li">
                     <?php if (isset($_SESSION['admin_name'])){ ?>
 
                         <a id="profile-menu" class="mdl-button mdl-js-button mdl-js-ripple-effect font-13">
@@ -36,32 +37,33 @@
                             </li>
                         </ul>
 
-                    <?php }else if (isset($_SESSION[''])){ ?>
+                    <?php }else if (isset($_SESSION['patient_name'])){ ?>
 
-                        <a id="profile-menu" class="mdl-button mdl-js-button mdl-js-ripple-effect font-13">
-                            <i class="fa fa-user-o color-black mdl-color-text--green"></i> <?php echo $_SESSION[''];?></a>
+                        <a id="profile-menu" class="mdl-button mdl-js-button mdl-js-ripple-effect font-16 text-capitalize">
+                            <i class="fa fa-user color-green"> </i> <?php echo $_SESSION['patient_first_name']." ".$_SESSION['patient_last_name'];?></a>
                         <ul id="hdr-user-menu-dd" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="profile-menu">
                             <li class="mdl-menu__item">
-                                <a href="admin/profile.php"><i class="fa fa-sign-in mdl-color-text--green"></i> Profile</a>
+                                <a href="admin/profile.php"><i class="fa fa-user mdl-color-text--green"></i> Profile</a>
+                            </li>
+
+                            <li class="mdl-menu__item">
+                                <a href="update_profile.php"><i class="fa fa-user-plus mdl-color-text--green"></i> Update Profile</a>
                             </li>
                             <li class="mdl-menu__item">
-                                <a href="my_appointment.php"><i class="fa fa-user-o mdl-color-text--green"></i> My Appointment</a>
+                                <a href="my_appointment.php"><i class="fa fa-plus-square mdl-color-text--green"></i> My Appointment</a>
                             </li>
                             <li class="mdl-menu__item">
-                                <a href="update_profile.php"><i class="fa fa-user-o mdl-color-text--green"></i> Update Profile</a>
+                                <a href="my_request.php"><i class="fa fa-qrcode mdl-color-text--green"></i> My Request</a>
                             </li>
                             <li class="mdl-menu__item">
-                                <a href="my_invoice.php"><i class="fa fa-user-o mdl-color-text--green"></i> My Invoice</a>
+                                <a href="my_invoice.php"><i class="fa fa-user-md mdl-color-text--green"></i> My Medical History</a>
                             </li>
                             <li class="mdl-menu__item">
-                                <a href="my_request.php"><i class="fa fa-user-o mdl-color-text--green"></i> My Request</a>
+                                <a href="include/logout.php"><i class="fa fa-sign-out mdl-color-text--green"></i> Logout</a>
                             </li>
-                            <li class="mdl-menu__item">
-                                <a href="include/logout.php"><i class="fa fa-user-o mdl-color-text--green"></i> Logout</a>
-                            </li>
-                            <li class="mdl-menu__item">
-                                <a href="forget_pass.php"><i class="fa fa-key mdl-color-text--green"></i> Forgot Password</a>
-                            </li>
+<!--                            <li class="mdl-menu__item">-->
+<!--                                <a href="about.php"><i class="fa fa-key mdl-color-text--green"></i> Help </a>-->
+<!--                            </li>-->
                         </ul>
 
 
@@ -97,7 +99,8 @@
             <!--                {{--</div>--}}-->
 
             <div class="row align-items-center justify-content-end">
-                <a href="index.php" style="padding-left: 60px" class="text-primary"><h1 style="font-family: 'Harlow Solid Italic'">AppointmentBD</h1></a>
+<!--                <a href="index.php" style="padding-left: 60px" class="text-primary"><h1 style="font-family: 'Harlow Solid Italic'">AppointmentBD</h1></a>-->
+                <a href="index.php" style="padding-left: 60px" class="text-primary"><h1 style="font-family: 'Harlow Solid Italic'"><?php echo $page_name;?></h1></a>
                 <!-- Start Menu Section -->
                 <ul class="col menu">
                     <li >
@@ -105,6 +108,7 @@
                     </li>
                     <li id="doctor"><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Doctors</a></li>
                     <li id="hospital"><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Hospitals</a></li>
+                    <li id="department"><a href="department.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Departments</a></li>
 
                     <li id="service"><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>
                     <li id="page">

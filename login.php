@@ -35,13 +35,14 @@
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon form-bot-check">
                         <i class="fa fa-question"></i>
-                        <input class="mdl-textfield__input" type="number" name="bot-check" id="login-bot">
+
 
                         <input type="hidden" name="n" value="<?php echo $n=rand(1,10); ?>">
                         <input type="hidden" name="m" value="<?php echo $m=rand(10,20); ?>">
 
                         <label class="mdl-textfield__label" for="login-bot">What is <?php echo $n; ?> plus <?php echo $m; ?> = <em> *</em></label>
                         <span class="mdl-textfield__error">Please Enter Correct Value!</span>
+                        <input class="mdl-textfield__input" type="number" name="bot-check" id="login-bot">
                     </div>
                     <div class="form-submit">
                         <button type="submit" name="login" id="login-submit" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised mdl-button--raised button button-primary button-pill">Login</button>
@@ -57,7 +58,7 @@
 </div>
 <!-- End Login Section -->
 
-	<!-- Start Make an Appointment Modal -->
+<!-- Start Make an Appointment Modal -->
 	<div id="appointment" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -150,7 +151,7 @@
 						<div class="appointment-success">
 							<p class="paragraph-medium">Hello <span id="appointment-success-name"></span></p>
 							<p class="appointment-success-descr paragraph-medium">
-								Your appointment for <span id="appointment-success-date"></span> at <span id="appointment-success-time"></span> 
+								Your appointment for <span id="appointment-success-date"></span> at <span id="appointment-success-time"></span>
 								has been booked.							</p>
 							<div class="appointment-mail-icon"><i class="fa fa-envelope-o"></i></div>
 							<p class="paragraph-medium paragraph-black">For more information visit your mail box.</p>
@@ -159,6 +160,7 @@
 				</div>
 			</div>
 		</div>
-	</div><!-- End Make an Appointment Section -->
+	</div>
+<!-- End Make an Appointment Section -->
 <?php include('include/footer.php');?>
 

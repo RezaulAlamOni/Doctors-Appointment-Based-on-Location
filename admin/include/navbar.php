@@ -105,7 +105,7 @@
     </li>
     <li id="appointment-li">
         <a class="menu-dropdown">
-            <i class="icon-user-follow"></i>
+            <i class="fa fa-plus-square-o"></i>
             <span>Appointments</span>
             <i class="fa fa-angle-down"></i>
         </a>
@@ -114,7 +114,7 @@
 
             <li id="appointment">
                 <a href="appointment.php">
-                    <i class="icon-user"></i>
+                    <i class="fa fa-plus-square"></i>
                     <span>All Appointments</span>
                 </a>
             </li>

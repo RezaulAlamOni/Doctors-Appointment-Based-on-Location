@@ -1,126 +1,51 @@
 <?php include('include/header.php');?>
-<body>
-<!-- Header Start -->
-<header id="header">
-    <div id="hdr-top-wrapper">
-        <div class="layer-stretch hdr-top">
-            <div class="hdr-top-block hidden-xs">
-                <div id="hdr-social">
-                    <ul class="social-list social-list-sm">
-                        <li><a class="width-auto font-13">Follow Us : </a></li>
-                        <li><a href="https://www.facebook.com/pepdevofficial" target="_blank" id="hdr-facebook" ><i class="fa fa-facebook" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-facebook">Facebook</span></li>
-                        <li><a href="https://twitter.com/pepdevofficial" target="_blank" id="hdr-twitter" ><i class="fa fa-twitter" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-twitter">Twitter</span></li>
-                        <li><a href="https://plus.google.com/110823961031348424693" target="_blank" id="hdr-google" ><i class="fa fa-google" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-google">Google</span></li>
-                        <li><a href="https://www.instagram.com/pepdevofficial/" target="_blank" id="hdr-instagram" ><i class="fa fa-instagram" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-instagram">Instagram</span></li>
-                        <li><a href="https://www.youtube.com/channel/UCRuPHwjNznZilEvlGIr1Y1Q" target="_blank" id="hdr-youtube" ><i class="fa fa-youtube" ></i></a><span class="mdl-tooltip mdl-tooltip--bottom" for="hdr-youtube">Youtube</span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="hdr-top-line hidden-xs"></div>
-<!--            <div class="hdr-top-block hdr-number">-->
-<!--                <div class="font-13">-->
-<!--                    <i class="fa fa-mobile font-20 tbl-cell"> </i> <span class="hidden-xs tbl-cell"> Emergency Number : </span> <span class="tbl-cell">1800000000</span>-->
-<!--                </div>-->
-<!--            </div>-->
-            <div class="hdr-top-line"></div>
-            <div class="hdr-top-block">
-                <div class="theme-dropdown">
+<?php
+    $page_name = "<i class='fa fa-address-card-o'></i> My Profile";
+?>
+<?php include('include/nav.php');?>
 
+<!--    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-profile">-->
+<!--        <li class="mdl-menu__item">-->
+<!--            <a href="login.php"><i class="fa fa-sign-in color-green"></i> Login</a>-->
+<!--        </li>-->
+<!--        <li class="mdl-menu__item">-->
+<!--            <a href="register.php"><i class="fa fa-user-o color-green"></i> Register</a>-->
+<!--        </li>-->
+<!--        <li class="mdl-menu__item">-->
+<!--            <a href="forget_pass.php"><i class="fa fa-key color-green"></i> Forgot Password</a>-->
+<!--        </li>-->
+<!---->
+<!---->
+<!--        <li class="mdl-menu__item">-->
+<!--            <a href="profile.php"><i class="fa fa-address-card-o color-green"></i>My Profile</a>-->
+<!--        </li>-->
+<!--        <li class="mdl-menu__item">-->
+<!--            <a href="my_appointment.php"><i class="fa fa-plus-square-o color-green"></i> My Appointment</a>-->
+<!--        </li>-->
+<!--        <li class="mdl-menu__item">-->
+<!--            <a href="my_invoice.php"><i class="fa fa-key color-green"></i> My Invoice</a>-->
+<!--        </li>-->
+<!--        <li class="mdl-menu__item">-->
+<!--            <a href="update_profile.php"><i class="fa fa-key color-green"></i> Update Profile</a>-->
+<!--        </li>-->
+<!--        <li class="mdl-menu__item">-->
+<!--            <a href="include/logout.php"><i class="fa fa-sign-out color-green"></i> Logout</a>-->
+<!--        </li>-->
+<!--    </ul>-->
 
-                    <a id="menu-profile" class="mdl-button mdl-js-button mdl-js-ripple-effect active"><i class="fa fa-user-o color-black"> </i>
-
-                        <?php session_start(); if (isset($_SESSION['admin_name'])){echo $_SESSION['admin_first_name']." ".$_SESSION['admin_last_name'];}else echo "Profile";?>
-                        <i class="fa fa-chevron-down"></i>
-                    </a>
-                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-profile">
-                        <li class="mdl-menu__item">
-                            <a href="login.php"><i class="fa fa-sign-in color-green"></i> Login</a>
-                        </li>
-                        <li class="mdl-menu__item">
-                            <a href="register.php"><i class="fa fa-user-o color-green"></i> Register</a>
-                        </li>
-                        <li class="mdl-menu__item">
-                            <a href="forget_pass.php"><i class="fa fa-key color-green"></i> Forgot Password</a>
-                        </li>
-
-
-                        <li class="mdl-menu__item">
-                            <a href="profile.php"><i class="fa fa-address-card-o color-green"></i>My Profile</a>
-                        </li>
-                        <li class="mdl-menu__item">
-                            <a href="my_appointment.php"><i class="fa fa-plus-square-o color-green"></i> My Appointment</a>
-                        </li>
-                        <li class="mdl-menu__item">
-                            <a href="my_invoice.php"><i class="fa fa-key color-green"></i> My Invoice</a>
-                        </li>
-                        <li class="mdl-menu__item">
-                            <a href="update_profile.php"><i class="fa fa-key color-green"></i> Update Profile</a>
-                        </li>
-                        <li class="mdl-menu__item">
-                            <a href="include/logout.php"><i class="fa fa-sign-out color-green"></i> Logout</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="hdr-wrapper" style="z-index: auto; position: static; top: auto;" class="">
-        <div class="layer-stretch hdr">
-            <!--                {{--<div class="tbl-cell hdr-logo">--}}-->
-            <!--                    {{--<a href="index2378.html?route=home">--}}-->
-            <!--                        {{--<img src="public/uploads/logo-purple.png" alt="Klinikal Health care">--}}-->
-            <!--                    {{--</a>--}}-->
-            <!--                {{--</div>--}}-->
-
-            <div class="row align-items-center justify-content-end">
-                <a href="index.php" style="padding-left: 60px" class="text-primary"><h1 style="font-family: 'Harlow Solid Italic'">AppointmentBD</h1></a>
-                <!-- Start Menu Section -->
-                <ul class="col menu">
-                    <li>
-                        <a href="index.php" id="" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a>
-                    </li>
-                    <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect">Doctors</a></li>
-                    <li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Hospitals</a></li>
-
-                    <li><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>
-                    <li>
-                        <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Pages <i class="fa fa-chevron-down"></i></a>
-                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-pages">
-                            <li class="mdl-menu__item">
-                                <a href="about.php">About</a>
-                            </li>
-                            <li class="mdl-menu__item">
-                                <a href="contact.php">Contact</a>
-                            </li>
-
-                            <li class="mdl-menu__item">
-                                <a href="gallery.php">Gallery</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="admin" id="menu-admin" class="text-success mdl-button mdl-js-button mdl-js-ripple-effect ">Admin Panel</a></li>
-                    <li class="mobile-menu-close"><i class="fa fa-times"></i></li>
-                </ul>
-                <div id="menu-bar" class="col-2 col-md-auto"><a><i class="fa fa-bars color-white"></i></a></div>
-            </div>
-        </div>
-    </div><div style="display: none; width: 1349px; height: 76px; float: none;"></div>
-</header>
 <!-- Header End --><!-- Start Page Title Section -->
-<div class="page-ttl">
-    <div class="layer-stretch" style="height: 90px;">
-        <div class="page-ttl-container">
-            <div class="page-ttl-icon"><i class="fa fa-address-card-o"></i></div>
-            <div class="page-ttl-name">
-                <h1>My Profile</h1>
-                <p><a href="index.php">Home</a> &gt; My Profile</p>
-            </div>
-        </div>
-    </div>
-</div>
+<!--<div class="page-ttl">-->
+<!--    <div class="layer-stretch" style="height: 90px;">-->
+<!--        <div class="page-ttl-container">-->
+<!--            <div class="page-ttl-name">-->
+<!--                <h1><i class="fa fa-address-card-o"></i> My Profile</h1>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <!-- End Page Title Section -->
 <!-- Start Profile Section -->
-<div id="profile-page">
+<div id="profile-page" class="dtr-modal-background">
     <div class="layer-stretch">
         <div class="row layer-wrapper">
             <div class="col-md-6 profile-left">
@@ -167,7 +92,7 @@
                 <div class="profile-edit">
                     <div class="paragraph-medium paragraph-black">Manage this basic information — your name, email, phone number, birthday, blood group and location — to help our doctor in emergency case.</div>
                     <div class="profile-edit-button">
-                        <a href="http://pepdev.com/theme-preview/klinikal/index.php?route=user/profile/edit" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised mdl-button--raised button button-primary button-pill" data-upgraded=",MaterialButton,MaterialRipple">Edit Personal Info <i class="fa fa-pencil-square-o"></i><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+                        <a href="update_profile.php" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised mdl-button--raised button button-primary button-pill" data-upgraded=",MaterialButton,MaterialRipple">Edit Personal Info <i class="fa fa-pencil-square-o"></i><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
                     </div>
                 </div>
             </div>

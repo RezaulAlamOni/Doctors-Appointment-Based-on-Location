@@ -1,23 +1,22 @@
 <?php include('include/header.php');?>
+<?php
+$page_name = "<i class=\"fa fa-user-md\"> </i> Doctors";
+?>
 <?php include('include/nav.php');?>
 
-
-<!-- Header End --><!-- Start Page Ti8tle Section -->
-<div class="page-ttl" style="height: 150px">
-	<div class="layer-stretch">
-		<div class="page-ttl-container">
-			<div class="page-ttl-name">
-				<h1><i class="fa fa-user-md color-white"></i> Doctors</h1>
-				<p><a href="index.php">Home</a> > doctor</p>
-			</div>
-		</div>
-	</div>
-</div><!-- End Page Title Section -->
-
-
+<!--<!-- Header End --><!-- Start Page Ti8tle Section -->-->
+<!--<div class="page-ttl" style="height: 120px">-->
+<!--	<div class="layer-stretch">-->
+<!--		<div class="page-ttl-container">-->
+<!--			<div class="page-ttl-name">-->
+<!--				<h1><i class="fa fa-user-md color-white"></i> Doctors</h1>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div><!-- End Page Title Section -->-->
 
     <!-- Start Doctor List Section -->
-<div class="layer-stretch animated-wrapper" style="opacity: 1;">
+<div class="layer-stretch animated-wrapper" style="opacity: 1;background-color: #53b7ed">
     <div class="layer-wrapper layer-bottom-0">
         <div class="row text-center">
             <div class="col-md-8">

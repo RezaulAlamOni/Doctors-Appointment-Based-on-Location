@@ -14,7 +14,11 @@
                             ?>
                             <a href="admin" class="font-20 text-uppercase"><b>Welcome TO Admin</b></a>
                             <?php
-                        }else {
+                        }elseif (isset($_SESSION['patient_phone'])){ ?>
+
+                            <a href="my_appointment.php" class="font-18 text-uppercase color-white"><i class="fa fa-plus-square-o"></i> My Appointment </a>
+
+                        <?php }else {
                             ?>
                             <a href="login.php" class="font-14 mr-4"><i class="fa fa-sign-in"></i>Login</a>
                             <a href="register.php" class="font-14"><i class="fa fa-user-o"></i>Register</a>
@@ -51,13 +55,15 @@
                     <ul class="col menu text-left">
                         <li><a href="index.php" id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a></li>
 						<li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect">Doctors</a></li>
-                        <li><a href="hospitals.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Hospitals</a></li>
-                        <li><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>
+                        <li><a href="hospitals.php" id="menu-hospital" class="mdl-button mdl-js-button mdl-js-ripple-effect">Hospitals</a></li>
+                        <li><a href="departments.php" id="menu-department" class="mdl-button mdl-js-button mdl-js-ripple-effect">Departments</a></li>
+<!--                        <li><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>-->
                         <li>
                             <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Pages <i class="fa fa-chevron-down"></i></a>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-pages">
                                 <li class="mdl-menu__item"><a href="about.php">About</a></li>
                                 <li class="mdl-menu__item"><a href="contact.php">Contact</a></li>
+                                <li class="mdl-menu__item"><a href="service.php">Our Service</a></li>
                                 <li class="mdl-menu__item"><a href="gallery.php">Gallery</a></li>
                             </ul>
                         </li>
@@ -65,20 +71,6 @@
 					</ul>
 
 					<ul class="col menu ">
-<!--                        <li style="width:310px;height:25px;padding-bottom: 40px;">-->
-<!--                            <div class="" style="">-->
-<!--                                <form action="" method="post" style="">-->
-<!--                                    <div class="input-group">-->
-<!--                                        <input  name="search" type="text" class="form-control">-->
-<!--                                        <span class="input-group-btn" style="">-->
-<!--                                            <button class="btn btn-default" type="submit" name="submit">-->
-<!--                                                <span class="fa fa-search"></span>-->
-<!--                                            </button>-->
-<!--                                        </span>-->
-<!--                                    </div>-->
-<!--                                </form>-->
-<!--                            </div>-->
-<!--                        </li>-->
 						<li><a href="admin" id="menu-admin" class="mdl-button mdl-js-button mdl-js-ripple-effect btn btn-success">Admin Panel</a></li>
 
                         <li>
@@ -105,22 +97,30 @@
                                         </li>
 
                                         <?php }
+                                        else if (isset($_SESSION['patient_name'])) {
+                                        ?>
 
-                                        else if (isset($_SESSION['patient_name'])) { ?>
                                             <li class="mdl-menu__item">
-                                                <a href="profile.php"> <i class="fa fa-user-circle-o color-green"> </i> Profile</a>
+                                                <a href="profile.php"> <i class="fa fa-user-circle color-green"> </i> Profile</a>
                                             </li>
                                             <li class="mdl-menu__item">
-                                                <a href="include/logout.php"><i class="fa fa-sign-out color-green"> </i> Logout</a>
+                                                <a href="update_profile.php"><i class="fa fa-user-plus color-green"> </i> Update Profile</a>
                                             </li>
                                             <li class="mdl-menu__item">
-                                                <a href="forget_pass.php"><i class="fa fa-key color-green" > </i> Forgot Password</a>
+                                                <a href="my_appointment.php"><i class="fa fa-plus-circle color-green"> </i> My Appointment</a>
+                                            </li>
+                                            <li class="mdl-menu__item">
+                                                <a href="my_request.php"><i class="fa fa-qrcode color-green"> </i> My Request</a>
+                                            </li>
+                                            <li class="mdl-menu__item">
+                                                <a href="my-medical_history.php"><i class="fa fa-hospital-o color-green"> </i> My Medical History</a>
+                                            </li>
+                                            <li class="mdl-menu__item">
+                                                <a href="include/logout.php"><i class="fa fa-sign-out color-green" > </i> Logout</a>
                                             </li>
 
-                                            <?php
-                                        }else{
 
-                                            ?>
+                                            <?php }else{ ?>
 
 
                                             <li class="mdl-menu__item">
@@ -132,9 +132,11 @@
                                             <li class="mdl-menu__item">
                                                 <a href="forget_pass.php"><i class="fa fa-key color-green"></i> Forgot Password</a>
                                             </li>
-                                            <?php
-                                        }
-                                            ?>
+                                            <li class="mdl-menu__item">
+                                                <a href="about.php"><i class="fa fa-key color-green"></i> Help</a>
+                                            </li>
+
+                                            <?php }   ?>
 							</ul>
                         </li>
 
@@ -154,7 +156,7 @@
 		<ul class="slides">
 			<li>
 				<div class="slider-info">
-					<h1 class="animated fadeInDown">Appointment System Based on Patient Area</h1>
+					<h1 class="animated fadeInDown">Appointment System Based on Patient Location</h1>
 					<p class="animated fadeInDown">We have created 30+ Pages, 70+ Components or Shortcodes, Popup for this template and more in future. #twitterhash, @facebooktag</p>
 
                 </div>
@@ -233,10 +235,10 @@
 						</div>
 					</div>
                     <div class="hm-about-block">
-                        <div class="tbl-cell hm-about-icon"><i class="fa fa-calendar"></i></div>
+                        <div class="tbl-cell hm-about-icon"><i class="fa fa-hospital-o"></i></div>
                         <div class="tbl-cell hm-about-number">
                             <span>23</span>
-                            <p>Year of Service(s)</p>
+                            <p>Department(s)</p>
                         </div>
                     </div>
 					<div class="hm-about-paragraph animated animated-up">

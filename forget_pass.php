@@ -3,15 +3,11 @@
 <?php include('include/nav.php');?>
 
     <!-- Header End --><!-- Start Page Title Section -->
-<div class="page-ttl">
+<div class="page-ttl" style="height: 150px">
 	<div class="layer-stretch">
 		<div class="page-ttl-container">
-			<div class="page-ttl-icon">
-				<i class="fa fa-key"></i>
-			</div>
 			<div class="page-ttl-name">
-				<h1>Forgot Password</h1>
-				<p><a href="index2378.html?route=home">Home</a> > Forgot Password</p>
+				<h1><i class="fa fa-key"> </i> Forgot Password</h1>
 			</div>
 		</div>
 	</div>
@@ -21,7 +17,7 @@
 	<div class="layer-stretch">
 		<div class="layer-wrapper">
 			<div class="layer-container">
-				<form class="form-container" action="http://pepdev.com/theme-preview/klinikal/index.php?route=forgot" method="post" enctype="multipart/form-data">
+				<form class="form-container" action="include/function.php" method="post" enctype="multipart/form-data">
                     <div class="login-condition">Enter the Email address associated with your account and we will mail you a Reset Link.</div>
 					<input type="hidden" name="_token" value="15276e55e6cdfa6911f440f75f64501dc97cc6f4a19102dddb4c47f0c4dd1523ad639943996afef209d6a358056f3b3389a9bcb175b7413ef3547589673a2b7d">
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">

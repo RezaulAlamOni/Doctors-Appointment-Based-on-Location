@@ -1,20 +1,20 @@
 <?php include('include/header.php');?>
+<?php
+ $page_name = "<i class=\"fa fa-info-circle\"></i> About US";
+?>
 <?php include('include/nav.php');?>
 
     <!-- Header End --><!-- Start Page Title Section -->
-<div class="page-ttl">
-	<div class="layer-stretch">
-		<div class="page-ttl-container">
-			<div class="page-ttl-icon">
-				<i class="fa fa-info-circle"></i>
-			</div>
-			<div class="page-ttl-name">
-				<h1>About Us</h1>
-				<p><a href="index2378.html?route=home">Home</a> > About Us</p>
-			</div>
-		</div>
-	</div>
-</div><!-- End Page Title Section -->
+<!--<div class="page-ttl">-->
+<!--	<div class="layer-stretch">-->
+<!--		<div class="page-ttl-container">-->
+<!--			<div class="page-ttl-name">-->
+<!--				<h1><i class="fa fa-info-circle"></i> About Us</h1>-->
+<!--				<p><a href="index2378.html?route=home">Home</a> > About Us</p>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div><!-- End Page Title Section -->-->
 <!-- Start About Section  -->
 <div class="layer-stretch animated-wrapper">
 	<div class="layer-wrapper text-center">
@@ -184,7 +184,7 @@
 					</div>
 	</div>
 </div><!-- End About Page  -->
-<!-- Start Testimonial Section -->	
+<!-- Start Testimonial Section -->
 <div id="testimonial" class="colored-background">
 	<div class="layer-stretch">
 		<div class="layer-wrapper layer-bottom-0 animated-wrapper">
@@ -323,7 +323,7 @@
 						<div class="appointment-success">
 							<p class="paragraph-medium">Hello <span id="appointment-success-name"></span></p>
 							<p class="appointment-success-descr paragraph-medium">
-								Your appointment for <span id="appointment-success-date"></span> at <span id="appointment-success-time"></span> 
+								Your appointment for <span id="appointment-success-date"></span> at <span id="appointment-success-time"></span>
 								has been booked.							</p>
 							<div class="appointment-mail-icon"><i class="fa fa-envelope-o"></i></div>
 							<p class="paragraph-medium paragraph-black">For more information visit your mail box.</p>

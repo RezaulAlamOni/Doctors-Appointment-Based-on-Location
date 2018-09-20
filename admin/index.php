@@ -1,10 +1,15 @@
 <?php include('include/header.php'); ?>
 <?php include('include/navbar.php'); ?>
-
+<?php
+    $pdo = new PDO("mysql:host=localhost;dbname=doctors",'root','');
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+?>
 
     <div class="page-container">
 
-        <script>$('#dashboard-li a').addClass('active');</script>
+        <script>
+            $('#dashboard-li a').addClass('active');
+        </script>
 
         <!-- Dahsboard Body -->
         <div class="page-hdr">
@@ -136,7 +141,14 @@
                                 <h5 class="icon-widget-heading">Patients</h5>
                                 <div class="icon-widget-body tbl">
                                     <p class="tbl-cell"><i class="fa fa-wheelchair" style="color: #3d0089"></i></p>
-                                    <p class="tbl-cell text-right">146</p>
+
+                                    <?php
+                                        $sql = "SELECT * FROM patients";
+                                        $result = $pdo->prepare($sql);
+                                        $result->execute();
+                                    ?>
+
+                                    <p class="tbl-cell text-right"><?php echo $result->rowCount()?></p>
                                 </div>
                             </div>
                         </div>
@@ -180,17 +192,17 @@
                     </div>
                 </div>
             </div>
-
-            <script>
-                window.chartColors = {red: 'rgb(255, 99, 132)',
-                    orange: 'rgb(255, 159, 64)',
-                    yellow: 'rgb(255, 205, 86)',
-                    green: 'rgb(75, 192, 192)',
-                    blue: 'rgb(54, 162, 235)',
-                    purple: 'rgb(153, 102, 255)',
-                    grey: 'rgb(201, 203, 207)' };
-                var color = Chart.helpers.color;
-            </script>
+<!---->
+<!--            <script>-->
+<!--                window.chartColors = {red: 'rgb(255, 99, 132)',-->
+<!--                    orange: 'rgb(255, 159, 64)',-->
+<!--                    yellow: 'rgb(255, 205, 86)',-->
+<!--                    green: 'rgb(75, 192, 192)',-->
+<!--                    blue: 'rgb(54, 162, 235)',-->
+<!--                    purple: 'rgb(153, 102, 255)',-->
+<!--                    grey: 'rgb(201, 203, 207)' };-->
+<!--                var color = Chart.helpers.color;-->
+<!--            </script>-->
             <div class="row">
                 <div class="col-sm-6 col-md-4">
                     <div class="dashboard-card">
