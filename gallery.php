@@ -1,14 +1,17 @@
 
 <?php include('include/header.php');?>
+<?php
+    $page_name = "<i class='fa fa-picture-o'> </i> Gallery";
+?>
 <?php include('include/nav.php');?>
 
 <!-- Header End --><!-- Start Page Title Section -->
-<div class="page-ttl " style="height: 150px">
+<div class="page-ttl " style="height: 120px">
 	<div class="layer-stretch">
 		<div class="page-ttl-container">
 			<div class="page-ttl-name">
 				<h1><i class="fa fa-picture-o color-white"></i> Gallery</h1>
-				<p><a href="index2378.html?route=home">Home</a> > Gallery</p>
+<!--				<p><a href="index2378.html?route=home">Home</a> > Gallery</p>-->
 			</div>
 		</div>
 	</div>

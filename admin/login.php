@@ -27,7 +27,9 @@ if (isset($_SESSION['admin_name'])){
 
 <div class="lgn-wrapper">
     <div class="lgn-logo text-center">
-        <a href="../"><img src="public/images/logo.png" alt="Clinical"></a>
+<!--        <a href="../"><!--<img src="public/images/logo.png" alt="Clinical"></a>-->
+        <a href="../" style="padding-left: 60px" class="text-primary"><h1 style="font-family: 'Harlow Solid Italic'">AppointmentBD</h1></a>
+
     </div>
     <div id="login-form" class="lgn-form ">
         <form class="form-vertical" action="include/verify_user.php" method="post" siq_id="autopick_8519">
@@ -52,6 +54,7 @@ if (isset($_SESSION['admin_name'])){
                 <label class="control-label col-sm-12">What is <?php echo $a;?> plus <?php echo $b;?> =</label>
                 <div class="col-sm-12">
                     <input name="sum" type="text" id="lgn-bot" class="form-control" placeholder="Answer" autocomplete="off">
+
                     <input type="hidden" name="a" value="<?php echo $a;?>">
                     <input type="hidden" name="b"  value="<?php echo $b;?>">
                 </div>

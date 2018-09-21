@@ -1,23 +1,29 @@
 <?php include('include/header.php');?>
+<?php
+    $page_name = "<i class='fa fa-registered'></i> Registration";
+?>
 <?php include('include/nav.php');?>
 
     <!-- Header End --><!-- Start Page Title Section -->
-<div class="page-ttl" style="height: 120px">
-    <div class="layer-stretch">
-        <div class="page-ttl-container">
-            <div class="page-ttl-name">
-                <h1><i class="fa fa-user color-white"></i> Register</h1>
-            </div>
-        </div>
-    </div>
-</div><!-- End Page Title Section -->
+<!--<div class="page-ttl" style="height: 120px">-->
+<!--    <div class="layer-stretch">-->
+<!--        <div class="page-ttl-container">-->
+<!--            <div class="page-ttl-name">-->
+<!--                <h1><i class="fa fa-user color-white"></i> Register</h1>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div><!-- End Page Title Section -->-->
 <!-- Start Register Section -->
+    <h2 class="text-center text-success" style="font-family: SansSerif;">Please Enter Your Valid Information</h2>
 <div id="login-page">
-    <div class="layer-stretch">
+    <div class="layer-stretch" >
         <div class="layer-wrapper">
-            <div class="layer-container">
-                <form class="form-container" action="http://pepdev.com/theme-preview/klinikal/index.php?route=register" method="post" enctype="multipart/form-data">
-                                        <input type="hidden" name="_token" value="15276e55e6cdfa6911f440f75f64501dc97cc6f4a19102dddb4c47f0c4dd1523ad639943996afef209d6a358056f3b3389a9bcb175b7413ef3547589673a2b7d">
+            <div class="layer-container " >
+
+                <form class="form-container" action="include/function.php" method="post" enctype="multipart/form-data">
+
+                    <input type="hidden" name="_token" value="15276e55e6cdfa6911f440f75f64501dc97cc6f4a19102dddb4c47f0c4dd1523ad639943996afef209d6a358056f3b3389a9bcb175b7413ef3547589673a2b7d">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                         <i class="fa fa-user-o"></i>
                         <input class="mdl-textfield__input" type="text" name="firstname" pattern="[A-Z,a-z, ]*" id="register-first-name">
@@ -43,7 +49,13 @@
                         <span class="mdl-textfield__error">Please Enter Valid Mobile Number!</span>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
-                        <i class="fa fa-key"></i> 
+                        <i class="fa fa-key"></i>
+                        <input class="mdl-textfield__input" type="text" name="username" id="register-username">
+                        <label class="mdl-textfield__label" for="register-password">Username <em> *</em></label>
+                        <span class="mdl-textfield__error">Please Enter Valid Username(Min 6 Character)!</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                        <i class="fa fa-key"></i>
                         <input class="mdl-textfield__input" type="password" name="password" id="register-password">
                         <label class="mdl-textfield__label" for="register-password">Password <em> *</em></label>
                         <span class="mdl-textfield__error">Please Enter Valid Password(Min 6 Character)!</span>
@@ -57,20 +69,48 @@
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon form-bot-check">
                         <i class="fa fa-question"></i>
                         <input class="mdl-textfield__input" type="number" name="bot-check" id="register-bot">
-                        <label class="mdl-textfield__label" for="register-bot">What is 3 plus 10 = <em> *</em></label>
+                        <?php
+                            $a = rand(1,10);
+                            $b = rand(10,20);
+                         ?>
+                        <label class="mdl-textfield__label" for="register-bot">What is <?php echo $a;?> plus <?php echo $b;?> = <em> *</em></label>
                         <span class="mdl-textfield__error">Please Enter Correct Value!</span>
                     </div>
-                    <div class="login-condition">By clicking Creat Account you aggree to our<br /><a href="index91ac.html?route=terms-condition">Terms & Condition</a></div>
+                    <div class="login-condition">By clicking Creat Account you aggree to our<br /><a href="about.php">Terms & Condition</a></div>
                     <div class="form-submit">
                         <button type="submit" id="register-submit" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised mdl-button--raised button button-primary button-pill" name="register">Create Account</button>
                     </div>
                     <div class="login-link">
                         <span class="paragraph-small">Already have an account?</span>
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="login.php">Login</a>
                     </div>
                 </form>
             </div>
         </div>
+<!--        <form action="">-->
+<!--            <div class="row ">-->
+<!--                <div class="col-md-6">-->
+<!--                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">-->
+<!--                        <i class="fa fa-user-o"></i>-->
+<!--                        <input class="mdl-textfield__input" type="text" name="firstname" pattern="[A-Z,a-z, ]*" id="register-first-name">-->
+<!--                        <label class="mdl-textfield__label" for="register-first-name">First Name <em> *</em></label>-->
+<!--                        <span class="mdl-textfield__error">Please Enter Valid Name!</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-md-6">-->
+<!---->
+<!--                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">-->
+<!--                            <i class="fa fa-user-o"></i>-->
+<!--                            <input class="mdl-textfield__input" type="text" name="firstname" pattern="[A-Z,a-z, ]*" id="register-first-name">-->
+<!--                            <label class="mdl-textfield__label" for="register-first-name">First Name <em> *</em></label>-->
+<!--                            <span class="mdl-textfield__error">Please Enter Valid Name!</span>-->
+<!--                        </div>-->
+<!---->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form>-->
+
+
     </div>
 </div>
 <!-- End Register Section -->

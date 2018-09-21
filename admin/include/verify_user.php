@@ -10,6 +10,11 @@ $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);
 if (isset($_REQUEST['login']) ){
     $username   = $_REQUEST['username'];
     $password   = $_REQUEST['password'];
+
+    $a   = $_REQUEST['a'];
+    $b   = $_REQUEST['b'];
+    $sum   = $_REQUEST['sum'];
+
 //    $username   = mysqli_real_escape_string($con,$username);
 //    $password   = mysqli_real_escape_string($con,$password);
 //    $sql        = "SELECT * FROM admins where user_name = '{$username}'";
@@ -27,7 +32,7 @@ if (isset($_REQUEST['login']) ){
 //    $result = $pdo->query($sql);
 
 //    if (mysqli_num_rows($rslt)>0) {
-    if ($result->rowCount()>0) {
+    if ($result->rowCount()>0 && $sum == $a+$b) {
 
 //        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 
@@ -46,7 +51,7 @@ if (isset($_REQUEST['login']) ){
 //           $password = crypt($password,$pass);
 
 //           if(password_verify($password,$pass)){
-            if ($password == $pass) {
+            if ($password == $pass ) {
 
                 $_SESSION['admin_first_name'] = $first_name;
                 $_SESSION['admin_last_name'] = $last_name;

@@ -10,15 +10,22 @@
         if (empty($_REQUEST['password']) ) header('Location: ../login.php');
 
 
-        $email = $_REQUEST['email'];
-        $password = $_REQUEST['password'];
+        $email      = $_REQUEST['email'];
+        $password   = $_REQUEST['password'];
+
+        $n   = $_REQUEST['n'];
+        $m   = $_REQUEST['m'];
+        $sum   = $_REQUEST['sum'];
+
+//        if ($sum =$n+$m) header('Location: ../login.php');
+
 
         $sql = "SELECT * FROM patients where email = :email";
         $result = $pdo->prepare($sql);
         $result->execute(['email'=>$email]);
         $patients = $result->fetchAll(); // default value PDO::FETCH_ASSOC
 
-        if ($result->rowCount()>0) {
+        if ($result->rowCount()>0 && $sum == $n+$m) {
 
             foreach ($patients as $row){
 

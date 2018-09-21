@@ -1,17 +1,20 @@
 <?php include('include/header.php');?>
+<?php
+$page_name = "<i class=\"fa fa-medkit\"></i> Services ";
+?>
 <?php include('include/nav.php');?>
 
     <!-- Header End --><!-- Start Page Title Section -->
-<div class="page-ttl " style="height: 150px">
-	<div class="layer-stretch">
-		<div class="page-ttl-container">
-			<div class="page-ttl-name">
-				<h1><i class="fa fa-medkit color-white"></i>  Services</h1>
-				<p><a href="index.php">Home</a> > Service</p>
-			</div>
-		</div>
-	</div>
-</div><!-- End Page Title Section -->
+<!--<div class="page-ttl " style="height: 150px">-->
+<!--	<div class="layer-stretch">-->
+<!--		<div class="page-ttl-container">-->
+<!--			<div class="page-ttl-name">-->
+<!--				<h1><i class="fa fa-medkit color-white"></i>  Services</h1>-->
+<!--				<p><a href="index.php">Home</a> > Service</p>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div><!-- End Page Title Section -->-->
 <!-- Start Service List Section -->
 <div class="layer-stretch animated-wrapper">
 	<div class="layer-wrapper layer-bottom-0">
