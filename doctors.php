@@ -24,31 +24,37 @@ $page_name = "<i class=\"fa fa-user-md\"> </i> Doctors";
                     <div class="col-sm-3">
                         <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                             <div class="theme-block-picture">
-                                <img src="public/uploads/doctor-1.jpg" alt="Daniel Barnes">
+                                <a href="include/doctor_details.php"><img src="public/uploads/doctor-1.jpg" alt="Daniel Barnes"></a>
                             </div>
                             <div class="doctor-name">
                                 <h4><a>Daniel Barnes</a></h4>
                             </div>
                             <div class="doctor-details">
                                 <div class="doctor-specility">
-                                    <p>Orthologist</p>
+                                    <p> Orthologist
+                                        <a href="include/doctor_details.php" class="text-info"> Read More </a>
+                                    </p>
                                 </div>
-                                <div class="doctor-details-extra">
-                                    <p><i class="fa fa-shield"></i>CEO &amp; Founder</p>
-                                    <p><i class="fa fa-mortar-board"></i>MBBS, MD</p>
-                                    <p><i class="fa fa-trophy"></i>Awards: 8</p>
-                                    <p><i class="fa fa-star"></i>Experience: 17 year</p>
-                                </div>
+
+
+<!--                                <div class="doctor-details-extra">-->
+<!--                                    <p><i class="fa fa-shield"></i>CEO &amp; Founder</p>-->
+<!--                                    <p><i class="fa fa-mortar-board"></i>MBBS, MD</p>-->
+<!--                                    <p><i class="fa fa-trophy"></i>Awards: 8</p>-->
+<!--                                    <p><i class="fa fa-star"></i>Experience: 17 year</p>-->
+<!--                                </div>-->
                             </div>
-                            <div class="doctor-social">
-                                <ul class="social-list social-list-bordered social-list-rounded">
-                                    <li><a href="https://www.facebook.com" class="fa fa-facebook" target="_blank"></a></li>
-                                    <li><a href="https://www.twitter.com" class="fa fa-twitter" target="_blank"></a></li>
-                                    <li><a href="https://www.google.com" class="fa fa-google" target="_blank"></a></li>
-                                    <li><a href="https://www.instagram.com" class="fa fa-instagram" target="_blank"></a></li>
-                                </ul>
-                            </div>
-                        </div>					</div>
+<!--                            <div class="doctor-social">-->
+<!--                                <ul class="social-list social-list-bordered social-list-rounded">-->
+<!--                                    <li><a href="https://www.facebook.com" class="fa fa-facebook" target="_blank"></a></li>-->
+<!--                                    <li><a href="https://www.twitter.com" class="fa fa-twitter" target="_blank"></a></li>-->
+<!--                                    <li><a href="https://www.google.com" class="fa fa-google" target="_blank"></a></li>-->
+<!--                                    <li><a href="https://www.instagram.com" class="fa fa-instagram" target="_blank"></a></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+                        </div>
+
+                    </div>
                     <div class="col-sm-3">
                         <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                             <div class="theme-block-picture">
@@ -453,14 +459,14 @@ $page_name = "<i class=\"fa fa-user-md\"> </i> Doctors";
 						<p class="paragraph-small paragraph-white">Another milestone to achieve Holistic Health is the addendum of Ayurvedic Clinic at our clinic. The first school of medicine dating back to the origin of life itself, makes a come back with all its glory in the 21st century. With the west aping the east on eternal truths and knowledge of life, we need to refresh our old science of sages according to modern ages.</p>
 					</div>
 				</div>
-								<div class="department-block animated animated-up">
+                <div class="department-block animated animated-up">
 					<div class="tbl-cell department-icon"><i class="fa fa-glass"></i></div>
 					<div class="tbl-cell department-detail">
 						<a>Pathology</a>
 						<p class="paragraph-small paragraph-white">The modern practice of pathology is divided into a number of subdisciplines within the discrete but deeply interconnected aims of biological research and medical practice. Biomedical research into disease incorporates the work of vast variety of life science specialists, whereas, in most parts of the world, to be licensed to practice pathology as medical specialty, one has to complete medical school and secure a license to practice medicine.</p>
 					</div>
 				</div>
-							</div>
+            </div>
 		</div>
 	</div>
 </div><!-- End Department List Section -->

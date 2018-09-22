@@ -1,9 +1,12 @@
 
 <?php include('include/header.php');?>
+<?php
+    $page_name = "<i class='fa fa-key'> </i> Forgot Password";
+?>
 <?php include('include/nav.php');?>
 
     <!-- Header End --><!-- Start Page Title Section -->
-<div class="page-ttl" style="height: 150px">
+<div class="page-ttl" style="height: 120px">
 	<div class="layer-stretch">
 		<div class="page-ttl-container">
 			<div class="page-ttl-name">

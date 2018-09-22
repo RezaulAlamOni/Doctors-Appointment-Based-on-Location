@@ -41,7 +41,8 @@
                     <a href="#"><img src="public/images/icon.png" alt=""></a>
                 </div>
                 <div class="tbl-cell">
-                    <a href="../index.php"><img src="public/images/logo.png"></a>
+<!--                    <a href="../index.php"><img src="public/images/logo.png"></a>-->
+                    <a href="../index.php"><h2 class="text-info">Admin</h2></a>
                 </div>
             </div>
             <div class="menu-user">

@@ -192,22 +192,24 @@
                     </div>
                 </div>
             </div>
-<!---->
-<!--            <script>-->
-<!--                window.chartColors = {red: 'rgb(255, 99, 132)',-->
-<!--                    orange: 'rgb(255, 159, 64)',-->
-<!--                    yellow: 'rgb(255, 205, 86)',-->
-<!--                    green: 'rgb(75, 192, 192)',-->
-<!--                    blue: 'rgb(54, 162, 235)',-->
-<!--                    purple: 'rgb(153, 102, 255)',-->
-<!--                    grey: 'rgb(201, 203, 207)' };-->
-<!--                var color = Chart.helpers.color;-->
-<!--            </script>-->
+
+            <script>
+                window.chartColors = {
+                    red: 'rgb(255, 99, 132)',
+                    orange: 'rgb(255, 159, 64)',
+                    yellow: 'rgb(255, 205, 86)',
+                    green: 'rgb(75, 192, 192)',
+                    blue: 'rgb(54, 162, 235)',
+                    purple: 'rgb(153, 102, 255)',
+                    grey: 'rgb(201, 203, 207)' };
+                var color = Chart.helpers.color;
+            </script>
+
             <div class="row">
                 <div class="col-sm-6 col-md-4">
-                    <div class="dashboard-card">
+                    <div class="dashboard-card"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
                         <p class="dashboard-card-ttl"><i class="fa fa-bar-chart"></i>Clinic Statistics</p>
-                        <canvas id="clinicStats" width="400" height="400"></canvas>
+                        <canvas id="clinicStats" width="518" height="518" style="display: block; width: 259px; height: 259px;"></canvas>
                         <script>
                             var barChartData = {
                                 labels: ['User', 'Appointment', 'Invoice', 'Request', 'Review', 'Comment'],
@@ -247,12 +249,12 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4">
-                    <div class="dashboard-card">
+                    <div class="dashboard-card"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
                         <p class="dashboard-card-ttl"><i class="fa fa-bar-chart"></i>Appointment Statistics</p>
-                        <canvas id="grouped" width="400" height="400"></canvas>
+                        <canvas id="grouped" width="518" height="518" style="display: block; width: 259px; height: 259px;"></canvas>
                         <script>
                             var barChartData = {
-                                labels: ["Mar","Apr","May","Jun","Jul","Aug"],
+                                labels: ["Apr","May","Jun","Jul","Aug","Sep"],
                                 datasets: [{
                                     label: 'Appointment Count ',
                                     backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
@@ -278,15 +280,15 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4" style="display: none">
-                    <div class="dashboard-card">
+                    <div class="dashboard-card"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
                         <p class="dashboard-card-ttl">
                             <i class="fa fa-pie-chart"></i>Appointment <span class="font-12">(Doctor Wise)</span>
                         </p>
-                        <canvas id="myChart" width="400" height="400"></canvas>
+                        <canvas id="myChart" width="300" height="150" style="display: block;"></canvas>
                         <script>
                             var doctor_label = [];
                             var doctor_count = [];
-                            [{"name":"Daniel Barnes","count":"60"},{"name":"Melissa Bates","count":"92"},{"name":"Cheri Aria","count":"67"},{"name":"Steve Soeren","count":"40"},{"name":"Theodore Bennett","count":"15"},{"name":"Barbara Baker","count":"8"},{"name":"Linda Adams","count":"23"},{"name":"Vedhraj Jain","count":"18"}].forEach(function (element) {
+                            [{"name":"Daniel Barnes","count":"67"},{"name":"Melissa Bates","count":"103"},{"name":"Cheri Aria","count":"75"},{"name":"Steve Soeren","count":"42"},{"name":"Theodore Bennett","count":"17"},{"name":"Barbara Baker","count":"9"},{"name":"Linda Adams","count":"24"},{"name":"Vedhraj Jain","count":"21"}].forEach(function (element) {
                                 doctor_label.push(element['name']);
                                 doctor_count.push(parseInt(element['count']));
                             });
@@ -314,15 +316,15 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4">
-                    <div class="dashboard-card">
+                    <div class="dashboard-card"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
                         <p class="dashboard-card-ttl"><i class="fa fa-bar-chart"></i>Earnings</p>
-                        <canvas id="lineChart" width="400" height="400"></canvas>
+                        <canvas id="lineChart" width="518" height="518" style="display: block; width: 259px; height: 259px;"></canvas>
                         <script>
                             var ctx = document.getElementById("lineChart");
                             var myChart = new Chart(ctx, {
                                 type: 'line',
                                 data: {
-                                    labels: ["Mar","Apr","May","Jun","Jul","Aug"],
+                                    labels: ["Apr","May","Jun","Jul","Aug","Sep"],
                                     datasets: [{
                                         label: 'USD',
                                         data: [3010,1820,2350,3400,2260,4230],
