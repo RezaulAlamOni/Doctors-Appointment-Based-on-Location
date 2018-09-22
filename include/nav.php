@@ -1,5 +1,8 @@
 <body>
 <?php session_start();?>
+<?php
+
+?>
 <!-- Header Start -->
 <header id="header">
     <div id="hdr-top-wrapper">
@@ -43,7 +46,7 @@
                             <i class="fa fa-user color-green"> </i> <?php echo $_SESSION['patient_first_name']." ".$_SESSION['patient_last_name'];?></a>
                         <ul id="hdr-user-menu-dd" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="profile-menu">
                             <li class="mdl-menu__item">
-                                <a href="admin/profile.php"><i class="fa fa-user mdl-color-text--green"></i> Profile</a>
+                                <a href="profile.php"><i class="fa fa-user mdl-color-text--green"></i> Profile</a>
                             </li>
 
                             <li class="mdl-menu__item">

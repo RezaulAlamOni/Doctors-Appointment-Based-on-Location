@@ -4,6 +4,7 @@
 ?>
 <?php include('include/nav.php');?>
 
+
     <!-- Header End --><!-- Start Page Title Section -->
 <!--<div class="page-ttl" style="height: 120px">-->
 <!--    <div class="layer-stretch">-->
@@ -18,11 +19,9 @@
     <h2 class="text-center text-success" style="font-family: SansSerif;">Please Enter Your Valid Information</h2>
 <div id="login-page">
     <div class="layer-stretch" >
-        <div class="layer-wrapper">
+        <div class="layer-wrapper" style="background-color: #66bb6a">
             <div class="layer-container " >
-
                 <form class="form-container" action="include/function.php" method="post" enctype="multipart/form-data">
-
                     <input type="hidden" name="_token" value="15276e55e6cdfa6911f440f75f64501dc97cc6f4a19102dddb4c47f0c4dd1523ad639943996afef209d6a358056f3b3389a9bcb175b7413ef3547589673a2b7d">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                         <i class="fa fa-user-o"></i>
@@ -42,12 +41,66 @@
                         <label class="mdl-textfield__label" for="register-email">Email Address <em> *</em></label>
                         <span class="mdl-textfield__error">Please Enter Valid Email Address!</span>
                     </div>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-location-arrow"></i>
+                        <label for="location">Location : </label>
+                        <select name="location" id="location" class="form-input" >
+                            <option value="" class="">Select Your Location</option>
+                            <?php
+                                $pdo = new PDO("mysql:host=localhost;dbname=doctors",'root','');
+                                $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+
+                                $sql = "SELECT * FROM locations ORDER BY name ASC ";
+                                $result = $pdo->prepare($sql);
+                                $result->execute();
+                                $locations = $result->fetchAll(); // default value PDO::FETCH_obj
+
+                            foreach ($locations as $location) {
+                                    ?>
+                                    <option class="text-capitalize" value="<?php echo $location->location_id; ?>"><?php echo $location->name; ?></option>
+                                    <?php
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                    <i class="fa fa-plus-circle"></i>
+                        <label for="blood">Blood Group :</label>
+                        <select name="blood" id="location" class="form-input" >
+                            <option value="">Select Blood Group</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+
+                        </select>
+                    </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                     <i class="fa fa-phone"></i>
                         <input class="mdl-textfield__input" type="text" name="mobile" pattern="[0-9]*" id="register-mobile">
                         <label class="mdl-textfield__label" for="register-mobile">Mobile Number <em> *</em></label>
                         <span class="mdl-textfield__error">Please Enter Valid Mobile Number!</span>
                     </div>
+
+                    <div class="row form-input">
+                        <div class="col-md-4">
+                            <label for=""><span></span><p class="text-info"><i class="fa fa-intersex text-success"> </i><b>  Gender : </b></p> </label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="radio" name="gender" value="Male" id="gender-male" class="mdl-radio__outer-circle">
+                            <label for="gender-male"><span></span><p><i class="fa fa-mars"></i> Male </p></label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="radio" name="gender" value="Female" id="gender-female" class="mdl-radio__outer-circle">
+                            <label for="gender-female"><span></span><p><i class="fa fa-venus"></i> Female </p></label>
+                        </div>
+                    </div>
+
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                         <i class="fa fa-key"></i>
                         <input class="mdl-textfield__input" type="text" name="username" id="register-username">

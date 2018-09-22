@@ -29,7 +29,6 @@ if (isset($_SESSION['admin_name'])){
     <div class="lgn-logo text-center">
 <!--        <a href="../"><!--<img src="public/images/logo.png" alt="Clinical"></a>-->
         <a href="../" style="padding-left: 60px" class="text-primary"><h1 style="font-family: 'Harlow Solid Italic'">AppointmentBD</h1></a>
-
     </div>
     <div id="login-form" class="lgn-form ">
         <form class="form-vertical" action="include/verify_user.php" method="post" siq_id="autopick_8519">
