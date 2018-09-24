@@ -1,5 +1,9 @@
 <?php include('include/db.php');?>
 <?php include('include/header.php');?>
+<?php require ('class/doctors.php');?>
+<?php require ('class/departments.php');?>
+<?php require ('class/patients.php');?>
+<?php require ('class/hospitals.php');?>
 
 <body>
     <!-- Start Header Section -->
@@ -55,8 +59,8 @@
                     <ul class="col menu text-left">
                         <li><a href="index.php" id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a></li>
 						<li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect">Doctors</a></li>
-                        <li><a href="hospitals.php" id="menu-hospital" class="mdl-button mdl-js-button mdl-js-ripple-effect">Hospitals</a></li>
-                        <li><a href="departments.php" id="menu-department" class="mdl-button mdl-js-button mdl-js-ripple-effect">Departments</a></li>
+                        <li><a href="hospital.php" id="menu-hospital" class="mdl-button mdl-js-button mdl-js-ripple-effect">Hospitals</a></li>
+                        <li><a href="department.php" id="menu-department" class="mdl-button mdl-js-button mdl-js-ripple-effect">Departments</a></li>
 <!--                        <li><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>-->
                         <li>
                             <a id="menu-pages" class="mdl-button mdl-js-button mdl-js-ripple-effect">Pages <i class="fa fa-chevron-down"></i></a>
@@ -157,7 +161,7 @@
 			<li>
 				<div class="slider-info">
 					<h1 class="animated fadeInDown">Appointment System Based on Patient Location</h1>
-					<p class="animated fadeInDown">We have created 30+ Pages, 70+ Components or Shortcodes, Popup for this template and more in future. #twitterhash, @facebooktag</p>
+					<p class="animated fadeInDown">This is web application for the patient in our country to book appointment. </p>
 
                 </div>
                 <div class="slider-backgroung-image" style="background-image: url(public/uploads/slider-1.jpg); ">7</div>
@@ -166,7 +170,7 @@
 			<li>
 				<div class="slider-info">
 					<h2>A Complete Patient Data Management System</h2>
-					<p class="animated fadeInDown">This is tag line ipsum dolor sit amet, consectetur Nihil cupiditate. mollitia maiores elit#twitterhash, @facebooktag</p>
+					<p class="animated fadeInDown">This system can manage the patient data for farther user doctor can update patient diagnosis information.</p>
 				</div>
                 <div class="slider-backgroung-image" style="background-image: url(public/uploads/slider-3.jpg);"></div>
 
@@ -174,7 +178,7 @@
 			<li>
 				<div class="slider-info">
 					<h2>Get Appointment in any Hospital of Bangladesh </h2>
-					<p class="animated fadeInDown">Do not hesitate to contact us on our dedicated support forum. mollitia maiores temp fugit! consectetur adipisicing elit #twitterhash, @facebooktag</p>
+					<p class="animated fadeInDown">Do not hesitate to contact us on our dedicated contact for the patient #twitterhash, @facebooktag</p>
 				</div>
                 <div class="slider-backgroung-image" style="background-image: url(public/uploads/slider-2.jpg);"></div>
 
@@ -182,7 +186,7 @@
 			<li>
 				<div class="slider-info">
 					<h2>Get Appointment Quickly & Nearest Hospital</h2>
-					<p class="animated fadeInDown">Do not hesitate to contact us on our dedicated support forum. mollitia maiores temp fugit! consectetur adipisicing elit #twitterhash, @facebooktag</p>
+					<p class="animated fadeInDown">Do not hesitate to contact us on our dedicated support forum #twitterhash, @facebooktag</p>
 				</div>
                 <div class="slider-backgroung-image" style="background-image: url(public/uploads/slider-3.jpg);"></div>
 
@@ -191,7 +195,7 @@
 
 			<div class="slider-appointment">
 <!--				<a id="slider-appointment-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect animated fadeInUp" >Input Your Disease Symptom For Appointment</a><br>-->
-				<a id="slider-appointment-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect animated fadeInUp" >Make An Appointment</a>
+				<a id="slider-appointment-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect animated fadeInUp">Make An Appointment</a>
 			</div>
 	</div>
 </div>
@@ -215,14 +219,24 @@
 					<div class="hm-about-block">
 						<div class="tbl-cell hm-about-icon"><i class="fa fa-user-md"></i></div>
 						<div class="tbl-cell hm-about-number">
-							<span>10</span>
+							<span>
+                                <?php
+                                $doctor = new doctors();
+                                echo $doctor->count();
+                                ?>
+                            </span>
 							<p>Doctor(s)</p>
 						</div>
 					</div>
 					<div class="hm-about-block">
 						<div class="tbl-cell hm-about-icon"><i class="fa fa-ambulance"></i></div>
 						<div class="tbl-cell hm-about-number">
-							<span>20</span>
+							<span>
+                                <?php
+                                $hos = new hospitals();
+                                echo $hos->count();
+                                ?>
+                            </span>
 							<p>Hospital(s)</p>
 						</div>
 					</div>
@@ -230,15 +244,25 @@
 					<div class="hm-about-block">
 						<div class="tbl-cell hm-about-icon"><i class="fa fa-users"></i></div>
 						<div class="tbl-cell hm-about-number">
-							<span>40</span>
+							<span>
+                                <?php
+                                    $patient = new patients();
+                                    echo $patient->count();
+                                ?>
+                            </span>
 							<p>Patients</p>
 						</div>
 					</div>
                     <div class="hm-about-block">
                         <div class="tbl-cell hm-about-icon"><i class="fa fa-hospital-o"></i></div>
                         <div class="tbl-cell hm-about-number">
-                            <span>23</span>
-                            <p>Department(s)</p>
+                            <span>
+                                <?php
+                                    $dpt = new departments();
+                                    echo $dpt->count();
+                                ?>
+                            </span>
+                            <p><a href="department.php"></a>Department(s)</p>
                         </div>
                     </div>
 					<div class="hm-about-paragraph animated animated-up">

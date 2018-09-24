@@ -1,9 +1,13 @@
+<?php include('include/db.php'); ?>
 <?php include('include/header.php'); ?>
 <?php include('include/navbar.php'); ?>
 <?php
-    $pdo = new PDO("mysql:host=localhost;dbname=doctors",'root','');
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+    require('../class/doctors.php');
+    require ('../class/departments.php');
+    require ('../class/patients.php');
+    require ('../class/hospitals.php');
 ?>
+
 
     <div class="page-container">
 
@@ -26,47 +30,12 @@
                         <div class="nav-menu-dropdown">
                             <div class="nav-dropdown-title">Recently Added</div>
                             <div class="nav-dropdown-body">
+
                                 <div class="recently-block text-left">
                                     <span class="badge badge-sm badge-appointment badge-pill">Appointment</span>
-                                    <div class="recently-name"><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/edit&id=1000" target="_blank">chgyyyhv</a>
+                                    <div class="recently-name"><a href="" target="_blank">chgy yyhv</a>
                                     </div>
                                     <span class="recently-date">28 Aug 2018</span>
-                                </div>
-                                <div class="recently-block text-left">
-                                    <span class="badge badge-sm badge-appointment badge-pill">Appointment</span>
-                                    <div class="recently-name"><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/edit&id=999" target="_blank">pd</a>
-                                    </div>
-                                    <span class="recently-date">28 Aug 2018</span>
-                                </div>
-                                <div class="recently-block text-left">
-                                    <span class="badge badge-sm badge-appointment badge-pill">Appointment</span>
-                                    <div class="recently-name"><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/edit&id=998" target="_blank">sanju</a>
-                                    </div>
-                                    <span class="recently-date">27 Aug 2018</span>
-                                </div>
-                                <div class="recently-block text-left">
-                                    <span class="badge badge-sm badge-appointment badge-pill">Appointment</span>
-                                    <div class="recently-name"><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/edit&id=997" target="_blank">abcdefg</a>
-                                    </div>
-                                    <span class="recently-date">27 Aug 2018</span>
-                                </div>
-                                <div class="recently-block text-left">
-                                    <span class="badge badge-sm badge-appointment badge-pill">Appointment</span>
-                                    <div class="recently-name"><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/edit&id=996" target="_blank">tester</a>
-                                    </div>
-                                    <span class="recently-date">27 Aug 2018</span>
-                                </div>
-                                <div class="recently-block text-left">
-                                    <span class="badge badge-sm badge-appointment badge-pill">Appointment</span>
-                                    <div class="recently-name"><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/edit&id=995" target="_blank">zdsdasd</a>
-                                    </div>
-                                    <span class="recently-date">27 Aug 2018</span>
-                                </div>
-                                <div class="recently-block text-left">
-                                    <span class="badge badge-sm badge-appointment badge-pill">Appointment</span>
-                                    <div class="recently-name"><a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/edit&id=994" target="_blank">JOkin</a>
-                                    </div>
-                                    <span class="recently-date">27 Aug 2018</span>
                                 </div>
                             </div>
                         </div>
@@ -141,14 +110,40 @@
                                 <h5 class="icon-widget-heading">Patients</h5>
                                 <div class="icon-widget-body tbl">
                                     <p class="tbl-cell"><i class="fa fa-wheelchair" style="color: #3d0089"></i></p>
-
-                                    <?php
-                                        $sql = "SELECT * FROM patients";
-                                        $result = $pdo->prepare($sql);
-                                        $result->execute();
-                                    ?>
-
-                                    <p class="tbl-cell text-right"><?php echo $result->rowCount()?></p>
+                                    <p class="tbl-cell text-right">
+                                        <?php
+                                        $patient = new patients();
+                                        echo $patient->count();
+                                        ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3 col-lg-12">
+                            <div class="icon-widget">
+                                <h5 class="icon-widget-heading">Hospital</h5>
+                                <div class="icon-widget-body tbl">
+                                    <p class="tbl-cell"><i class="fa fa-hospital-o text-danger"></i></p>
+                                    <p class="tbl-cell text-right">
+                                        <?php
+                                        $hos = new hospitals();
+                                        echo $hos->count();
+                                        ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3 col-lg-12">
+                            <div class="icon-widget">
+                                <h5 class="icon-widget-heading">Doctors</h5>
+                                <div class="icon-widget-body tbl">
+                                    <p class="tbl-cell"><i class="fa fa-user-md text-info"></i></p>
+                                    <p class="tbl-cell text-right">
+                                        <?php
+                                        $doctor = new doctors();
+                                        echo $doctor->count();
+                                        ?>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -171,24 +166,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-3 col-lg-12">
-                            <div class="icon-widget">
-                                <h5 class="icon-widget-heading">Doctors</h5>
-                                <div class="icon-widget-body tbl">
-                                    <p class="tbl-cell"><i class="fa fa-user-md text-info"></i></p>
-                                    <p class="tbl-cell text-right">34</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3 col-lg-12">
-                            <div class="icon-widget">
-                                <h5 class="icon-widget-heading">Hospital</h5>
-                                <div class="icon-widget-body tbl">
-                                    <p class="tbl-cell"><i class="fa fa-hospital-o text-danger"></i></p>
-                                    <p class="tbl-cell text-right">63</p>
-                                </div>
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
             </div>

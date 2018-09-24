@@ -110,7 +110,7 @@
                         <a href="index.php" id="" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a>
                     </li>
                     <li id="doctor"><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Doctors</a></li>
-                    <li id="hospital"><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Hospitals</a></li>
+                    <li id="hospital"><a href="hospital.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Hospitals</a></li>
                     <li id="department"><a href="department.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect ">Departments</a></li>
 
                     <li id="service"><a href="service.php" id="menu-service" class="mdl-button mdl-js-button mdl-js-ripple-effect">Our Service</a></li>

@@ -149,7 +149,7 @@
                 <a href="add_doctors.php"><i class="fa fa-user-plus"></i><span>Add Doctors</span></a>
             </li>
             <li id="service_page">
-                <a href="doctors.php"><i class="fa fa-edit"></i><span>Update Doctors</span></a>
+                <a href="edit_doctor.php"><i class="fa fa-edit"></i><span>Update Doctors</span></a>
             </li>
 
         </ul>
@@ -215,32 +215,7 @@
 
         </ul>
     </li>
-    <!--                <li id="setting-li">-->
-    <!--                    <a class="menu-dropdown"><i class="icon-settings"></i><span>Settings</span><i class="fa fa-angle-down"></i></a>-->
-    <!--                    <ul id="setting" class="sub-menu">-->
-    <!--                        <li>-->
-    <!--                            <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=setting/generalsetting"><i class="icon-settings"></i><span>General Setting</span></a>-->
-    <!--                        </li>-->
-    <!--                        <li>-->
-    <!--                            <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=tax"><i class="icon-settings"></i><span>Finance Setting</span></a>-->
-    <!--                        </li>-->
-    <!--                        <li>-->
-    <!--                            <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=setting/analytics"><i class="icon-settings"></i><span>Google Analytics</span></a>-->
-    <!--                        </li>-->
-    <!--                        <li>-->
-    <!--                            <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=setting/customcss"><i class="fa fa-css3"></i><span>Custom Css</span></a>-->
-    <!--                        </li>-->
-    <!--                        <li>-->
-    <!--                            <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=icon"><i class="icon-flag"></i><span>Icon Set</span></a>-->
-    <!--                        </li>-->
-    <!--                        <li>-->
-    <!--                            <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=errorlog"><i class="icon-exclamation"></i><span>Error Log</span></a>-->
-    <!--                        </li>-->
-    <!--                        <li>-->
-    <!--                            <a href="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=permission"><i class="icon-bell"></i><span>Permission</span></a>-->
-    <!--                        </li>-->
-    <!--                    </ul>-->
-    <!--                </li>-->
+
 </ul>
 </div>
 </div>
