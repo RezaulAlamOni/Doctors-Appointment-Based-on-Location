@@ -15,4 +15,12 @@ class hospitals
         $result->execute();
         return $result->rowCount();
     }
+    function all(){
+        global $pdo;
+        $sql = "SELECT * FROM hospitals";
+        $result = $pdo->prepare($sql);
+        $result->execute();
+        return $result;
+    }
+
 }

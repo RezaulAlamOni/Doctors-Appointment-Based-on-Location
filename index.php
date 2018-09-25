@@ -212,7 +212,7 @@
 	<div class="layer-stretch">
 		<div class="layer-wrapper animated-wrapper">
 			<div class="layer-ttl layer-ttl-white">
-				<h3 class="animated animated-down">Who We Are</h3>
+				<h3 class="animated animated-down">Our Components</h3>
 			</div>
 			<div class="row">
 				<div class="col-md-7">
@@ -229,7 +229,7 @@
 						</div>
 					</div>
 					<div class="hm-about-block">
-						<div class="tbl-cell hm-about-icon"><i class="fa fa-ambulance"></i></div>
+						<div class="tbl-cell hm-about-icon"><i class="fa fa-hospital-o"></i></div>
 						<div class="tbl-cell hm-about-number">
 							<span>
                                 <?php
@@ -254,7 +254,7 @@
 						</div>
 					</div>
                     <div class="hm-about-block">
-                        <div class="tbl-cell hm-about-icon"><i class="fa fa-hospital-o"></i></div>
+                        <div class="tbl-cell hm-about-icon"><i class="fa fa-building-o"></i></div>
                         <div class="tbl-cell hm-about-number">
                             <span>
                                 <?php
@@ -266,7 +266,7 @@
                         </div>
                     </div>
 					<div class="hm-about-paragraph animated animated-up">
-						<p class="paragraph-medium paragraph-white">A hospital is an institution for healthcare typically providing specialized treatment for inpatient (or overnight) stays. Some hospitals primarily admit patients suffering from a specific disease or affection, or are reserved for the diagnosis and treatment of conditions affecting a specific age group. Others have a mandate that expands beyond offering dominantly curative and rehabilitative care services to include promotional, preventive and educational roles as part of a primary healthcare approach. Today, hospitals are usually funded by the state, health organizations (for profit or non-profit), by health insurances or by charities and by donations.</p>
+						<p class="paragraph-medium paragraph-white">This is a web base application.You can book appointment in any hospital in Bangladesh.------------------------------------------------------------</p>
 					</div>
 				</div>
 				<div class="col-md-5 animated animated-up fadeInUp">

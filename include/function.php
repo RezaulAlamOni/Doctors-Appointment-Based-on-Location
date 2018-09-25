@@ -25,7 +25,9 @@ if (isset($_REQUEST['register'])){
         $sql = "INSERT INTO `patients` (`first_name`, `last_name`, `user_name`, `password`, `email`, `blood_group`, `gender`, `phone`, `location_id`, `created_at`,`medical_history`) ";
         $sql .= " VALUES ('$first_name','$last_name','$username','$password','$email','$blood_group','$gender','$mobile',$location,now(),'')";
         $result = $pdo->prepare($sql);
+
         $result->execute();
-        header("Location: ../register.php");
+//        if ($result) $register = "Registration Complete !!!!!";
+        header("Location: ../login.php");
     }else header("Location: ../register.php");
 }

@@ -15,5 +15,14 @@ class patients
         $result->execute();
         return $result->rowCount();
     }
+    function location($id){
+        global $pdo;
+        $sql = "SELECT * FROM locations WHERE id = :id";
+        $result = $pdo->prepare($sql);
+        $result->execute(['id'=>$id]);
+        return $result;
+    }
+
+
 
 }
