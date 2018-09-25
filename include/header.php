@@ -26,4 +26,5 @@
     <!-- <link rel="stylesheet" href="public/css/style-blue.min.css"> -->
     <link rel="stylesheet" href="public/css/style-blue.min.css">
     <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="admin/public/css/datatables.min.css">
 </head>

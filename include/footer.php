@@ -148,7 +148,7 @@
             </div>
             <div class="col-md-4 footer-block">
                 <div class="footer-ttl">
-                    <p>Newsletter</p>
+                    <p>Subscribe</p>
                 </div>
                 <div class="footer-container footer-c">
                     <div class="footer-subscribe">
@@ -166,19 +166,19 @@
                     <div class="social-list social-list-colored footer-social">
                         <ul>
                             <li>
-                                <a href="https://www.facebook.com/pepdevofficial" target="_blank" id="footer-facebook" class="fa fa-facebook"></a>
+                                <a href="https://www.facebook.com/" target="_blank" id="footer-facebook" class="fa fa-facebook"></a>
                                 <span class="mdl-tooltip mdl-tooltip--top" for="footer-facebook">Facebook</span>
                             </li>
                             <li>
-                                <a href="https://twitter.com/pepdevofficial" target="_blank" id="footer-twitter" class="fa fa-twitter"></a>
+                                <a href="https://twitter.com/" target="_blank" id="footer-twitter" class="fa fa-twitter"></a>
                                 <span class="mdl-tooltip mdl-tooltip--top" for="footer-twitter">Twitter</span>
                             </li>
                             <li>
-                                <a href="https://plus.google.com/110823961031348424693" target="_blank" id="footer-google" class="fa fa-google"></a>
+                                <a href="https://plus.google.com/" target="_blank" id="footer-google" class="fa fa-google"></a>
                                 <span class="mdl-tooltip mdl-tooltip--top" for="footer-google">Google</span>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/pepdevofficial/" target="_blank" id="footer-instagram" class="fa fa-instagram"></a>
+                                <a href="https://www.instagram.com/" target="_blank" id="footer-instagram" class="fa fa-instagram"></a>
                                 <span class="mdl-tooltip mdl-tooltip--top" for="footer-instagram">Instagram</span>
                             </li>
                             <li>
@@ -216,6 +216,7 @@
 <script src="public/js/jquery.waypoints.min.js"></script>
 <script src="public/js/smoothscroll.min.js"></script>
 <script src="public/js/custom.js"></script>
+
 <script>$('#menu-home').addClass('active');</script>	<!-- Custom Css -->
 <style></style>
 
