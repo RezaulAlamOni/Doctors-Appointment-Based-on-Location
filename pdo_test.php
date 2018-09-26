@@ -33,12 +33,21 @@ $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
 //var_dump($admin);
 
 $name = 'mehadi';
-$sql = "SELECT * FROM admins where user_name = :name";
+$sql = "SELECT * FROM patients where patient_id = :id";
 $result = $pdo->prepare($sql);
-$result->execute(['name'=>$name]);
+$result->execute(['id'=>20]);
 $admins = $result->fetchAll(PDO::FETCH_ASSOC);
+
+
 foreach ($admins as $admin){
 //    echo $admin->user_name;
-    echo $admin['user_name'];
+    echo $admin['password']."<br>";
 }
 //var_dump($admins);
+ $password = 'qwerty';
+ $pass = password_hash($password,PASSWORD_BCRYPT,array('cost'=>12));
+$p = 'qwerty';
+if (password_verify($p,$pass)){
+    echo "<br>aadscfasdcvasdvcasd";
+}
+

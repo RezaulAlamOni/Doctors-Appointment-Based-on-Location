@@ -44,6 +44,66 @@ class doctors
         $result->execute();
         return $result->rowCount();
     }
+    function username_exist($username){
+        global $pdo;
+        $sql = "SELECT * FROM doctors WHERE username = '{$username}'";
+        $result = $pdo->prepare($sql);
+        $result->execute();
+        if ($result->rowCount()){
+            return true;
+        }else return false;
+    }
+    function email_exist($mail){
+        global $pdo;
+        $sql = "SELECT * FROM doctors WHERE email = '{$mail}'";
+        $result = $pdo->prepare($sql);
+        $result->execute();
+        if ($result->rowCount()){
+            return true;
+        }else{ return false;}
+    }
 
+    function add(){
+        global $pdo;
+        if (isset($_REQUEST['register_doctor'])){
+
+            $fname      = trim($_REQUEST['firstname']);
+            $lname      = trim($_REQUEST['lastname']);
+            $mail       = trim($_REQUEST['email']);
+            $degree     = trim($_REQUEST['degree']);
+            $hospital_id   = trim($_REQUEST['hospital']);
+            $department_id = trim($_REQUEST['department']);
+            $mobile     = trim($_REQUEST['mobile']);
+            $gender     = trim($_REQUEST['gender']);
+            $username   = trim($_REQUEST['username']);
+            $password   = trim($_REQUEST['password']);
+
+            $password   = password_hash($password,PASSWORD_BCRYPT,array('cost'=>12));
+
+            $img        =   $_FILES['photo']['name'];
+            $img_temp   =   $_FILES['photo']['tmp_name'];
+
+
+            if ($this->username_exist($username)){
+                echo "<p class='text-center text-danger'>Please Try Another username this is already Registered</p>";
+            }else if ($this->email_exist($mail)){
+                echo "<p class='text-center text-danger'>Please Try Another Email Id this is already Registered</p>";
+            }else if (!empty($degree) || !empty($hospital_id) || !empty($department_id) || !empty($username)){
+
+                move_uploaded_file($img_temp,"public/uploads/{$img}");
+
+                $sql = "INSERT INTO `doctors`(`first_name`, `last_name`, `email`, `phone`, `username`, `password`,`photo`, `degree`, `department_id`,`experience`, `hospital_id`, `created_at`) " ;
+                $sql .= "VALUES ('$fname','$lname','$mail','$mobile','$username','$password','$img','$degree',$department_id,0,$hospital_id,now())";
+
+                $result = $pdo->prepare($sql);
+                $result->execute();
+
+                if ($result){
+                    echo '<h1 class="text-center text-success">Registration Successful !!! <a href="login.php">Login Please</a></h1>';
+                }
+
+            }
+        }
+    }
 
 }

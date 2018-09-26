@@ -16,7 +16,9 @@ if (isset($_REQUEST['register'])){
     $patient['gender']      = $_REQUEST['gender'] ;
 //    $patient['role']        = $_REQUEST['role'] ;
     $patient['username']    = $_REQUEST['username'];
-    echo $patient['password']    = $_REQUEST['password'];
+    $patient['password']    = trim($_REQUEST['password']);
+
+//    $patient['password']    = password_hash($passwords,PASSWORD_BCRYPT,array('cost'=>12));
 
     if (count($patient)==9) {
         foreach ($patient as $key => $value) {

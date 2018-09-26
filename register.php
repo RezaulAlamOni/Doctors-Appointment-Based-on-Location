@@ -40,6 +40,7 @@
                         according to patient location.'
                     </p>
                 </div>
+
             </div>
 
         </div>

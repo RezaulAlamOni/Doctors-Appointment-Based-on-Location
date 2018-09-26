@@ -9,23 +9,16 @@
         if (empty($_REQUEST['email']) ) header('Location: ../login.php');
         if (empty($_REQUEST['password']) ) header('Location: ../login.php');
 
-
         $email      = $_REQUEST['email'];
-        $password   = $_REQUEST['password'];
+        $password   = trim($_POST['password']);
 
-        $n   = $_REQUEST['n'];
-        $m   = $_REQUEST['m'];
-        $sum   = $_REQUEST['sum'];
-
-//        if ($sum =$n+$m) header('Location: ../login.php');
-
-
-        $sql = "SELECT * FROM patients where email = :email";
+        $sql = "SELECT * FROM patients where email = :email 
+";
         $result = $pdo->prepare($sql);
         $result->execute(['email'=>$email]);
         $patients = $result->fetchAll(); // default value PDO::FETCH_ASSOC
 
-        if ($result->rowCount()>0 && $sum == $n+$m) {
+        if ($result->rowCount()>0) {
 
             foreach ($patients as $row){
 
@@ -47,27 +40,31 @@
                 $updated  = $row['updated_at'];
 
 
-                if ($password == $pass) {
+                if ($password==$pass) {
+//                if (password_verify($password,$pass)) {
 
-                    $_SESSION['patient_first_name'] = $first_name;
-                    $_SESSION['patient_last_name'] = $last_name;
-                    $_SESSION['patient_name'] = $user_name;
-                    $_SESSION['patient_email'] = $mail;
-                    $_SESSION['patient_phone'] = $phone;
-                    $_SESSION['patient_id'] = $id;
+                        $_SESSION['patient_first_name'] = $first_name;
+                        $_SESSION['patient_last_name'] = $last_name;
+                        $_SESSION['patient_name'] = $user_name;
+                        $_SESSION['patient_email'] = $mail;
+                        $_SESSION['patient_phone'] = $phone;
+                        $_SESSION['patient_id'] = $id;
 
-                    header("Location: ../index.php");
-                } else {
+                        header("Location: ../index.php");
+                    } else {
 
-                    header('Location: ../login.php');
+                        header('Location: ../login.php');
+                    }
                 }
             }
-        }else{
+        else{
             header("Location: ../login.php");
+
         }
-
-
-
     }
+
+
+
+
 
 

@@ -217,7 +217,8 @@
 			<div class="row">
 				<div class="col-md-7">
 					<div class="hm-about-block">
-						<div class="tbl-cell hm-about-icon"><i class="fa fa-user-md"></i></div>
+                        <a href="doctors.php">
+                            <div class="tbl-cell hm-about-icon"><i class="fa fa-user-md"></i></div>
 						<div class="tbl-cell hm-about-number">
 							<span>
                                 <?php
@@ -227,9 +228,11 @@
                             </span>
 							<p>Doctor(s)</p>
 						</div>
+                        </a>
 					</div>
 					<div class="hm-about-block">
-						<div class="tbl-cell hm-about-icon"><i class="fa fa-hospital-o"></i></div>
+                        <a href="hospital.php">
+                            <div class="tbl-cell hm-about-icon"><i class="fa fa-hospital-o"></i></div>
 						<div class="tbl-cell hm-about-number">
 							<span>
                                 <?php
@@ -239,6 +242,7 @@
                             </span>
 							<p>Hospital(s)</p>
 						</div>
+                        </a>
 					</div>
 
 					<div class="hm-about-block">
@@ -254,7 +258,9 @@
 						</div>
 					</div>
                     <div class="hm-about-block">
-                        <div class="tbl-cell hm-about-icon"><i class="fa fa-building-o"></i></div>
+
+                        <a href="department.php">
+                            <div class="tbl-cell hm-about-icon"><i class="fa fa-building-o"></i></div>
                         <div class="tbl-cell hm-about-number">
                             <span>
                                 <?php
@@ -262,8 +268,9 @@
                                     echo $dpt->count();
                                 ?>
                             </span>
-                            <p><a href="department.php"></a>Department(s)</p>
+                            <p>Department(s)</p>
                         </div>
+                        </a>
                     </div>
 					<div class="hm-about-paragraph animated animated-up">
 						<p class="paragraph-medium paragraph-white">This is a web base application.You can book appointment in any hospital in Bangladesh.------------------------------------------------------------</p>
@@ -278,6 +285,13 @@
 </div>
 <!-- Start Home Facility Section -->
 
+<?php
+
+    $result = $dpt->all();
+    $departments  = $result->fetchAll();
+
+
+?>
 
 
 <!-- Start Make an Appointment Modal -->

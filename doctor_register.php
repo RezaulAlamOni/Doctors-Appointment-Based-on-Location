@@ -1,16 +1,26 @@
+<?php ob_start(); ?>
+<?php include('include/db.php');?>
 <?php include('include/header.php');?>
 <?php
-$page_name = "<i class='fa fa-registered'></i> Registration <span style='font-size: 18px;'> >>Doctor ";
+    require ('class/doctors.php');
+    $doctor = new doctors();
+
+
+    $page_name = "<i class='fa fa-registered'></i> Registration <span style='font-size: 18px;'> >>Doctor ";
 ?>
 <?php include('include/nav.php');?>
+<p>
+<?php
 
-
+    $doctor->add();
+?>
+</p>
     <h2 class="text-center text-success" style="font-family: SansSerif;">Please Enter Your Valid Information</h2>
     <div id="login-page">
         <div class="layer-stretch" >
-            <div class="layer-wrapper" style="background-color: #66bb6a">
+            <div class="layer-wrapper" style="background-image: url('public/uploads/slider-1.jpg');">
                 <div class="layer-container " >
-                    <form class="form-container" action="include/function.php" method="post" enctype="multipart/form-data">
+                    <form class="form-container" action="doctor_register.php" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="15276e55e6cdfa6911f440f75f64501dc97cc6f4a19102dddb4c47f0c4dd1523ad639943996afef209d6a358056f3b3389a9bcb175b7413ef3547589673a2b7d">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                             <i class="fa fa-user-o"></i>
@@ -25,6 +35,11 @@ $page_name = "<i class='fa fa-registered'></i> Registration <span style='font-si
                             <span class="mdl-textfield__error">Please Enter Valid Name!</span>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                            <i class="fa fa-file-picture-o"></i>
+                            <input class="mdl-textfield__input" type="file" name="photo" pattern="[A-Z,a-z, ]*" id="register-last-name">
+
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                             <i class="fa fa-envelope-o"></i>
                             <input class="mdl-textfield__input" type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="register-email">
                             <label class="mdl-textfield__label" for="register-email">Email Address <em> *</em></label>
@@ -33,41 +48,52 @@ $page_name = "<i class='fa fa-registered'></i> Registration <span style='font-si
 
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                             <i class="fa fa-location-arrow"></i>
-                            <label for="location">Location : </label>
-                            <select name="location" id="location" class="form-input" >
-                                <option value="" class="">Select Your Location</option>
+                            <label for="location"> </label>
+                            <select name="hospital" id="hospital" class="form-input" >
+                                <option class="text-capitalize text-info " >Select Your main Chamber :</option>
                                 <?php
-                                $pdo = new PDO("mysql:host=localhost;dbname=doctors",'root','');
-                                $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+//                                $pdo = new PDO("mysql:host=localhost;dbname=doctors",'root','');
+//                                $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
 
-                                $sql = "SELECT * FROM locations ORDER BY name ASC ";
+                                $sql = "SELECT * FROM hospitals ORDER BY name ASC ";
                                 $result = $pdo->prepare($sql);
                                 $result->execute();
-                                $locations = $result->fetchAll(); // default value PDO::FETCH_obj
+                                $hospitals = $result->fetchAll(); // default value PDO::FETCH_obj
 
-                                foreach ($locations as $location) {
+                                foreach ($hospitals as $hospital) {
                                     ?>
-                                    <option class="text-capitalize" value="<?php echo $location->location_id; ?>"><?php echo $location->name; ?></option>
+                                    <option class="text-capitalize text-info" value="<?php echo $hospital->id; ?>"><?php echo $hospital->name; ?></option>
+                                    <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                            <i class="fa fa-location-arrow"></i>
+                            <label for="location"> </label>
+                            <select name="department" id="department" class="form-input" >
+                                <option class="text-capitalize text-info " >Select Your Department:</option>
+                                <?php
+
+                                $sql = "SELECT * FROM departments ORDER BY name ASC ";
+                                $result = $pdo->prepare($sql);
+                                $result->execute();
+                                $hospitals = $result->fetchAll(); // default value PDO::FETCH_obj
+
+                                foreach ($hospitals as $hospital) {
+                                    ?>
+                                    <option class="text-capitalize text-info" value="<?php echo $hospital->id; ?>"><?php echo $hospital->name; ?></option>
                                     <?php
                                 }
                                 ?>
                             </select>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
-                            <i class="fa fa-plus-circle"></i>
-                            <label for="blood">Blood Group :</label>
-                            <select name="blood" id="location" class="form-input" >
-                                <option value="">Select Blood Group</option>
-                                <option value="A+">A+</option>
-                                <option value="A-">A-</option>
-                                <option value="B+">B+</option>
-                                <option value="B-">B-</option>
-                                <option value="AB+">AB+</option>
-                                <option value="AB-">AB-</option>
-                                <option value="O+">O+</option>
-                                <option value="O-">O-</option>
-
-                            </select>
+                            <i class="fa fa-graduation-cap"></i>
+                            <input class="mdl-textfield__input" type="text" name="degree" pattern="[A-Z,a-z, ]*" id="register-last-name">
+                            <label class="mdl-textfield__label" for="register-mobile">Degree <em> *</em></label>
+                            <span class="mdl-textfield__error">Please Enter Completed Degree!</span>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                             <i class="fa fa-phone"></i>
@@ -120,7 +146,7 @@ $page_name = "<i class='fa fa-registered'></i> Registration <span style='font-si
                         </div>
                         <div class="login-condition">By clicking Creat Account you aggree to our<br /><a href="about.php">Terms & Condition</a></div>
                         <div class="form-submit">
-                            <button type="submit" id="register-submit" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised mdl-button--raised button button-primary button-pill" name="register">Create Account</button>
+                            <button type="submit" id="register-submit" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised mdl-button--raised button button-primary button-pill" name="register_doctor                                          ">Create Account</button>
                         </div>
                         <div class="login-link">
                             <span class="paragraph-small">Already have an account?</span>
@@ -129,28 +155,6 @@ $page_name = "<i class='fa fa-registered'></i> Registration <span style='font-si
                     </form>
                 </div>
             </div>
-            <!--        <form action="">-->
-            <!--            <div class="row ">-->
-            <!--                <div class="col-md-6">-->
-            <!--                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">-->
-            <!--                        <i class="fa fa-user-o"></i>-->
-            <!--                        <input class="mdl-textfield__input" type="text" name="firstname" pattern="[A-Z,a-z, ]*" id="register-first-name">-->
-            <!--                        <label class="mdl-textfield__label" for="register-first-name">First Name <em> *</em></label>-->
-            <!--                        <span class="mdl-textfield__error">Please Enter Valid Name!</span>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--                <div class="col-md-6">-->
-            <!---->
-            <!--                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">-->
-            <!--                            <i class="fa fa-user-o"></i>-->
-            <!--                            <input class="mdl-textfield__input" type="text" name="firstname" pattern="[A-Z,a-z, ]*" id="register-first-name">-->
-            <!--                            <label class="mdl-textfield__label" for="register-first-name">First Name <em> *</em></label>-->
-            <!--                            <span class="mdl-textfield__error">Please Enter Valid Name!</span>-->
-            <!--                        </div>-->
-            <!---->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!--        </form>-->
 
 
         </div>

@@ -37,11 +37,14 @@
 
                             <select class="mdl-selectfield__select" id="appointment-department" name="department">
                                 <option value=""></option>
-                                <option value="1">Gynaecology</option>
-                                <option value="2">Orthology</option>
-                                <option value="3">Dermatologist</option>
-                                <option value="4">Anaesthesia</option>
-                                <option value="5">Ayurvedic</option>
+                                <?php
+                                foreach ($departments as $department) {
+                                    ?>
+                                    <option value="<?php echo $department->id; ?>"><?php echo $department->name; ?></option>
+                                <?php
+                                }
+                                ?>
+
                             </select>
 
                             <label class="mdl-selectfield__label" for="appointment-department">Choose Department <em>*</em></label>
