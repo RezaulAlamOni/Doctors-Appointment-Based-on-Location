@@ -295,6 +295,7 @@
 
 
 <!-- Start Make an Appointment Modal -->
- <?php include('include/make_appointment.php');?>
 
+ <?php
+    if (isset($_SESSION['patient_name'])) include('include/make_appointment.php'); ?>
  <?php include('include/footer.php');?>

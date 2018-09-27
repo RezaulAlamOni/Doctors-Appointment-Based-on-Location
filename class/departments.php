@@ -11,7 +11,7 @@ class departments
 
     function all(){
         global $pdo;
-        $sql = "SELECT * FROM departments";
+        $sql = "SELECT * FROM departments ORDER By name ASC ";
         $result = $pdo->prepare($sql);
         $result->execute();
         return $result;

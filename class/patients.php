@@ -22,7 +22,62 @@ class patients
         $result->execute(['id'=>$id]);
         return $result;
     }
+    function username_exist($username){
+        global $pdo;
+        $sql = "SELECT * FROM patients WHERE username = '{$username}'";
+        $result = $pdo->prepare($sql);
+        $result->execute();
+        if ($result->rowCount()){
+            return true;
+        }else return false;
+    }
+    function email_exist($mail){
+        global $pdo;
+        $sql = "SELECT * FROM patients WHERE email = '{$mail}'";
+        $result = $pdo->prepare($sql);
+        $result->execute();
+        if ($result->rowCount()){
+            return true;
+        }else{ return false;}
+    }
+    function add(){
+        global $pdo;
+        if (isset($_REQUEST['register_patient'])){
 
+            $fname      = trim($_REQUEST['firstname']);
+            $lname      = trim($_REQUEST['lastname']);
+            $mail       = trim($_REQUEST['email']);
+            $mobile     = trim($_REQUEST['mobile']);
+            $gender     = trim($_REQUEST['gender']);
+            $username   = trim($_REQUEST['username']);
+            $password   = trim($_REQUEST['password']);
+            $blood_group = trim($_REQUEST['blood']) ;
+            $location    = trim($_REQUEST['location']) ;
+
+//            $password   = password_hash($password,PASSWORD_BCRYPT,array('cost'=>12));
+
+            if ($this->username_exist($username)){
+                echo "<h2 class='text-center text-danger text-capitalize'>Please Try Another username this is already Registered</h2>";
+            }else if ($this->email_exist($mail)){
+                echo "<h2 class='text-center text-danger text-capitalize'>Please Try Another Email Id this is already Registered</h2>";
+            }else if (!empty($username)){
+
+
+                $sql  = "INSERT INTO `patients` (`first_name`, `last_name`, `user_name`, `password`, `email`, `blood_group`, `gender`, `phone`, `location_id`, `created_at`,`medical_history`) " ;
+                $sql .= "VALUES ('$fname','$lname','$username','$password','$mail','$blood_group','$gender','$mobile',$location,now(),'')";
+
+                $result = $pdo->prepare($sql);
+                $result->execute();
+
+                if ($result){
+                    echo '<h2 class="text-center text-success text-capitalize">patient Registration Successful !!! <a href="login.php">Login Please</a></h2>';
+                }else
+                    echo '<h2 class="text-center text-danger text-capitalize">patient Registration failed !!! <a href="login.php">Login Please</a></h2>';
+
+
+            }
+        }
+    }
 
 
 }

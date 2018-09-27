@@ -30,6 +30,23 @@ $page_name = "<i class='fa fa-sign-in'></i> Login";
                         <span class="mdl-textfield__error">Please Enter Valid Email Address!</span>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                        <i class="fa fa-ravelry"></i>
+                        <div class="row form-input">
+                            <div class="col-md-4">
+                                <label for=""><p class="text-info"><b>User Role:</b></p> </label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="radio" name="role" value="patient" id="gender-male" class="mdl-radio__outer-circle">
+                                <label for="gender-male"><span></span><p> Patient </p></label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="radio" name="role" value="doctor" id="gender-female" class="mdl-radio__outer-circle">
+                                <label for="doctor"><span></span><p> Doctor </p></label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                         <i class="fa fa-key"></i>
                         <input class="mdl-textfield__input" type="password" name="password" id="login-password">
                         <label class="mdl-textfield__label" for="login-password">Password <em> *</em></label>

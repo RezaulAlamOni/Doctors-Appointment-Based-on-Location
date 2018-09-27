@@ -10,14 +10,14 @@ class hospitals
 {
     function count() {
         global $pdo;
-        $sql = "SELECT * FROM hospitals";
+        $sql = "SELECT * FROM hospitals ";
         $result = $pdo->prepare($sql);
         $result->execute();
         return $result->rowCount();
     }
     function all(){
         global $pdo;
-        $sql = "SELECT * FROM hospitals";
+        $sql = "SELECT * FROM hospitals ORDER BY name ASC ";
         $result = $pdo->prepare($sql);
         $result->execute();
         return $result;

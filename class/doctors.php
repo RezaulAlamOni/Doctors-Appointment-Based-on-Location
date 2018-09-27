@@ -78,29 +78,30 @@ class doctors
             $username   = trim($_REQUEST['username']);
             $password   = trim($_REQUEST['password']);
 
-            $password   = password_hash($password,PASSWORD_BCRYPT,array('cost'=>12));
+//            $password   = password_hash($password,PASSWORD_BCRYPT,array('cost'=>12));
 
             $img        =   $_FILES['photo']['name'];
             $img_temp   =   $_FILES['photo']['tmp_name'];
 
 
             if ($this->username_exist($username)){
-                echo "<p class='text-center text-danger'>Please Try Another username this is already Registered</p>";
+                echo "<h3 class='text-center text-danger'>Please Try Another username this is already Registered</h3>";
             }else if ($this->email_exist($mail)){
-                echo "<p class='text-center text-danger'>Please Try Another Email Id this is already Registered</p>";
+                echo "<h3 class='text-center text-danger'>Please Try Another Email Id this is already Registered</h3>";
             }else if (!empty($degree) || !empty($hospital_id) || !empty($department_id) || !empty($username)){
 
                 move_uploaded_file($img_temp,"public/uploads/{$img}");
 
-                $sql = "INSERT INTO `doctors`(`first_name`, `last_name`, `email`, `phone`, `username`, `password`,`photo`, `degree`, `department_id`,`experience`, `hospital_id`, `created_at`) " ;
-                $sql .= "VALUES ('$fname','$lname','$mail','$mobile','$username','$password','$img','$degree',$department_id,0,$hospital_id,now())";
+                $sql = "INSERT INTO `doctors`(`first_name`, `last_name`, `email`, `phone`, `gender`, `username`, `password`,`photo`, `degree`, `department_id`,`experience`, `hospital_id`, `created_at`) " ;
+                $sql .= "VALUES ('$fname','$lname','$mail','$mobile','$gender','$username','$password','$img','$degree',$department_id,0,$hospital_id,now())";
 
                 $result = $pdo->prepare($sql);
                 $result->execute();
 
                 if ($result){
-                    echo '<h1 class="text-center text-success">Registration Successful !!! <a href="login.php">Login Please</a></h1>';
-                }
+                    echo '<h2 class="text-center text-primary">Registration Successful !!! <a href="login.php">Login Please</a></h2>';
+                }else
+                    echo '<h2 class="text-center text-danger">Registration failed !!! <a href="login.php">Login Please</a></h2>';
 
             }
         }

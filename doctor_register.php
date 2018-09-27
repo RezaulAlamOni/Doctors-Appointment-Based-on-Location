@@ -3,7 +3,9 @@
 <?php include('include/header.php');?>
 <?php
     require ('class/doctors.php');
-    $doctor = new doctors();
+    require ('class/hospitals.php');
+    require ('class/departments.php');
+
 
 
     $page_name = "<i class='fa fa-registered'></i> Registration <span style='font-size: 18px;'> >>Doctor ";
@@ -11,7 +13,7 @@
 <?php include('include/nav.php');?>
 <p>
 <?php
-
+    $doctor = new doctors();
     $doctor->add();
 ?>
 </p>
@@ -52,12 +54,10 @@
                             <select name="hospital" id="hospital" class="form-input" >
                                 <option class="text-capitalize text-info " >Select Your main Chamber :</option>
                                 <?php
-//                                $pdo = new PDO("mysql:host=localhost;dbname=doctors",'root','');
-//                                $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
 
-                                $sql = "SELECT * FROM hospitals ORDER BY name ASC ";
-                                $result = $pdo->prepare($sql);
-                                $result->execute();
+                                $hsptl = new hospitals();
+                                $result = $hsptl->all();
+
                                 $hospitals = $result->fetchAll(); // default value PDO::FETCH_obj
 
                                 foreach ($hospitals as $hospital) {
@@ -76,14 +76,13 @@
                                 <option class="text-capitalize text-info " >Select Your Department:</option>
                                 <?php
 
-                                $sql = "SELECT * FROM departments ORDER BY name ASC ";
-                                $result = $pdo->prepare($sql);
-                                $result->execute();
-                                $hospitals = $result->fetchAll(); // default value PDO::FETCH_obj
+                                $dpt = new departments();
+                                $result = $dpt->all();
+                                $departments = $result->fetchAll(); // default value PDO::FETCH_obj
 
-                                foreach ($hospitals as $hospital) {
+                                foreach ($departments as $department) {
                                     ?>
-                                    <option class="text-capitalize text-info" value="<?php echo $hospital->id; ?>"><?php echo $hospital->name; ?></option>
+                                    <option class="text-capitalize text-info" value="<?php echo $department->id; ?>"><?php echo $department->name; ?></option>
                                     <?php
                                 }
                                 ?>
@@ -146,7 +145,7 @@
                         </div>
                         <div class="login-condition">By clicking Creat Account you aggree to our<br /><a href="about.php">Terms & Condition</a></div>
                         <div class="form-submit">
-                            <button type="submit" id="register-submit" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised mdl-button--raised button button-primary button-pill" name="register_doctor                                          ">Create Account</button>
+                            <button type="submit" id="register-submit" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised mdl-button--raised button button-primary button-pill" name="register_doctor">Create Account</button>
                         </div>
                         <div class="login-link">
                             <span class="paragraph-small">Already have an account?</span>
