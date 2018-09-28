@@ -33,13 +33,14 @@
                                     <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                                         <div class="theme-block-picture" style="height: auto" >
                                             <a href="include/doctor_details.php">
-                                                <img src="public/uploads/<?php echo $doctor->photo;?>" style="height: 130px;;" alt="<?php echo $doctor->first_name." ".$doctor->last_name ?>"></a>
+                                                <img src="public/uploads/<?php echo $doctor->photo;?>" style="height: 130px;;" alt="<?php echo $doctor->first_name." ".$doctor->last_name ?>">
+                                            </a>
                                         </div>
                                         <div class="doctor-name">
-                                            <h4 class="text-capitalize">
+                                            <h4 class="text-capitalize" style="height: 250px">
                                                 <a href="doctor_details.php"
                                                    style="color: #e5007a;font-size: 14px">
-                                                    <b>Dr. <?php echo $doctor->first_name." ".$doctor->last_name ?></b>
+                                                    <b>Dr. <?php echo $doctor->first_name." ".$doctor->last_name."<br>"; ?></b>
                                                     <?php echo $doctor->degree."<br>"; ?>
                                                     <p class="text-capitalize" style="font-family: 'Harlow Solid Italic'; color: #0b0b0b">
                                                         <?php

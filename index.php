@@ -1,5 +1,6 @@
 <?php include('include/db.php');?>
 <?php include('include/header.php');?>
+
 <?php require ('class/doctors.php');?>
 <?php require ('class/departments.php');?>
 <?php require ('class/patients.php');?>
@@ -18,14 +19,18 @@
                             ?>
                             <a href="admin" class="font-20 text-uppercase"><b>Welcome TO Admin</b></a>
                             <?php
-                        }elseif (isset($_SESSION['patient_phone'])){ ?>
+                        }elseif (isset($_SESSION['patient_email'])){ ?>
 
                             <a href="my_appointment.php" class="font-18 text-uppercase color-white"><i class="fa fa-plus-square-o"></i> My Appointment </a>
 
+                        <?php }elseif (isset($_SESSION['doctor_email'])){ ?>
+
+                            <a href="my_patients.php?id=<?php echo $_SESSION['doctor_id']; ?>" class="font-18 text-uppercase color-white"><i class="fa fa-wheelchair"></i> My Patients </a>
+
                         <?php }else {
                             ?>
-                            <a href="login.php" class="font-14 mr-4"><i class="fa fa-sign-in"></i>Login</a>
-                            <a href="register.php" class="font-14"><i class="fa fa-user-o"></i>Register</a>
+                            <a href="login.php?route=login" class="font-14 mr-4"><i class="fa fa-sign-in"></i>Login</a>
+                            <a href="register.php?route=register" class="font-14"><i class="fa fa-user-o"></i>Register</a>
                             <?php
                         }
                             ?>
@@ -35,9 +40,6 @@
 					<div class="text-center text-danger">
 						<a href="index.php"><h1 style="padding-left: 120px"><b>AppointmentBD</b></h1></a>
 					</div>
-                    <!--<div class="hdr-center-logo text-center">-->
-                        <!--<a href="index.html" class="d-inline-block"><img src="public/uploads/logo-blue.png" alt="Klinikal Health care"> </a>-->
-                    <!--</div>-->
                 </div>
                 <div class="col-lg-4 d-none d-sm-none d-md-block d-lg-block d-xl-block">
                     <div class="pull-right">
@@ -57,7 +59,7 @@
 
                     <!-- Start Menu Section -->
                     <ul class="col menu text-left">
-                        <li><a href="index.php" id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a></li>
+                        <li><a href="/" id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect">Home</a></li>
 						<li><a href="doctors.php" id="menu-doctor" class="mdl-button mdl-js-button mdl-js-ripple-effect">Doctors</a></li>
                         <li><a href="hospital.php" id="menu-hospital" class="mdl-button mdl-js-button mdl-js-ripple-effect">Hospitals</a></li>
                         <li><a href="department.php" id="menu-department" class="mdl-button mdl-js-button mdl-js-ripple-effect">Departments</a></li>
@@ -78,12 +80,22 @@
 						<li><a href="admin" id="menu-admin" class="mdl-button mdl-js-button mdl-js-ripple-effect btn btn-success">Admin Panel</a></li>
 
                         <li>
-                            <a id="menu-profile" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="fa fa-user-o color-white"></i>
+                            <a id="menu-profile" class="mdl-button mdl-js-button mdl-js-ripple-effect">
 
                                 <?php
-                                if (isset($_SESSION['admin_name'])){
-                                    echo $_SESSION['admin_name'];
-                                }else { ?> Profile <?php } ?>
+                                if (isset($_SESSION['admin_name'])){?>
+                                    <i class="fa fa-user-secret color-green"></i>
+                                    <?php echo $_SESSION['admin_name'];
+
+                                }else if (isset($_SESSION['doctor_email'])){?>
+                                    <i class="fa fa-user-md color-green"></i>
+                                    <?php  echo $_SESSION['doctor_username'];
+
+                                }else if (isset($_SESSION['patient_email'])){ ?>
+                                    <i class="fa fa-user-o color-blue"></i>
+                                    <?php  echo $_SESSION['patient_username'];
+
+                               }else { ?> <i class="fa fa-user-o color-white"></i> Profile <?php } ?>
 
                                 <i class="fa fa-chevron-down"></i></a>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-profile">
@@ -101,26 +113,43 @@
                                         </li>
 
                                         <?php }
-                                        else if (isset($_SESSION['patient_name'])) {
+                                        else if (isset($_SESSION['doctor_email'])) {
                                         ?>
 
                                             <li class="mdl-menu__item">
-                                                <a href="profile.php"> <i class="fa fa-user-circle color-green"> </i> Profile</a>
+                                                <a href="doctor_profile.php?id=<?php echo $_SESSION['doctor_id'];?>"> <i class="fa fa-user-circle color-green"> </i> Profile</a>
                                             </li>
                                             <li class="mdl-menu__item">
-                                                <a href="update_profile.php"><i class="fa fa-user-plus color-green"> </i> Update Profile</a>
+                                                <a href="update_doctor_profile.php?id=<?php echo $_SESSION['doctor_id'];?>"><i class="fa fa-user-plus color-green"> </i> Update Profile</a>
                                             </li>
                                             <li class="mdl-menu__item">
-                                                <a href="my_appointment.php"><i class="fa fa-plus-circle color-green"> </i> My Appointment</a>
+                                                <a href="my_patients.php?id=<?php echo $_SESSION['doctor_id'];?>"><i class="fa fa-plus-circle color-green"> </i> My Patients</a>
                                             </li>
                                             <li class="mdl-menu__item">
-                                                <a href="my_request.php"><i class="fa fa-qrcode color-green"> </i> My Request</a>
+                                                <a href="include/logout.php"><i class="fa fa-sign-out color-green"> </i> Logout</a>
+                                            </li>
+
+
+                                            <?php }else if (isset($_SESSION['patient_email'])) {
+                                        ?>
+
+                                            <li class="mdl-menu__item">
+                                                <a href="profile.php?id=<?php echo $_SESSION['patient_id'];?>"> <i class="fa fa-user-circle color-green"> </i> Profile</a>
                                             </li>
                                             <li class="mdl-menu__item">
-                                                <a href="my-medical_history.php"><i class="fa fa-hospital-o color-green"> </i> My Medical History</a>
+                                                <a href="update_profile.php?id=<?php echo $_SESSION['patient_id'];?>"><i class="fa fa-user-plus color-green"> </i> Update Profile</a>
                                             </li>
                                             <li class="mdl-menu__item">
-                                                <a href="include/logout.php"><i class="fa fa-sign-out color-green" > </i> Logout</a>
+                                                <a href="my_appointment.php?id=<?php echo $_SESSION['patient_id'];?>"><i class="fa fa-plus-circle color-green"> </i> My Appointment</a>
+                                            </li>
+                                            <li class="mdl-menu__item">
+                                                <a href="my_request.php?id=<?php echo $_SESSION['patient_id'];?>"><i class="fa fa-qrcode color-green"> </i> My Request</a>
+                                            </li>
+                                            <li class="mdl-menu__item">
+                                                <a href="my_medical_history.php?id=<?php echo $_SESSION['patient_id'];?>"><i class="fa fa-hospital-o color-green"> </i> My Medical History</a>
+                                            </li>
+                                            <li class="mdl-menu__item">
+                                                <a href="include/logout.php"><i class="fa fa-sign-out color-green"> </i> Logout</a>
                                             </li>
 
 

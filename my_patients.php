@@ -3,7 +3,7 @@
 
 <?php
 
-    $page_name = "<i class='fa fa-plus-square'> </i> My Appointments";
+    $page_name = "<i class='fa fa-plus-square'> </i> My Patients";
 ?>
 <?php include('include/nav.php');?>
  Start My Appointment Section

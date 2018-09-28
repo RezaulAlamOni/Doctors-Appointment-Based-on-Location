@@ -5,9 +5,11 @@
  * Date: 9/25/2018
  * Time: 12:36 AM
  */
-
+require ('hospitals.php');
+$hos = new hospitals();
 class doctors
 {
+
     function all(){
         global $pdo;
         $sql = "SELECT * FROM doctors";
@@ -26,15 +28,17 @@ class doctors
             echo $dpt->name_adj;
         }
     }
+
     function doctor_hptl($id){
         global  $pdo;
+        global  $hos;
         $sql2 = "SELECT * FROM hospitals WHERE id = :id";
         $r = $pdo->prepare($sql2);
         $r->execute(['id'=>$id]);
         $hptl = $r->fetchAll();
 
         foreach ($hptl as $hpt){
-            echo "<h6 class='text-white' style='height: 50px;'><b>".$hpt->name."</b></h6><h6 class=''>".$hpt->dist_city."</h6>";
+            echo "<h6 class='text-white' style='height: 50px;'><b>".$hpt->name."</b></h6><h6 class=''>".$hos->find($hpt->location_id)."</h6>";
         }
     }
     function count() {
@@ -105,6 +109,17 @@ class doctors
 
             }
         }
+    }
+    function find_doctors_location($location_id){
+        global $pdo;
+        $sql = "SELECT * FROM `doctors`WHERE doctors.hospital_id IN(SELECT hospitals.id FROM hospitals WHERE hospitals.location_id= :id)";
+
+    }
+    function remaining_doctors_after_finding_by_location($location_id){
+        global $pdo;
+        $sql = "SELECT * FROM `doctors`WHERE doctors.hospital_id IN(SELECT hospitals.id FROM hospitals WHERE hospitals.location_id= :id)";
+
+
     }
 
 }

@@ -22,5 +22,14 @@ class hospitals
         $result->execute();
         return $result;
     }
-
+    function find($id){
+        global $pdo;
+        $sql = "SELECT name FROM hospitals WHERE  location_id = $id";
+        $result = $pdo->prepare($sql);
+        $result->execute();
+        $hospital = $result->fetchAll();
+        foreach ($hospital as $name){
+            echo $name->name;
+        }
+    }
 }

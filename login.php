@@ -1,24 +1,17 @@
 
 <?php include('include/header.php');?>
 <?php
-$page_name = "<i class='fa fa-sign-in'></i> Login";
+
+    $page_name = "<i class='fa fa-sign-in'></i> Login";
 ?>
 <?php include('include/nav.php');?>
-
-    <!-- Header End --><!-- Start page Title Section -->
-<!--<div class="page-ttl" style="height: 120px">-->
-<!--    <div class="layer-stretch">-->
-<!--        <div class="page-ttl-container">-->
-<!--            <div class="page-ttl-name">-->
-<!--                <h1><i class="fa fa-sign-in color-white"></i> Login</h1>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!-- End page Title Section -->
+<?php
+    if (isset($_SESSION['patient_email'])) {header("Location: index.php");}
+    if (isset($_SESSION['doctor_email'])) {header("Location: index.php");}
+    ?>
 <!-- Start Login Section -->
 <div id="login-page">
-    <div class="layer-stretch">
+    <div class="layer-stretch" style="background-image: url('public/uploads/slider-1.jpg')">
         <div class="layer-wrapper">
             <div class="layer-container">
                 <form class="form-container" action="include/verify_user.php" method="post" enctype="multipart/form-data">
@@ -26,7 +19,7 @@ $page_name = "<i class='fa fa-sign-in'></i> Login";
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                         <i class="fa fa-envelope-o"></i>
                         <input class="mdl-textfield__input" type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="login-email">
-                        <label class="mdl-textfield__label" for="login-email">Email Address <em> *</em></label>
+                        <label class="mdl-textfield__label" for="login-email">Email Address :<em> *</em></label>
                         <span class="mdl-textfield__error">Please Enter Valid Email Address!</span>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
