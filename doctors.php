@@ -23,49 +23,181 @@
                 <div class="row">
 
                     <?php
-                        $result = $doct->all();
-                        $doctors = $result->fetchAll();
-                        if ($result->rowCount()>0 ){
-                            foreach ($doctors as $doctor) {
-                                ?>
 
-                                <div class="col-sm-3">
-                                    <div class="theme-block theme-block-hover animated animated-up fadeInUp">
-                                        <div class="theme-block-picture" style="height: auto" >
-                                            <a href="include/doctor_details.php">
-                                                <img src="public/uploads/<?php echo $doctor->photo;?>" style="height: 130px;;" alt="<?php echo $doctor->first_name." ".$doctor->last_name ?>">
-                                            </a>
-                                        </div>
-                                        <div class="doctor-name">
-                                            <h4 class="text-capitalize" style="height: 250px">
-                                                <a href="doctor_details.php"
-                                                   style="color: #e5007a;font-size: 14px">
-                                                    <b>Dr. <?php echo $doctor->first_name." ".$doctor->last_name."<br>"; ?></b>
-                                                    <?php echo $doctor->degree."<br>"; ?>
-                                                    <p class="text-capitalize" style="font-family: 'Harlow Solid Italic'; color: #0b0b0b">
-                                                        <?php
+                        if (isset($_SESSION['patient_email'])) {
+
+                            $result = $doct->find_doctors_by_location($_SESSION['location_id']);
+
+                            $doctors = $result->fetchAll();
+                            if ($result->rowCount() > 0) {
+                                foreach ($doctors as $doctor) {
+                                    ?>
+
+                                    <div class="col-sm-3">
+                                        <div class="theme-block theme-block-hover animated animated-up fadeInUp">
+                                            <div class="theme-block-picture" style="height: auto">
+                                                <a href="include/doctor_details.php">
+                                                    <img src="public/uploads/<?php echo $doctor->photo; ?>"
+                                                         style="height: 130px;;"
+                                                         alt="<?php echo $doctor->first_name . " " . $doctor->last_name ?>">
+                                                </a>
+                                            </div>
+                                            <div class="doctor-name">
+                                                <h4 class="text-capitalize" style="height: 220px">
+                                                    <a href="doctor_details.php"
+                                                       style="color: #e5007a;font-size: 14px">
+                                                        <b>Dr. <?php echo $doctor->first_name . " " . $doctor->last_name . "<br>"; ?></b>
+                                                        <?php echo $doctor->degree . "<br>"; ?>
+                                                        <p class="text-capitalize"
+                                                           style="font-family: 'Harlow Solid Italic'; color: #0b0b0b">
+                                                            <?php
                                                             $id = $doctor->department_id;
                                                             $doct->doctor_dpt($id);
-                                                            echo " (Exp:".$doctor->experience." Y)";
+                                                            echo " (Exp:" . $doctor->experience . " Y)";
 
-                                                           ?>
-                                                    </p>
-                                                    <hr>
-                                                    <p class="text-capitalize" style="font-family: Rockwell; color: #050092">
+                                                            ?>
+                                                        </p>
+                                                        <hr>
+                                                        <p class="text-capitalize"
+                                                           style="font-family: Rockwell; color: #050092;height: 40px;">
+                                                            <?php
+                                                            $hospital = new hospitals();
+                                                            $hospital->find($doctor->hospital_id);
+                                                            ?>
+                                                        </p>
+                                                        <p class="text-capitalize"
+                                                           style="font-family: Rockwell; height: 40px;">
+                                                            <?php
+                                                            $hospital->hptl_location($doctor->hospital_id);
 
-                                                        <?php $doct->doctor_hptl($doctor->hospital_id); ?>
-                                                    </p>
-                                                </a>
-                                            </h4>
+                                                            ?>
+                                                        </p>
+                                                    </a>
+                                                </h4>
+                                            </div>
                                         </div>
+
                                     </div>
 
-                                </div>
+                                    <?php
+                                }
+                            }
+                            $result1 = $doct->remaining_doctors_after_finding_by_location($_SESSION['location_id']);
+                            $doctorss = $result1->fetchAll();
 
-                                <?php
+                            if ($result1->rowCount() > 0) {
+                                foreach ($doctorss as $doctor) {
+                                    ?>
+
+                                    <div class="col-sm-3">
+                                        <div class="theme-block theme-block-hover animated animated-up fadeInUp">
+                                            <div class="theme-block-picture" style="height: auto">
+                                                <a href="include/doctor_details.php">
+                                                    <img src="public/uploads/<?php echo $doctor->photo; ?>"
+                                                         style="height: 130px;;"
+                                                         alt="<?php echo $doctor->first_name . " " . $doctor->last_name ?>">
+                                                </a>
+                                            </div>
+                                            <div class="doctor-name">
+                                                <h4 class="text-capitalize" style="height: 220px">
+                                                    <a href="doctor_details.php"
+                                                       style="color: #e5007a;font-size: 14px">
+                                                        <b>Dr. <?php echo $doctor->first_name . " " . $doctor->last_name . "<br>"; ?></b>
+                                                        <?php echo $doctor->degree . "<br>"; ?>
+                                                        <p class="text-capitalize"
+                                                           style="font-family: 'Harlow Solid Italic'; color: #0b0b0b">
+                                                            <?php
+                                                            $id = $doctor->department_id;
+                                                            $doct->doctor_dpt($id);
+                                                            echo " (Exp:" . $doctor->experience . " Y)";
+
+                                                            ?>
+                                                        </p>
+                                                        <hr>
+                                                        <p class="text-capitalize"
+                                                           style="font-family: Rockwell; color: #050092;height: 40px;">
+                                                            <?php
+                                                            $hospital = new hospitals();
+                                                            $hospital->find($doctor->hospital_id);
+                                                            ?>
+                                                        </p>
+                                                        <p class="text-capitalize"
+                                                           style="font-family: Rockwell; height: 40px;">
+                                                            <?php
+                                                            $hospital->hptl_location($doctor->hospital_id);
+
+                                                            ?>
+                                                        </p>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <?php
+                                }
+                            }
+                        }else {
+
+                            $result1 = $doct->all();
+                            $doctorss = $result1->fetchAll();
+
+                            if ($result1->rowCount() > 0) {
+                                foreach ($doctorss as $doctor) {
+                                    ?>
+
+                                    <div class="col-sm-3">
+                                        <div class="theme-block theme-block-hover animated animated-up fadeInUp">
+                                            <div class="theme-block-picture" style="height: auto">
+                                                <a href="include/doctor_details.php">
+                                                    <img src="public/uploads/<?php echo $doctor->photo; ?>"
+                                                         style="height: 130px;;"
+                                                         alt="<?php echo $doctor->first_name . " " . $doctor->last_name ?>">
+                                                </a>
+                                            </div>
+                                            <div class="doctor-name">
+                                                <h4 class="text-capitalize" style="height: 220px">
+                                                    <a href="doctor_details.php"
+                                                       style="color: #e5007a;font-size: 14px">
+                                                        <b>Dr. <?php echo $doctor->first_name . " " . $doctor->last_name . "<br>"; ?></b>
+                                                        <?php echo $doctor->degree . "<br>"; ?>
+                                                        <p class="text-capitalize"
+                                                           style="font-family: 'Harlow Solid Italic'; color: #0b0b0b">
+                                                            <?php
+                                                            $id = $doctor->department_id;
+                                                            $doct->doctor_dpt($id);
+                                                            echo " (Exp:" . $doctor->experience . " Y)";
+
+                                                            ?>
+                                                        </p>
+                                                        <hr>
+                                                        <p class="text-capitalize"
+                                                           style="font-family: Rockwell; color: #050092;height: 40px;">
+                                                            <?php
+                                                            $hospital = new hospitals();
+                                                            $hospital->find($doctor->hospital_id);
+                                                            ?>
+                                                        </p>
+                                                        <p class="text-capitalize"
+                                                           style="font-family: Rockwell; height: 40px;">
+                                                            <?php
+                                                            $hospital->hptl_location($doctor->hospital_id);
+
+                                                            ?>
+                                                        </p>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <?php
+                                }
                             }
                         }
-                    ?>
+                        ?>
 
                 </div>
             </div>

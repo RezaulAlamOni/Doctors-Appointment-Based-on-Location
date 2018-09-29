@@ -1,8 +1,4 @@
-/**
- * Admin JS - admin js for klinikal theme
- * @version v1.0.1
- * @copyright 2017 Pepdev.
- */
+
  $(document).ready(function () {
     "use strict";
 
@@ -375,7 +371,7 @@
             url: 'index.php?route=report/removeReport',
             data: {id: id, name: name},
             error: function() {
-                alert('Server Error - File could not be ddeleted.');
+                alert('Server Error - File could not be deleted.');
             },
             success: function(data) {
                 alert('File Deleted Succefully.');

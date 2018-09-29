@@ -4,7 +4,7 @@
 <?php require ('class/doctors.php');?>
 <?php require ('class/departments.php');?>
 <?php require ('class/patients.php');?>
-<?php require ('class/hospitals.php');?>
+<?php //require ('class/hospitals.php');?>
 
 <body>
     <!-- Start Header Section -->

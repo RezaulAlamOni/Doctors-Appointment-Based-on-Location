@@ -125,5 +125,12 @@ class doctors
         return $result;
 
     }
+    function count_by_dptID($id){
+        global $pdo;
+        $sql = "SELECT * FROM doctors where department_id = :id";
+        $result = $pdo->prepare($sql);
+        $result->execute(['id'=>$id]);
+        return $result->rowCount();
+    }
 
 }

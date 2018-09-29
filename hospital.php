@@ -2,10 +2,11 @@
 <?php include('include/db.php');?>
 <?php include('include/header.php');?>
 <?php
-require ('class/hospitals.php');
+//require_once ('class/hospitals.php');
 require ('class/doctors.php');
-require ('class/departments.php');
+require('class/departments.php');
 $doct = new doctors();
+
 $hsptl = new  hospitals();
 
 $page_name = "<i class=\"fa fa-hospital-o\"> </i> Hospitals ";

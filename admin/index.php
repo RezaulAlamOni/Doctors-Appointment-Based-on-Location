@@ -2,10 +2,10 @@
 <?php include('include/header.php'); ?>
 <?php include('include/navbar.php'); ?>
 <?php
-    require('../class/doctors.php');
-    require ('../class/departments.php');
-    require ('../class/patients.php');
-    require ('../class/hospitals.php');
+    require('class/doctors.php');
+    require ('class/departments.php');
+    require ('class/patients.php');
+//    require ('../class/hospitals.php');
 ?>
 
 
@@ -131,6 +131,26 @@
                                         ?>
                                     </p>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3 col-lg-12">
+                            <div class="icon-widget">
+                                <a href="department.php">
+                                <h5 class="icon-widget-heading">Departments</h5></a>
+                                <div class="icon-widget-body tbl">
+                                    <p class="tbl-cell">
+                                        <a href="department.php">
+                                            <i class="fa fa-user-md text-info"></i>
+                                        </a>
+                                    </p>
+                                    <p class="tbl-cell text-right">
+                                        <a href="department.php"> <?php
+                                        $dpt = new departments();
+                                        echo $dpt->count();
+                                        ?>
+                                    </p>
+
+                            </div>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3 col-lg-12">

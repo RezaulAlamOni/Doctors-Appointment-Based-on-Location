@@ -29,12 +29,20 @@ class hospitals
     function hptl_location($hospital_id){
 
         global $pdo;
-        $sql = "SELECT locations.name FROM locations WHERE locations.location_id = (SELECT hospitals.location_id FROM hospitals WHERE hospitals.id= :id )";
+        $sql = "SELECT locations.name FROM locations WHERE locations.location_id =  :id ";
         $result = $pdo->prepare($sql);
         $result->execute(['id'=>$hospital_id]);
         $locations = $result->fetchAll();
         foreach ($locations as $location) {
             echo $location->name;
         }
+    }
+    function doctor_count_by_hospitalID($id){
+        global $pdo;
+        $sql = "SELECT * FROM `doctors` WHERE hospital_id = :id";
+        $result = $pdo->prepare($sql);
+        $result->execute(['id'=>$id]);
+        return $result->rowCount();
+
     }
 }

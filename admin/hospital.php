@@ -1,18 +1,19 @@
 <?php include('include/db.php'); ?>
 <?php include('include/header.php'); ?>
 <?php include('include/navbar.php'); ?>
+
 <?php require ('class/doctors.php')?>
 
 <div class="page-container">
             <script>
-	$('#doctor').show();
-	$('#doctor-li>a').addClass('active');
+	$('#hospital').show();
+	$('#hospital-li>a').addClass('active');
             </script>
 
 <div class="page-hdr">
 	<div class="row">
 		<div class="col-4 page-name">
-			<h1><i class="fa fa-user-md"></i>Doctors</h1>
+			<h1><i class="fa fa-user-md"></i>Hospitals</h1>
 		</div>
         <div class="page-name col-3 text-right">
             <h1 id="time">Time</h1>
@@ -29,44 +30,47 @@
 			<thead>
 				<tr class="table-heading">
 					<th>#</th>
-					<th>Doctor Info</th>
-                    <th>Department</th>
-                    <th>Picture</th>
-					<th class="text-center">Patients</th>
+					<th>Hospital Info</th>
+					<th>Picture</th>
+					<th>Doctors</th>
+					<th>Location</th>
 					<th class="table-action">Action</th>
 				</tr>
 			</thead>
 			<tbody>
 
                 <?php
-                    $doctors = new doctors();
-                    $result = $doctors->all();
-                    $docts = $result->fetchAll();
+                    $hospita = new hospitals();
+                    $result = $hospita->all();
+                    $hospitals = $result->fetchAll();
                     if ($result->rowCount()>0) {
-                        foreach ($docts as $doct) {
+                        foreach ($hospitals as $hospital) {
 
                 ?>
                 <tr>
-                <td class="table-srno"><?php echo $doct->id;?></td>
+                <td class="table-srno"><?php echo $hospital->id;?></td>
                 <td>
-                    <p class="font-16 margin-0"><?php echo $doct->first_name." ".$doct->last_name;?></p>
-                    <p class="font-12 margin-0"><?php echo $doct->email;?></p>
-                    <p class="font-12 margin-0"><?php echo $doct->phone;?></p>
-                </td>
-                <td>
-                    <?php $doctors->doctor_dpt($doct->id); ?>
-                </td>
-                    <td class="table-img">
-                        <img class="img-thumbnail" src="../public/uploads/<?php echo $doct->photo;?>" alt="">
-                    </td>
+                    <p class="font-16 margin-0"><?php echo $hospital->name;?></p>
+                    <p class="font-12 margin-0"><?php echo $hospital->address; ?></p>
 
-                <td class="text-center">0</td>
+                </td>
+                <td class="table-img">
+                    <img class="img-thumbnail" src="../public/uploads/<?php echo $hospital->photo;?>" alt="">
+                </td>
+                <td class="text-center"><a href="doctors.php?id=<?php echo $hospital->id; ?>">
+                    <?php
+                        echo $doctors = $hospita->doctor_count_by_hospitalID($hospital->id);
+                    ?>
+                    </a></td>
+                <td class="text-center text-capitalize">
+                    <?php
+                    $hospita->hptl_location($hospital->location_id);
+                    ?>
+                </td>
                 <td class="table-action">
-                    <a href="edit_doctor.php?id=<?php echo $doct->id; ?>" class="btn btn-outline btn-info btn-outline-1x btn-circle" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
-
+                    <a href="edit_doctor.php?id=<?php echo $hospital->id; ?>" class="btn btn-outline btn-info btn-outline-1x btn-circle" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
                     <a class="btn btn-outline btn-danger btn-outline-1x btn-circle table-delete" data-toggle="tooltip" title="Delete">
-                        <i class="fa fa-trash-o"></i>
-                        <input type="hidden" value="<?php echo $doct->id; ?>">
+                        <i class="fa fa-trash-o"></i><input type="hidden" value="1">
                     </a>
                 </td>
             </tr>
@@ -79,7 +83,6 @@
 		</table>
 	</div>
 </div>
-
 
 <!-- Delete Modal -->
 <div id="delete-card" class="modal fade" role="dialog">
@@ -103,5 +106,4 @@
 	</div>
 </div>
 <!-- Footer -->
-
     <?php include ('include/footer.php');?>
