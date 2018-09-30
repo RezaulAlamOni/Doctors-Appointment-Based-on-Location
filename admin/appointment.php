@@ -19,13 +19,13 @@
             <h1 id="time">Time</h1>
         </div>
         <div class="col-5 page-menu">
-            <a id="cancel" href="index.php?route=appointment" data-toggle="tooltip" data-placement="left" title="Reload">
+            <a id="cancel" href=" " data-toggle="tooltip" data-placement="left" title="Reload">
                 <i class="fa fa-refresh"></i>
             </a>
-            <a href="index.php?route=appointment/add" data-toggle="tooltip" data-placement="left" title="Add Appointment">
+            <a href="appointment_add.php?ap=add" data-toggle="tooltip" data-placement="left" title="Add Appointment">
                 <i class="fa fa-plus"></i>
             </a>
-        </div>
+        </div>s
     </div>
     <input type="hidden" value="appointment" name="hidden-appointment">
 </div>
@@ -54,10 +54,8 @@
                     <select name="" id="filter-status" class="form-control">
                         <option value=""></option>
                         <option value="New">New</option>
-                        <option value="In-process">In Process</option>
                         <option value="Confirmed">Confirmed</option>
                         <option value="Completed">Completed</option>
-                        <option value="Canceled">Canceled</option>
                     </select>
                 </div>
             </div>
@@ -213,10 +211,12 @@
                             <div class="row card-ftr">
                                 <div class="col-8 text-left">
                                     <span class="badge badge-default badge-sm">New</span>
-                                                                    </div>
+                                                                    
+                                
+                                </div>
                                 <div class="card-action">
-                                                                        <a href="index.php?route=invoice/add&id=988" class="btn btn-outline btn-warning btn-outline-1x btn-circle" data-toggle="tooltip" title="Create Invoice" target="_blank"><i class="fa fa-credit-card"></i></a>
-                                                                        <a href="index.php?route=appointment/edit&id=988" class="btn btn-outline btn-info btn-outline-1x btn-circle" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
+<!--                                    <a href="" class="btn btn-outline btn-warning btn-outline-1x btn-circle" data-toggle="tooltip" title="Create Invoice" target="_blank"><i class="fa fa-credit-card"></i></a>-->
+                                    <a href="index.php?route=appointment/edit&id=988" class="btn btn-outline btn-info btn-outline-1x btn-circle" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
                                     <a class="btn btn-outline btn-danger btn-outline-1x btn-circle table-delete" data-toggle="tooltip" data-placement="top" title="Delete">
                                         <i class="fa fa-trash-o"></i>
                                         <input type="hidden" value="988">

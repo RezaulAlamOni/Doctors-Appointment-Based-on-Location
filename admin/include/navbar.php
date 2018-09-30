@@ -52,10 +52,10 @@
                         <img src="public/images/<?php echo $_SESSION['admin_img']?>" style="height: 50px" alt="">
                     </a>
                 </div>
-                <div class="menu-user-info">
+                <div class="menu-user-info"><a href="profile.php">
                     <p><?php echo $_SESSION['admin_name'];?></p>
                     <p><?php echo $_SESSION['admin_first_name'];
-                    echo $_SESSION['admin_last_name'];?></p>
+                        echo $_SESSION['admin_last_name'];?></p></a>
 <div class="menu-user-dropdown">
     <i class="fa fa-angle-double-down fa-2x" id="menu-user-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></i>
     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="menu-user-drop">
@@ -88,16 +88,7 @@
                     <i class="icon-user-follow"></i><span>Add Patient</span>
                 </a>
             </li>
-            <li id="appointment">
-                <a href="patient_edite.php">
-                    <i class="icon-user-follow"></i><span>Update Patient</span>
-                </a>
-            </li>
-            <li>
-                <a href="invoice.php">
-                    <i class="icon-envelope"></i><span>Invoice</span>
-                </a>
-            </li><li>
+          <li>
                 <a href="request.php">
                     <i class="icon-envelope-open"></i><span>Requests</span>
                 </a>

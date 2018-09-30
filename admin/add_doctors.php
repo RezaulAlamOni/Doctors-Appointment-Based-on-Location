@@ -1,47 +1,56 @@
 <?php include('include/db.php'); ?>
 <?php include('include/header.php'); ?>
 <?php include('include/navbar.php'); ?>
+<?php
+    require ('class/doctors.php');
+    require ('class/departments.php');
+//    require ('class/hospitals.php'); its declared in to doctors class
+?>
 
 <div class="page-container"><script>
         $('#themeoption').show();
         $('#themeoption-li>a').addClass('active');</script>
 
 
-    <form action="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=themeoption/doctor/action" method="post" enctype="multipart/form-data" siq_id="autopick_8762">
+    <form action="add_doctors.php" method="post" enctype="multipart/form-data" >
         <div class="page-hdr scroll-to-fixed-fixed" style="z-index: 9; position: fixed; top: 0px; margin-left: 0px; width: 920px; left: 60px;">
             <div class="row">
-                <div class="col-8 page-name">
+                <div class="col-6 page-name">
                     <h1><i class="fa fa-user-md"></i>Add Doctor</h1>
                 </div>
-                <div class="col-4 page-menu">
-                    <a id="cancel" href="index.php?route=themeoption/doctor" data-toggle="tooltip" data-placement="left" title="" data-original-title="Back to List"><i class="fa fa-reply"></i></a>
-                    <button type="submit" name="submit" data-toggle="tooltip" data-placement="left" title="" data-original-title="Save Doctor"><i class="fa fa-floppy-o"></i></button>
+                <div class="col-4 page-menu" style="padding-right: 50px">
+                    <a id="cancel" href="doctors.php" data-toggle="tooltip" data-placement="left" title="" data-original-title="Back to List"><i class="fa fa-reply"></i></a>
+                    <button type="submit" name="doctor_submit" data-toggle="tooltip" data-placement="left" title="" data-original-title="Save Doctor"><i class="fa fa-floppy-o"></i></button>
                 </div>
             </div>
         </div><div style="display: block; width: 920px; height: 70px; float: none;"></div>
         <div class="content">
             <div class="row">
                 <div class="col-md-8">
+                    <?php
+                        $doct = new doctors();
+                        $doct->add();
+                    ?>
                     <div class="content-block content-block-horizantal">
                         <div class="content-block-ttl">Basic Info</div>
                         <div class="content-block-main">
-                            <input type="hidden" name="_token" value="413ccea5ca6b8ce59e0da0d74a15110a305317f742542dcc5f09cc85ddf4f25288776a66377494dbf3154612b21c29b49cdcd6ee235b8ea2b77355d52eef0188">
-                            <div class="content-input">
-                                <label><text>*</text>Name : </label>
-                                <input type="text" class="input-text" name="name" value="" placeholder="Name" required="">
-                                <p class="content-input-error-name">Please enter doctor name!</p>
+                            <input type="hidden" name="_token" value="413cf0188">
+                            <div class="content-input row">
+                                <div class="col-6">
+                                    <label><text>*</text>First Name : </label>
+                                    <input type="text" class="input-text" name="firstname" value="" placeholder="First Name" required>
+                                    <p class="content-input-error-name">Please enter doctor first name!</p>
+                                </div>
+                                <div class="col-6">
+                                    <label><text>*</text>Last Name : </label>
+                                    <input type="text" class="input-text" name="lastname" value="" placeholder="Last Name" required>
+                                    <p class="content-input-error-name">Please enter doctor last name!</p>
+                                </div>
+
                             </div>
                             <div class="content-input">
                                 <label><text>*</text>Picture : </label>
-                                <div class="image-upload">
-                                    <a>Upload</a>
-                                </div>
-                                <div class="saved-picture" style="display: none">
-                                    <input type="hidden" name="doctor-picture" value="">
-                                </div>
-                                <div class="saved-picture-delete" data-toggle="tooltip" data-placement="right" title="" style="display: none" data-original-title="Remove">
-                                    <a class="fa fa-times"></a>
-                                </div>
+                                    <input type="file" name="doctor_picture" value="">
                                 <div class="content-description">(Size: 530px * 470px)</div>
                             </div>
                             <div class="content-input">
@@ -54,29 +63,75 @@
                                 <input type="number" class="input-mobile" name="mobile" value="" placeholder="mobile" required="">
                                 <p class="content-input-error-name">Please enter doctor phone number!</p>
                             </div>
+                            <div class="row content-radio col-12">
+                                <div class="content-radio-container col-sm-6">
+                                    <div class="">
+                                        <label> Gender : </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="gender" value="Male" id="gender-male">
+                                        <label for="gender-male"><span><i class="fa fa-check"></i></span><p>Male</p></label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="gender" value="Female" id="gender-female">
+                                        <label for="gender-female"><span><i class="fa fa-check"></i></span><p>Female</p></label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="content-input">
+                                        <label><text>*</text>Doctors Age : </label>
+                                        <input type="number" name="age" placeholder="Enter Doctor Age .">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="content-input">
                                         <label><text>*</text>Department : </label>
                                         <select name="department" class="select-list" required="" title="Please Choose Department" id="ui-id-1" style="display: none;">
-                                            <option value="" disabled="" selected="">Department</option>
-                                            <option value="1"> Gynaecology										</option>
-                                            <option value="2"> Orthology										</option>
-                                            <option value="3"> Dermatologist										</option>
-                                            <option value="4"> Anaesthesia										</option>
-                                            <option value="5"> Ayurvedic										</option>
-                                            <option value="6"> Pathology										</option>
-                                        </select><span tabindex="0" id="ui-id-1-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="ui-id-1-menu" aria-haspopup="true" title="Please Choose Department" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">Department</span></span>
+                                            <option class="text-capitalize text-info " >Select Your Department:</option>
+                                            <?php
+
+                                            $dpt = new departments();
+                                            $result = $dpt->all();
+                                            $departments = $result->fetchAll(); // default value PDO::FETCH_obj
+
+                                            foreach ($departments as $department) {
+                                                ?>
+                                                <option class="text-capitalize text-info" value="<?php echo $department->id; ?>"><?php echo $department->name; ?></option>
+                                                <?php
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="content-input">
-                                        <label><text>*</text>Status : </label>
-                                        <select name="status" id="ui-id-2" class="select-list" required="" style="display: none;">
-                                            <option value="0">Disabled</option>
-                                            <option value="1">Enabled</option>
-                                        </select><span tabindex="0" id="ui-id-2-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="ui-id-2-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">Disabled</span></span>
+                                        <label><text>*</text>Mail Chamber : </label>
+                                        <select name="chamber" id="ui-id-2" class="select-list" required="" style="display: none;">
+                                            <option class="text-capitalize text-info " >Select Your main Chamber :</option>
+                                            <?php
+
+                                            $hsptl = new hospitals();
+                                            $result = $hsptl->all();
+
+                                            $hospitals = $result->fetchAll(); // default value PDO::FETCH_obj
+
+                                            foreach ($hospitals as $hospital) {
+                                                ?>
+                                                <option class="text-capitalize text-info" value="<?php echo $hospital->id; ?>"><?php echo $hospital->name; ?></option>
+                                                <?php
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
+                                </div>
+                                <div class="content-input col-12">
+                                    <label><text>*</text>Appointment Status : </label>
+                                    <select name="status" id="ui-id-3" class="select-list" style="display: none;">
+                                        <option value="0">Disabled</option>
+                                        <option value="1">Enabled</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -87,10 +142,6 @@
                         <div class="content-block-ttl">Other Info</div>
                         <div class="content-block-main">
                             <div class="content-input">
-                                <label><text>*</text>Priority : </label>
-                                <input type="number" class="input-number" value="" name="priority" placeholder="Enter Priority">
-                            </div>
-                            <div class="content-input">
                                 <label>Position : </label>
                                 <input type="text" name="position" value="" placeholder="position">
                             </div>
@@ -100,8 +151,8 @@
                                 <p class="content-input-error-name">Please enter doctor degree!</p>
                             </div>
                             <div class="content-input">
-                                <label>Specility : </label>
-                                <input type="text" name="specility" value="" placeholder="Specility">
+                                <label>Speciality : </label>
+                                <input type="text" name="speciality" value="" placeholder="Speciality">
                             </div>
                             <div class="content-input">
                                 <label><text>*</text>Experience : </label>
@@ -112,32 +163,40 @@
                                 <label>Awards : </label>
                                 <input type="text" name="awards" value="" placeholder="Awards">
                             </div>
+                            <div class="content-input">
+                                <label><text>*</text>Username : </label>
+                                <input type="text" name="username" value="" placeholder="Awards">
+                            </div>
+                            <div class="content-input">
+                                <label><text>*</text>Password : </label>
+                                <input type="text" name="password" value="" placeholder="Awards">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="content-block">
-                <div class="content-block-ttl">Social Link</div>
-                <div class="content-block-main">
-                    <div class="content-input content-link">
-                        <label>Facebook <i class="fa fa-facebook"></i> : </label>
-                        <input type="url" name="facebook" value="" placeholder="Facebook URL">
-                    </div>
-                    <div class="content-input content-link">
-                        <label>Twitter <i class="fa fa-twitter"></i> : </label>
-                        <input type="url" name="twitter" value="" placeholder="Twitter URL">
-                    </div>
-                    <div class="content-input content-link">
-                        <label>Google + <i class="fa fa-google"></i> : </label>
-                        <input type="url" name="google" value="" placeholder="Google plus URL">
-                    </div>
-                    <div class="content-input content-link">
-                        <label>Instagram <i class="fa fa-instagram"></i> : </label>
-                        <input type="url" name="instagram" value="" placeholder="Instagram URL">
-                    </div>
-                </div>
-            </div>
+<!--            <div class="content-block">-->
+<!--                <div class="content-block-ttl">Social Link</div>-->
+<!--                <div class="content-block-main">-->
+<!--                    <div class="content-input content-link">-->
+<!--                        <label>Facebook <i class="fa fa-facebook"></i> : </label>-->
+<!--                        <input type="url" name="facebook" value="" placeholder="Facebook URL">-->
+<!--                    </div>-->
+<!--                    <div class="content-input content-link">-->
+<!--                        <label>Twitter <i class="fa fa-twitter"></i> : </label>-->
+<!--                        <input type="url" name="twitter" value="" placeholder="Twitter URL">-->
+<!--                    </div>-->
+<!--                    <div class="content-input content-link">-->
+<!--                        <label>Google + <i class="fa fa-google"></i> : </label>-->
+<!--                        <input type="url" name="google" value="" placeholder="Google plus URL">-->
+<!--                    </div>-->
+<!--                    <div class="content-input content-link">-->
+<!--                        <label>Instagram <i class="fa fa-instagram"></i> : </label>-->
+<!--                        <input type="url" name="instagram" value="" placeholder="Instagram URL">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
             <div class="content-block">
                 <div class="content-block-ttl">Appointment Info</div>
                 <div class="content-block-main">
@@ -145,32 +204,19 @@
                         <div class="col-sm-6">
                             <div class="content-input">
                                 <label>Start Time - before Lunch ( hh:mm ):</label>
-                                <input type="time" name="st1" value="" placeholder="Start Time">
+                                <input type="time" name="st" value="" placeholder="Start Time">
                                 <p class="content-input-error-name">Please select time!</p>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="content-input">
                                 <label>End Time - before Lunch ( hh:mm ):</label>
-                                <input type="time" name="et1" value="" placeholder="End Time">
+                                <input type="time" name="et" value="" placeholder="End Time">
                                 <p class="content-input-error-name">Please select time</p>
                             </div>
                         </div>
                     </div>
-                    <div class="row bottom-border-1x content-block-horizantal">
-                        <div class="col-sm-6">
-                            <div class="content-input">
-                                <label>Start Time - After Lunch ( hh:mm ):</label>
-                                <input type="time" name="st2" value="" placeholder="Start Time">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="content-input">
-                                <label>End Time - After Lunch ( hh:mm ):</label>
-                                <input type="time" name="et2" value="" placeholder="End Time">
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="content-input">
                         <label>Time Slot :<br>( in Minutes)</label>
                         <input type="number" name="slot" value="" placeholder="Slot">
@@ -178,36 +224,23 @@
                     </div>
                     <div class="content-input weekly-container">
                         <label>Weekly Holiday : </label>
-                        <select name="weeklyList[]" id="doctor-list" multiple="multiple">
-                            <option value="1">Monday</option>
-                            <option value="2">Tuesday</option>
-                            <option value="3">Wednesday</option>
-                            <option value="4">Thursday</option>
-                            <option value="5">Friday</option>
-                            <option value="6">Saturday</option>
-                            <option value="0">Sunday</option>
+                        <select name="week_end" id="doctor-list" multiple="multiple">
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday"></option>
+                            <option value="Friday">Friday</option>
+                            <option value="Saturday">Saturday</option>
+                            <option value="Sunday">Sunday</option>
                         </select>
-                        <input type="hidden" id="weekly-holiday" value="">
                         <p class="content-description">Please use the CTRL key (PC) or COMMAND key (Mac) to select multiple items.</p>
                     </div>
-                    <div class="content-input">
-                        <label>National Holiday : </label>
-                        <div id="other-holiday" class="hasDatepicker"><div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-datepicker-multi ui-datepicker-multi-3" style="display: block; width: 51em;"><div class="ui-datepicker-group ui-datepicker-group-first"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-left"><a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">September</span>&nbsp;<span class="ui-datepicker-year">2018</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">1</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">2</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">3</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">4</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">5</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">6</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">7</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">8</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">9</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">10</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">11</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">12</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">13</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">14</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">15</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">16</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">17</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">18</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">19</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">20</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">21</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">22</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">23</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">24</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">25</span></td><td class=" ui-datepicker-days-cell-over undefined ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="8" data-year="2018"><a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">26</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="8" data-year="2018"><a class="ui-state-default" href="#">27</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="8" data-year="2018"><a class="ui-state-default" href="#">28</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="8" data-year="2018"><a class="ui-state-default" href="#">29</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="8" data-year="2018"><a class="ui-state-default" href="#">30</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div><div class="ui-datepicker-group ui-datepicker-group-middle"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix"><div class="ui-datepicker-title"><span class="ui-datepicker-month">October</span>&nbsp;<span class="ui-datepicker-year">2018</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">1</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">2</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">3</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">4</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">5</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">6</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">7</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">8</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">9</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">10</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">11</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">12</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">13</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">14</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">15</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">16</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">17</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">18</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">19</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">20</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">21</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">22</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">23</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">24</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">25</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">26</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">27</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">28</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">29</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">30</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="9" data-year="2018"><a class="ui-state-default" href="#">31</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div><div class="ui-datepicker-group ui-datepicker-group-last"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-right"><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">November</span>&nbsp;<span class="ui-datepicker-year">2018</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">1</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">2</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">3</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">4</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">5</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">6</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">7</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">8</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">9</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">10</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">11</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">12</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">13</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">14</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">15</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">16</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">17</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">18</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">19</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">20</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">21</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">22</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">23</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">24</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">25</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">26</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">27</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">28</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">29</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="10" data-year="2018"><a class="ui-state-default" href="#">30</a></td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div><div class="ui-datepicker-row-break"></div><div class="ui-datepicker-group ui-datepicker-group-first"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-left"><div class="ui-datepicker-title"><span class="ui-datepicker-month">December</span>&nbsp;<span class="ui-datepicker-year">2018</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">1</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">2</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">3</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">4</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">5</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">6</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">7</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">8</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">9</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">10</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">11</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">12</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">13</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">14</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">15</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">16</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">17</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">18</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">19</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">20</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">21</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">22</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">23</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">24</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">25</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">26</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">27</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">28</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">29</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">30</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="11" data-year="2018"><a class="ui-state-default" href="#">31</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div><div class="ui-datepicker-group ui-datepicker-group-middle"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix"><div class="ui-datepicker-title"><span class="ui-datepicker-month">January</span>&nbsp;<span class="ui-datepicker-year">2019</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">1</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">2</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">3</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">4</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">5</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">6</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">7</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">8</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">9</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">10</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">11</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">12</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">13</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">14</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">15</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">16</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">17</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">18</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">19</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">20</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">21</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">22</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">23</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">24</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">25</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">26</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">27</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">28</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">29</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">30</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="0" data-year="2019"><a class="ui-state-default" href="#">31</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div><div class="ui-datepicker-group ui-datepicker-group-last"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-right"><div class="ui-datepicker-title"><span class="ui-datepicker-month">February</span>&nbsp;<span class="ui-datepicker-year">2019</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">1</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">2</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">3</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">4</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">5</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">6</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">7</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">8</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">9</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">10</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">11</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">12</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">13</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">14</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">15</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">16</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">17</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">18</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">19</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">20</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">21</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">22</a></td><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">23</a></td></tr><tr><td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">24</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">25</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">26</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">27</a></td><td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2019"><a class="ui-state-default" href="#">28</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div><div class="ui-datepicker-row-break"></div></div></div>
-                        <input type="hidden" name="nationalList" value="2000-12-25" id="altField">
-                        <input type="hidden" id="other-holiday-list" value="">
-                    </div>
-                    <div class="content-input">
-                        <label><text>*</text>Appointment Status : </label>
-                        <select name="appointment" id="ui-id-3" class="select-list" style="display: none;">
-                            <option value="0">Disabled</option>
-                            <option value="1">Enabled</option>
-                        </select><span tabindex="0" id="ui-id-3-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="ui-id-3-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">Disabled</span></span>
-                    </div>
+
                 </div>
             </div>
             <input type="hidden" name="id" value="">
             <div class="content-submit text-center">
-                <button type="submit" name="submit" class="btn btn-primary">Save</button>
+                <button type="submit" name="doctor_submit" class="btn btn-primary">Save</button>
             </div>
 
         </div>

@@ -3,7 +3,7 @@
 <?php include('include/header.php');?>
 <?php
     require ('class/doctors.php');
-    require ('class/hospitals.php');
+//    require ('class/hospitals.php');
     require ('class/departments.php');
 
 
@@ -101,7 +101,7 @@
                             <span class="mdl-textfield__error">Please Enter Valid Mobile Number!</span>
                         </div>
 
-                        <div class="row form-input">
+                        <div class="row form-input content-radio-container">
                             <div class="col-md-4">
                                 <label for=""><span></span><p class="text-info"><i class="fa fa-intersex text-success"> </i><b>  Gender : </b></p> </label>
                             </div>

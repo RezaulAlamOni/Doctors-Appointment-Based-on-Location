@@ -18,8 +18,8 @@
             <h1 id="time">Time</h1>
         </div>
 		<div class="col-5 page-menu">
-			<a id="cancel" href="index.php?route=themeoption/doctor" data-toggle="tooltip" data-placement="left" title="Reload"><i class="fa fa-refresh"></i></a>
-			<a href="index.php?route=themeoption/doctor/add" data-toggle="tooltip" data-placement="left" title="Add Doctor"><i class="fa fa-plus"></i></a>
+			<a id="cancel" href="doctors.php" data-toggle="tooltip" data-placement="left" title="Reload"><i class="fa fa-refresh"></i></a>
+			<a href="add_doctors.php" data-toggle="tooltip" data-placement="left" title="Add Doctor"><i class="fa fa-plus"></i></a>
 		</div>
 	</div>
 </div>

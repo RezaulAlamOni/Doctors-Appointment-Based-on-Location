@@ -40,44 +40,96 @@ class patients
             return true;
         }else{ return false;}
     }
-    function add(){
+    function patient_add(){
         global $pdo;
-        if (isset($_REQUEST['register_patient'])){
+        if (isset($_POST['patient_submit'])){
+            $first_name = $_POST['firstname'];
+            $last_name  = $_POST['lastname'] ;
+            $email      = $_POST['email'] ;
+            $mobile     = $_POST['mobile'] ;
+            $dob        = $_POST['dob'] ;
+            $location   = $_POST['location'] ;
+            $blood_group= $_POST['bloodgroup'];
+            $gender     = $_POST['gender'] ;
+            $role       = $_POST['role'] ;
+            $username     = $_POST['username'];
+            $password     = $_POST['password'];
 
-            $fname      = trim($_REQUEST['firstname']);
-            $lname      = trim($_REQUEST['lastname']);
-            $mail       = trim($_REQUEST['email']);
-            $mobile     = trim($_REQUEST['mobile']);
-            $gender     = trim($_REQUEST['gender']);
-            $username   = trim($_REQUEST['username']);
-            $password   = trim($_REQUEST['password']);
-            $blood_group = trim($_REQUEST['blood']) ;
-            $location    = trim($_REQUEST['location']) ;
-
-//            $password   = password_hash($password,PASSWORD_BCRYPT,array('cost'=>12));
+            if (!empty($_POST['medical'])){
+                $history="";
+//                $number=  count($_POST['medical']);
+                foreach ($_POST['medical'] as $medical){
+                    $history .= $medical.",";
+                }
+            }
 
             if ($this->username_exist($username)){
-                echo "<h2 class='text-center text-danger text-capitalize'>Please Try Another username this is already Registered</h2>";
-            }else if ($this->email_exist($mail)){
-                echo "<h2 class='text-center text-danger text-capitalize'>Please Try Another Email Id this is already Registered</h2>";
-            }else if (!empty($username)){
+                echo "<h3 class='text-center text-danger text-capitalize'>Please Try Another username this is already Registered</h3>";
+            }else if ($this->email_exist($email)){
+                echo "<h3 class='text-center text-danger text-capitalize'>Please Try Another Email Id this is already Registered</h3>";
+            }else if (!empty($username)) {
 
+                $sql = "INSERT INTO `patients` (`first_name`, `last_name`, `user_name`, `password`, `email`, `dob`, `blood_group`, `gender`, `phone`, `location_id`, `role_id`, `created_at`,`medical_history`) ";
+                $sql .= " VALUES ('$first_name','$last_name','$username','$password','$email','$dob','$blood_group','$gender','$mobile','$location','$role',now(),'$history')";
+                $result = $pdo->prepare($sql);
+                $result->execute();
 
-                $sql  = "INSERT INTO `patients` (`first_name`, `last_name`, `user_name`, `password`, `email`, `blood_group`, `gender`, `phone`, `location_id`, `created_at`,`medical_history`) " ;
-                $sql .= "VALUES ('$fname','$lname','$username','$password','$mail','$blood_group','$gender','$mobile',$location,now(),'')";
+                if ($result) {
+                    echo '<h3 class="text-center text-success text-capitalize">patient Added Successful !!! </h3>';
+                } else {
+                    header("Location: patient_add.php");
+                }
+            }
+        }
+    }
+    function patient_update($id){
+        global $pdo;
+        if (isset($_POST['patient_update'])){
+            $first_name = $_POST['firstname'];
+            $last_name  = $_POST['lastname'] ;
+            $email      = $_POST['email'] ;
+            $mobile     = $_POST['mobile'] ;
+//            $dob        = $_POST['dob'] ;
+            $location   = $_POST['location'] ;
+            $blood_group= $_POST['bloodgroup'];
+            $gender     = $_POST['gender'] ;
+            $role       = $_POST['role'] ;
+            $status       = $_POST['status'] ;
+            $username     = $_POST['username'];
+            $password     = $_POST['password'];
+            echo $id;
+            if (!empty($_POST['medical'])) {
+                $history = "";
+//                $number = count($_POST['medical']);
+                foreach ($_POST['medical'] as $medical) {
+                    $history .= $medical.",";
+                }
+            }
+
+            if (!empty($username)) {
+
+                $sql  = "UPDATE `patients` SET `first_name`='$first_name', `last_name`='$last_name', `user_name`='$username', `password`= '$password', `email`='$email', `blood_group`='$blood_group', ";
+                echo $sql .= "`gender`='$gender', `phone`='$mobile', `location_id`=$location, `role_id`= $role, `updated_at`= now(),`medical_history`='$history',`status`=$status WHERE `patient_id` = $id ";
 
                 $result = $pdo->prepare($sql);
                 $result->execute();
 
-                if ($result){
-                    echo '<h2 class="text-center text-success text-capitalize">patient Registration Successful !!! <a href="login.php">Login Please</a></h2>';
+                if ($result) {
+                    echo '<script>alert("<h3>Patient Updated Successful !!! </h3>")</script>';
+                    header('Location: patient.php');
+
                 }else
-                    echo '<h2 class="text-center text-danger text-capitalize">patient Registration failed !!! <a href="login.php">Login Please</a></h2>';
-
-
+                    header('Location: patient_edite.php?id={$id}');
             }
         }
     }
 
+    function find($id){
+        global $pdo;
+        $sql = "SELECT * FROM patients where patient_id = :id ";
+        $result = $pdo->prepare($sql);
+        $result->execute(['id'=>$id]);
+        return $result;
+    }
 
 }

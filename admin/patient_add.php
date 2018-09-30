@@ -2,6 +2,8 @@
 <?php include('include/header.php'); ?>
 <?php include('include/navbar.php'); ?>
 
+<?php require('class/patients.php')?>
+
 <!--page Container start-->
     <div class="page-container">
         <link rel="stylesheet" href="public/css/jquery.fancybox.min.css">
@@ -18,20 +20,16 @@
             });
         </script>
 
-        <?php
-            $pdo = new PDO("mysql:host=localhost;dbname=doctors",'root','');
-            $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
-        ?>
 
-        <form action="include/admin_function.php" method="post" enctype="multipart/form-data" siq_id="autopick_7004">
+        <form action="" method="post" enctype="multipart/form-data" siq_id="autopick_7004">
             <div class="page-hdr scroll-to-fixed-fixed" style="z-index: 9; position: fixed; top: 0px; margin-left: 0px; width: 920px; left: 60px;">
                 <div class="row col-sm-12">
                     <div class="col-sm-6 page-name">
                         <h1><i class="fa fa-users"></i>Add Patient</h1>
                     </div>
                     <div class="col-sm-4 page-menu" >
-                        <a id="cancel" href="index.php?route=patient" data-toggle="tooltip" data-placement="left" title="" data-original-title="Back to List"><i class="fa fa-reply"></i></a>
-                        <button type="submit" name="patient_submit" data-toggle="tooltip" data-placement="left" title="" data-original-title="Save Page"><i class="fa fa-floppy-o"></i></button>
+                        <a id="cancel" href="patient_add.php" data-toggle="tooltip" data-placement="left" title="" data-original-title="Back to List"><i class="fa fa-reply"></i></a>
+                        <button type="submit" name="patient_submit" data-toggle="" data-placement="left" title="" data-original-title="Save Page"><i class="fa fa-floppy-o"></i></button>
                     </div>
                 </div>
             </div><div style="display: block; width: 920px; height: 70px; float: none;"></div>
@@ -39,6 +37,11 @@
                 <input type="hidden" name="_token" value="413ccea5ca6b8ce59e0da0d74a15110a305317f742542dcc5f09cc85ddf4f25288776a66377494dbf3154612b21c29b49cdcd6ee235b8ea2b77355d52eef0188">
                 <div class="row">
                     <div class="col-sm-8">
+                        <?php
+                            $patient=new patients();
+                            $patient->patient_add();
+                        ?>
+
                         <div class="content-block content-block-horizantal">
                             <div class="content-block-ttl">Basic details</div>
                             <div class="content-block-main">
@@ -80,7 +83,7 @@
                                 <div class="row content-input">
                                     <div class="col-sm-6">
                                         <label>Date of Birth : </label>
-                                        <input type="text" name="dob" id="user-dob" value="" placeholder="Date of Birth (DD/MM/YY)" class="hasDatepicker">
+                                        <input type="date" name="dob" id="user-dob" value="" placeholder="Date of Birth (DD/MM/YY)" class="hasDatepicker">
                                     </div>
                                     <div class="col-sm-6">
                                     </div>

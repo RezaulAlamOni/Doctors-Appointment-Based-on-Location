@@ -35,19 +35,29 @@ $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
 $name = 'mehadi';
 $sql = "SELECT * FROM patients where patient_id = :id";
 $result = $pdo->prepare($sql);
-$result->execute(['id'=>20]);
+$result->execute(['id'=>4]);
 $admins = $result->fetchAll(PDO::FETCH_ASSOC);
 
 
 foreach ($admins as $admin){
 //    echo $admin->user_name;
-    echo $admin['password']."<br>";
+    $medical_history =  $admin['medical_history']."<br>";
+    $medical_historys= explode(',',$medical_history);
+    $i = 0;
+    foreach ($medical_historys as $item) {
+
+        echo $medical_historys[$i]."<br>";
+        $i++;
+    }
 }
 //var_dump($admins);
- $password = 'qwerty';
- $pass = password_hash($password,PASSWORD_BCRYPT,array('cost'=>12));
-$p = 'qwerty';
-if (password_verify($p,$pass)){
-    echo "<br>aadscfasdcvasdvcasd";
-}
+    $password = 'qwerty';
+    $pass = password_hash($password,PASSWORD_BCRYPT,array('cost'=>12));
+    $p = 'qwerty';
+
+//    if (password_verify($p,$pass)){
+//        echo "<br>aadscfasdcvasdvcasd";
+//    }
+
+
 

@@ -107,28 +107,44 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-3 col-lg-12">
                             <div class="icon-widget">
-                                <h5 class="icon-widget-heading">Patients</h5>
+                                <a href="patient.php">
+                                    <h5 class="icon-widget-heading">Patients</h5>
+                                </a>
                                 <div class="icon-widget-body tbl">
-                                    <p class="tbl-cell"><i class="fa fa-wheelchair" style="color: #3d0089"></i></p>
+                                    <p class="tbl-cell">
+                                        <a href="patient.php">
+                                            <i class="fa fa-wheelchair" style="color: #3d0089"></i>
+                                        </a>
+                                    </p>
                                     <p class="tbl-cell text-right">
-                                        <?php
-                                        $patient = new patients();
-                                        echo $patient->count();
-                                        ?>
+                                        <a href="patient.php">
+                                            <?php
+                                            $patient = new patients();
+                                            echo $patient->count();
+                                            ?>
+                                        </a>
                                     </p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3 col-lg-12">
                             <div class="icon-widget">
-                                <h5 class="icon-widget-heading">Hospital</h5>
+                                <a href="hospital.php">
+                                     <h5 class="icon-widget-heading">Hospital</h5>
+                                </a>
                                 <div class="icon-widget-body tbl">
-                                    <p class="tbl-cell"><i class="fa fa-hospital-o text-danger"></i></p>
+                                    <p class="tbl-cell">
+                                        <a href="hospital.php">
+                                            <i class="fa fa-hospital-o text-danger"></i>
+                                        </a>
+                                    </p>
                                     <p class="tbl-cell text-right">
-                                        <?php
-                                        $hos = new hospitals();
-                                        echo $hos->count();
-                                        ?>
+                                        <a href="hospital.php">
+                                            <?php
+                                            $hos = new hospitals();
+                                            echo $hos->count();
+                                            ?>
+                                        </a>
                                     </p>
                                 </div>
                             </div>
@@ -140,14 +156,16 @@
                                 <div class="icon-widget-body tbl">
                                     <p class="tbl-cell">
                                         <a href="department.php">
-                                            <i class="fa fa-user-md text-info"></i>
+                                            <i class="fa fa-building text-info"></i>
                                         </a>
                                     </p>
                                     <p class="tbl-cell text-right">
-                                        <a href="department.php"> <?php
-                                        $dpt = new departments();
-                                        echo $dpt->count();
-                                        ?>
+                                        <a href="department.php">
+                                            <?php
+                                            $dpt = new departments();
+                                            echo $dpt->count();
+                                            ?>
+                                        </a>
                                     </p>
 
                             </div>
@@ -155,33 +173,43 @@
                         </div>
                         <div class="col-sm-6 col-md-3 col-lg-12">
                             <div class="icon-widget">
+                                <a href="doctors.php">
                                 <h5 class="icon-widget-heading">Doctors</h5>
+                                </a>
                                 <div class="icon-widget-body tbl">
-                                    <p class="tbl-cell"><i class="fa fa-user-md text-info"></i></p>
+                                    <p class="tbl-cell">
+                                        <a href="doctors.php">
+                                            <i class="fa fa-user-md text-info"></i>
+                                        </a>
+                                    </p>
                                     <p class="tbl-cell text-right">
+                                        <a href="doctors.php">
                                         <?php
                                         $doctor = new doctors();
                                         echo $doctor->count();
                                         ?>
+                                        </a>
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-3 col-lg-12">
-                            <div class="icon-widget">
-                                <h5 class="icon-widget-heading">Users</h5>
-                                <div class="icon-widget-body tbl">
-                                    <p class="tbl-cell"><i class="fa fa-users text-success"></i></p>
-                                    <p class="tbl-cell text-right">346</p>
-                                </div>
-                            </div>
-                        </div>
+<!--                        <div class="col-sm-6 col-md-3 col-lg-12">-->
+<!--                            <div class="icon-widget">-->
+<!--                                <h5 class="icon-widget-heading">Users</h5>-->
+<!--                                <div class="icon-widget-body tbl">-->
+<!--                                    <p class="tbl-cell"><i class="fa fa-users text-success"></i></p>-->
+<!--                                    <p class="tbl-cell text-right">346</p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
                         <div class="col-sm-6 col-md-3 col-lg-12">
                             <div class="icon-widget">
                                 <h5 class="icon-widget-heading">Appointments</h5>
                                 <div class="icon-widget-body tbl">
-                                    <p class="tbl-cell"><i class="fa fa-calendar-minus-o text-primary"></i></p>
+                                    <p class="tbl-cell">
+                                        <i class="fa fa-calendar-minus-o text-primary"></i>
+                                    </p>
                                     <p class="tbl-cell text-right">323</p>
                                 </div>
                             </div>
@@ -207,14 +235,14 @@
             <div class="row">
                 <div class="col-sm-6 col-md-4">
                     <div class="dashboard-card"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
-                        <p class="dashboard-card-ttl"><i class="fa fa-bar-chart"></i>Clinic Statistics</p>
+                        <p class="dashboard-card-ttl"><i class="fa fa-bar-chart"></i>System Statistics</p>
                         <canvas id="clinicStats" width="518" height="518" style="display: block; width: 259px; height: 259px;"></canvas>
                         <script>
                             var barChartData = {
-                                labels: ['User', 'Appointment', 'Invoice', 'Request', 'Review', 'Comment'],
+                                labels: ['Patient', 'Appointment', 'Doctor', 'Department', 'Hospital', 'Comment'],
                                 datasets: [{
-                                    label: "Clinic Statistics",
-                                    data: [953,1277,1339,800,428,1153],
+                                    label: "System Statistics",
+                                    data: [20,290,37,16,57,100],
                                     backgroundColor: [color(window.chartColors.purple).alpha(0.7).rgbString(),
                                         color(window.chartColors.blue).alpha(0.7).rgbString(),
                                         color(window.chartColors.orange).alpha(0.7).rgbString(),
@@ -278,45 +306,46 @@
                         </script>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" style="display: none">
-                    <div class="dashboard-card"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
-                        <p class="dashboard-card-ttl">
-                            <i class="fa fa-pie-chart"></i>Appointment <span class="font-12">(Doctor Wise)</span>
-                        </p>
-                        <canvas id="myChart" width="300" height="150" style="display: block;"></canvas>
-                        <script>
-                            var doctor_label = [];
-                            var doctor_count = [];
-                            [{"name":"Daniel Barnes","count":"67"},{"name":"Melissa Bates","count":"103"},{"name":"Cheri Aria","count":"75"},{"name":"Steve Soeren","count":"42"},{"name":"Theodore Bennett","count":"17"},{"name":"Barbara Baker","count":"9"},{"name":"Linda Adams","count":"24"},{"name":"Vedhraj Jain","count":"21"}].forEach(function (element) {
-                                doctor_label.push(element['name']);
-                                doctor_count.push(parseInt(element['count']));
-                            });
-                            new Chart(document.getElementById("myChart"),
-                                {
-                                    "type":"doughnut",
-                                    "data":{
-                                        "labels":doctor_label,
-                                        "datasets": [{
-                                            "label":"My First Dataset",
-                                            "data":doctor_count,
-                                            "backgroundColor":[window.chartColors.red,
-                                                window.chartColors.orange,
-                                                window.chartColors.yellow,
-                                                window.chartColors.green,
-                                                window.chartColors.blue,
-                                                window.chartColors.purple,
-                                                window.chartColors.blue,
-                                                window.chartColors.blue,
-                                                window.chartColors.blue]
-                                        }]
-                                    }
-                                });
-                        </script>
-                    </div>
-                </div>
+<!--                <div class="col-sm-6 col-md-4" style="display: none">-->
+<!--                    <div class="dashboard-card"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>-->
+<!--                        <p class="dashboard-card-ttl">-->
+<!--                            <i class="fa fa-pie-chart"></i>Appointment-->
+<!--                            <span class="font-12">(Doctor Wise)</span>-->
+<!--                        </p>-->
+<!--                        <canvas id="myChart" width="300" height="150" style="display: block;"></canvas>-->
+<!--                        <script>-->
+<!--                            var doctor_label = [];-->
+<!--                            var doctor_count = [];-->
+<!--                            [{"name":"Daniel Barnes","count":"67"},{"name":"Melissa Bates","count":"103"},{"name":"Cheri Aria","count":"75"},{"name":"Steve Soeren","count":"42"},{"name":"Theodore Bennett","count":"17"},{"name":"Barbara Baker","count":"9"},{"name":"Linda Adams","count":"24"},{"name":"Vedhraj Jain","count":"21"}].forEach(function (element) {-->
+<!--                                doctor_label.push(element['name']);-->
+<!--                                doctor_count.push(parseInt(element['count']));-->
+<!--                            });-->
+<!--                            new Chart(document.getElementById("myChart"),-->
+<!--                                {-->
+<!--                                    "type":"doughnut",-->
+<!--                                    "data":{-->
+<!--                                        "labels":doctor_label,-->
+<!--                                        "datasets": [{-->
+<!--                                            "label":"My First Dataset",-->
+<!--                                            "data":doctor_count,-->
+<!--                                            "backgroundColor":[window.chartColors.red,-->
+<!--                                                window.chartColors.orange,-->
+<!--                                                window.chartColors.yellow,-->
+<!--                                                window.chartColors.green,-->
+<!--                                                window.chartColors.blue,-->
+<!--                                                window.chartColors.purple,-->
+<!--                                                window.chartColors.blue,-->
+<!--                                                window.chartColors.blue,-->
+<!--                                                window.chartColors.blue]-->
+<!--                                        }]-->
+<!--                                    }-->
+<!--                                });-->
+<!--                        </script>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <div class="col-sm-6 col-md-4">
                     <div class="dashboard-card"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
-                        <p class="dashboard-card-ttl"><i class="fa fa-bar-chart"></i>Earnings</p>
+                        <p class="dashboard-card-ttl"><i class="fa fa-bar-chart"></i>Patients</p>
                         <canvas id="lineChart" width="518" height="518" style="display: block; width: 259px; height: 259px;"></canvas>
                         <script>
                             var ctx = document.getElementById("lineChart");
@@ -325,7 +354,7 @@
                                 data: {
                                     labels: ["Apr","May","Jun","Jul","Aug","Sep"],
                                     datasets: [{
-                                        label: 'USD',
+                                        label: 'Patient Count ',
                                         data: [3010,1820,2350,3400,2260,4230],
                                         backgroundColor: [
                                             color(window.chartColors['yellow']).alpha(0.5).rgbString(),

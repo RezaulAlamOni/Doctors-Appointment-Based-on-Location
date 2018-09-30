@@ -1,6 +1,7 @@
 
 <?php include('include/header.php'); ?>
 <?php include('include/navbar.php'); ?>
+<?php require('class/patients.php')?>
 
     <div class="page-container">
         <link rel="stylesheet" href="public/css/jquery.fancybox.min.css">
@@ -17,48 +18,83 @@
             });
         </script>
 
-        <form action="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=user/action" method="post" enctype="multipart/form-data" siq_id="autopick_5272">
+        <form action="patient_edite.php" method="post" enctype="multipart/form-data" siq_id="autopick_5272">
             <div class="page-hdr scroll-to-fixed-fixed" style="z-index: 9; position: fixed; top: 0px; margin-left: 0px; width: 920px; left: 60px;">
                 <div class="row">
-                    <div class="col-5 page-name">
+                    <div class="col-6 page-name">
                         <h1><i class="fa fa-users"></i>Edit Patient</h1>
                     </div>
-                    <div class="col-4 page-menu">
-                        <a id="cancel" href="index.php?route=patient" data-toggle="tooltip" data-placement="left" title="" data-original-title="Back to List"><i class="fa fa-reply"></i></a>
-                        <button type="submit" name="submit" data-toggle="tooltip" data-placement="left" title="" data-original-title="Save Page"><i class="fa fa-floppy-o"></i></button>
+                    <div class="col-4 page-menu" style="padding-right: 50px">
+                        <a id="cancel" href="patient.php" data-toggle="tooltip" data-placement="left" title="" data-original-title="Back to List"><i class="fa fa-reply"></i></a>
+                        <button type="submit" name="patient_update" data-toggle="tooltip" data-placement="left" title="" data-original-title="Save Page"><i class="fa fa-floppy-o"></i></button>
                     </div>
                 </div>
-            </div><div style="display: block; width: 920px; height: 70px; float: none;"></div>
+            </div>
+            <div style="display: block; width: 920px; height: 70px; float: none;"></div>
             <div class="content">
-                <input type="hidden" name="_token" value="413ccea5ca6b8ce59e0da0d74a15110a305317f742542dcc5f09cc85ddf4f25288776a66377494dbf3154612b21c29b49cdcd6ee235b8ea2b77355d52eef0188">
+                <input type="hidden" name="_token" value="">
                 <div class="row">
+                    <?php
+                        $patient=new patients();
+//                        $patient->patient_update();
+                        if (isset($_GET['id'])){$id = $_REQUEST['id'];}
+                        if (isset($_POST['id'])){$id = $_REQUEST['id'];}
+
+                        $rslt = $patient->find($id);
+                        $patients = $rslt->fetchAll();
+                        $patient->patient_update($id);
+                        foreach ($patients as $patient) {
+
+                    ?>
                     <div class="col-sm-8">
                         <div class="content-block content-block-horizantal">
                             <div class="content-block-ttl">Basic details</div>
                             <div class="content-block-main">
                                 <div class="row content-input">
                                     <div class="col-sm-6">
-                                        <label><text>*</text>First Name : </label>
-                                        <input type="text" class="input-text" name="firstname" value="viraj" placeholder="Enter your First Name" required="">
+                                        <label>
+                                            <text>*</text>
+                                            First Name : </label>
+                                        <input type="text" class="input-text" name="firstname" value="<?php echo $patient->first_name;?>"
+                                               placeholder="Enter your First Name" required="">
                                         <p class="content-input-error-name">Please enter name!</p>
                                     </div>
                                     <div class="col-sm-6">
-                                        <label><text>*</text>Last Name : </label>
-                                        <input type="text" class="input-text" name="lastname" value="chamara" placeholder="Enter your Last Name" required="">
+                                        <label>
+                                            <text>*</text>
+                                            Last Name : </label>
+                                        <input type="text" class="input-text" name="lastname" value="<?php echo $patient->last_name;?>"
+                                               placeholder="Enter your Last Name" required="">
                                         <p class="content-input-error-name">Please enter last name!</p>
                                     </div>
                                 </div>
                                 <div class="row content-input">
                                     <div class="col-sm-6">
-                                        <label><text>*</text>Email Address : </label>
-                                        <input type="email" class="input-email" name="email" value="ishararokzz@gmail.com" placeholder="Enter your Email Address" readonly="" required="">
+                                        <label>
+                                            <text>*</text>
+                                            Email Address : </label>
+                                        <input type="email" class="input-email" name="email" value="<?php echo $patient->email;?>"
+                                               placeholder="Enter your Email Address" required="">
                                         <p class="content-input-error-name">Please enter email!</p>
                                     </div>
                                     <div class="col-sm-6">
-                                        <label><text>*</text>Mobile : </label>
-                                        <input type="number" class="input-mobile" name="mobile" value="0766136852" placeholder="Enter your Mobile number" min="1" required="">
+                                        <label>
+                                            <text>*</text>
+                                            Mobile : </label>
+                                        <input type="number" class="input-mobile" name="mobile" value="<?php echo $patient->phone;?>"
+                                               placeholder="Enter your Mobile number" min="1" required="">
                                         <p class="content-input-error-name">Please enter phone number!</p>
                                     </div>
+                                </div>
+                                <div class="content-input">
+                                    <label>
+                                        <text>*</text>
+                                        Password (min 6 words) :</label>
+                                    <input type="password" class="input-password" pattern=".{6,}"
+                                           title="Minimum 6 word required!" name="password"
+                                           placeholder="Enter your Password" required="">
+                                    <p class="content-input-error-name">Please enter password (minimum 6 words)!</p>
+                                    <div class="content-description">This password will be mailed to user.</div>
                                 </div>
                             </div>
                         </div>
@@ -68,39 +104,71 @@
                                 <div class="row content-input">
                                     <div class="col-sm-6">
                                         <label>Date of Birth : </label>
-                                        <input type="text" name="dob" id="user-dob" value="" placeholder="Date of Birth" class="hasDatepicker">
+                                        <input type="text" value="<?php echo $patient->dob;?>"  disabled>
                                     </div>
                                     <div class="col-sm-6">
                                     </div>
                                 </div>
                                 <div class="row content-input">
-                                    <div class="col-sm-6">
-                                        <label>Location : </label>
-                                        <input type="text" name="location" value="" placeholder="User Location">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <label>Country : </label>
-                                        <input type="text" name="country" value="" placeholder="User Country">
-                                    </div>
-                                </div>
-                                <div class="row content-input content-radio">
-                                    <div class="col-sm-6">
-                                        <label>Gender : </label>
-                                        <div class="content-radio-container">
-                                            <div>
-                                                <input type="radio" name="gender" value="1" id="gender-male">
-                                                <label for="gender-male"><span><i class="fa fa-check"></i></span><p>Male</p></label>
-                                            </div>
-                                            <div>
-                                                <input type="radio" name="gender" value="2" id="gender-female">
-                                                <label for="gender-female"><span><i class="fa fa-check"></i></span><p>Female</p></label>
-                                            </div>
-                                        </div>
+                                    <div class="col-sm-6 text-capitalize">
+
+                                        <label>
+                                            <text>*</text>
+                                            Location : </label>
+                                        <select name="location" title="Select User Role" class="select-list" required=""
+                                                id="ui-id-1" style="display: none;">
+                                            <option value="">Select your location</option>
+                                            <?php
+                                            $sql = "SELECT * FROM locations ";
+                                            $result = $pdo->prepare($sql);
+                                            $result->execute();
+                                            $locations = $result->fetchAll(); // default value PDO::FETCH_obj
+                                            foreach ($locations as $location) {
+                                                ?>
+                                                <option value="<?php echo $location->location_id;?>"
+                                                    <?php if ($location->location_id==$patient->location_id) { echo "selected";}?> >
+                                                    <?php echo $location->name; ?></option>
+
+                                                <?php
+                                            }
+                                            ?>
+
+                                        </select>
                                     </div>
                                     <div class="col-sm-6">
                                         <label>Blood Group : </label>
-                                        <input type="text" name="bloodgroup" value="" placeholder="Blood Group">
+                                        <select name="bloodgroup" title="Select User Role" class="select-list"
+                                                required="" id="ui-id-1" style="display: none;">
+                                            <option value="">Select your Blood Group</option>
+                                            <option value="A+" <?php if ($patient->blood_group=='A+'){echo 'selected';} ?>>A+</option>
+                                            <option value="A-" <?php if ($patient->blood_group=='A-'){echo 'selected';} ?>>A-</option>
+                                            <option value="B+" <?php if ($patient->blood_group=='B+'){echo 'selected';} ?>>B+</option>
+                                            <option value="B-" <?php if ($patient->blood_group=='B-'){echo 'selected';} ?>>B-</option>
+                                            <option value="AB+" <?php if ($patient->blood_group=='AB+'){echo 'selected';} ?>>AB+</option>
+                                            <option value="AB-" <?php if ($patient->blood_group=='AB-'){echo 'selected';} ?>>AB-</option>
+                                            <option value="O+" <?php if ($patient->blood_group=='O+'){echo 'selected';} ?>>O+</option>
+                                            <option value="O-" <?php if ($patient->blood_group=='O-'){echo 'selected';} ?>>O-</option>
+
+                                        </select>
                                     </div>
+                                </div>
+                                <div class="row content-input content-radio">
+                                    <div class="col-sm-12">
+                                        <label>Gender : </label>
+                                        <div class="content-radio-container">
+                                            <div>
+                                                <input type="radio" name="gender" value="Male" id="gender-male" <?php if ($patient->gender == 'Male') echo 'checked'; ?>>
+                                                <label for="gender-male"><span><i class="fa fa-check"></i></span>
+                                                    <p>Male</p></label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="gender" value="Female" id="gender-female" <?php if ($patient->gender == 'Female') echo 'checked'; ?>>
+                                                <label for="gender-female"><span><i class="fa fa-check"></i></span>
+                                                    <p>Female</p></label>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -111,95 +179,206 @@
                                 <div class="content-radio">
                                     <label>Do you now or have you ever had:</label>
                                     <div>
+                                        <?php
+                                        $md_rpt = explode(',',$patient->medical_history);
+                                        $n = count($md_rpt);
+                                        ?>
                                         <div class="row">
                                             <div class="col-sm-6 col-md-4 content-radio-container">
                                                 <div>
-                                                    <input type="checkbox" name="medical[diabetes]" value="checked" id="diabetes">
-                                                    <label for="diabetes"><span><i class="fa fa-check"></i></span><p>Diabetes</p></label>
+                                                    <input type="checkbox" name="medical[]" value="diabetes"
+
+                                                        <?php
+                                                        foreach ($md_rpt as $item) {
+
+                                                            if ($item =='diabetes') echo 'checked';
+                                                        }
+                                                        ?>
+
+                                                           id="diabetes">
+                                                    <label for="diabetes"><span><i class="fa fa-check"></i></span>
+                                                        <p>Diabetes</p></label>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-4 content-radio-container">
                                                 <div>
-                                                    <input type="checkbox" name="medical[high-blood-pressure]" value="checked" id="high-blood-pressure">
-                                                    <label for="high-blood-pressure"><span><i class="fa fa-check"></i></span><p>High blood pressure</p></label>
+                                                    <input type="checkbox" name="medical[]" value="high-blood-pressure"
+                                                        <?php  foreach ($md_rpt as $item) {
+
+                                                            if ($item=='high-blood-pressure') echo 'checked';
+                                                        }
+                                                        ?>
+                                                           id="high-blood-pressure">
+                                                    <label for="high-blood-pressure"><span><i
+                                                                    class="fa fa-check"></i></span>
+                                                        <p>High blood pressure</p></label>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-4 content-radio-container">
                                                 <div>
-                                                    <input type="checkbox" name="medical[high-cholesterol]" value="checked" id="high-cholesterol">
-                                                    <label for="high-cholesterol"><span><i class="fa fa-check"></i></span><p>High cholesterol</p></label>
+                                                    <input type="checkbox" name="medical[]" value="high-cholesterol"
+                                                        <?php
+                                                        foreach ($md_rpt as $item) {
+                                                            if ($item =='high-cholesterol') echo 'checked';
+                                                        }?>
+                                                           id="high-cholesterol">
+                                                    <label for="high-cholesterol"><span><i
+                                                                    class="fa fa-check"></i></span>
+                                                        <p>High cholesterol</p></label>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-4 content-radio-container">
                                                 <div>
-                                                    <input type="checkbox" name="medical[heart-problems]" value="checked" id="heart-problems">
-                                                    <label for="heart-problems"><span><i class="fa fa-check"></i></span><p>Heart problems</p></label>
+                                                    <input type="checkbox" name="medical[]" value="heart-problems"
+                                                        <?php
+                                                        foreach ($md_rpt as $item) {
+
+                                                            if ($item=='heart-problems') echo 'checked';
+                                                        }?>
+                                                           id="heart-problems">
+                                                    <label for="heart-problems"><span><i class="fa fa-check"></i></span>
+                                                        <p>Heart problems</p></label>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-4 content-radio-container">
                                                 <div>
-                                                    <input type="checkbox" name="medical[asthma]" value="checked" id="asthma">
-                                                    <label for="asthma"><span><i class="fa fa-check"></i></span><p>Asthma</p></label>
+                                                    <input type="checkbox" name="medical[]" value="asthma" id="asthma"
+                                                    <?php
+                                                    foreach ($md_rpt as $item) {
+                                                        if ($item == 'asthma') echo 'checked';
+                                                    }?>>
+                                                    <label for="asthma"><span><i class="fa fa-check"></i></span>
+                                                        <p>Asthma</p></label>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-4 content-radio-container">
                                                 <div>
-                                                    <input type="checkbox" name="medical[kidney-disease]" value="checked" id="kidney-disease">
-                                                    <label for="kidney-disease"><span><i class="fa fa-check"></i></span><p>Kidney disease</p></label>
+                                                    <input type="checkbox" name="medical[]" value="kidney-disease"
+                                                        <?php
+                                                         foreach ($md_rpt as $item) {
+                                                           if ($item == 'kidney-disease') echo 'checked';
+                                                        }?>
+                                                           id="kidney-disease">
+                                                    <label for="kidney-disease"><span><i class="fa fa-check"></i></span>
+                                                        <p>Kidney disease</p></label>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-4 content-radio-container">
                                                 <div>
-                                                    <input type="checkbox" name="medical[kidney-stones]" value="checked" id="kidney-stones">
-                                                    <label for="kidney-stones"><span><i class="fa fa-check"></i></span><p>Kidney Stones</p></label>
+                                                    <input type="checkbox" name="medical[]" value="kidney-stones"
+                                                        <?php
+                                                         foreach ($md_rpt as $item) {
+                                                             if ($item == 'kidney-stones') echo 'checked';
+                                                        }?>
+                                                           id="kidney-stones">
+                                                    <label for="kidney-stones"><span><i class="fa fa-check"></i></span>
+                                                        <p>Kidney Stones</p></label>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-4 content-radio-container">
                                                 <div>
-                                                    <input type="checkbox" name="medical[jaundice]" value="checked" id="jaundice">
-                                                    <label for="jaundice"><span><i class="fa fa-check"></i></span><p>Jaundice</p></label>
+                                                    <input type="checkbox" name="medical[]" value="jaundice"
+                                                        <?php
+                                                        foreach ($md_rpt as $item) {
+
+                                                            if ($item =='jaundice') echo 'checked';
+                                                        }?>
+                                                           id="jaundice">
+                                                    <label for="jaundice"><span><i class="fa fa-check"></i></span>
+                                                        <p>Jaundice</p></label>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-4 content-radio-container">
                                                 <div>
-                                                    <input type="checkbox" name="medical[hepatitis]" value="checked" id="hepatitis">
-                                                    <label for="hepatitis"><span><i class="fa fa-check"></i></span><p>Hepatitis</p></label>
+                                                    <input type="checkbox" name="medical[]" value=""
+                                                        <?php
+                                                        foreach ($md_rpt as $item) {
+
+                                                            if ($item =='hepatitis') echo 'checked';
+                                                        }?>
+                                                           id="hepatitis" >
+                                                    <label for="hepatitis"><span><i class="fa fa-check"></i></span>
+                                                        <p>Hepatitis</p></label>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-4 content-radio-container">
                                                 <div>
-                                                    <input type="checkbox" name="medical[rheumatic-fever]" value="checked" id="rheumatic-fever">
-                                                    <label for="rheumatic-fever"><span><i class="fa fa-check"></i></span><p>Rheumatic Fever</p></label>
+                                                    <input type="checkbox" name="medical[]" value="rheumatic-fever"
+                                                           <?php
+                                                           foreach ($md_rpt as $item) {
+
+                                                               if ($item =='rheumatic-fever') echo 'checked';
+                                                           }?>
+                                                           id="rheumatic-fever">
+                                                    <label for="rheumatic-fever"><span><i
+                                                                    class="fa fa-check"></i></span>
+                                                        <p>Rheumatic Fever</p></label>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-4 content-radio-container">
                                                 <div>
-                                                    <input type="checkbox" name="medical[cancer]" value="checked" id="cancer">
-                                                    <label for="cancer"><span><i class="fa fa-check"></i></span><p>Cancer</p></label>
+                                                    <input type="checkbox" name="medical[]" value="cancer"
+                                                        <?php
+                                                        foreach ($md_rpt as $item) {
+
+                                                            if ($item =='cancer') echo 'checked';
+                                                        }?>
+                                                           id="cancer">
+
+                                                    <label for="cancer"><span><i class="fa fa-check"></i></span>
+                                                        <p>Cancer</p></label>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-4 content-radio-container">
                                                 <div>
-                                                    <input type="checkbox" name="medical[hiv]" value="checked" id="hiv">
-                                                    <label for="hiv"><span><i class="fa fa-check"></i></span><p>HIV/AIDS</p></label>
+                                                    <input type="checkbox" name="medical[]" value="hiv"
+                                                        <?php
+                                                    foreach ($md_rpt as $item) {
+
+                                                        if ($item == 'hiv') echo 'checked';
+                                                    }?> id="hiv">
+
+                                                    <label for="hiv"><span><i class="fa fa-check"></i></span>
+                                                        <p>HIV/AIDS</p></label>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-4 content-radio-container">
                                                 <div>
-                                                    <input type="checkbox" name="medical[epilepsy]" value="checked" id="epilepsy">
-                                                    <label for="epilepsy"><span><i class="fa fa-check"></i></span><p>Epilepsy</p></label>
+                                                    <input type="checkbox" name="medical[]" value="epilepsy"
+                                                        <?php
+                                                        foreach ($md_rpt as $item) {
+
+                                                            if ($item =='epilepsy') echo 'checked';
+                                                        }?>
+                                                           id="epilepsy">
+                                                    <label for="epilepsy"><span><i class="fa fa-check"></i></span>
+                                                        <p>Epilepsy</p></label>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-4 content-radio-container">
                                                 <div>
-                                                    <input type="checkbox" name="medical[pregnancy]" value="checked" id="pregnancy">
-                                                    <label for="pregnancy"><span><i class="fa fa-check"></i></span><p>Pregnancy</p></label>
+                                                    <input type="checkbox" name="medical[]" value=""
+                                                        <?php
+                                                        foreach ($md_rpt as $item) {
+
+                                                            if ($item =='pregnancy') echo 'checked';
+                                                        }?>
+                                                           id="pregnancy">
+                                                    <label for="pregnancy"><span><i class="fa fa-check"></i></span>
+                                                        <p>Pregnancy</p></label>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-4 content-radio-container">
                                                 <div>
-                                                    <input type="checkbox" name="medical[blood-thinners]" value="checked" id="blood-thinners">
-                                                    <label for="blood-thinners"><span><i class="fa fa-check"></i></span><p>Blood thinners</p></label>
+                                                    <input type="checkbox" name="medical[]" value="blood-thinners"
+                                                        <?php
+                                                        foreach ($md_rpt as $item) {
+
+                                                            if ($item =='blood-thinners') echo 'checked';
+                                                        }?>
+                                                           id="blood-thinners">
+                                                    <label for="blood-thinners"><span><i class="fa fa-check"></i></span>
+                                                        <p>Blood thinners</p></label>
                                                 </div>
                                             </div>
                                         </div>
@@ -207,7 +386,7 @@
                                 </div>
                                 <div class="content-input">
                                     <label>Other History : </label>
-                                    <textarea name="medical[other]" placeholder="Patient other history or about user"></textarea>
+                                    <textarea name="medical[]" placeholder="Patient other history or about user"><?php if (!empty($md_rpt)) { echo $md_rpt[$n-2]; } ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -216,9 +395,14 @@
                         <div class="content-block">
                             <div class="content-block-ttl">Patient history</div>
                             <div class="content-block-main user-history">
-                                <p class="btn btn-primary btn-sm" data-toggle="modal" data-target="#appointment-modal">Appointments ( 1 ) </p>
-                                <p class="btn btn-warning btn-sm" data-toggle="modal" data-target="#invoice-modal">Invoices ( 0 )</p>
-                                <p class="btn btn-danger btn-sm" data-toggle="modal" data-target="#report-modal">All Reports</p>
+                                <p class="btn btn-primary btn-sm" data-toggle="modal" data-target="#appointment-modal">
+                                    Appointments (
+                                    <?php
+
+                                    ?>
+                                    ) </p>
+                                <p class="btn btn-danger btn-sm" data-toggle="modal" data-target="#report-modal">All
+                                    Reports</p>
                                 <p id="create-apnt-user" class="btn btn-default btn-sm">Create Appointment</p>
                             </div>
                         </div>
@@ -227,57 +411,82 @@
                             <div class="content-block-main">
                                 <div class="content-input">
                                     <label>User Role : </label>
-                                    <select name="role" title="Select User Role" class="select-list" required="" id="ui-id-1" style="display: none;">
-                                        <option value="1" selected="">Patient</option>
-                                        <option value="2">Handler</option>
-                                        <option value="3">Doctor</option>
-                                        <option value="4">Dean</option>
-                                    </select><span tabindex="0" id="ui-id-1-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="ui-id-1-menu" aria-haspopup="true" title="Select User Role" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">Patient</span></span>
+                                    <select name="role" title="Select User Role" class="select-list" required=""
+                                            id="ui-id-1" style="display: none;">
+                                        <?php
+                                        $sql = "SELECT * FROM roles ";
+                                        $result = $pdo->prepare($sql);
+                                        $result->execute();
+                                        $roles = $result->fetchAll(); // default value PDO::FETCH_obj
+
+                                        foreach ($roles as $role) {
+                                            ?>
+                                            <option value="<?php echo $role->role_id; ?>"
+                                                <?php if ($role->role_id == $patient->role_id) echo "selected"?> >
+                                                <p class="text-capitalize"><?php echo $role->role_name; ?></p>
+                                            </option>
+
+                                            <?php
+                                        }
+
+                                        ?>
+
+
+                                    </select>
                                     <div class="content-description">
-                                        If you want to give an admin access to user then select role otherwise do not select. It will automatically assign patient role to user.
+                                        If you want to give an admin access to user then select role otherwise do not
+                                        select. It will automatically assign patient role to user.
                                     </div>
                                 </div>
                                 <div class="content-input">
                                     <label>User Name : </label>
-                                    <input type="text" name="username" value="" placeholder="User Name">
+                                    <input type="text" name="username" value="<?php echo $patient->user_name;?>" placeholder="User Name">
                                     <div class="content-description">
-                                        If you want to give an admin access to user then fill this field otherwise leave empty.
+                                        If you want to give an admin access to user then fill this field otherwise leave
+                                        empty.
                                     </div>
                                 </div>
                                 <div class="content-input">
                                     <label>Created Date : </label>
-                                    <input type="text" value="14 Sep 2018  ( 6:57 PM )" readonly="">
+                                    <input type="text" value="<?php echo $patient->created_at;?>" readonly="">
                                 </div>
-                                <div class="content-input">
-                                    <label>Email Confirmation : </label>
-                                    <input type="text" value="Unconfirmed" readonly="">
-                                </div>
+<!--                                <div class="content-input">-->
+<!--                                    <label>Email Confirmation : </label>-->
+<!--                                    <input type="text" value="Unconfirmed" readonly="">-->
+<!--                                </div>-->
                                 <div class="content-input">
                                     <label>Status : </label>
                                     <select name="status" class="select-list" id="ui-id-2" style="display: none;">
-                                        <option value="" disabled="" selected="">Status</option>
-                                        <option value="0">InActive</option>
-                                        <option value="1" selected="">Active</option>
-                                    </select><span tabindex="0" id="ui-id-2-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="ui-id-2-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">Active</span></span>
+                                        <option value="1" <?php if ($patient->status == 1) echo "selected"?>>Active</option>
+                                        <option value="0" <?php if ($patient->status == 0) echo "selected"?>>InActive</option>
+                                    </select>
+
                                 </div>
-                                <div class="content-input">
-                                    <label>Notify User : </label>
-                                    <div class="content-radio-container">
-                                        <div>
-                                            <input type="checkbox" name="sendmail" value="1" id="send-mail" checked="">
-                                            <label for="send-mail"><span><i class="fa fa-check"></i></span><p>Send an Email</p></label>
-                                        </div>
-                                    </div>
-                                </div>
+<!--                                <div class="content-input">-->
+<!--                                    <label>Notify User : </label>-->
+<!--                                    <div class="content-radio-container">-->
+<!--                                        <div>-->
+<!--                                            <input type="checkbox" name="sendmail" value="1" id="send-mail" checked="">-->
+<!--                                            <label for="send-mail"><span><i class="fa fa-check"></i></span>-->
+<!--                                                <p>Send an Email</p></label>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
                             </div>
                         </div>
                     </div>
-                    <input type="hidden" name="id" value="284">
+                    <input type="hidden" name="id" value="<?php echo $patient->patient_id; ?>">
                 </div>
+
+                <?php
+                    }
+                ?>
                 <div class="content-submit text-center">
-                    <button type="submit" name="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" name="patient_update" class="btn btn-primary">Save</button>
                 </div>
-            </div>
+
+           </div>
+
         </form>
 
         <!-- Appointment List Modal -->
