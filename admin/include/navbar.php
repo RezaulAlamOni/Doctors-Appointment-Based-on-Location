@@ -139,9 +139,9 @@
             <li id="home_page">
                 <a href="add_doctors.php"><i class="fa fa-user-plus"></i><span>Add Doctors</span></a>
             </li>
-            <li id="service_page">
-                <a href="edit_doctor.php"><i class="fa fa-edit"></i><span>Update Doctors</span></a>
-            </li>
+<!--            <li id="service_page">-->
+<!--                <a href="edit_doctor.php"><i class="fa fa-edit"></i><span>Update Doctors</span></a>-->
+<!--            </li>-->
 
         </ul>
     </li>

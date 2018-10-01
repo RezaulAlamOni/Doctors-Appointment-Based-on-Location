@@ -50,16 +50,13 @@
 
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                             <i class="fa fa-location-arrow"></i>
-                            <label for="location"> </label>
                             <select name="hospital" id="hospital" class="form-input" >
-                                <option class="text-capitalize text-info " >Select Your main Chamber :</option>
+                                <option class="text-capitalize text-info " >  Select Your main Chamber :</option>
                                 <?php
 
                                 $hsptl = new hospitals();
                                 $result = $hsptl->all();
-
                                 $hospitals = $result->fetchAll(); // default value PDO::FETCH_obj
-
                                 foreach ($hospitals as $hospital) {
                                     ?>
                                     <option class="text-capitalize text-info" value="<?php echo $hospital->id; ?>"><?php echo $hospital->name; ?></option>
@@ -71,7 +68,6 @@
 
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                             <i class="fa fa-location-arrow"></i>
-                            <label for="location"> </label>
                             <select name="department" id="department" class="form-input" >
                                 <option class="text-capitalize text-info " >Select Your Department:</option>
                                 <?php
@@ -79,7 +75,6 @@
                                 $dpt = new departments();
                                 $result = $dpt->all();
                                 $departments = $result->fetchAll(); // default value PDO::FETCH_obj
-
                                 foreach ($departments as $department) {
                                     ?>
                                     <option class="text-capitalize text-info" value="<?php echo $department->id; ?>"><?php echo $department->name; ?></option>

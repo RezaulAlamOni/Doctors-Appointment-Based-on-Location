@@ -67,6 +67,62 @@ class doctors
         }else{ return false;}
     }
 
+    function update(){
+        global $pdo;
+        if (isset($_POST['doctor_update'])){
+
+            $fname          = trim($_REQUEST['firstname']);
+            $lname          = trim($_REQUEST['lastname']);
+//            $mail           = trim($_REQUEST['email']);
+            $mobile         = trim($_REQUEST['mobile']);
+            $gender         = trim($_REQUEST['gender']);
+            $age            = trim($_REQUEST['age']);
+            $department_id  = trim($_REQUEST['department']);
+            $hospital_id    = trim($_REQUEST['chamber']);
+            $position       = trim($_REQUEST['position']);
+            $role_id       = trim($_REQUEST['role']);
+            $degree         = trim($_REQUEST['degree']);
+            $speciality     = trim($_REQUEST['speciality']);
+            $experience     = trim($_REQUEST['experience']);
+            $awards         = trim($_REQUEST['awards']);
+            $username       = trim($_REQUEST['username']);
+            $password       = trim($_REQUEST['password']);
+
+            $start_time     = trim($_REQUEST['st']);
+            $end_time       = trim($_REQUEST['et']);
+            $slot           = trim($_REQUEST['slot']);
+            $week_end       = trim($_REQUEST['week_end']);
+            $status         = trim($_REQUEST['status']);
+            $id             = trim($_REQUEST['id']);
+            $img            = $_FILES['doctor_picture']['name'];
+            $img_temp       = $_FILES['doctor_picture']['tmp_name'];
+//            $password   = password_hash($password,PASSWORD_BCRYPT,array('cost'=>12));
+
+            if (!empty($degree) && !empty($hospital_id) && !empty($department_id) && !empty($password)&& !empty($username)){
+
+                if(!empty($img)) {
+                    move_uploaded_file($img_temp, "../public/uploads/{$img}");
+                }else{
+                    $result = $this->find($id);
+                    $doctor = $result->fetchAll();
+                    foreach ($doctor as $doct){
+                        $img = $doct->photo;
+                    }
+                }
+                $sql  = "UPDATE `doctors` SET  `first_name`='$fname',`last_name`='$lname', `phone`='$mobile',`username`='$username', `gender`='$gender', `age`=$age, `password`='$password', `role_id`=$role_id, `photo`='$img', `degree`='$degree', `awards`='$awards', `department_id`=$department_id , ";
+                $sql .= "`position`='$position', `specialty`='$speciality', `experience`='$experience', `hospital_id`=$hospital_id, `start_appointment`='$start_time', `end_appointment`='$end_time', `time_slot`='$slot', `week_end`='$week_end', `status`=$status, `updated_at`=now() WHERE id =$id " ;
+                $result = $pdo->prepare($sql);
+                $result->execute();
+
+                if ($result){
+                    echo '<h2 class="text-center text-primary">Successful Update Doctor !!! </h2>';
+                    header('Location: doctors.php');
+                }else
+                    echo '<h2 class="text-center text-danger">Update failed !!! </h2>';
+
+            }
+        }
+    }
     function add(){
         global $pdo;
         if (isset($_POST['doctor_submit'])){
@@ -122,12 +178,18 @@ class doctors
             }
         }
     }
-
     function find_doctors_by_location($location_id){
         global $pdo;
         $sql = "SELECT * FROM `doctors`WHERE doctors.hospital_id IN(SELECT hospitals.id FROM hospitals WHERE hospitals.location_id = :id)";
         $result = $pdo->prepare($sql);
         $result->execute(['id'=>$location_id]);
+        return $result;
+    }
+    function find($id){
+        global $pdo;
+        $sql = "SELECT * FROM doctors where id = :id";
+        $result = $pdo->prepare($sql);
+        $result->execute(['id'=>$id]);
         return $result;
     }
     function remaining_doctors_after_finding_by_location($location_id){
@@ -145,5 +207,6 @@ class doctors
         $result->execute(['id'=>$id]);
         return $result->rowCount();
     }
+
 
 }
