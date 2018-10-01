@@ -42,14 +42,15 @@
                 </div>
                 <div class="tbl-cell">
 <!--                    <a href="../index.php"><img src="public/images/logo.png"></a>-->
-                    <a href="../index.php"><h2 class="text-info">Admin</h2></a>
+                    <a href="../index.php"><h2 class="text-info"><b>Home</b></h2></a>
                 </div>
             </div>
             <div class="menu-user">
 
                 <div class="menu-user-icon"><!--<i class="fa fa-user-circle"></i>-->
                     <a href="profile.php">
-                        <img src="public/images/<?php echo $_SESSION['admin_img']?>" style="height: 50px" alt="">
+                        <i class="fa fa-user-circle"></i>
+<!--                        <img src="public/images/--><?php //echo $_SESSION['admin_img']?><!--" style="height: 50px" alt="">-->
                     </a>
                 </div>
                 <div class="menu-user-info"><a href="profile.php">
@@ -195,11 +196,11 @@
         <a class="menu-dropdown"><i class="icon-people"></i><span>Subscriber </span><i class="fa fa-angle-down"></i></a>
         <ul id="user" class="sub-menu">
             <li>
-                <a class="menu-dropdown" href="user.php"><i class="icon-people"></i><span>Users</span></a>
+                <a class="menu-dropdown" href="user.php"><i class="icon-people"></i><span>Subscribers</span></a>
             </li>
-            <li>
-                <a class="menu-dropdown" href=""><i class="icon-user-follow"></i><span>Add User</span></a>
-            </li>
+<!--            <li>-->
+<!--                <a class="menu-dropdown" href=""><i class="icon-user-follow"></i><span>Add User</span></a>-->
+<!--            </li>-->
 <!--            <li>-->
 <!--                <a class="menu-dropdown" href=""><i class="icon-user-follow"></i><span>Update Users</span></a>-->
 <!--            </li>-->

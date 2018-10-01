@@ -63,7 +63,8 @@
                 <td class="table-img">
                     <img class="img-thumbnail" src="../public/uploads/<?php echo $hospital->photo;?>" alt="">
                 </td>
-                <td class="text-center"><a href="doctors.php?hospital=<?php echo $hospital->id; ?>">
+                <td class="text-center">
+                    <a href="doctors.php?hospital=<?php echo $hospital->id; ?>">
                     <?php
                         echo $doctors = $hospita->doctor_count_by_hospitalID($hospital->id);
                     ?>

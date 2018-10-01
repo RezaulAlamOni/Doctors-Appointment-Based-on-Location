@@ -32,7 +32,7 @@
 					<th>Doctor Info</th>
                     <th>Department</th>
                     <th>Picture</th>
-					<th class="text-center">Patients</th>
+					<th class="text-center">Appointment</th>
 					<th class="table-action">Action</th>
 				</tr>
 			</thead>
@@ -43,6 +43,9 @@
                     if (isset($_GET['hospital'])){
                         $id = $_GET['hospital'];
                         $result = $doctors->find_all_by_hosptalID($id);
+                        if ($result->rowCount()==0){
+                            header('Location: hospital.php');
+                        }
                     }else{
                         $result = $doctors->all();
                     }
@@ -67,7 +70,11 @@
                         <img class="img-thumbnail" src="../public/uploads/<?php echo $doct->photo;?>" alt="">
                     </td>
 
-                <td class="text-center">0</td>
+                <td class="text-center">
+                    <a href="appointment.php?doctor=<?php echo $doct->id;?>">
+                        0
+                    </a>
+                </td>
                 <td class="table-action">
                     <a href="edit_doctor.php?id=<?php echo $doct->id; ?>" class="btn btn-outline btn-info btn-outline-1x btn-circle" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
 

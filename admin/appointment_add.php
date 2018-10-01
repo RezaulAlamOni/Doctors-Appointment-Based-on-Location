@@ -16,7 +16,7 @@
                     <h1 id="time">Time</h1>
                 </div>
 				<div class="col-5 page-menu">
-					<a id="cancel" href="index.php?route=appointment" data-toggle="tooltip" data-placement="left" title="Back to List"><i class="fa fa-reply"></i></a>
+					<a id="cancel" href="appointment.php" data-toggle="tooltip" data-placement="left" title="Back to List"><i class="fa fa-reply"></i></a>
 					<button type="submit" name="submit" data-toggle="tooltip" data-placement="left" title="Save Appointment"><i class="fa fa-floppy-o"></i></button>
 				</div>
 			</div>

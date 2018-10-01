@@ -101,7 +101,7 @@ class hospitals
             $name     = $_POST['name'];
             $address  = $_POST['address'];
             $location = $_POST['location'];
-            $img      =   $_FILES['photo']['name'];
+            $img      = $_FILES['photo']['name'];
 
             if (!empty($img)) {
                 $img_temp   =   $_FILES['photo']['tmp_name'];

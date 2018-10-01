@@ -25,7 +25,7 @@
             <a href="appointment_add.php?ap=add" data-toggle="tooltip" data-placement="left" title="Add Appointment">
                 <i class="fa fa-plus"></i>
             </a>
-        </div>s
+        </div>
     </div>
     <input type="hidden" value="appointment" name="hidden-appointment">
 </div>
