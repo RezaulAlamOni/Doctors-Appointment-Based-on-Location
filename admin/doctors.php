@@ -40,7 +40,14 @@
 
                 <?php
                     $doctors = new doctors();
-                    $result = $doctors->all();
+                    if (isset($_GET['hospital'])){
+                        $id = $_GET['hospital'];
+                        $result = $doctors->find_all_by_hosptalID($id);
+                    }else{
+                        $result = $doctors->all();
+                    }
+
+
                     $docts = $result->fetchAll();
                     if ($result->rowCount()>0) {
                         foreach ($docts as $doct) {

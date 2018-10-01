@@ -18,7 +18,7 @@
             </div>
             <div class="col-5 page-menu">
                 <a id="cancel" href="" data-toggle="tooltip" data-placement="left" title="Reload"><i class="fa fa-refresh"></i></a>
-                <a href="department_add.php" data-toggle="tooltip" data-placement="left" title="Add location"><i class="fa fa-plus"></i></a>
+                <a href="add_location.php" data-toggle="tooltip" data-placement="left" title="Add location"><i class="fa fa-plus"></i></a>
             </div>
         </div>
     </div>

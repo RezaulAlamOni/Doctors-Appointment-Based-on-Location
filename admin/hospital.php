@@ -19,8 +19,8 @@
             <h1 id="time">Time</h1>
         </div>
 		<div class="col-5 page-menu">
-			<a id="cancel" href="index.php?route=themeoption/doctor" data-toggle="tooltip" data-placement="left" title="Reload"><i class="fa fa-refresh"></i></a>
-			<a href="index.php?route=themeoption/doctor/add" data-toggle="tooltip" data-placement="left" title="Add Doctor"><i class="fa fa-plus"></i></a>
+			<a id="cancel" href="hospital.php" data-toggle="tooltip" data-placement="left" title="Reload"><i class="fa fa-refresh"></i></a>
+			<a href="add_hospital.php" data-toggle="tooltip" data-placement="left" title="Add Doctor"><i class="fa fa-plus"></i></a>
 		</div>
 	</div>
 </div>
@@ -41,7 +41,13 @@
 
                 <?php
                     $hospita = new hospitals();
-                    $result = $hospita->all();
+                    if (isset($_GET['location'])){
+                       $id = $_GET['location'];
+                        $result = $hospita->find_all_by_location($id);
+                    }else{
+                        $result = $hospita->all();
+                    }
+
                     $hospitals = $result->fetchAll();
                     if ($result->rowCount()>0) {
                         foreach ($hospitals as $hospital) {
@@ -57,7 +63,7 @@
                 <td class="table-img">
                     <img class="img-thumbnail" src="../public/uploads/<?php echo $hospital->photo;?>" alt="">
                 </td>
-                <td class="text-center"><a href="doctors.php?id=<?php echo $hospital->id; ?>">
+                <td class="text-center"><a href="doctors.php?hospital=<?php echo $hospital->id; ?>">
                     <?php
                         echo $doctors = $hospita->doctor_count_by_hospitalID($hospital->id);
                     ?>
@@ -68,9 +74,10 @@
                     ?>
                 </td>
                 <td class="table-action">
-                    <a href="edit_doctor.php?id=<?php echo $hospital->id; ?>" class="btn btn-outline btn-info btn-outline-1x btn-circle" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
+                    <a href="update_hospital.php?id=<?php echo $hospital->id; ?>" class="btn btn-outline btn-info btn-outline-1x btn-circle" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
                     <a class="btn btn-outline btn-danger btn-outline-1x btn-circle table-delete" data-toggle="tooltip" title="Delete">
-                        <i class="fa fa-trash-o"></i><input type="hidden" value="1">
+                        <i class="fa fa-trash-o"></i>
+                        <input type="hidden" value="1">
                     </a>
                 </td>
             </tr>

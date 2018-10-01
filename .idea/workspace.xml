@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d550c67-55db-4070-ba62-851c40f322f1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/add_location.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/class/location.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/locations.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/update_location.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/add_hospital.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/update_hospital.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/class/departments.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/class/departments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add_location.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_location.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/class/doctors.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/class/doctors.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/class/hospitals.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/class/hospitals.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/department_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/department_add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/edit_department.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit_department.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/class/location.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/class/location.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/doctors.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/doctors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/hospital.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/hospital.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/include/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/include/navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/locations.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/locations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/update_location.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/update_location.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,27 +24,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pdo_test.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pdo_test.php">
+      <file leaf-file-name="doctors.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/doctors.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="44" column="35" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="35" />
+            <state relative-caret-position="1056">
+              <caret line="44" column="71" selection-start-line="44" selection-start-column="71" selection-end-line="44" selection-end-column="71" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hospitals.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="hospital.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/hospital.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1824">
+              <caret line="76" column="44" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update_hospital.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/update_hospital.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="696">
+              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hospitals.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/class/hospitals.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+            <state relative-caret-position="360">
+              <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
               <folding>
                 <element signature="n#count#0;n#hospitals#0;n#!!top" />
-                <element signature="n#all#0;n#hospitals#0;n#!!top" />
                 <element signature="n#find#0;n#hospitals#0;n#!!top" />
-                <element signature="n#find#1;n#hospitals#0;n#!!top" />
+                <element signature="n#find_by_location#0;n#hospitals#0;n#!!top" />
+                <element signature="n#find_all_by_location#0;n#hospitals#0;n#!!top" />
                 <element signature="n#hptl_location#0;n#hospitals#0;n#!!top" />
                 <element signature="n#doctor_count_by_hospitalID#0;n#hospitals#0;n#!!top" />
+                <element signature="n#add#0;n#hospitals#0;n#!!top" />
+                <element signature="n#update#0;n#hospitals#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -51,17 +73,25 @@
       <file leaf-file-name="departments.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/class/departments.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+            <state relative-caret-position="264">
+              <caret line="63" column="1" selection-start-line="63" selection-start-column="1" selection-end-line="94" selection-end-column="5" />
               <folding>
                 <element signature="n#all#0;n#departments#0;n#!!top" />
-                <element signature="n#all#1;n#departments#0;n#!!top" />
+                <element signature="n#find#0;n#departments#0;n#!!top" />
                 <element signature="n#count#0;n#departments#0;n#!!top" />
                 <element signature="n#delete#0;n#departments#0;n#!!top" />
                 <element signature="n#add#0;n#departments#0;n#!!top" />
                 <element signature="n#update#0;n#departments#0;n#!!top" />
-                <element signature="e#1884#2830#0#PHP" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_hospital.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/add_hospital.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="30" column="73" selection-start-line="30" selection-start-column="73" selection-end-line="30" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -69,35 +99,8 @@
       <file leaf-file-name="navbar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/include/navbar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="176" column="12" lean-forward="true" selection-start-line="176" selection-start-column="12" selection-end-line="176" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_location.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/add_location.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="update_location.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/update_location.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="15" column="72" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="locations.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/locations.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="53" column="100" selection-start-line="53" selection-start-column="100" selection-end-line="53" selection-end-column="100" />
+            <state relative-caret-position="3720">
+              <caret line="155" column="25" selection-start-line="155" selection-start-column="25" selection-end-line="155" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -105,8 +108,13 @@
       <file leaf-file-name="location.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/class/location.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+            <state relative-caret-position="168">
+              <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+              <folding>
+                <element signature="n#add#0;n#location#0;n#!!top" />
+                <element signature="n#update#0;n#location#0;n#!!top" />
+                <element signature="n#find#0;n#location#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,8 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/doctor_details.php" />
-        <option value="$PROJECT_DIR$/add_department.php" />
         <option value="$PROJECT_DIR$/include/footer.php" />
         <option value="$PROJECT_DIR$/department2.php" />
         <option value="$PROJECT_DIR$/department.php" />
@@ -179,31 +185,33 @@
         <option value="$PROJECT_DIR$/class/doctors.php" />
         <option value="$PROJECT_DIR$/class/hospitals.php" />
         <option value="$PROJECT_DIR$/doctors.php" />
-        <option value="$PROJECT_DIR$/admin/hospital.php" />
         <option value="$PROJECT_DIR$/admin/public/js/admin.js" />
-        <option value="$PROJECT_DIR$/admin/appointment.php" />
         <option value="$PROJECT_DIR$/admin/index.php" />
         <option value="$PROJECT_DIR$/admin/include/admin_function.php" />
         <option value="$PROJECT_DIR$/admin/include/db.php" />
         <option value="$PROJECT_DIR$/pdo_test.php" />
         <option value="$PROJECT_DIR$/admin/patient_add.php" />
         <option value="$PROJECT_DIR$/admin/class/patients.php" />
-        <option value="$PROJECT_DIR$/admin/doctors.php" />
         <option value="$PROJECT_DIR$/admin/add_doctors.php" />
         <option value="$PROJECT_DIR$/doctor_register.php" />
         <option value="$PROJECT_DIR$/admin/patient_edite.php" />
         <option value="$PROJECT_DIR$/admin/edit_doctor.php" />
-        <option value="$PROJECT_DIR$/admin/class/doctors.php" />
         <option value="$PROJECT_DIR$/admin/department.php" />
         <option value="$PROJECT_DIR$/admin/department_add.php" />
         <option value="$PROJECT_DIR$/admin/class/departments.php" />
         <option value="$PROJECT_DIR$/admin/edit_department.php" />
-        <option value="$PROJECT_DIR$/admin/class/location.php" />
-        <option value="$PROJECT_DIR$/admin/include/navbar.php" />
+        <option value="$PROJECT_DIR$/admin/doctors.php" />
+        <option value="$PROJECT_DIR$/admin/class/doctors.php" />
+        <option value="$PROJECT_DIR$/admin/appointment.php" />
+        <option value="$PROJECT_DIR$/admin/locations.php" />
         <option value="$PROJECT_DIR$/admin/add_location.php" />
         <option value="$PROJECT_DIR$/admin/update_location.php" />
+        <option value="$PROJECT_DIR$/admin/include/navbar.php" />
+        <option value="$PROJECT_DIR$/admin/class/location.php" />
+        <option value="$PROJECT_DIR$/admin/hospital.php" />
+        <option value="$PROJECT_DIR$/admin/add_hospital.php" />
         <option value="$PROJECT_DIR$/admin/class/hospitals.php" />
-        <option value="$PROJECT_DIR$/admin/locations.php" />
+        <option value="$PROJECT_DIR$/admin/update_hospital.php" />
       </list>
     </option>
   </component>
@@ -227,7 +235,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -259,6 +266,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -336,18 +344,19 @@
       <workItem from="1538127163403" duration="19528000" />
       <workItem from="1538207182238" duration="27900000" />
       <workItem from="1538299377316" duration="30596000" />
-      <workItem from="1538375130622" duration="16178000" />
+      <workItem from="1538375130622" duration="23836000" />
+      <workItem from="1538415022442" duration="612000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="394295000" />
+    <option name="totallyTimeSpent" value="402565000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1505295" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15279879" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -392,20 +401,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/include/make_appointment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-168">
-          <caret line="54" column="10" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/needed/service.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="405" column="9" selection-start-line="405" selection-start-column="9" selection-end-line="405" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/about.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -553,13 +548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/hospital.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
-          <caret line="66" column="66" selection-start-line="66" selection-start-column="66" selection-end-line="66" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/public/js/custom.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -573,20 +561,10 @@
     <entry file="file://$PROJECT_DIR$/admin/class/appointments.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/appointment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="218" column="49" selection-start-line="218" selection-start-column="49" selection-end-line="218" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7680">
           <caret line="356" column="62" selection-start-line="356" selection-start-column="62" selection-end-line="356" selection-end-column="62" />
-          <folding>
-            <marker date="1538301463188" expanded="false" signature="135810:138704" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -627,19 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="984">
           <caret line="53" column="78" selection-start-line="53" selection-start-column="78" selection-end-line="53" selection-end-column="78" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/add_doctors.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="240" column="50" selection-start-line="240" selection-start-column="50" selection-end-line="240" selection-end-column="50" />
-          <folding>
-            <element signature="e#843#870#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -654,19 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="134" column="50" lean-forward="true" selection-start-line="134" selection-start-column="50" selection-end-line="134" selection-end-column="50" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#2;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/doctors.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -674,59 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-          <folding>
-            <element signature="e#764#791#0#HTML" expanded="true" />
-            <element signature="e#1246#1310#0#HTML" expanded="true" />
-            <element signature="e#3008#3029#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/class/doctors.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="173" column="98" lean-forward="true" selection-start-line="173" selection-start-column="20" selection-end-line="173" selection-end-column="98" />
-          <folding>
-            <element signature="n#all#0;n#doctors#0;n#!!top" />
-            <element signature="n#doctor_dpt#0;n#doctors#0;n#!!top" />
-            <element signature="e#631#633#0#PHP" />
-            <element signature="n#count#0;n#doctors#0;n#!!top" />
-            <element signature="n#username_exist#0;n#doctors#0;n#!!top" />
-            <element signature="n#email_exist#0;n#doctors#0;n#!!top" />
-            <element signature="n#update#0;n#doctors#0;n#!!top" />
-            <element signature="n#find_doctors_by_location#0;n#doctors#0;n#!!top" />
-            <element signature="n#find#0;n#doctors#0;n#!!top" />
-            <element signature="n#remaining_doctors_after_finding_by_location#0;n#doctors#0;n#!!top" />
-            <element signature="n#count_by_dptID#0;n#doctors#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/include/navbar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="176" column="12" lean-forward="true" selection-start-line="176" selection-start-column="12" selection-end-line="176" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/class/location.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/add_location.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/update_location.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="72" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
         </state>
       </provider>
     </entry>
@@ -734,17 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#1;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pdo_test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="44" column="35" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -755,41 +643,131 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/class/hospitals.php">
+    <entry file="file://$PROJECT_DIR$/admin/appointment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding>
-            <element signature="n#count#0;n#hospitals#0;n#!!top" />
-            <element signature="n#all#0;n#hospitals#0;n#!!top" />
-            <element signature="n#find#0;n#hospitals#0;n#!!top" />
-            <element signature="n#find#1;n#hospitals#0;n#!!top" />
-            <element signature="n#hptl_location#0;n#hospitals#0;n#!!top" />
-            <element signature="n#doctor_count_by_hospitalID#0;n#hospitals#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="168">
+          <caret line="7" column="50" lean-forward="true" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/class/departments.php">
+    <entry file="file://$PROJECT_DIR$/pdo_test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding>
-            <element signature="n#all#0;n#departments#0;n#!!top" />
-            <element signature="n#all#1;n#departments#0;n#!!top" />
-            <element signature="n#count#0;n#departments#0;n#!!top" />
-            <element signature="n#delete#0;n#departments#0;n#!!top" />
-            <element signature="n#add#0;n#departments#0;n#!!top" />
-            <element signature="n#update#0;n#departments#0;n#!!top" />
-            <element signature="e#1884#2830#0#PHP" />
-          </folding>
+        <state relative-caret-position="24">
+          <caret line="44" column="35" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/class/doctors.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="132" column="19" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/locations.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-836">
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/update_location.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/add_location.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="53" column="100" selection-start-line="53" selection-start-column="100" selection-end-line="53" selection-end-column="100" />
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/doctors.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="44" column="71" selection-start-line="44" selection-start-column="71" selection-end-line="44" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/add_doctors.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="125" column="49" lean-forward="true" selection-start-line="110" selection-start-column="40" selection-end-line="125" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/include/navbar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3720">
+          <caret line="155" column="25" selection-start-line="155" selection-start-column="25" selection-end-line="155" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/class/location.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+          <folding>
+            <element signature="n#add#0;n#location#0;n#!!top" />
+            <element signature="n#update#0;n#location#0;n#!!top" />
+            <element signature="n#find#0;n#location#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/hospital.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1824">
+          <caret line="76" column="44" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/add_hospital.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="30" column="73" selection-start-line="30" selection-start-column="73" selection-end-line="30" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/class/departments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="63" column="1" selection-start-line="63" selection-start-column="1" selection-end-line="94" selection-end-column="5" />
+          <folding>
+            <element signature="n#all#0;n#departments#0;n#!!top" />
+            <element signature="n#find#0;n#departments#0;n#!!top" />
+            <element signature="n#count#0;n#departments#0;n#!!top" />
+            <element signature="n#delete#0;n#departments#0;n#!!top" />
+            <element signature="n#add#0;n#departments#0;n#!!top" />
+            <element signature="n#update#0;n#departments#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/update_hospital.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/class/hospitals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding>
+            <element signature="n#count#0;n#hospitals#0;n#!!top" />
+            <element signature="n#find#0;n#hospitals#0;n#!!top" />
+            <element signature="n#find_by_location#0;n#hospitals#0;n#!!top" />
+            <element signature="n#find_all_by_location#0;n#hospitals#0;n#!!top" />
+            <element signature="n#hptl_location#0;n#hospitals#0;n#!!top" />
+            <element signature="n#doctor_count_by_hospitalID#0;n#hospitals#0;n#!!top" />
+            <element signature="n#add#0;n#hospitals#0;n#!!top" />
+            <element signature="n#update#0;n#hospitals#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

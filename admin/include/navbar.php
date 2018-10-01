@@ -116,23 +116,23 @@
                     <span>Add Appointments</span>
                 </a>
             </li>
-            <li id="service">
-                <a href="appointment_edit.php">
-                    <i class="icon-briefcase"></i><span>Update Appointment </span>
-                </a>
-            </li>
-            <li id="service">
-                <a href="">
-                    <i class="icon-briefcase"></i><span>Hospitals Appointment </span>
-                </a>
-            </li>
+<!--            <li id="service">-->
+<!--                <a href="appointment_edit.php">-->
+<!--                    <i class="icon-briefcase"></i><span>Update Appointment </span>-->
+<!--                </a>-->
+<!--            </li>-->
+<!--            <li id="service">-->
+<!--                <a href="">-->
+<!--                    <i class="icon-briefcase"></i><span>Hospitals Appointment </span>-->
+<!--                </a>-->
+<!--            </li>-->
 
         </ul>
     </li>
     <li id="doctor-li">
         <a class="menu-dropdown"><i class="fa fa-user-md"></i>
             <span>Doctors</span><i class="fa fa-angle-down"></i></a>
-        <ul id="page" class="sub-menu">
+        <ul id="doctor" class="sub-menu">
             <li id="menu_page">
                 <a href="doctors.php"><i class="icon-people"></i><span>All Doctors</span></a>
             </li>
@@ -148,12 +148,12 @@
     <li id="hospital-li">
         <a class="menu-dropdown"><i class="fa fa-hospital-o"></i>
             <span>Hospitals</span><i class="fa fa-angle-down"></i></a>
-        <ul id="page" class="sub-menu">
+        <ul id="hospital" class="sub-menu">
             <li id="menu_page">
                 <a href="hospital.php"><i class="fa fa-list-alt"></i><span>All Hospitals</span></a>
             </li>
             <li id="home_page">
-                <a href="hospital_add.php"><i class="fa fa-home"></i><span>Add Hospital</span></a>
+                <a href="add_hospital.php"><i class="fa fa-home"></i><span>Add Hospital</span></a>
             </li>
 
         </ul>
@@ -161,7 +161,7 @@
     <li id="department-li">
         <a class="menu-dropdown"><i class="fa fa-building"></i>
             <span>Departments</span><i class="fa fa-angle-down"></i></a>
-        <ul id="page" class="sub-menu">
+        <ul id="department" class="sub-menu">
             <li id="menu_page">
                 <a href="department.php"><i class="icon-home"></i><span>All Departments</span></a>
             </li>

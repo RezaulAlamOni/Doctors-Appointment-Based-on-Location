@@ -17,6 +17,13 @@ class doctors
         $result->execute();
         return $result;
     }
+    function find_all_by_hosptalID($id){
+        global $pdo;
+        $sql = "SELECT * FROM doctors WHERE hospital_id = :id";
+        $result = $pdo->prepare($sql);
+        $result->execute(['id'=>$id]);
+        return $result;
+    }
     function doctor_dpt($id){
         global  $pdo;
         $sql2 = "SELECT * FROM departments WHERE id = :id";
