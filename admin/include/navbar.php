@@ -168,9 +168,9 @@
             <li id="home_page">
                 <a href="department_add.php"><i class="icon-home"></i><span>Add Department</span></a>
             </li>
-            <li id="service_page">
-                <a href="edit_department.php"><i class="icon-briefcase"></i><span>Update Department</span></a>
-            </li>
+<!--            <li id="service_page">-->
+<!--                <a href="edit_department.php"><i class="icon-briefcase"></i><span>Update Department</span></a>-->
+<!--            </li>-->
         </ul>
 
     </li>
@@ -179,20 +179,20 @@
             <span>Areas</span><i class="fa fa-angle-down"></i></a>
         <ul id="area" class="sub-menu">
             <li>
-                <a class="menu-dropdown" href=""><i class="icon-list"></i><span>Area List</span></a>
+                <a class="menu-dropdown" href="locations.php"><i class="icon-list"></i><span>Area List</span></a>
             </li>
             <li>
-                <a href=""><i class="icon-map"></i><span>Add Area</span></a>
+                <a href="add_location.php"><i class="icon-map"></i><span>Add Area</span></a>
             </li>
-            <li>
-                <a href=""><i class="icon-map"></i><span>Update Area</span></a>
-            </li>
+<!--            <li>-->
+<!--                <a href=""><i class="icon-map"></i><span>Update Area</span></a>-->
+<!--            </li>-->
 
         </ul>
     </li>
 
     <li id="user-li">
-        <a class="menu-dropdown"><i class="icon-people"></i><span>Users</span><i class="fa fa-angle-down"></i></a>
+        <a class="menu-dropdown"><i class="icon-people"></i><span>Subscriber </span><i class="fa fa-angle-down"></i></a>
         <ul id="user" class="sub-menu">
             <li>
                 <a class="menu-dropdown" href="user.php"><i class="icon-people"></i><span>Users</span></a>
@@ -200,9 +200,9 @@
             <li>
                 <a class="menu-dropdown" href=""><i class="icon-user-follow"></i><span>Add User</span></a>
             </li>
-            <li>
-                <a class="menu-dropdown" href=""><i class="icon-user-follow"></i><span>Update Users</span></a>
-            </li>
+<!--            <li>-->
+<!--                <a class="menu-dropdown" href=""><i class="icon-user-follow"></i><span>Update Users</span></a>-->
+<!--            </li>-->
 
         </ul>
     </li>

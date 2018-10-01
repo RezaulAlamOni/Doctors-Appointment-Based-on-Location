@@ -5,15 +5,15 @@
 
 <div class="page-container">
     <script>
-        $('#themeoption').show();
-        $('#themeoption-li>a').addClass('active');
+        $('#area').show();
+        $('#area-li>a').addClass('active');
     </script>
 
-    <form action="edit_department.php" method="post" enctype="multipart/form-data" siq_id="autopick_4656">
+    <form action="" method="post" enctype="multipart/form-data" siq_id="autopick_4656">
         <div class="page-hdr scroll-to-fixed-fixed" style="z-index: 9; position: fixed; top: 0px; margin-left: 0px; width: 920px; left: 60px;">
             <div class="row">
                 <div class="col-6 page-name">
-                    <h1><i class="fa fa-hospital-o"></i>Update Department</h1>
+                    <h1><i class="fa fa-hospital-o"></i>Update Locations</h1>
                 </div>
                 <div class="col-4 page-menu" style="padding-right: 50px">
                     <a id="cancel" href="department.php" data-toggle="tooltip" data-placement="left" title="" data-original-title="Back to List"><i class="fa fa-reply"></i></a>

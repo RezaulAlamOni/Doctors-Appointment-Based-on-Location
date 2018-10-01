@@ -5,8 +5,8 @@
 
 <div class="page-container">
     <script>
-        $('#themeoption').show();
-        $('#themeoption-li>a').addClass('active');
+        $('#area').show();
+        $('#area-li>a').addClass('active');
     </script>
 
         <form action="department_add.php" method="post" enctype="multipart/form-data" siq_id="autopick_4656">

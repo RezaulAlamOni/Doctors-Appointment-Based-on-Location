@@ -26,6 +26,13 @@ class hospitals
             echo $name->name;
         }
     }
+    function find_by_location($id){
+        global $pdo;
+        $sql = "SELECT name FROM hospitals WHERE  location_id = :id";
+        $result = $pdo->prepare($sql);
+        $result->execute(['id'=>$id]);
+        return $result->rowCount();
+    }
     function hptl_location($hospital_id){
 
         global $pdo;
