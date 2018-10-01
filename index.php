@@ -109,7 +109,7 @@
                                             <a href="admin/include/logout.php"><i class="fa fa-sign-out color-green"> </i> Logout</a>
                                         </li>
                                         <li class="mdl-menu__item">
-                                            <a href="forget_pass.php"><i class="fa fa-key color-green" > </i> Forgot Password</a>
+                                            <a href="about.php"><i class="fa fa-address-book color-green" > </i> About</a>
                                         </li>
 
                                         <?php }
@@ -117,13 +117,13 @@
                                         ?>
 
                                             <li class="mdl-menu__item">
-                                                <a href="doctor_profile.php?id=<?php echo $_SESSION['doctor_id'];?>"> <i class="fa fa-user-circle color-green"> </i> Profile</a>
+                                                <a href="doctor_profile.php"> <i class="fa fa-user-circle color-green"> </i> Profile</a>
                                             </li>
                                             <li class="mdl-menu__item">
-                                                <a href="update_doctor_profile.php?id=<?php echo $_SESSION['doctor_id'];?>"><i class="fa fa-user-plus color-green"> </i> Update Profile</a>
+                                                <a href="update_doctor_profile.php"><i class="fa fa-user-plus color-green"> </i> Update Profile</a>
                                             </li>
                                             <li class="mdl-menu__item">
-                                                <a href="my_patients.php?id=<?php echo $_SESSION['doctor_id'];?>"><i class="fa fa-plus-circle color-green"> </i> My Patients</a>
+                                                <a href="my_patients.php"><i class="fa fa-plus-circle color-green"> </i> My Patients</a>
                                             </li>
                                             <li class="mdl-menu__item">
                                                 <a href="include/logout.php"><i class="fa fa-sign-out color-green"> </i> Logout</a>
@@ -134,19 +134,19 @@
                                         ?>
 
                                             <li class="mdl-menu__item">
-                                                <a href="profile.php?id=<?php echo $_SESSION['patient_id'];?>"> <i class="fa fa-user-circle color-green"> </i> Profile</a>
+                                                <a href="profile.php"> <i class="fa fa-user-circle color-green"> </i> Profile</a>
                                             </li>
                                             <li class="mdl-menu__item">
-                                                <a href="update_profile.php?id=<?php echo $_SESSION['patient_id'];?>"><i class="fa fa-user-plus color-green"> </i> Update Profile</a>
+                                                <a href="update_profile.php"><i class="fa fa-user-plus color-green"> </i> Update Profile</a>
                                             </li>
                                             <li class="mdl-menu__item">
-                                                <a href="my_appointment.php?id=<?php echo $_SESSION['patient_id'];?>"><i class="fa fa-plus-circle color-green"> </i> My Appointment</a>
+                                                <a href="my_appointment.php"><i class="fa fa-plus-circle color-green"> </i> My Appointment</a>
                                             </li>
+<!--                                            <li class="mdl-menu__item">-->
+<!--                                                <a href="my_request.php?id=--><?php //echo $_SESSION['patient_id'];?><!--"><i class="fa fa-qrcode color-green"> </i> My Request</a>-->
+<!--                                            </li>-->
                                             <li class="mdl-menu__item">
-                                                <a href="my_request.php?id=<?php echo $_SESSION['patient_id'];?>"><i class="fa fa-qrcode color-green"> </i> My Request</a>
-                                            </li>
-                                            <li class="mdl-menu__item">
-                                                <a href="my_medical_history.php?id=<?php echo $_SESSION['patient_id'];?>"><i class="fa fa-hospital-o color-green"> </i> My Medical History</a>
+                                                <a href="my_medical_history.php"><i class="fa fa-hospital-o color-green"> </i> My Medical History</a>
                                             </li>
                                             <li class="mdl-menu__item">
                                                 <a href="include/logout.php"><i class="fa fa-sign-out color-green"> </i> Logout</a>

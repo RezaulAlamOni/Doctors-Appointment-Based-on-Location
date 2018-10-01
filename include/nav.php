@@ -36,7 +36,7 @@
                                 <a href="admin/include/logout.php"><i class="fa fa-user-o mdl-color-text--green"></i> Logout</a>
                             </li>
                             <li class="mdl-menu__item">
-                                <a href="admin/include/forget_pass.php"><i class="fa fa-key mdl-color-text--green"></i> Forgot Password</a>
+                                <a href="about.php"><i class="fa fa-address-book mdl-color-text--green"></i> About</a>
                             </li>
                         </ul>
 
@@ -55,18 +55,18 @@
                             <li class="mdl-menu__item">
                                 <a href="my_appointment.php"><i class="fa fa-plus-square mdl-color-text--green"></i> My Appointment</a>
                             </li>
-                            <li class="mdl-menu__item">
-                                <a href="my_request.php"><i class="fa fa-qrcode mdl-color-text--green"></i> My Request</a>
-                            </li>
-                            <li class="mdl-menu__item">
-                                <a href="my_invoice.php"><i class="fa fa-user-md mdl-color-text--green"></i> My Medical History</a>
-                            </li>
+<!--                            <li class="mdl-menu__item">-->
+<!--                                <a href="my_request.php"><i class="fa fa-qrcode mdl-color-text--green"></i> My Request</a>-->
+<!--                            </li>-->
+<!--                            <li class="mdl-menu__item">-->
+<!--                                <a href="my_invoice.php"><i class="fa fa-user-md mdl-color-text--green"></i> My Medical History</a>-->
+<!--                            </li>-->
                             <li class="mdl-menu__item">
                                 <a href="include/logout.php"><i class="fa fa-sign-out mdl-color-text--green"></i> Logout</a>
                             </li>
-<!--                            <li class="mdl-menu__item">-->
-<!--                                <a href="about.php"><i class="fa fa-key mdl-color-text--green"></i> Help </a>-->
-<!--                            </li>-->
+                            <li class="mdl-menu__item">
+                                <a href="about.php"><i class="fa fa-key mdl-color-text--green"></i> Help </a>
+                            </li>
                         </ul>
 
 
@@ -76,14 +76,14 @@
                             <i class="fa fa-user color-green"> </i> <?php echo $_SESSION['doctor_username'];?></a>
                         <ul id="hdr-user-menu-dd" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="profile-menu">
                             <li class="mdl-menu__item">
-                                <a href="doctor_profile.php?id=<?php echo $_SESSION['doctor_id'] ?>"><i class="fa fa-user mdl-color-text--green"></i> Profile</a>
+                                <a href="doctor_profile.php"><i class="fa fa-user mdl-color-text--green"></i> Profile</a>
                             </li>
 
                             <li class="mdl-menu__item">
-                                <a href="update_doctor_profile.php?id=<?php echo $_SESSION['doctor_id'] ?>"><i class="fa fa-user-plus mdl-color-text--green"></i> Update Profile</a>
+                                <a href="update_doctor_profile.php"><i class="fa fa-user-plus mdl-color-text--green"></i> Update Profile</a>
                             </li>
                             <li class="mdl-menu__item">
-                                <a href="my_patients.php?id=<?php echo $_SESSION['doctor_id'] ?>"><i class="fa fa-plus-square mdl-color-text--green"></i> My Appointment</a>
+                                <a href="my_patients.php"><i class="fa fa-plus-square mdl-color-text--green"></i> My Appointment</a>
                             </li>
                             <li class="mdl-menu__item">
                                 <a href="include/logout.php"><i class="fa fa-sign-out mdl-color-text--green"></i> Logout</a>
