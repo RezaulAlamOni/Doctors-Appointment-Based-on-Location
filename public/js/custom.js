@@ -244,7 +244,7 @@
                     $('.appointment-loading').show();
                     $.ajax({
                         type: 'post',
-                        url: 'index.php?route=patient/makeanappointment',
+                        url: '',
                         data: {
                             form_id: 1,
                             date: date,

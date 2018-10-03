@@ -6,15 +6,11 @@
     require ('class/departments.php');
     $doct = new doctors();
 
-    $page_name = "<i class=\"fa fa-user-md\"> </i> Doctors";
+    $page_name = "<i class='fa fa-user-md'> </i> Doctors";
 ?>
-<?php include('include/nav.php');?>
-
-<?php
-//$pdo = new PDO("mysql:host=localhost;dbname=doctors",'root','');
-//$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
-
+    <?php include('include/nav.php');
 ?>
+
     <!-- Start Doctor List Section -->
 <div class="layer-stretch animated-wrapper" style="opacity: 1;background-color: #d8ed84">
     <div class="layer-wrapper layer-bottom-0">

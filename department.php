@@ -37,7 +37,7 @@ $page_name = "<i class=\"fa fa-building-o\"> </i> Departments ";
                                     <div class="theme-block-hidden service-hidden-block">
                                         <i class="fa fa-stethoscope"></i>
                                         <h4>
-                                            <a href=""><?php echo $department->name;?></a>
+                                            <a href="department_details.php?dpt_id=<?php echo $department->id;?>"><?php echo $department->name;?></a>
                                         </h4>
                                         <p class="service-description paragraph-small paragraph-black">
                                             <span>

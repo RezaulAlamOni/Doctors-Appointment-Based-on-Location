@@ -37,4 +37,11 @@ class hospitals
             echo $location->name;
         }
     }
+    function AllAccordingToPatientLOcation($i){
+        global $pdo;
+        $sql = "SELECT * FROM `hospitals` WHERE location_id = $i UNION SELECT * FROM `hospitals` WHERE location_id != $i";
+        $result = $pdo->prepare($sql);
+        $result->execute();
+        return $result;
+    }
 }

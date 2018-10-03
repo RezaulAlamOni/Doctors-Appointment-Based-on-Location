@@ -6,9 +6,10 @@
 ?>
 <?php include('include/nav.php');
   require ('class/doctors.php');
-  require ('class/hospitals.php');
+//  require ('class/hospitals.php');
   require ('class/patients.php');
   require ('class/departments.php');
+
 
 
 ?>
@@ -17,7 +18,7 @@
 	<div class="layer-wrapper text-center">
 		<div class="row">
 			<div class="col-md-5 hm-service-left">
-				<img class="animated animated-up" src="public/uploads/hm-service.jpg" alt="">
+				<img class="animated animated-up" src="public/uploads/about.jpg" alt="">
 			</div>
 			<div class="col-md-7 hm-service-right animated animated-up">
 				<div class="paragraph-medium paragraph-black"><div style="text-align: justify;">A hospital is an institution for healthcare typically providing specialized treatment for inpatient (or overnight) stays. Some hospitals primarily admit patients suffering from a specific disease or affection, or are reserved for the diagnosis and treatment of conditions affecting a specific age group. Others have a mandate that expands beyond offering dominantly curative and rehabilitative care services to include promotional, preventive and educational roles as part of a primary healthcare approach. Today, hospitals are usually funded by the state, health organizations (for profit or non-profit), by health insurances or by charities and by donations. Historically, however, they were often founded and funded by religious orders or charitable individuals and leaders. Hospitals are nowadays staffed by professionally trained doctors, nurses, paramedical clinicians, etc., whereas historically, this work was usually done by the founding religious orders or by volunteers.<span style="background-color: rgb(255, 255, 255);"><br></span><div style="text-align: justify;"><span style="background-color: rgb(252, 252, 252); color: rgb(85, 85, 85); font-size: 14px; letter-spacing: 0.5px; text-align: left;"><br>&nbsp;</span><b>A walk-in clinic</b>&nbsp;describes a very broad category of medical facilities only loosely defined as those that accept patients on a walk-in basis and with no appointment required. A number of healthcare service providers fall under the walk-in clinic umbrella including urgent care centers, retail clinics and even many free clinics or community health clinics. Walk-in clinics offer the advantages of being accessible and often inexpensive.</div><div style="text-align: left;"><br></div></div><ul><li style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, nostrum</li><li style="text-align: left;">Expedita autem, ea, inventore eligendi debitis nihil obcaecati consequatur quo</li><li style="text-align: left;">Dolores, voluptatem vel eligendi asperiores totam deserunt exercitationem</li><li style="text-align: left;">Pariatur iusto corporis facilis corrupti dolorem exercitationem ipsam quisquam<br></li></ul></div>
