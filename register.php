@@ -8,7 +8,7 @@
     <!-- Header End -->
     <!-- Start Page Title Section -->
 <div class="page-ttl">
-    <div class="layer-stretch">
+    <div class="layer-stretch" >
         <div class="page-ttl-container">
             <div class="page-ttl-name">
                 <h1><i class="fa fa-user-plus color-white"></i> Registration</h1>
@@ -17,12 +17,12 @@
             <div class="row">
                 <div class="col-md-6 text-justify">
 
-                    <button type="button" class="btn btn-primary btn-lg btn-block">
+                    <button type="button" class="btn btn-primary btn-lg btn-block btn-pill">
                         <a href="patient_register.php">
                             <h2><b>Patient Registration</b></h2>
                         </a>
                     </button>
-                    <p class="text-danger" style="font-size: 14px"><br>
+                    <p class="text-white" style="font-size: 14px"><br>
                         "If you are register as a patient you can be able to search  doctor, hospital and book appointment
                         of any doctor according to your location. As a patient you can update your present disease condition
                         in you profile for doctor's follow up. You can book doctor appointment any where in Bangladesh. You
@@ -30,11 +30,11 @@
                     </p>
                 </div>
                 <div class="col-md-6 text-justify" >
-                    <button type="button" class="btn btn-success btn-lg btn-block">
+                    <button type="button" class="btn btn-success btn-lg btn-block btn-pill">
                         <a href="doctor_register.php">
                             <h2><b>Doctor Registration</b></h2>
                         </a></button>
-                    <p class="text-danger" style="font-size: 14px"><br>
+                    <p class="text-white" style="font-size: 14px"><br>
                         'If you are register as a doctor in this system you can get more patient by the system.
                         "Appointment System Based on Patin Location" help the people to book doctor's appointment
                         according to patient location.'

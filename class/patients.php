@@ -15,13 +15,21 @@ class patients
         $result->execute();
         return $result->rowCount();
     }
+    function find($id){
+        global $pdo;
+        $sql = "SELECT * FROM patients WHERE patient_id = $id";
+        $result = $pdo->prepare($sql);
+        $result->execute();
+        return $result;
+    }
     function location($id){
         global $pdo;
-        $sql = "SELECT * FROM locations WHERE id = :id";
+        $sql = "SELECT * FROM locations WHERE location_id = :id";
         $result = $pdo->prepare($sql);
         $result->execute(['id'=>$id]);
         return $result;
     }
+
     function username_exist($username){
         global $pdo;
         $sql = "SELECT * FROM patients WHERE username = '{$username}'";

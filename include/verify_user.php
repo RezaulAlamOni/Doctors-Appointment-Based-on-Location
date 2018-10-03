@@ -48,9 +48,12 @@
                             $_SESSION['patient_email']          = $mail;
                             $_SESSION['patient_phone']          = $phone;
                             $_SESSION['patient_id']             = $id;
-                            $_SESSION['location_id']             = $location_id;
+                            $_SESSION['location_id']            = $location_id;
                             $_SESSION['medical_history']        = $medical_history;
                             $_SESSION['medical_report']         = $medical_report;
+                            $_SESSION['dob']                    = $dob;
+                            $_SESSION['bld_grp']                = $blood_grp;
+                            $_SESSION['gender']                = $gender;
 
                             header("Location: ../index.php");
                         } else {
@@ -92,12 +95,13 @@
 
                             $_SESSION['doctor_first_name'] = $first_name;
                             $_SESSION['doctor_last_name']  = $last_name;
-                            $_SESSION['doctor_username']       = $user_name;
+                            $_SESSION['doctor_username']   = $user_name;
                             $_SESSION['doctor_email']      = $mail;
-                            $_SESSION['doctor_d_id']      = $department_id;
-                            $_SESSION['doctor_h_id']      = $hospital_id;
+                            $_SESSION['doctor_d_id']       = $department_id;
+                            $_SESSION['doctor_h_id']       = $hospital_id;
                             $_SESSION['doctor_phone']      = $phone;
                             $_SESSION['doctor_id']         = $id;
+
 
                             header("Location: ../index.php");
                         } else {
