@@ -22,7 +22,7 @@ $page_name = "<i class=\"fa fa-pencil-square-o\"></i> My Profile";
     <div class="layer-stretch">
         <div class="row layer-wrapper text-center">
             <div class="col-md-8 form-full-container">
-                <form action="http://pepdev.com/theme-preview/klinikal/index.php?route=user/profile/edit" method="post" enctype="multipart/form-data">
+                <form action="" method="post" enctype="multipart/form-data">
                     <p class="sub-ttl">Update Profile</p>
                     <input type="hidden" name="_token" value="15276e55e6cdfa6911f440f75f64501dc97cc6f4a19102dddb4c47f0c4dd1523ad639943996afef209d6a358056f3b3389a9bcb175b7413ef3547589673a2b7d">
                     <div class="row">

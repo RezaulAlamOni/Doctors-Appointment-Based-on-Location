@@ -224,7 +224,7 @@
 
 			<div class="slider-appointment">
 <!--				<a id="slider-appointment-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect animated fadeInUp" >Input Your Disease Symptom For Appointment</a><br>-->
-				<a id="slider-appointment-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect animated fadeInUp">Make An Appointment</a>
+				<a href="make_appointment.php" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect animated fadeInUp">Make An Appointment</a>
 			</div>
 	</div>
 </div>
@@ -313,22 +313,15 @@
 	</div>
 </div>
 <!-- Start Home Facility Section -->
-
 <?php
 
     $result = $dpt->all();
     $departments  = $result->fetchAll();
-
-
-?>
-
-
+    ?>
 <!-- Start Make an Appointment Modal -->
-
  <?php
     if (isset($_SESSION['patient_email'])) {
         include('include/make_appointment.php');
     }
-
     ?>
  <?php include('include/footer.php');?>

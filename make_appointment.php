@@ -1,17 +1,20 @@
 
 <?php include('include/db.php');?>
 <?php include('include/header.php');?>
-
 <?php
+
 $page_name = "<i class=\"fa fa-calendar-check-o\"></i> Make An Appointment";
 ?>
 <?php include('include/nav.php');
 require ('class/doctors.php');
+require ('class/appointments.php');
 require ('class/departments.php');
 $dpt = new departments();
 
 $result = $dpt->all();
 $departments = $result->fetchAll();
+session_start();
+if (empty($_SESSION['patient_email'])) {header("Location: login.php");}
 
 ?>
 
@@ -20,7 +23,7 @@ $departments = $result->fetchAll();
         <div class="layer-wrapper">
             <div class="col-12">
                 <div style="height: 80px">
-                    <h1 class="text-center text-white text-uppercase"><b>Choose Your Appointments Options</b></h1>
+                    <h1 class="text-center text-white text-uppercase" id="head"><b>Choose Your Appointments Options</b></h1>
                 </div>
                 <form class="form-container col-8" action="" method="post" enctype="multipart/form-data">
 
@@ -59,7 +62,7 @@ $departments = $result->fetchAll();
                         <div id="ap_time"></div>
 
                     </div>
-
+<!--                    <input type="hidden" name="id" value="--><?php //echo $_SESSION['patient_id']; ?><!--">-->
                     <div class="form-submit text-center" id="submit">
                         <input type="submit" name="appointment_submit" id="ap_sub" value="Confirm Appointment" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised mdl-button--raised button button-primary button-pill">
                     </div>

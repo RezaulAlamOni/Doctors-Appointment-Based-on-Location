@@ -76,8 +76,10 @@
 </div><!-- End of Time Table Section -->
 
 <div id="appointment-button">
-    <button id="appointment-now" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-button--raised animated slideInUp"><i class="fa fa-plus"></i></button>
-    <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="appointment-now">Make An Appointment</div>
+    <a href="make_appointment.php">
+        <button id="now" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-button--raised animated slideInUp"><i class="fa fa-plus"></i></button>
+        <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="appointment-now">Make An Appointment</div>
+    </a>
 </div>
 
 <!-- End Fixed Appointment Bottom Button -->

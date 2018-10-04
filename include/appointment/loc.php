@@ -9,7 +9,7 @@ if (isset($_POST['doctor_id'])){
     $result->execute();
     $doctors = $result->fetchAll();
     ?>
-    <p id="loc1">
+    <input type="text" id="loc1"
 <?php
     foreach ($doctors as $doctor) {
         $i = $doctor->hospital_id;
@@ -18,13 +18,14 @@ if (isset($_POST['doctor_id'])){
         $result->execute();
         $hospitals = $result->fetchAll();
         foreach ($hospitals as $hospital) {
-            echo $hospital->name."<br> <span>".$hospital->address."</span>";
-        }
+            ?>
+            value="<?php echo $hospital->name.".".$hospital->address." ";?>"
+            <?php
 
+        }
     }
     ?>
-    </p>
-        <?php
-
+           readonly="" >
+    <?php
 
 }

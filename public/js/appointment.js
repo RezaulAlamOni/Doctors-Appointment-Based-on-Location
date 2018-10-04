@@ -44,3 +44,28 @@ $('#date').on('change', function () {
     }
 
 });
+// add appointment
+$('input#ap_sub').on('click', function () {
+
+    var dpt_id      = $('#ap_dpt').val();
+    var doctor_id   = $('#doctor_id').val();
+    var date        = $('input#date1').val();
+    var time        = $('input#time_slot').val();
+    var address     = $('#loc1').val();
+    var patient_id  = $('input#id').val();
+
+        $.post('include/appointment/addAppointment.php',
+            {
+                dpt_id      : dpt_id,
+                doctor_id   : doctor_id,
+                date        : date,
+                time        : time,
+                address     : address
+            },function (data) {
+
+            // $('h1#head').before(data);
+            alert(data);
+
+
+        });
+});

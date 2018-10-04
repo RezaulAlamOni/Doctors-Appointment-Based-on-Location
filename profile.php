@@ -90,7 +90,7 @@
                         </div>
                         <div class="profile-data-block">
                             <div class="profile-data-label">Medical Report </div>
-                            <div class="profile-data-value"><?php /*echo $_SESSION['patient_email'];*/ ?></div>
+                            <div class="profile-data-value"><?php echo $_SESSION['patient_email']; ?></div>
                         </div>
 <!--                        <div class="profile-data-block">-->
 <!--                            <div class="profile-data-label">Mobile Number</div>-->

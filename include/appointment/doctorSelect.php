@@ -7,7 +7,7 @@ if (isset($_POST['dpt_id'])){
     $doctors = $result->fetchAll();
     ?>
     <div class="doctor_ap">
-    <select name="" id="doctor_id" class="">
+    <select name="ap_doctor" id="doctor_id" class="">
         <option value="">Select Doctor</option>
 
 <?php
@@ -20,3 +20,4 @@ if (isset($_POST['dpt_id'])){
     </div>
 <?php
 }
+
