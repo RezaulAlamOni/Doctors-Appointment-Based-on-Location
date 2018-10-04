@@ -216,6 +216,7 @@
 <script src="public/js/jquery.waypoints.min.js"></script>
 <script src="public/js/smoothscroll.min.js"></script>
 <script src="public/js/custom.js"></script>
+<script src="public/js/appointment.js"></script>
 
 <script>$('#menu-home').addClass('active');</script>	<!-- Custom Css -->
 <style></style>

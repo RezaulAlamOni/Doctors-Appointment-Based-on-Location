@@ -6,7 +6,7 @@
 
             <script>$('#appointment-li>a').addClass('active');</script>
 <div class="main">
-	<form action="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/action" method="post">
+	<form action="" method="post">
 		<div class="page-hdr">
 			<div class="row">
 				<div class="col-4 page-name">
@@ -21,7 +21,7 @@
 				</div>
 			</div>
 		</div>
-				<div class="content">
+        <div class="content">
 			<div class="content-invisible">
                 <input type="hidden" value="{&quot;id&quot;:3,&quot;name&quot;:&quot;Melissa Bates&quot;,&quot;department_id&quot;:1,&quot;weekly&quot;:&quot;[\&quot;1\&quot;,\&quot;2\&quot;,\&quot;6\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-04-13, 2017-04-14, 2017-04-20, 2017-07-07, 2017-07-08, 2017-07-14\&quot;&quot;,&quot;department&quot;:&quot;Gynaecology&quot;}" class="doctor-id-3 department-id-Gynaecology" >
                 <input type="hidden" value="{&quot;id&quot;:8,&quot;name&quot;:&quot;Linda Adams&quot;,&quot;department_id&quot;:1,&quot;weekly&quot;:&quot;[\&quot;0\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-06-16, 2017-06-21, 2017-06-26, 2017-07-11, 2017-07-14, 2017-07-20, 2017-07-31\&quot;&quot;,&quot;department&quot;:&quot;Gynaecology&quot;}" class="doctor-id-8 department-id-Gynaecology" >

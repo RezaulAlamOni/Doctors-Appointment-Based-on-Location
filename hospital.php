@@ -20,16 +20,15 @@ $page_name = "<i class=\"fa fa-hospital-o\"> </i> Hospitals ";
                 <div class="row">
 
                     <?php
-
+                    session_start();
                     if (isset($_SESSION['patient_email'])) {
-                        $result = $hsptl->AllAccordingToPatientLOcation($_SESSION['patient_id']);
+                        $id = $_SESSION['location_id'] ;
+                        $result = $hsptl->AllAccordingToPatientLOcation($id);
                     }else{
                         $result = $hsptl->all();
                     }
 
                         $hospitals = $result->fetchAll();
-
-
                     if ($result->rowCount()>0 ){
                         foreach ($hospitals as $hospital) {
                             ?>
