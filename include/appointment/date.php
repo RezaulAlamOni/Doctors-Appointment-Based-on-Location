@@ -18,9 +18,9 @@ if (isset($_POST['doctor_id'])){
     $result->execute();
     $doctors = $result->fetchAll();
     ?>
-    <div class="text-center">
+    <div class="text-center" id="div-time">
 
-        <input id="time_slot"
+        <input type="text" id="time_slot" readonly
 <?php
     foreach ($doctors as $doctor){
 
@@ -38,13 +38,13 @@ if (isset($_POST['doctor_id'])){
 
                 <?php
             } else
-                echo '<p class="text-danger">Doctor is not Available !!!!<br>Please Select another Day</p>';
+
+                echo '<br><br>Doctor is not Available !!!!<br>Please Select another Day';
 
         }else
             echo '<p class="text-danger">You Select Wrong Date!!!!<br>Please Select Correct date!!</p>';
 
     }?>
-               readonly="">
     </div>
         <?php
 

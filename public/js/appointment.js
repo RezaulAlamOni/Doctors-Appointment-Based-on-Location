@@ -3,6 +3,7 @@ $('#time_ap').hide();
 $('#location').hide();
 $('#ap_dpt').on('change', function () {
     $('.doctor_ap').remove();
+    $('div#div-time').remove();
     $('#time_slot').hide();
     $('#location').hide();
     $('#date').hide();
@@ -22,8 +23,9 @@ $('#doctor_change').on('change', function () {
 
 });
 $('#date').on('change', function () {
-    $('#time_slot').remove();
-    $('#loc1').remove();
+    $('div#div-time').remove();
+    $('input#time_slot').remove();
+    $('input#loc1').remove();
     $('#time_ap').show();
     $('#location').show();
     var doctor_id = $('#doctor_id').val();
@@ -51,9 +53,10 @@ $('input#ap_sub').on('click', function () {
     var doctor_id   = $('#doctor_id').val();
     var date        = $('input#date1').val();
     var time        = $('input#time_slot').val();
-    var address     = $('#loc1').val();
+    var address     = $('input#loc1').val();
     var patient_id  = $('input#id').val();
 
+    // alert(address);
         $.post('include/appointment/addAppointment.php',
             {
                 dpt_id      : dpt_id,

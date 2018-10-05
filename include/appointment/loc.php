@@ -19,7 +19,7 @@ if (isset($_POST['doctor_id'])){
         $hospitals = $result->fetchAll();
         foreach ($hospitals as $hospital) {
             ?>
-            value="<?php echo $hospital->name.".".$hospital->address." ";?>"
+            value="<?php echo $hospital->name.",".$hospital->address." ";?>"
             <?php
 
         }

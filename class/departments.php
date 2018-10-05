@@ -8,7 +8,6 @@
 
 class departments
 {
-
     function all(){
         global $pdo;
         $sql = "SELECT * FROM departments ORDER By name ASC ";

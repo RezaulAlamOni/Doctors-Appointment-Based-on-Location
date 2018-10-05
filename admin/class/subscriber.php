@@ -2,18 +2,17 @@
 /**
  * Created by PhpStorm.
  * User: rzala
- * Date: 9/25/2018
- * Time: 11:24 PM
+ * Date: 10/5/2018
+ * Time: 3:38 PM
  */
 
-class appointments
+class subscriber
 {
     function all(){
         global $pdo;
-        $sql = "SELECT * FROM appointment";
+        $sql = "SELECT * FROM subscribers";
         $result = $pdo->prepare($sql);
         $result->execute();
         return $result;
     }
-
 }

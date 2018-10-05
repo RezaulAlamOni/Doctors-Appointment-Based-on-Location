@@ -2,9 +2,11 @@
 <?php include('include/header.php'); ?>
 <?php include('include/navbar.php'); ?>
 <?php
+    require('class/appointments.php');
     require('class/doctors.php');
     require ('class/departments.php');
     require ('class/patients.php');
+    require ('class/subscriber.php');
 //    require ('../class/hospitals.php');
 ?>
 
@@ -197,7 +199,15 @@
                                     <p class="tbl-cell">
                                         <i class="fa fa-calendar-minus-o text-white"></i>
                                     </p>
-                                    <p class="tbl-cell text-right text-white"><b>23</b></p>
+                                    <p class="tbl-cell text-right text-white">
+                                        <b>
+                                            <?php
+                                            $appointment = new appointments();
+                                            $result = $appointment->all();
+                                            echo $result->rowCount();
+                                            ?>
+                                        </b>
+                                    </p>
                                 </div>
                             </div>
                             </a>
@@ -210,7 +220,15 @@
                                     <p class="tbl-cell">
                                         <i class="fa fa-user-circle-o text-white"></i>
                                     </p>
-                                    <p class="tbl-cell text-right text-white"><b>34</b></p>
+                                    <p class="tbl-cell text-right text-white">
+                                        <b>
+                                            <?php
+                                                $sub = new subscriber();
+                                                $result = $sub->all();
+                                                echo $result->rowCount();
+                                            ?>
+                                        </b>
+                                    </p>
                                 </div>
                             </div>
                             </a>
@@ -373,90 +391,90 @@
             </div>
         </div>
         <!-- Appointment side bar -->
-        <div id="apntinfo" class="sidenav">
-            <div class="container-fluid sidenav-hdr">
-                <p>Appointment Details</p>
-                <span class="sidenav-close">x</span>
-            </div>
-            <input type="hidden" value="{&quot;id&quot;:3,&quot;name&quot;:&quot;Melissa Bates&quot;,&quot;department_id&quot;:1,&quot;weekly&quot;:&quot;[\&quot;1\&quot;,\&quot;2\&quot;,\&quot;6\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-04-13, 2017-04-14, 2017-04-20, 2017-07-07, 2017-07-08, 2017-07-14\&quot;&quot;,&quot;department&quot;:&quot;Gynaecology&quot;}" class="doctor-id-3 department-id-Gynaecology" >
-            <input type="hidden" value="{&quot;id&quot;:8,&quot;name&quot;:&quot;Linda Adams&quot;,&quot;department_id&quot;:1,&quot;weekly&quot;:&quot;[\&quot;0\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-06-16, 2017-06-21, 2017-06-26, 2017-07-11, 2017-07-14, 2017-07-20, 2017-07-31\&quot;&quot;,&quot;department&quot;:&quot;Gynaecology&quot;}" class="doctor-id-8 department-id-Gynaecology" >
-            <input type="hidden" value="{&quot;id&quot;:1,&quot;name&quot;:&quot;Daniel Barnes&quot;,&quot;department_id&quot;:2,&quot;weekly&quot;:&quot;[\&quot;3\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-01-18, 2017-01-21, 2017-01-30, 2017-03-27, 2017-03-31\&quot;&quot;,&quot;department&quot;:&quot;Orthology&quot;}" class="doctor-id-1 department-id-Orthology" >
-            <input type="hidden" value="{&quot;id&quot;:5,&quot;name&quot;:&quot;Steve Soeren&quot;,&quot;department_id&quot;:2,&quot;weekly&quot;:&quot;[\&quot;0\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-02-16, 2017-03-14, 2017-03-17, 2017-03-23, 2017-03-31\&quot;&quot;,&quot;department&quot;:&quot;Orthology&quot;}" class="doctor-id-5 department-id-Orthology" >
-            <input type="hidden" value="{&quot;id&quot;:7,&quot;name&quot;:&quot;Barbara Baker&quot;,&quot;department_id&quot;:2,&quot;weekly&quot;:&quot;[\&quot;1\&quot;,\&quot;5\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-06-08, 2017-06-20, 2017-06-28, 2017-06-29\&quot;&quot;,&quot;department&quot;:&quot;Orthology&quot;}" class="doctor-id-7 department-id-Orthology" >
-            <input type="hidden" value="{&quot;id&quot;:4,&quot;name&quot;:&quot;Cheri Aria&quot;,&quot;department_id&quot;:3,&quot;weekly&quot;:&quot;[\&quot;5\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-03-07, 2017-03-14, 2017-03-20, 2017-03-26\&quot;&quot;,&quot;department&quot;:&quot;Dermatologist&quot;}" class="doctor-id-4 department-id-Dermatologist" >
-            <input type="hidden" value="{&quot;id&quot;:6,&quot;name&quot;:&quot;Theodore Bennett&quot;,&quot;department_id&quot;:4,&quot;weekly&quot;:&quot;[\&quot;0\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-02-15, 2017-02-16, 2017-03-07, 2017-03-15, 2017-03-23, 2017-03-31\&quot;&quot;,&quot;department&quot;:&quot;Anaesthesia&quot;}" class="doctor-id-6 department-id-Anaesthesia" >
-            <input type="hidden" value="{&quot;id&quot;:10,&quot;name&quot;:&quot;Vedhraj Jain&quot;,&quot;department_id&quot;:5,&quot;weekly&quot;:&quot;[\&quot;6\&quot;,\&quot;0\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25\&quot;&quot;,&quot;department&quot;:&quot;Ayurvedic&quot;}" class="doctor-id-10 department-id-Ayurvedic" >
-            <form action="http://pepdev.com/theme-preview/klinikal/admin/index.php?route=appointment/dashboardappointment" method="post">
-                <div class="sidenav-bdy">
-                    <div class="apntinfo-block">
-                        <div class="apntinfo-block-ttl">Appointment Info</div>
-                        <div class="apntinfo-block-container">
-                            <input type="hidden" id="apntinfo-id" name="id" value="">
-                            <div class="content-input">
-                                <label>Status :</label>
-                                <select id="apntinfo-status" name="status" class="form-control">
-                                    <option value="0">New</option>
-                                    <option value="2">In Process</option>
-                                    <option value="3">Confirmed</option>
-                                    <option value="4">Completed</option>
-                                    <option value="1">Canceled</option>
-                                </select>
-                            </div>
-                            <div class="content-input">
-                                <label><text>*</text>Doctor :</label>
-                                <select id="apntinfo-doctor" name="doctor" class="appointment-doctor form-control">
-                                    <option value="">Select Doctor</option>
-                                    <option value="3">Melissa Bates( Gynaecology )</option>
-                                    <option value="8">Linda Adams( Gynaecology )</option>
-                                    <option value="1">Daniel Barnes( Orthology )</option>
-                                    <option value="5">Steve Soeren( Orthology )</option>
-                                    <option value="7">Barbara Baker( Orthology )</option>
-                                    <option value="4">Cheri Aria( Dermatologist )</option>
-                                    <option value="6">Theodore Bennett( Anaesthesia )</option>
-                                    <option value="10">Vedhraj Jain( Ayurvedic )</option>
-                                </select>
-                                <input type="hidden" class="appointment-department" name="department" value="">
-                            </div>
-                            <div class="content-input">
-                                <label><text>*</text>Date : </label>
-                                <input type="text" name="date" id="appointment-date" value="" placeholder="Date" readonly required>
-                            </div>
-                            <div class="content-input apntinfo-time">
-                                <label><text>*</text>Time : </label>
-                                <input type="text" name="time" id="apntinfo-time" placeholder="Time" readonly required>
-                            </div>
-                            <div class="content-input appointment-slot">
-                                <label for=""></label>
-                                <div id="appointment-slot"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="apntinfo-block">
-                        <div class="apntinfo-block-ttl">Patient Info</div>
-                        <div class="apntinfo-block-container">
-                            <div class="content-input">
-                                <label><text>*</text>Name : </label>
-                                <input type="text" class="input-text" id="apntinfo-name" value="" name="name" placeholder="Enter Patient Name" required >
-                            </div>
-                            <div class="content-input">
-                                <label><text>*</text>Email : </label>
-                                <input type="text" class="input-text" value="" id="apntinfo-email" name="email" placeholder="Enter Patient Email Address" required >
-                            </div>
-                            <div class="content-input">
-                                <label><text>*</text>Mobile : </label>
-                                <input type="text" class="input-text" value="" id="apntinfo-mobile" name="mobile" placeholder="Enter Patient Mobile Number" required >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="sidenav-ftr">
-                    <div class="apntinfo-button text-right">
-                        <a href="" class="apntinfo-edit btn btn-default" target="_blank">View More</a>
-                        <button type="submit" name="submit" class="btn btn-primary">Save</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+<!--        <div id="apntinfo" class="sidenav">-->
+<!--            <div class="container-fluid sidenav-hdr">-->
+<!--                <p>Appointment Details</p>-->
+<!--                <span class="sidenav-close">x</span>-->
+<!--            </div>-->
+<!--            <input type="hidden" value="{&quot;id&quot;:3,&quot;name&quot;:&quot;Melissa Bates&quot;,&quot;department_id&quot;:1,&quot;weekly&quot;:&quot;[\&quot;1\&quot;,\&quot;2\&quot;,\&quot;6\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-04-13, 2017-04-14, 2017-04-20, 2017-07-07, 2017-07-08, 2017-07-14\&quot;&quot;,&quot;department&quot;:&quot;Gynaecology&quot;}" class="doctor-id-3 department-id-Gynaecology" >-->
+<!--            <input type="hidden" value="{&quot;id&quot;:8,&quot;name&quot;:&quot;Linda Adams&quot;,&quot;department_id&quot;:1,&quot;weekly&quot;:&quot;[\&quot;0\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-06-16, 2017-06-21, 2017-06-26, 2017-07-11, 2017-07-14, 2017-07-20, 2017-07-31\&quot;&quot;,&quot;department&quot;:&quot;Gynaecology&quot;}" class="doctor-id-8 department-id-Gynaecology" >-->
+<!--            <input type="hidden" value="{&quot;id&quot;:1,&quot;name&quot;:&quot;Daniel Barnes&quot;,&quot;department_id&quot;:2,&quot;weekly&quot;:&quot;[\&quot;3\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-01-18, 2017-01-21, 2017-01-30, 2017-03-27, 2017-03-31\&quot;&quot;,&quot;department&quot;:&quot;Orthology&quot;}" class="doctor-id-1 department-id-Orthology" >-->
+<!--            <input type="hidden" value="{&quot;id&quot;:5,&quot;name&quot;:&quot;Steve Soeren&quot;,&quot;department_id&quot;:2,&quot;weekly&quot;:&quot;[\&quot;0\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-02-16, 2017-03-14, 2017-03-17, 2017-03-23, 2017-03-31\&quot;&quot;,&quot;department&quot;:&quot;Orthology&quot;}" class="doctor-id-5 department-id-Orthology" >-->
+<!--            <input type="hidden" value="{&quot;id&quot;:7,&quot;name&quot;:&quot;Barbara Baker&quot;,&quot;department_id&quot;:2,&quot;weekly&quot;:&quot;[\&quot;1\&quot;,\&quot;5\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-06-08, 2017-06-20, 2017-06-28, 2017-06-29\&quot;&quot;,&quot;department&quot;:&quot;Orthology&quot;}" class="doctor-id-7 department-id-Orthology" >-->
+<!--            <input type="hidden" value="{&quot;id&quot;:4,&quot;name&quot;:&quot;Cheri Aria&quot;,&quot;department_id&quot;:3,&quot;weekly&quot;:&quot;[\&quot;5\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-03-07, 2017-03-14, 2017-03-20, 2017-03-26\&quot;&quot;,&quot;department&quot;:&quot;Dermatologist&quot;}" class="doctor-id-4 department-id-Dermatologist" >-->
+<!--            <input type="hidden" value="{&quot;id&quot;:6,&quot;name&quot;:&quot;Theodore Bennett&quot;,&quot;department_id&quot;:4,&quot;weekly&quot;:&quot;[\&quot;0\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-02-15, 2017-02-16, 2017-03-07, 2017-03-15, 2017-03-23, 2017-03-31\&quot;&quot;,&quot;department&quot;:&quot;Anaesthesia&quot;}" class="doctor-id-6 department-id-Anaesthesia" >-->
+<!--            <input type="hidden" value="{&quot;id&quot;:10,&quot;name&quot;:&quot;Vedhraj Jain&quot;,&quot;department_id&quot;:5,&quot;weekly&quot;:&quot;[\&quot;6\&quot;,\&quot;0\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25\&quot;&quot;,&quot;department&quot;:&quot;Ayurvedic&quot;}" class="doctor-id-10 department-id-Ayurvedic" >-->
+<!--            <form action="" method="post">-->
+<!--                <div class="sidenav-bdy">-->
+<!--                    <div class="apntinfo-block">-->
+<!--                        <div class="apntinfo-block-ttl">Appointment Info</div>-->
+<!--                        <div class="apntinfo-block-container">-->
+<!--                            <input type="hidden" id="apntinfo-id" name="id" value="">-->
+<!--                            <div class="content-input">-->
+<!--                                <label>Status :</label>-->
+<!--                                <select id="apntinfo-status" name="status" class="form-control">-->
+<!--                                    <option value="0">New</option>-->
+<!--                                    <option value="2">In Process</option>-->
+<!--                                    <option value="3">Confirmed</option>-->
+<!--                                    <option value="4">Completed</option>-->
+<!--                                    <option value="1">Canceled</option>-->
+<!--                                </select>-->
+<!--                            </div>-->
+<!--                            <div class="content-input">-->
+<!--                                <label><text>*</text>Doctor :</label>-->
+<!--                                <select id="apntinfo-doctor" name="doctor" class="appointment-doctor form-control">-->
+<!--                                    <option value="">Select Doctor</option>-->
+<!--                                    <option value="3">Melissa Bates( Gynaecology )</option>-->
+<!--                                    <option value="8">Linda Adams( Gynaecology )</option>-->
+<!--                                    <option value="1">Daniel Barnes( Orthology )</option>-->
+<!--                                    <option value="5">Steve Soeren( Orthology )</option>-->
+<!--                                    <option value="7">Barbara Baker( Orthology )</option>-->
+<!--                                    <option value="4">Cheri Aria( Dermatologist )</option>-->
+<!--                                    <option value="6">Theodore Bennett( Anaesthesia )</option>-->
+<!--                                    <option value="10">Vedhraj Jain( Ayurvedic )</option>-->
+<!--                                </select>-->
+<!--                                <input type="hidden" class="appointment-department" name="department" value="">-->
+<!--                            </div>-->
+<!--                            <div class="content-input">-->
+<!--                                <label><text>*</text>Date : </label>-->
+<!--                                <input type="text" name="date" id="appointment-date" value="" placeholder="Date" readonly required>-->
+<!--                            </div>-->
+<!--                            <div class="content-input apntinfo-time">-->
+<!--                                <label><text>*</text>Time : </label>-->
+<!--                                <input type="text" name="time" id="apntinfo-time" placeholder="Time" readonly required>-->
+<!--                            </div>-->
+<!--                            <div class="content-input appointment-slot">-->
+<!--                                <label for=""></label>-->
+<!--                                <div id="appointment-slot"></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="apntinfo-block">-->
+<!--                        <div class="apntinfo-block-ttl">Patient Info</div>-->
+<!--                        <div class="apntinfo-block-container">-->
+<!--                            <div class="content-input">-->
+<!--                                <label><text>*</text>Name : </label>-->
+<!--                                <input type="text" class="input-text" id="apntinfo-name" value="" name="name" placeholder="Enter Patient Name" required >-->
+<!--                            </div>-->
+<!--                            <div class="content-input">-->
+<!--                                <label><text>*</text>Email : </label>-->
+<!--                                <input type="text" class="input-text" value="" id="apntinfo-email" name="email" placeholder="Enter Patient Email Address" required >-->
+<!--                            </div>-->
+<!--                            <div class="content-input">-->
+<!--                                <label><text>*</text>Mobile : </label>-->
+<!--                                <input type="text" class="input-text" value="" id="apntinfo-mobile" name="mobile" placeholder="Enter Patient Mobile Number" required >-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="sidenav-ftr">-->
+<!--                    <div class="apntinfo-button text-right">-->
+<!--                        <a href="" class="apntinfo-edit btn btn-default" target="_blank">View More</a>-->
+<!--                        <button type="submit" name="submit" class="btn btn-primary">Save</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
         <div class="sidenav-background"></div>
         <!-- Footer -->
 

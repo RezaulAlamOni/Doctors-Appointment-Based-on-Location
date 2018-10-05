@@ -1,9 +1,12 @@
+<?php include('include/db.php'); ?>
 <?php include('include/header.php'); ?>
 <?php include('include/navbar.php'); ?>
+<?php require('class/appointments.php'); ?>
+<?php require('class/departments.php'); ?>
+<?php require('class/doctors.php'); ?>
 
 <div class="page-container">
             <script>$('#appointment').show();</script>
-
             <script>$('#appointment-li>a').addClass('active');</script>
 <div class="main">
 	<form action="" method="post">
@@ -22,16 +25,6 @@
 			</div>
 		</div>
         <div class="content">
-			<div class="content-invisible">
-                <input type="hidden" value="{&quot;id&quot;:3,&quot;name&quot;:&quot;Melissa Bates&quot;,&quot;department_id&quot;:1,&quot;weekly&quot;:&quot;[\&quot;1\&quot;,\&quot;2\&quot;,\&quot;6\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-04-13, 2017-04-14, 2017-04-20, 2017-07-07, 2017-07-08, 2017-07-14\&quot;&quot;,&quot;department&quot;:&quot;Gynaecology&quot;}" class="doctor-id-3 department-id-Gynaecology" >
-                <input type="hidden" value="{&quot;id&quot;:8,&quot;name&quot;:&quot;Linda Adams&quot;,&quot;department_id&quot;:1,&quot;weekly&quot;:&quot;[\&quot;0\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-06-16, 2017-06-21, 2017-06-26, 2017-07-11, 2017-07-14, 2017-07-20, 2017-07-31\&quot;&quot;,&quot;department&quot;:&quot;Gynaecology&quot;}" class="doctor-id-8 department-id-Gynaecology" >
-                <input type="hidden" value="{&quot;id&quot;:1,&quot;name&quot;:&quot;Daniel Barnes&quot;,&quot;department_id&quot;:2,&quot;weekly&quot;:&quot;[\&quot;3\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-01-18, 2017-01-21, 2017-01-30, 2017-03-27, 2017-03-31\&quot;&quot;,&quot;department&quot;:&quot;Orthology&quot;}" class="doctor-id-1 department-id-Orthology" >
-                <input type="hidden" value="{&quot;id&quot;:5,&quot;name&quot;:&quot;Steve Soeren&quot;,&quot;department_id&quot;:2,&quot;weekly&quot;:&quot;[\&quot;0\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-02-16, 2017-03-14, 2017-03-17, 2017-03-23, 2017-03-31\&quot;&quot;,&quot;department&quot;:&quot;Orthology&quot;}" class="doctor-id-5 department-id-Orthology" >
-                <input type="hidden" value="{&quot;id&quot;:7,&quot;name&quot;:&quot;Barbara Baker&quot;,&quot;department_id&quot;:2,&quot;weekly&quot;:&quot;[\&quot;1\&quot;,\&quot;5\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-06-08, 2017-06-20, 2017-06-28, 2017-06-29\&quot;&quot;,&quot;department&quot;:&quot;Orthology&quot;}" class="doctor-id-7 department-id-Orthology" >
-                <input type="hidden" value="{&quot;id&quot;:4,&quot;name&quot;:&quot;Cheri Aria&quot;,&quot;department_id&quot;:3,&quot;weekly&quot;:&quot;[\&quot;5\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-03-07, 2017-03-14, 2017-03-20, 2017-03-26\&quot;&quot;,&quot;department&quot;:&quot;Dermatologist&quot;}" class="doctor-id-4 department-id-Dermatologist" >
-                <input type="hidden" value="{&quot;id&quot;:6,&quot;name&quot;:&quot;Theodore Bennett&quot;,&quot;department_id&quot;:4,&quot;weekly&quot;:&quot;[\&quot;0\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25, 2017-02-15, 2017-02-16, 2017-03-07, 2017-03-15, 2017-03-23, 2017-03-31\&quot;&quot;,&quot;department&quot;:&quot;Anaesthesia&quot;}" class="doctor-id-6 department-id-Anaesthesia" >
-                <input type="hidden" value="{&quot;id&quot;:10,&quot;name&quot;:&quot;Vedhraj Jain&quot;,&quot;department_id&quot;:5,&quot;weekly&quot;:&quot;[\&quot;6\&quot;,\&quot;0\&quot;]&quot;,&quot;national&quot;:&quot;\&quot;2000-12-25\&quot;&quot;,&quot;department&quot;:&quot;Ayurvedic&quot;}" class="doctor-id-10 department-id-Ayurvedic" >
-            </div>
 			<div class="row">
 				<div class="col-md-7">
 					<div class="content-block content-block-horizantal">
@@ -45,37 +38,44 @@
 							</div>
 							<div class="content-input">
 								<label>Choose Doctor</label>
-								<select name="doctor" id="appointment-doctor" class="select-list appointment-doctor">
-									<option value="">Select Doctor</option>
-																		<option value="3">Dr. Melissa Bates(Gynaecology)</option>
-																		<option value="8">Dr. Linda Adams(Gynaecology)</option>
-																		<option value="1">Dr. Daniel Barnes(Orthology)</option>
-																		<option value="5">Dr. Steve Soeren(Orthology)</option>
-																		<option value="7">Dr. Barbara Baker(Orthology)</option>
-																		<option value="4">Dr. Cheri Aria(Dermatologist)</option>
-																		<option value="6">Dr. Theodore Bennett(Anaesthesia)</option>
-																		<option value="10">Dr. Vedhraj Jain(Ayurvedic)</option>
-																	</select>
+								<select name="doctor" id="app-doctor" class="select-list appointment-doctor">
+                                    <option value="">Select Doctor</option>
+                                    <?php
+                                    $sql = "SELECT * FROM doctors order by department_id";
+                                    $result = $pdo->prepare($sql);
+                                    $result->execute();
+                                    $doctors = $result->fetchAll();
+                                    foreach ($doctors as $doctor) {
+                                        $dpt = new departments();
+                                        $result = $dpt->find($doctor->department_id);
+                                        $departments = $result->fetchAll();
+                                        foreach ($departments as $department) {
+
+                                            ?>
+                                            <option value="<?php echo $doctor->id; ?>">
+                                                Dr.
+                                                <?php
+                                                echo $doctor->first_name . " " . $doctor->last_name . "  (  " .$department->name." )";
+
+                                                ?>
+
+                                            </option>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
+
+                                </select>
 							</div>
 							<div class="content-input">
 								<label>Appointment Date : </label>
-								<input type="text" name="date" id="appointment-date" value="" placeholder="Date" readonly required>
+								<input type="date" name="date" id="ap-date" value="" placeholder="Date" required>
 								<p class="content-input-error-name">Please Select Date!</p>
 								<div class="content-description">Select Date to select time slot.</div>
 							</div>
-							<div class="content-input" id="add-appointment-slot">
+							<div class="content-input" id="add-ap-slot">
 								<label>Appointment Time : </label>
-								<div id="appointment-slot">
-
-								</div>
-							</div>
-							<div class="content-input">
-								<label>Status : </label>
-								<select name="status" id="" class="select-list" required>
-									<option value="2">In Process</option>
-									<option value="3">Confirmed</option>
-									<option value="4">Completed</option>
-								</select>
+								<div id="ap-slot"></div>
 							</div>
 						</div>
 					</div>
@@ -111,5 +111,30 @@
 		</div>
 	</form>
 </div>
+    <script>
+        $('input#ap-date').on('change', function () {
+
+
+            var doctor_id = $('#app-doctor').val();
+            var date = $('input#ap-date').val();
+            // alert(date);
+
+            $.post('../include/appointment/date.php',{doctor_id : doctor_id, date : date}, function (data) {
+                // $('#ap_doctor').after(data);
+                // $('#ap-slot').after(data);
+                alert(data);
+
+            });
+            // $.post('include/appointment/loc.php',{doctor_id : doctor_id}, function (data) {
+            //     // $('#ap_doctor').after(data);
+            //     $('#doctor_loc').after(data);
+            // });
+            //
+            // if($('#time_slot').val != ''){
+            //     $('input[type="submit"]').removeAttr('disabled');
+            // }
+
+        });
+    </script>
 <!-- Footer -->
 <?php include('include/footer.php');?>
