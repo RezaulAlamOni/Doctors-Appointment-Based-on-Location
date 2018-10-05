@@ -76,8 +76,9 @@
                     </a>
                 </td>
                 <td class="table-action">
-                    <a href="edit_doctor.php?id=<?php echo $doct->id; ?>" class="btn btn-outline btn-info btn-outline-1x btn-circle" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
+                    <a href="include/make_admin.php?id=<?php echo $doct->id; ?>" class="btn btn-outline btn-info btn-outline-1x btn-circle" data-toggle="tooltip" title="Make Admin" onclick="return confirm('Are you sure you want to Make Admin this Doctor?');"><i class="fa fa-header"></i></a>
 
+                    <a href="edit_doctor.php?id=<?php echo $doct->id; ?>" class="btn btn-outline btn-info btn-outline-1x btn-circle" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
                     <a href="doctors.php?delete=<?php echo $doct->id; ?>" class="btn btn-outline btn-danger btn-outline-1x btn-circle table-delete" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure you want to delete this item?');">
                         <i class="fa fa-trash-o"></i>
                     </a>
