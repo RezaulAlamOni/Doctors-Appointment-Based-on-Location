@@ -76,9 +76,8 @@
                 </td>
                 <td class="table-action">
                     <a href="update_hospital.php?id=<?php echo $hospital->id; ?>" class="btn btn-outline btn-info btn-outline-1x btn-circle" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
-                    <a class="btn btn-outline btn-danger btn-outline-1x btn-circle table-delete" data-toggle="tooltip" title="Delete">
+                    <a href="hospital.php?delete=<?php echo $hospital->id; ?>" class="btn btn-outline btn-danger btn-outline-1x btn-circle table-delete" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure you want to delete this item?');">
                         <i class="fa fa-trash-o"></i>
-                        <input type="hidden" value="1">
                     </a>
                 </td>
             </tr>
@@ -86,32 +85,19 @@
                 <?php
                         }
                     }
+
+                if (isset($_GET['delete'])){
+                    $id= $_GET['delete'];
+                    $sql = "DELETE FROM hospitals WHERE id = {$id}";
+                    $result = $pdo->prepare($sql);
+                    $result->execute();
+                    header('Location: hospitals.php');
+                }
                 ?>
             </tbody>
 		</table>
 	</div>
 </div>
 
-<!-- Delete Modal -->
-<div id="delete-card" class="modal fade" role="dialog">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h4 class="modal-title">Confirm Delete</h4>
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-			</div>
-			<div class="modal-body">
-				<p class="delete-card-ttl">Are you sure you want to delete?</p>
-			</div>
-			<div class="modal-footer">
-				<form action="index.php?route=themeoption/doctor/delete" class="delete-card-button" method="post">
-					<input type="hidden" value="" name="id">
-					<button type="submit" class="btn btn-danger" name="delete">Delete</button>
-				</form>
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
 <!-- Footer -->
     <?php include ('include/footer.php');?>

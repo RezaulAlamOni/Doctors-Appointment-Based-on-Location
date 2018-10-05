@@ -1,3 +1,4 @@
+<?php include('include/db.php'); ?>
 <?php include('include/header.php'); ?>
 <?php include('include/navbar.php'); ?>
 <?php require ('class/location.php')?>
@@ -66,10 +67,8 @@
                                title="Edit"><i class="fa fa-pencil-square-o"></i>
                             </a>
 
-                            <a class="btn btn-outline btn-danger btn-outline-1x btn-circle table-delete"
-
+                            <a href="locations.php?delete=<?php echo $location->location_id; ?>" class="btn btn-outline btn-danger btn-outline-1x btn-circle table-delete" onclick="checkDelete()"
                                data-toggle="tooltip" data-placement="top" title="Delete">
-                                <input type="hidden" value="delete" id="delete">
                                 <i class="fa fa-trash-o"></i>
 
                             </a>
@@ -78,36 +77,16 @@
                     </tr>
 
 
-                    <!--                    --><?php
-//
-//                }if (isset($_POST['delete'])) {
-//                    $id = $_POST['id'];
-//                    $dpt ->delete($id);
-//                    header("Location: department.php");
-//                }
-
+                    <?php
+                    if (isset($_GET['delete'])){
+                        $id= $_GET['delete'];
+                        $sql = "DELETE FROM locations WHERE location_id = {$id}";
+                        $result = $pdo->prepare($sql);
+                        $result->execute();
+                        header('Location: locations.php');
+                    }
                 }
                 ?>
-                <div id="delete-card" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Confirm Delete</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <p class="delete-card-ttl">Are you sure you want to delete?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <form action="department.php" class="delete-card-button" method="post">
-                                    <input type="text" value="" name="id">
-                                    <button type="submit" class="btn btn-danger" name="delete">Delete</button>
-                                </form>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 </tbody>
             </table>
         </div>

@@ -14,7 +14,8 @@ $dpt = new departments();
 $result = $dpt->all();
 $departments = $result->fetchAll();
 session_start();
-if (empty($_SESSION['patient_email'])) {header("Location: login.php");}
+if (!isset($_SESSION['patient_email'])) {header("Location: login.php");}
+if (isset($_SESSION['admin_email'])) {header("Location: admin/appointment_add.php");}
 
 ?>
 
