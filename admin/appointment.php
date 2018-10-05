@@ -37,42 +37,7 @@
 </div>
 <div class="content">
     <div class="well">
-<!--        <div class="row">-->
-<!--            <div class="col-sm-3">-->
-<!--                <div class="form-group">-->
-<!--                    <label class="control-label">Doctor</label>-->
-<!--                    <select name="" id="filter-doctor" class="form-control">-->
-<!--                        <option value=""></option>-->
-<!--                            <option value="Dr. Melissa Bates">Dr. Melissa Bates</option>-->
-<!--                            <option value="Dr. Linda Adams">Dr. Linda Adams</option>-->
-<!--                            <option value="Dr. Daniel Barnes">Dr. Daniel Barnes</option>-->
-<!--                            <option value="Dr. Steve Soeren">Dr. Steve Soeren</option>-->
-<!--                            <option value="Dr. Barbara Baker">Dr. Barbara Baker</option>-->
-<!--                            <option value="Dr. Cheri Aria">Dr. Cheri Aria</option>-->
-<!--                            <option value="Dr. Theodore Bennett">Dr. Theodore Bennett</option>-->
-<!--                            <option value="Dr. Vedhraj Jain">Dr. Vedhraj Jain</option>-->
-<!--                        </select>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-sm-3">-->
-<!--                <div class="form-group">-->
-<!--                    <label class="control-label">Start Date</label>-->
-<!--                    <input type="text" id="filter-start-date" class="form-control filter-date">-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-sm-3">-->
-<!--                <div class="form-group">-->
-<!--                    <label class="control-label">End Date</label>-->
-<!--                    <input type="text" id="filter-end-date" class="form-control filter-date">-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-sm-12">-->
-<!--                <div class="pull-right">-->
-<!--                    <button id="reset" class="btn btn-default btn-sm">Reset</button>-->
-<!--                    <button id="filter-appointment" class="btn btn-primary btn-sm"><i class="fa fa-filter"></i>Filter</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+
         <script type="text/javascript">
             /*Doctor filter*/
             function filterByDoctor(filter) {
@@ -170,7 +135,7 @@
             $result = $appointment->all();
 
             $appointments = $result->fetchAll();
-        foreach ($appointments as $appointment) {
+            foreach ($appointments as $key => $appointment) {
 
 
             ?>
@@ -223,7 +188,7 @@
                                     </div>
                                     <div><i class="fa fa-hourglass-o"></i><span><?php echo $appointment->time;?></span></div>
                                 </div>
-                                <div class="col-4 text-left patient-info">
+                                <div class="col-3 text-left patient-info">
                                     <?php
                                         $patient = new patients();
                                         $result = $patient->find($appointment->patient_id);
@@ -245,13 +210,21 @@
                                     }
  ?>
                                 </div>
+                                <div class="col-2 appointment-time text-center">
+                                    <div class="crated_at">
+                                        <i class="fa fa-calendar"></i>Created
+                                        <span><?php echo $appointment->created_at;?></span>
+                                    </div>
+                                </div>
                              </div>
                             <div class="row card-ftr">
-                                <div class="col-8 text-left">
-                                    <span class="badge badge-default badge-sm">New</span>
+                                <?php
+                                if ($key<=8){
+                                    ?>
+                                    <?php
+                                }
+                                ?>
 
-
-                                </div>
                                 <div class="card-action">
                                     <!--<a href="" class="btn btn-outline btn-warning btn-outline-1x btn-circle" data-toggle="tooltip" title="Create Invoice" target="_blank"><i class="fa fa-credit-card"></i></a>-->
 <!--                                    <a href="index.php?route=appointment/edit&id=988"-->

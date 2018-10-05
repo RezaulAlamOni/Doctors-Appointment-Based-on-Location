@@ -4,6 +4,7 @@
 <?php require('class/appointments.php'); ?>
 <?php require('class/departments.php'); ?>
 <?php require('class/doctors.php'); ?>
+<?php require('class/patients.php'); ?>
 
 <div class="page-container">
             <script>$('#appointment').show();</script>
@@ -51,6 +52,7 @@
                                         $departments = $result->fetchAll();
                                         foreach ($departments as $department) {
 
+                                            $dpt_id = $department->id;
                                             ?>
                                             <option value="<?php echo $doctor->id; ?>">
                                                 Dr.
@@ -60,6 +62,7 @@
                                                 ?>
 
                                             </option>
+
                                             <?php
                                         }
                                     }
@@ -67,14 +70,19 @@
 
                                 </select>
 							</div>
+                            <input type="hidden" name="dpt_id" id="dpt_id" value="<?php echo $dpt_id;?>" >
 							<div class="content-input">
 								<label>Appointment Date : </label>
 								<input type="date" name="date" id="ap-date" value="" placeholder="Date" required>
 								<p class="content-input-error-name">Please Select Date!</p>
 								<div class="content-description">Select Date to select time slot.</div>
 							</div>
-							<div class="content-input" id="add-ap-slot">
-								<label>Appointment Time : </label>
+							<div class="content-input" id="add-address">
+								<label>Hospital & Address : </label>
+								<div id="doctor_loc"></div>
+							</div>
+                            <div class="content-input" id="add-ap-slot">
+								<label>Appointment Time Start From(24 H): </label>
 								<div id="ap-slot"></div>
 							</div>
 						</div>
@@ -85,20 +93,46 @@
 						<div class="content-block-ttl">Patient Info</div>
 						<div class="content-block-main">
 							<div class="content-input">
-								<label>Name : </label>
-								<input type="text" class="input-text" name="name" value="" placeholder="Name" required>
-								<p class="content-input-error-name">Please enter Name!</p>
+								<label> Patient Name : </label>
+                                <select name="patient" id="patient" class="text-capitalize">
+                                    <option value=""> Select Patient </option>
+                                    <?php
+                                    $sql = "SELECT * FROM patients";
+                                    $result = $pdo->prepare($sql);
+                                    $result->execute();
+                                    $patients = $result->fetchAll();
+
+                                    foreach ($patients as $patient) {
+                                        $email = $patient->email;
+                                        $mobile = $patient->phone;
+
+                                        ?>
+
+                                        <option value="<?php echo $patient->patient_id;?>"><?php echo $patient->first_name." ".$patient->last_name;?></option>
+                                        <?php
+                                    }
+                                    ?>
+
+
+                                </select>
+
+
 							</div>
 							<div class="content-input">
-								<label>Email : </label>
-								<input type="email" class="input-email" name="email" value="" placeholder="Email" required>
+								<label>Problems (If Any ): </label>
+								<input type="text" id="prblm" name="email" value="" placeholder="Problems" required>
 								<p class="content-input-error-name">Please enter valid Email!</p>
 							</div>
-							<div class="content-input">
-								<label>Mobile : </label>
-								<input type="number" class="input-number" name="mobile" value="" placeholder="Mobile" required>
-								<p class="content-input-error-name">Please enter valid Phone number!</p>
-							</div>
+<!--                            <div class="content-input">-->
+<!--								<label>Email : </label>-->
+<!--								<input type="email" class="input-email" name="email" value="--><?php //echo $email;?><!--" placeholder="Email" required>-->
+<!--								<p class="content-input-error-name">Please enter valid Email!</p>-->
+<!--							</div>-->
+<!--							<div class="content-input">-->
+<!--								<label>Mobile : </label>-->
+<!--								<input type="number" class="input-number" name="mobile" value="--><?php //echo $mobile;?><!--" placeholder="Mobile" required>-->
+<!--								<p class="content-input-error-name">Please enter valid Phone number!</p>-->
+<!--							</div>-->
 						</div>
 					</div>
 				</div>
@@ -106,34 +140,69 @@
 			
 			
 			<div class="content-submit text-center">
-				<button type="submit" name="submit" class="btn btn-primary">Save</button>
+				<button type="submit" name="submit" id="ap_sub" class="btn btn-primary">Save</button>
 			</div>
 		</div>
 	</form>
 </div>
     <script>
+        $('button[type="submit"]').attr('disabled','disabled');
         $('input#ap-date').on('change', function () {
-
-
+            $('div#div-time').remove();
+            $('input#loc1').remove();
+            $('input#time_slot').hide();
             var doctor_id = $('#app-doctor').val();
             var date = $('input#ap-date').val();
             // alert(date);
 
             $.post('../include/appointment/date.php',{doctor_id : doctor_id, date : date}, function (data) {
                 // $('#ap_doctor').after(data);
-                // $('#ap-slot').after(data);
-                alert(data);
+                $('#ap-slot').after(data);
+                // alert(data);
 
             });
-            // $.post('include/appointment/loc.php',{doctor_id : doctor_id}, function (data) {
-            //     // $('#ap_doctor').after(data);
-            //     $('#doctor_loc').after(data);
-            // });
-            //
-            // if($('#time_slot').val != ''){
-            //     $('input[type="submit"]').removeAttr('disabled');
-            // }
+            $.post('../include/appointment/loc.php',{doctor_id : doctor_id}, function (data) {
+                // $('#ap_doctor').after(data);
+                $('#doctor_loc').after(data);
+            });
 
+            if($('#time_slot').val != ''){
+                $('button[type="submit"]').removeAttr('disabled');
+            }
+
+        });
+
+
+        $('button#ap_sub').on('click', function () {
+
+            // var dpt_id      = $('input#dpt_id').val();
+            var doctor_id   = $('#app-doctor').val();
+            var date        = $('input#ap-date').val();
+            var time        = $('input#time_slot').val();
+            var address     = $('input#loc1').val();
+            var problem    = $('input#prblm').val();
+            var patient_id  = $('select#patient').val();
+
+            // alert(address);
+            // alert(patient_id);
+            // alert(doctor_id);
+            // alert(time);
+            // alert(date);
+            // alert(problem);
+
+            $.post('../include/appointment/AdminAddAppointment.php',
+                {
+                    doctor_id   : doctor_id,
+                    date        : date,
+                    time        : time,
+                    address     : address,
+                    problem     : problem,
+                    patient_id  : patient_id,
+
+                },function (data) {
+                    $('button#ap_sub').after(data);
+                    // alert(data);
+                });
         });
     </script>
 <!-- Footer -->

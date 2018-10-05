@@ -25,36 +25,6 @@
 </div>
 <div class="content">
 	<div class="<!--well-->">
-<!--		<div class="row">-->
-<!--            <div class="col-sm-3">-->
-<!--				<div class="form-group">-->
-<!--					<label class="control-label">Status</label>-->
-<!--					<select name="" id="filter-status" class="form-control">-->
-<!--						<option value=""></option>-->
-<!--						<option value="Active">Active</option>-->
-<!--						<option value="InActive">In Active</option>-->
-<!--					</select>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--			<div class="col-sm-3">-->
-<!--				<div class="form-group">-->
-<!--					<label class="control-label">Start Date</label>-->
-<!--					<input type="text" id="filter-start-date" class="form-control filter-date">-->
-<!--				</div>-->
-<!--			</div>-->
-<!--			<div class="col-sm-3">-->
-<!--				<div class="form-group">-->
-<!--					<label class="control-label">End Date</label>-->
-<!--					<input type="text" id="filter-end-date" class="form-control filter-date">-->
-<!--				</div>-->
-<!--			</div>-->
-<!--			<div class="col-sm-12">-->
-<!--				<div class="pull-right">-->
-<!--					<button id="reset" class="btn btn-default btn-sm">Reset</button>-->
-<!--					<button id="filter-user" class="btn btn-primary btn-sm"><i class="fa fa-filter"></i> Filter</button>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--		</div>-->
 		<script type="text/javascript">
 			/*Doctor filter*/
 			function filterByRole(filter) {
@@ -222,35 +192,24 @@
                         <a href="patient_edite.php?id=<?php echo $patient->patient_id;?>" class="btn btn-outline btn-info btn-outline-1x btn-circle" data-toggle="tooltip" title="Edit">
 							<i class="fa fa-pencil-square-o"></i>
 						</a>
-						<a class="btn btn-outline btn-danger btn-outline-1x btn-circle table-delete" data-toggle="tooltip" title="Delete">
-							<i class="fa fa-trash-o"></i><input type="hidden" value="<?php echo $patient->patient_id;?>">
+						<a href="patient.php?delete=<?php echo $patient->patient_id;?>" class="btn btn-outline btn-danger btn-outline-1x btn-circle" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure you want to delete this item?');">
+							<i class="fa fa-trash-o"></i>
 						</a>
 					</td>
 				</tr>
 
                     <!-- Delete Modal -->
-                    <div id="delete-card" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Confirm Delete</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
-                                <div class="modal-body">
-                                    <p class="delete-card-ttl">Are you sure you want to delete?</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <form action="patient.php?delete=<?php echo $patient->patient_id;?>" class="delete-card-button" method="post">
-                                        <input type="hidden" value="" name="id">
-                                        <button type="submit" class="btn btn-danger" name="delete">Delete</button>
-                                    </form>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
 
                     <?php
+
+                }
+                if (isset($_GET['delete'])){
+                    $id = $_GET['delete'];
+                    $sql = "DELETE FROM patients WHERE patient_id = {$id}";
+                    $result = $pdo->prepare($sql);
+                    $result->execute();
+                    header('Location: patient.php');
                 }
             ?>
 

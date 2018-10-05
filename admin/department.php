@@ -4,8 +4,8 @@
 <?php require ('class/doctors.php')?>
 <div class="page-container">
     <script>
-	    $('#themeoption').show();
-	    $('#themeoption-li>a').addClass('active');
+	    $('#department').show();
+	    $('#department-li>a').addClass('active');
     </script>
 
 <div class="page-hdr">
