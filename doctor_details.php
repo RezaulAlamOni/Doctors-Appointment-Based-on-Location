@@ -2,145 +2,164 @@
 <?php include('include/db.php');?>
 <?php include('include/header.php');?>
 <?php
-require ('class/doctors.php');
-require ('class/departments.php');
-$doct = new doctors();
-
-$page_name = "<i class=\"fa fa-user-md\"> </i> Doctors Details";
+$page_name = "<i class=\"fa fa-info-circle\"></i> Department ";
 ?>
-<?php include('include/nav.php');?>
-
 <?php
-//$pdo = new PDO("mysql:host=localhost;dbname=doctors",'root','');
-//$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+    include('include/nav.php');
+    require ('class/doctors.php');
+    //  require ('class/hospitals.php');
+    require ('class/patients.php');
+    require ('class/departments.php');
+?>
+<?php
+    $doct = new doctors();
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        }
+        $result = $doct->find($id);
+        $doctors = $result->fetchAll();
+        foreach ($doctors as $doctor) {
+
 
 ?>
-<!-- Start Doctor List Section -->
-<div class="layer-stretch animated-wrapper" style="opacity: 1;background-color: #d8ed84">
-    <div class="layer-wrapper layer-bottom-0">
-        <div class="row text-center">
-            <div class="col-md-8">
-                <div class="row">
-                    <h1> Coming Soon !!!!!! </h1>
 
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="theme-material-card text-center">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input ">
-                        <input class="mdl-textfield__input" type="text" id="search-doctors">
-                        <label class="mdl-textfield__label" for="search-doctors" style="font-size: 12px">Name, Department, Hospital, Location </label>
-                        <button type="submit" class="fa fa-search search-button" name="search"></button>
+    <div class="layer-stretch animated-wrapper">
+        <div class="layer-wrapper text-capitalize">
+
+            <div class="row">
+
+                <div class="col-md-7 hm-service-right animated animated-up">
+                    <div class="paragraph-medium paragraph-black">
+                        <div style="text-align: justify;"><h1 class='text-blue'><?php echo $doctor->first_name." ".$doctor->last_name;?> </h1></div>
+                    </div>
+                    <br>
+                    <br>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-6 paragraph-medium paragraph-black">
+                            <div > Phone : <?php echo $doctor->phone; ?> </div>
+                            <div >Email : <?php echo $doctor->email; ?> </div>
+                            <div >Gender : <?php echo $doctor->gender; ?> </div>
+                            <div >Age : <?php echo $doctor->age; ?> Year</div>
+                            <div >Degree : <?php echo $doctor->degree; ?> </div>
+                            <div >Position :<?php echo $doctor->position; ?> </div>
+                        </div>
+                        <div class="col-6 paragraph-medium paragraph-black">
+                            <div > Department : <?php $doct->doctor_dpt($doctor->department_id); ?> </div>
+                            <?php
+                                $sql = "SELECT * FROM hospitals WHERE  id = $doctor->hospital_id";
+                                $result = $pdo->prepare($sql);
+                                $result->execute();
+                                $hospital = $result->fetchAll();
+                                foreach ($hospital as $name) {
+                                    ?>
+                                    <div> Address : <?php  echo $name->name;?></div>
+                                    <div> Address : <?php  echo $name->address;?></div>
+                                    <?php
+                                }
+
+                            ?>
+                        </div>
+                    </div>
+
+                    <div class="paragraph-medium paragraph-black text-center">
+                        <h3>Make Appointment </h3>
+                        <form action="include/appointment/add_ap.php" method="post">
+                            <label for="">SELECT DATE</label><br>
+                            <input type="date" name="date">
+                            <input type="hidden" name="dpt_id" value="<?php echo $doctor->department_id;?>">
+                            <input type="hidden" name="doctor_id" value="<?php echo $_GET['id'];?>">
+                            <input type="hidden" name="time" value="<?php echo $doctor->start_appointment;?>">
+                            <input type="hidden" name="address" value="<?php foreach ($hospital as $name) { echo $name->name.", ".$name->address; } ?>">
+                           <br>
+                            <?php
+                            if (isset($_SESSION['patient_id'])) {
+                                ?>
+                                <button type="submit" name="submit" class="btn btn-success btn-lg btn-pill">Make
+                                    Appointment
+                                </button>
+                                <?php
+                            }else
+                                echo "Please Login For make appointment !!!";
+                            ?>
+                        </form>
+
+
                     </div>
                 </div>
 
-                <div class="theme-material-card">
-                    <div class="sub-ttl">Our Services</div>
-                    <div class="flexslider theme-flexslider">
-
-                        <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 1600%; transition-duration: 0s; transform: translate3d(-391px, 0px, 0px);"><li class="clone" aria-hidden="true" style="width: 391px; margin-right: 0px; float: left; display: block;">
-                                    <div class="theme-flexslider-container">
-                                        <img src="public/uploads/service-6.jpg" draggable="false">
-                                        <h4>Mammography</h4>
-                                        <a href="  " class="anchor-icon pull-right">Read More <i class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                </li>
-                                <li style="width: 391px; margin-right: 0px; float: left; display: block;" class="flex-active-slide" data-thumb-alt="">
-                                    <div class="theme-flexslider-container">
-                                        <img src="public/uploads/service-1.jpg" draggable="false">
-                                        <h4>Cardiovascular centre</h4>
-                                        <a href=" " class="anchor-icon pull-right">Read More <i class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                </li>
-                                <li data-thumb-alt="" style="width: 391px; margin-right: 0px; float: left; display: block;">
-                                    <div class="theme-flexslider-container">
-                                        <img src="public/uploads/service-2.jpg" draggable="false">
-                                        <h4>Childbirth Center</h4>
-                                        <a href=" " class="anchor-icon pull-right">Read More <i class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                </li>
-                                <li data-thumb-alt="" style="width: 391px; margin-right: 0px; float: left; display: block;">
-                                    <div class="theme-flexslider-container">
-                                        <img src="public/uploads/service-3.jpg" draggable="false">
-                                        <h4>Cardiology</h4>
-                                        <a href=" y" class="anchor-icon pull-right">Read More <i class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                </li>
-                                <li data-thumb-alt="" style="width: 391px; margin-right: 0px; float: left; display: block;">
-                                    <div class="theme-flexslider-container">
-                                        <img src="public/uploads/service-4.jpg" draggable="false">
-                                        <h4>Skin Care</h4>
-                                        <a href=" e" class="anchor-icon pull-right">Read More <i class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                </li>
-                                <li data-thumb-alt="" style="width: 391px; margin-right: 0px; float: left; display: block;">
-                                    <div class="theme-flexslider-container">
-                                        <img src="public/uploads/service-5.jpg" draggable="false">
-                                        <h4>Laboratory Services</h4>
-                                        <a href=" s" class="anchor-icon pull-right">Read More <i class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                </li>
-                                <li data-thumb-alt="" style="width: 391px; margin-right: 0px; float: left; display: block;">
-                                    <div class="theme-flexslider-container">
-                                        <img src="public/uploads/service-6.jpg" draggable="false">
-                                        <h4>Mammography</h4>
-                                        <a href="h y" class="anchor-icon pull-right">Read More <i class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                </li>
-                                <li style="width: 391px; margin-right: 0px; float: left; display: block;" class="clone" aria-hidden="true">
-                                    <div class="theme-flexslider-container">
-                                        <img src="public/uploads/service-1.jpg" draggable="false">
-                                        <h4>Cardiovascular centre</h4>
-                                        <a href="h e" class="anchor-icon pull-right">Read More <i class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                </li></ul></div><ol class="flex-control-nav flex-control-paging"><li><a href="#" class="flex-active">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li><a href="#">5</a></li><li><a href="#">6</a></li></ol><ul class="flex-direction-nav"><li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li><li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li></ul></div>
+                <div class="col-md-5 hm-service-left">
+                    <img class="animated animated-up" src="public/uploads/<?php echo $doctor->photo; ?>" alt="">
                 </div>
-                <div class="theme-material-card"><p>Nice Job</p></div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-7 hm-service-right animated animated-up">
+
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- End Doctor List Section -->
 
-<!-- Start Department div -->
-<div class="colored-background">
+<!-- Start Doctor Section -->
+    <div class="layer-stretch animated-wrapper">
+
+    </div>
+<?php
+}
+
+?><!-- End About Page  -->
+<!-- Start Testimonial Section -->
+<div id="testimonial" class="colored-background">
     <div class="layer-stretch">
+
         <div class="layer-wrapper layer-bottom-0 animated-wrapper">
             <div class="layer-ttl layer-ttl-white">
-                <h3 class="animated animated-down">Department </h3>
+                <h3 class="animated animated-down">What People Say?</h3>
             </div>
-            <div class="layer-container">
-                <?php
-                $dpt = new departments();
-                $result = $dpt->all();
-                $departments = $result->fetchAll();
-
-                if ($result->rowCount()>0){
-                    foreach ($departments as $department) {
-
-                        ?>
-                        <div class="department-block animated animated-up">
-                            <div class="tbl-cell department-icon"><i class="fa fa-female"></i></div>
-                            <div class="tbl-cell department-detail">
-                                <a><?php echo $department->name;?></a>
-                                <p class="paragraph-small paragraph-white">
-                                    <?php echo $department->details;?>
-                                </p>
-                            </div>
-                        </div>
-
-                        <?php
-                    }
-                }
-                ?>
+            <div id="testimonial-slider" class="owl-carousel owl-theme theme-owl-dot">
+                <div class="testimonial-block animated animated-right">
+                    <img class="img-responsive" src="public/uploads/testimonial-3.jpg" alt="">
+                    <div class="paragraph-medium paragraph-white">
+                        <i class="fa fa-quote-left"></i> Thank you for the remedy. I feel it has been working on a deeper subtle level. An inner seeing. I have had the feeling of a melting inside and great sense of peace and rightness. I experienced this before with your perception and treatment so thank you very much.					</div>
+                    <a>Aditya Ghanekar</a>
+                </div>
+                <div class="testimonial-block animated animated-right">
+                    <img class="img-responsive" src="public/uploads/testimonial-4.jpg" alt="">
+                    <div class="paragraph-medium paragraph-white">
+                        <i class="fa fa-quote-left"></i> This was my second visit here I loved it first visit but love it more on my second visit. I loved thier facility and online system.
+                    </div>
+                    <a>Amar Ghode</a>
+                </div>
+                <div class="testimonial-block animated animated-right">
+                    <img class="img-responsive" src="public/uploads/testimonial-2.jpg" alt="">
+                    <div class="paragraph-medium paragraph-white">
+                        <i class="fa fa-quote-left"></i> Thank you for the remedy. I feel it has been working on a deeper subtle level. An inner seeing. I have had the feeling of a melting inside and great sense of peace and rightness. I experienced this before with your perception and treatment so thank you very much.					</div>
+                    <a>Sonu Singh</a>
+                </div>
+                <div class="testimonial-block animated animated-right">
+                    <img class="img-responsive" src="public/uploads/testimonial-1.jpg" alt="">
+                    <div class="paragraph-medium paragraph-white">
+                        <i class="fa fa-quote-left"></i> This was my second visit here I loved it first visit but love it more on my second visit. I loved thier facility and online system.
+                    </div>
+                    <a>Vaibhav Ramteke</a>
+                </div>
+                <div class="testimonial-block animated animated-right">
+                    <img class="img-responsive" src="public/uploads/testimonial-5.jpg" alt="">
+                    <div class="paragraph-medium paragraph-white">
+                        <i class="fa fa-quote-left"></i> Thank you for the remedy. I feel it has been working on a deeper subtle level. An inner seeing. I have had the feeling of a melting inside and great sense of peace and rightness. I experienced this before with your perception and treatment so thank you very much.
+                    </div>
+                    <a>winceton logo</a>
+                </div>
             </div>
         </div>
     </div>
-</div><!-- End Department List Section -->
+</div><!-- End Testimonial Section -->
 
 <!-- Start Make an Appointment Modal -->
+
 <?php include('include/make_appointment.php');?>
-<!-- End Make an Appointment Section -->
 <?php include('include/footer.php');?>
 <script>
 

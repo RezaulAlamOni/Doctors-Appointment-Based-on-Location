@@ -123,7 +123,7 @@
                                                 <a href="update_doctor_profile.php"><i class="fa fa-user-plus color-green"> </i> Update Profile</a>
                                             </li>
                                             <li class="mdl-menu__item">
-                                                <a href="my_patients.php"><i class="fa fa-plus-circle color-green"> </i> My Patients</a>
+                                                <a href="my_patients.php?id=<?php echo $_SESSION['doctor_id']; ?>"><i class="fa fa-plus-circle color-green"> </i> My Patients</a>
                                             </li>
                                             <li class="mdl-menu__item">
                                                 <a href="include/logout.php"><i class="fa fa-sign-out color-green"> </i> Logout</a>

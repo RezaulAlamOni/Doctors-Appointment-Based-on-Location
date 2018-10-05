@@ -83,7 +83,7 @@
                                 <a href="update_doctor_profile.php"><i class="fa fa-user-plus mdl-color-text--green"></i> Update Profile</a>
                             </li>
                             <li class="mdl-menu__item">
-                                <a href="my_patients.php"><i class="fa fa-plus-square mdl-color-text--green"></i> My Appointment</a>
+                                <a href="my_patients.php?id=<?php echo $_SESSION['doctor_id']; ?>"><i class="fa fa-plus-square mdl-color-text--green"></i> My Appointment</a>
                             </li>
                             <li class="mdl-menu__item">
                                 <a href="include/logout.php"><i class="fa fa-sign-out mdl-color-text--green"></i> Logout</a>

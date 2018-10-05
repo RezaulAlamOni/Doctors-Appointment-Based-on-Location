@@ -32,7 +32,7 @@
                                     <div class="col-sm-3">
                                         <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                                             <div class="theme-block-picture" style="height: auto">
-                                                <a href="include/doctor_details.php">
+                                                <a href="doctor_details.php?id=<?php echo $doctor->id; ?>">
                                                     <img src="public/uploads/<?php echo $doctor->photo; ?>"
                                                          style="height: 130px;;"
                                                          alt="<?php echo $doctor->first_name . " " . $doctor->last_name ?>">
@@ -40,7 +40,7 @@
                                             </div>
                                             <div class="doctor-name">
                                                 <h4 class="text-capitalize" style="height: 220px">
-                                                    <a href="doctor_details.php"
+                                                    <a href="doctor_details.php?id=<?php echo $doctor->id; ?>"
                                                        style="color: #e5007a;font-size: 14px">
                                                         <b>Dr. <?php echo $doctor->first_name . " " . $doctor->last_name . "<br>"; ?></b>
                                                         <?php echo $doctor->degree . "<br>"; ?>
@@ -88,7 +88,7 @@
                                     <div class="col-sm-3">
                                         <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                                             <div class="theme-block-picture" style="height: auto">
-                                                <a href="include/doctor_details.php">
+                                                <a href="doctor_details.php?id=<?php echo $doctor->id; ?>">
                                                     <img src="public/uploads/<?php echo $doctor->photo; ?>"
                                                          style="height: 130px;;"
                                                          alt="<?php echo $doctor->first_name . " " . $doctor->last_name ?>">
@@ -96,7 +96,7 @@
                                             </div>
                                             <div class="doctor-name">
                                                 <h4 class="text-capitalize" style="height: 220px">
-                                                    <a href="doctor_details.php"
+                                                    <a href="doctor_details.php?id=<?php echo $doctor->id; ?>"
                                                        style="color: #e5007a;font-size: 14px">
                                                         <b>Dr. <?php echo $doctor->first_name . " " . $doctor->last_name . "<br>"; ?></b>
                                                         <?php echo $doctor->degree . "<br>"; ?>
@@ -146,7 +146,7 @@
                                     <div class="col-sm-3">
                                         <div class="theme-block theme-block-hover animated animated-up fadeInUp">
                                             <div class="theme-block-picture" style="height: auto">
-                                                <a href="include/doctor_details.php">
+                                                <a href="doctor_details.php?id=<?php echo $doctor->id; ?>">
                                                     <img src="public/uploads/<?php echo $doctor->photo; ?>"
                                                          style="height: 130px;;"
                                                          alt="<?php echo $doctor->first_name . " " . $doctor->last_name ?>">
@@ -154,7 +154,7 @@
                                             </div>
                                             <div class="doctor-name">
                                                 <h4 class="text-capitalize" style="height: 220px">
-                                                    <a href="doctor_details.php"
+                                                    <a href="doctor_details.php?id=<?php echo $doctor->id; ?>"
                                                        style="color: #e5007a;font-size: 14px">
                                                         <b>Dr. <?php echo $doctor->first_name . " " . $doctor->last_name . "<br>"; ?></b>
                                                         <?php echo $doctor->degree . "<br>"; ?>

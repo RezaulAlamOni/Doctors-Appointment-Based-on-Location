@@ -42,91 +42,6 @@ foreach ($dpts
             </div>
         </div>
     </div>
-
-<!-- End About Page  -->
-<!--<div class="colored-background">-->
-<!--	<div class="layer-stretch">-->
-<!--		<div class="layer-wrapper layer-bottom-0 animated-wrapper">-->
-<!--			<div class="layer-ttl layer-ttl-white">-->
-<!--				<h3 class=" animated animated-down">Who We Are?</h3>-->
-<!--			</div>-->
-<!--			<div class="row">-->
-<!--				<div class="col-md-7">-->
-<!---->
-<!--                    <div class="hm-about-block">-->
-<!--                        <a href="doctors.php">-->
-<!--                            <div class="tbl-cell hm-about-icon"><i class="fa fa-user-md"></i></div>-->
-<!--                            <div class="tbl-cell hm-about-number">-->
-<!--							<span>-->
-<!--                                --><?php
-//                                $doctor = new doctors();
-//                                echo $doctor->count();
-//                                ?>
-<!--                            </span>-->
-<!--                                <p>Doctor(s)</p>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                    <div class="hm-about-block">-->
-<!--                        <a href="hospital.php">-->
-<!--                            <div class="tbl-cell hm-about-icon"><i class="fa fa-hospital-o"></i></div>-->
-<!--                            <div class="tbl-cell hm-about-number">-->
-<!--							<span>-->
-<!--                                --><?php
-//                                $hos = new hospitals();
-//                                echo $hos->count();
-//                                ?>
-<!--                            </span>-->
-<!--                                <p>Hospital(s)</p>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="hm-about-block">-->
-<!--                        <div class="tbl-cell hm-about-icon"><i class="fa fa-users"></i></div>-->
-<!--                        <div class="tbl-cell hm-about-number">-->
-<!--							<span>-->
-<!--                                --><?php
-//                                $patient = new patients();
-//                                echo $patient->count();
-//                                ?>
-<!--                            </span>-->
-<!--                            <p>Patients</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="hm-about-block">-->
-<!---->
-<!--                        <a href="department.php">-->
-<!--                            <div class="tbl-cell hm-about-icon"><i class="fa fa-building-o"></i></div>-->
-<!--                            <div class="tbl-cell hm-about-number">-->
-<!--                            <span>-->
-<!--                                --><?php
-//                                $dpt = new departments();
-//                                echo $dpt->count();
-//                                ?>
-<!--                            </span>-->
-<!--                                <p>Department(s)</p>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--				<div class="col-md-5">-->
-<!--					<img class="img-thumbnail animated animated-up" src="public/uploads/hm-about-1.jpg" alt="">-->
-<!--				</div>-->
-<!--				<div class="row about-mission-vission text-center">-->
-<!--					<div class="col-md-6 about-mission animated animated-up ">-->
-<!--						<span>Our Mission</span>-->
-<!--						<p class="paragraph-medium paragraph-white text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas eligendi perferendis ducimus sed aliquid natus enim, beatae velit reiciendis, inventore molestiae, neque sapiente temporibus architecto dicta, vero quaerat sequi quos. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>-->
-<!--					</div>-->
-<!--					<div class="col-md-6 about-vission animated animated-up ">-->
-<!--						<span>Our Vission</span>-->
-<!--						<p class="paragraph-medium paragraph-white text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas eligendi perferendis ducimus sed aliquid natus enim, beatae velit reiciendis, inventore molestiae, neque sapiente temporibus architecto dicta, vero quaerat sequi quos. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--	</div>-->
-<!--</div>-->
 <!-- Start Doctor Section -->
     <div class="layer-stretch animated-wrapper">
         <div class="layer-wrapper layer-bottom-0">
@@ -236,5 +151,5 @@ foreach ($dpts
 <?php include('include/footer.php');?>
 <script>
 
-    $('#page>a').addClass('active');
+    $('#department>a').addClass('active');
 </script>

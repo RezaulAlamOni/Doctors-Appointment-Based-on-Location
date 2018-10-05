@@ -11,22 +11,6 @@
     <div class="layer-wrapper">
         <div class="theme-material-card">
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
-<!--                <div class="row"><div class="col-sm-12 col-md-6">-->
-<!--                        <div class="dataTables_length" id="DataTables_Table_0_length">-->
-<!--                            <label>Show <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-control form-control-sm">-->
-<!--                                    <option value="10">10</option>-->
-<!--                                    <option value="25">25</option>-->
-<!--                                    <option value="50">50</option>-->
-<!--                                    <option value="75">75</option>-->
-<!--                                    <option value="-1">All</option>-->
-<!--                                </select> entries</label></div>-->
-<!--                    </div>-->
-<!--                    <div class="col-sm-12 col-md-6">-->
-<!--                        <div id="DataTables_Table_0_filter" class="dataTables_filter">-->
-<!--                            <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="DataTables_Table_0"></label>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
                 <div class="row">
                     <div class="col-sm-12">
                         <table class="table table-bordered table-striped datatable-table dataTable no-footer dtr-inline collapsed" width="100%" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="width: 100%;">
@@ -37,6 +21,7 @@
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 49.5px;" aria-label="Doctor: activate to sort column ascending">Chamber</th>
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 34.5px;" aria-label="Date: activate to sort column ascending">Date & Time</th>
 <!--                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 45.5px;" aria-label="Status: activate to sort column ascending">Serial</th>-->
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 45.5px;" aria-label="Status: activate to sort column ascending">Comments</th>
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 45.5px;" aria-label="Status: activate to sort column ascending">Status</th>
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 0.5px;" aria-label=": activate to sort column ascending">Action</th>
                                 </tr>
@@ -51,7 +36,7 @@
                             foreach ($appointments as $appointment) {
 
                                 ?>
-                                <tr class="odd">
+                                <tr class="odd text-capitalize" >
                                     <td>12040<?php echo $appointment->id; ?>1238</td>
                                     <td>
                                         <?php
@@ -68,6 +53,7 @@
                                     </td>
                                     <td><?php echo $appointment->address; ?></td>
                                     <td><?php echo $appointment->date."<br>".$appointment->time; ?></td>
+                                    <td><?php echo $appointment->comments; ?></td>
                                     <td><?php echo "Active" ?></td>
                                     <td class="text-center">
 

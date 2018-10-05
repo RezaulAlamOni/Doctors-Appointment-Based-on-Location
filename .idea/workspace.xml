@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d550c67-55db-4070-ba62-851c40f322f1" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/appointment_details.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/appointment/add_ap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/department.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/department.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/doctors.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/doctors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/hospital.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/hospital.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/locations.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/locations.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/user_edite.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/make_appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/make_appointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/department_details.php" beforeDir="false" afterPath="$PROJECT_DIR$/department_details.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_details.php" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_details.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctor_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/doctor_profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctors.php" beforeDir="false" afterPath="$PROJECT_DIR$/doctors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/my_appointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_patients.php" beforeDir="false" afterPath="$PROJECT_DIR$/my_patients.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/update_doctor_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/update_doctor_profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/update_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/update_profile.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,65 +39,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="profile.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/profile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2208">
+              <caret line="92" column="97" lean-forward="true" selection-start-line="92" selection-start-column="71" selection-end-line="92" selection-end-column="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update_profile.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/update_profile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="e#6567#6600#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="doctors.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/doctors.php">
+        <entry file="file://$PROJECT_DIR$/doctors.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="91" column="15" lean-forward="true" selection-start-line="91" selection-start-column="15" selection-end-line="97" selection-end-column="17" />
+            <state relative-caret-position="696">
+              <caret line="41" column="98" selection-start-line="41" selection-start-column="98" selection-end-line="41" selection-end-column="98" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="department.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/department.php">
+      <file leaf-file-name="doctor_details.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/doctor_details.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2160">
-              <caret line="90" selection-start-line="90" selection-end-line="90" />
+            <state relative-caret-position="480">
+              <caret line="74" column="31" lean-forward="true" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="locations.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/locations.php">
+      <file leaf-file-name="add_ap.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/appointment/add_ap.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="79" column="25" lean-forward="true" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
+            <state relative-caret-position="432">
+              <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/user.php">
+      <file leaf-file-name="addAppointment.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/appointment/addAppointment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-304">
-              <caret line="72" column="35" lean-forward="true" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
+            <state relative-caret-position="48">
+              <caret line="2" selection-start-line="2" selection-end-line="22" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="make_appointment.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/make_appointment.php">
+      <file leaf-file-name="doctors.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/class/doctors.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="17" column="68" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="68" />
+            <state relative-caret-position="-699">
+              <caret line="31" column="19" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="verify_user.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/include/verify_user.php">
+      <file leaf-file-name="hospitals.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/class/hospitals.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="58" column="38" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hospital.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/hospital.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="88" column="15" selection-start-line="88" selection-start-column="15" selection-end-line="94" selection-end-column="17" />
+            <state relative-caret-position="480">
+              <caret line="26" column="9" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="26" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -108,7 +129,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>isset($_SESSION['patient_email'])</find>
       <find>.$hpt-&gt;name.&quot;</find>
       <find>remove</find>
       <find>delete-card</find>
@@ -122,13 +142,13 @@
       <find>doctor_submit</find>
       <find>update</find>
       <find>user</find>
-      <find>patient role</find>
+      <find />
       <find>userna</find>
       <find>save</find>
       <find>saveU</find>
-      <find>save doctor</find>
+      <find />
       <find>select</find>
-      <find>save De</find>
+      <find />
       <find>sav</find>
       <find>id</find>
       <find>appoi</find>
@@ -137,7 +157,8 @@
       <find>appointment</find>
       <find>make</find>
       <find>ap_sub</find>
-      <find>date of</find>
+      <find />
+      <find>doctor_deta</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,25 +167,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/update_hospital.php" />
-        <option value="$PROJECT_DIR$/admin/add_location.php" />
-        <option value="$PROJECT_DIR$/admin/add_doctors.php" />
-        <option value="$PROJECT_DIR$/admin/edit_doctor.php" />
         <option value="$PROJECT_DIR$/admin/class/hospitals.php" />
         <option value="$PROJECT_DIR$/admin/class/admin.php" />
         <option value="$PROJECT_DIR$/admin/profile.php" />
         <option value="$PROJECT_DIR$/admin/include/navbar.php" />
-        <option value="$PROJECT_DIR$/include/nav.php" />
-        <option value="$PROJECT_DIR$/update_doctor_profile.php" />
         <option value="$PROJECT_DIR$/class/patients.php" />
         <option value="$PROJECT_DIR$/register.php" />
         <option value="$PROJECT_DIR$/include/verify_user.php" />
         <option value="$PROJECT_DIR$/class/doctors.php" />
-        <option value="$PROJECT_DIR$/doctor_profile.php" />
-        <option value="$PROJECT_DIR$/doctors.php" />
         <option value="$PROJECT_DIR$/deoartment_details.php" />
         <option value="$PROJECT_DIR$/department.php" />
-        <option value="$PROJECT_DIR$/department_details.php" />
         <option value="$PROJECT_DIR$/hospital.php" />
         <option value="$PROJECT_DIR$/class/hospitals.php" />
         <option value="$PROJECT_DIR$/about.php" />
@@ -172,15 +184,12 @@
         <option value="$PROJECT_DIR$/public/js/custom.js" />
         <option value="$PROJECT_DIR$/include/header.php" />
         <option value="$PROJECT_DIR$/include/footer.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/profile.php" />
-        <option value="$PROJECT_DIR$/update_profile.php" />
         <option value="$PROJECT_DIR$/include/appointment/doctorSelect.php" />
         <option value="$PROJECT_DIR$/class/appointments.php" />
         <option value="$PROJECT_DIR$/class/departments.php" />
         <option value="$PROJECT_DIR$/include/appointment/loc.php" />
         <option value="$PROJECT_DIR$/include/appointment/addAppointment.php" />
-        <option value="$PROJECT_DIR$/my_appointment.php" />
         <option value="$PROJECT_DIR$/admin/class/subscriber.php" />
         <option value="$PROJECT_DIR$/admin/index.php" />
         <option value="$PROJECT_DIR$/public/js/appointment.js" />
@@ -197,6 +206,18 @@
         <option value="$PROJECT_DIR$/admin/locations.php" />
         <option value="$PROJECT_DIR$/admin/user.php" />
         <option value="$PROJECT_DIR$/make_appointment.php" />
+        <option value="$PROJECT_DIR$/my_appointment.php" />
+        <option value="$PROJECT_DIR$/my_patients.php" />
+        <option value="$PROJECT_DIR$/appointment_details.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/include/nav.php" />
+        <option value="$PROJECT_DIR$/doctor_profile.php" />
+        <option value="$PROJECT_DIR$/update_doctor_profile.php" />
+        <option value="$PROJECT_DIR$/update_profile.php" />
+        <option value="$PROJECT_DIR$/department_details.php" />
+        <option value="$PROJECT_DIR$/doctors.php" />
+        <option value="$PROJECT_DIR$/include/appointment/add_ap.php" />
+        <option value="$PROJECT_DIR$/doctor_details.php" />
       </list>
     </option>
   </component>
@@ -209,7 +230,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="697" />
@@ -230,7 +251,13 @@
             <path>
               <item name="Doctors_Appointment" type="b2602c69:ProjectViewProjectNode" />
               <item name="Doctors_Appointment" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Doctors_Appointment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Doctors_Appointment" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+              <item name="appointment" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Doctors_Appointment" type="b2602c69:ProjectViewProjectNode" />
@@ -252,8 +279,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Doctors_Appointment\include\appointment" />
       <recent name="C:\xampp\htdocs\Doctors_Appointment" />
+      <recent name="C:\xampp\htdocs\Doctors_Appointment\include\appointment" />
       <recent name="C:\xampp\htdocs\Doctors_Appointment\admin" />
       <recent name="C:\xampp\htdocs\Doctors_Appointment\class" />
       <recent name="C:\xampp\htdocs\Doctors_Appointment\admin\public\images" />
@@ -325,12 +352,12 @@
       <workItem from="1538592152153" duration="51021000" />
       <workItem from="1538722135008" duration="10214000" />
       <workItem from="1538733894723" duration="135000" />
-      <workItem from="1538735159364" duration="20957000" />
+      <workItem from="1538735159364" duration="35918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="509842000" />
+    <option name="totallyTimeSpent" value="524803000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -381,66 +408,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/include/db.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update_doctor_profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="24" column="109" selection-start-line="24" selection-start-column="109" selection-end-line="24" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doctor_profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3000">
-          <caret line="125" column="38" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/class/patients.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/department2.php" />
-    <entry file="file://$PROJECT_DIR$/doctors.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="22" column="64" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1752">
-          <caret line="73" column="7" selection-end-line="73" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/class/hospitals.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="41" column="65" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/department_details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="168" column="69" lean-forward="true" selection-start-line="168" selection-start-column="49" selection-end-line="168" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appointment/index.html" />
     <entry file="file://$PROJECT_DIR$/about.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -477,13 +444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5424">
-          <caret line="226" column="45" selection-start-line="226" selection-start-column="45" selection-end-line="226" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/sidebar.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -501,13 +461,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="92" column="97" lean-forward="true" selection-start-line="92" selection-start-column="71" selection-end-line="92" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -515,24 +468,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/update_profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="37" column="169" selection-start-line="37" selection-start-column="158" selection-end-line="37" selection-end-column="169" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/appointment/doctorSelect.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="454">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/appointment/addAppointment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
@@ -554,13 +493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_appointment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="73" column="183" selection-start-line="73" selection-start-column="112" selection-end-line="73" selection-end-column="183" />
         </state>
       </provider>
     </entry>
@@ -603,13 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/appointment/AdminAddAppointment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/appointment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -641,13 +566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/class/doctors.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="16" column="27" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="16" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/class/appointments.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -676,13 +594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2160">
           <caret line="90" selection-start-line="90" selection-end-line="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/doctors.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="91" column="15" lean-forward="true" selection-start-line="91" selection-start-column="15" selection-end-line="97" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -721,6 +632,157 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="17" column="68" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/doctors.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="91" column="15" lean-forward="true" selection-start-line="91" selection-start-column="15" selection-end-line="97" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_appointment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="57" column="60" lean-forward="true" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appointment_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#4;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_patients.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="44" column="106" selection-start-line="44" selection-start-column="106" selection-end-line="44" selection-end-column="106" />
+          <folding>
+            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="127" column="71" lean-forward="true" selection-start-line="127" selection-start-column="71" selection-end-line="127" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/nav.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="85" column="97" selection-start-line="85" selection-start-column="97" selection-end-line="85" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2208">
+          <caret line="92" column="97" lean-forward="true" selection-start-line="92" selection-start-column="71" selection-end-line="92" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doctor_profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2000">
+          <caret line="89" column="79" selection-start-line="89" selection-start-column="79" selection-end-line="89" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update_profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="e#6567#6600#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/department_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="149" column="48" lean-forward="true" selection-end-line="154" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update_doctor_profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="165" column="78" selection-start-line="165" selection-start-column="78" selection-end-line="165" selection-end-column="78" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doctors.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="41" column="98" selection-start-line="41" selection-start-column="98" selection-end-line="41" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class/doctors.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-699">
+          <caret line="31" column="19" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class/hospitals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="26" column="9" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="26" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/appointment/AdminAddAppointment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/appointment/addAppointment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" selection-start-line="2" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/appointment/add_ap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doctor_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="74" column="31" lean-forward="true" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

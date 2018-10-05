@@ -50,7 +50,19 @@
                     </div>
                     <div class="profile-data-block">
                         <div class="profile-data-label">Location</div>
-                        <div class="profile-data-value"><?php echo $doctor->hospital_id; ?></div>
+                        <div class="profile-data-value">
+                            <?php
+
+                            $sql = "SELECT * FROM hospitals where id = $doctor->hospital_id";
+                            $result = $pdo->prepare($sql);
+                            $result->execute();
+                            $hs = $result->fetchAll();
+                            foreach ($hs as $h) {
+                                echo $h->name."<br>".$h->address;
+
+                            }
+
+                            ?></div>
                     </div>
                     <div class="profile-data-block">
                         <div class="profile-data-label">About</div>
@@ -61,20 +73,21 @@
             <div class="col-md-6 profile-right">
                 <div class="profile-data">
                     <div class="profile-data-block">
-                        <div class="profile-data-label">Name</div>
-                        <div class="profile-data-value">oni asdfasd</div>
+                        <div class="profile-data-label">week End</div>
+                        <div class="profile-data-value text-capitalize"><?php echo $doctor->week_end ?></div>
                     </div>
                     <div class="profile-data-block">
-                        <div class="profile-data-label">Email Address</div>
-                        <div class="profile-data-value">rzalam93@gmail.com</div>
+                        <div class="profile-data-label">Start Appointment Everyday</div>
+                        <div class="profile-data-value"><?php echo $doctor->start_appointment ?></div>
                     </div>
                     <div class="profile-data-block">
-                        <div class="profile-data-label">Mobile Number</div>
-                        <div class="profile-data-value">01554534242</div>
+                        <div class="profile-data-label">End Appointment Everyday</div>
+                        <div class="profile-data-value"><?php echo $doctor->end_appointment ?></div>
                     </div>
+
                     <div class="profile-data-block">
-                        <div class="profile-data-label">Birthday</div>
-                        <div class="profile-data-value"></div>
+                        <div class="profile-data-label">Age</div>
+                        <div class="profile-data-value"><?php echo $doctor->age ?></div>
                     </div>
 <!--                    <div class="profile-data-block">-->
 <!--                        <div class="profile-data-label">Gender</div>-->
