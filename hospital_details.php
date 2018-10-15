@@ -12,13 +12,14 @@
 ?>
 <?php
     $dpt = new departments();
-    if (isset($_GET['dpt_id'])) {
-$id = $_GET['dpt_id'];
-$result = $dpt->find($id);
-$dpts = $result->fetchAll();
-foreach ($dpts
+    if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM hospitals WHERE  id = $id";
+    $result = $pdo->prepare($sql);
+    $result->execute();
+    $hospital = $result->fetchAll();
 
-         as $dpt) {
+    foreach ($hospital as $dpt) {
 
 
 ?>
@@ -36,7 +37,7 @@ foreach ($dpts
                         <div style="text-align: justify;"><h1 class='text-blue'><?php echo $dpt->name; ?> </h1></div>
                     </div>
                     <div class="paragraph-medium paragraph-black">
-                        <div style="text-align: justify;"><?php echo $dpt->details; ?> </div>
+                        <div style="text-align: justify;"><?php echo $dpt->address;?> </div>
                     </div>
                 </div>
             </div>
@@ -51,7 +52,7 @@ foreach ($dpts
             <div class="row">
                 <?php
                 $doctor = new doctors();
-                $sql = "SELECT * FROM doctors where department_id = $dpt->id";
+                $sql = "SELECT * FROM doctors where hospital_id = $dpt->id";
                 $result = $pdo->prepare($sql);
                 $result->execute();
                 $doctors = $result->fetchAll();
@@ -151,5 +152,5 @@ foreach ($dpts
 <?php include('include/footer.php');?>
 <script>
 
-    $('#department>a').addClass('active');
+    $('#hospital>a').addClass('active');
 </script>

@@ -139,9 +139,9 @@
                                 <a href="contact.php">Contact</a>
                             </li>
 
-                            <li class="mdl-menu__item">
-                                <a href="gallery.php">Gallery</a>
-                            </li>
+<!--                            <li class="mdl-menu__item">-->
+<!--                                <a href="gallery.php">Gallery</a>-->
+<!--                            </li>-->
                         </ul>
                     </li>
 

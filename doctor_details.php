@@ -30,7 +30,7 @@ $page_name = "<i class=\"fa fa-info-circle\"></i> Department ";
 
                 <div class="col-md-7 hm-service-right animated animated-up">
                     <div class="paragraph-medium paragraph-black">
-                        <div style="text-align: justify;"><h1 class='text-blue'><?php echo $doctor->first_name." ".$doctor->last_name;?> </h1></div>
+                        <div style="text-align: justify;"><h1 class='text-blue'>Dr. <?php echo $doctor->first_name." ".$doctor->last_name;?> </h1></div>
                     </div>
                     <br>
                     <br>

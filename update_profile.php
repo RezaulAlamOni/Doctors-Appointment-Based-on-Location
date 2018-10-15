@@ -10,7 +10,7 @@ $page_name = "<i class='fa fa-pencil-square-o'></i> My Profile<span style='font-
     <div class="layer-stretch">
         <div class="row layer-wrapper text-center">
             <div class="col-md-8 form-full-container">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="include/update_profile.php" method="post" enctype="multipart/form-data">
                     <p class="sub-ttl">Update Profile</p>
                     <?php
                     $sql = "SELECT * FROM patients where patient_id = {$_SESSION['patient_id']}";
@@ -26,7 +26,7 @@ $page_name = "<i class='fa fa-pencil-square-o'></i> My Profile<span style='font-
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input is-dirty is-upgraded"
                                  data-upgraded="MaterialTextfield">
                                 <input class="mdl-textfield__input" type="text" name="firstname" pattern="[A-Z,a-z, ]*"
-                                       value="<?php echo $doctor->first_name;?>" id="profile-first-name">
+                                       value="<?php echo $doctor->first_name;?>" id="profile-first-name" readonly>
                                 <label class="mdl-textfield__label" for="profile-first-name">First Name</label>
                                 <span class="mdl-textfield__error">Please Enter Valid Name!</span>
                             </div>
@@ -63,15 +63,9 @@ $page_name = "<i class='fa fa-pencil-square-o'></i> My Profile<span style='font-
                         <div class="col-sm-12 col-md-6">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input is-upgraded"
                                  data-upgraded=",MaterialTextfield"> Date Of Birth
-                                <input class="mdl-textfield__input hasDatepicker" type="text" name="dob" value="<?php echo $doctor->dob;?>"
+                                <input class="mdl-textfield__input" type="date" name="dob" value="<?php echo $doctor->dob;?>"
                                        id="">
                                 <label class="mdl-textfield__label" for=""></label>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-radio"
-                                 data-upgraded=",MaterialTextfield">
-
                             </div>
                         </div>
                         <div class="clearfix clear"></div>
@@ -79,21 +73,39 @@ $page_name = "<i class='fa fa-pencil-square-o'></i> My Profile<span style='font-
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input is-upgraded"
                                  data-upgraded=",MaterialTextfield">Blood Group
                                 <input class="mdl-textfield__input" type="text" name="bloodgroup" value="<?php echo $doctor->blood_group;?>"
-                                       id="profile-bg">
+                                       id="profile-bg" readonly>
                                 <label class="mdl-textfield__label" for="profile-bg"></label>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input is-upgraded"
                                  data-upgraded=",MaterialTextfield">
-                                <input class="mdl-textfield__input" type="text" value="<?php echo $doctor->location_id;?>" name="location"
-                                       id="profile-location">
+                                <select name="location_id" id="">
+
+                                <?php
+
+                                $sql = "SELECT * FROM locations";
+                                $result = $pdo->prepare($sql);
+                                $result->execute();
+                                $loc = $result->fetchAll();
+                                foreach ($loc as $item) {
+                                    ?>
+                                    <option value="<?php echo $item->location_id;?>" <?php if ($item->location_id==$doctor->location_id) {echo "selected";} ?>><?php echo $item->name;?></option>
+                                    <?php
+
+                                }
+
+                                ?>
+                                </select>
                                 <label class="mdl-textfield__label" for="profile-location"></label>
                             </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input is-upgraded"
-                                 data-upgraded=",MaterialTextfield" style="background-color: #4ca29e"> Update Your Diagnosis Status
-                                <input  type="text" value="" name="problems">
-
+                                 data-upgraded=",MaterialTextfield">Current Disease Condition :
+                                <input class="mdl-textfield__input hasDatepicker" type="text" name="condition" value="<?php echo $doctor->dob;?>"
+                                       id="">
+                                <label class="mdl-textfield__label" for=""></label>
                             </div>
                         </div>
                         <div class="clearfix clear"></div>
@@ -101,9 +113,16 @@ $page_name = "<i class='fa fa-pencil-square-o'></i> My Profile<span style='font-
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input is-upgraded"
                                  data-upgraded=",MaterialTextfield">
                                 <input class="mdl-textfield__input" type="text" name="country" value="Bangladesh"
-                                       id="profile-country">
+                                       id="profile-country" readonly>
                                 <label class="mdl-textfield__label" for="profile-country"></label>
                                 <input type="hidden" name="id" value="<?php echo $doctor->patient_id;?>">
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input is-upgraded"
+                                 data-upgraded=",MaterialTextfield">
+                                <label for="">Enter Report</label>
+                                <input type="file" name="report" >
                             </div>
                         </div>
                     </div>
@@ -116,6 +135,7 @@ $page_name = "<i class='fa fa-pencil-square-o'></i> My Profile<span style='font-
                     </div>
 
                 </form>
+
 
             </div>
             <div class="col-md-4">

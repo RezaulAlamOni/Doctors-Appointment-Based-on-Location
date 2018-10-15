@@ -40,11 +40,11 @@
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                             <i class="fa fa-location-arrow"></i>
                             <label for="location">Location : </label>
-                            <select name="location" id="location" class="form-input" >
+                            <select name="location" id="locationig" class="form-input" >
                                 <option value="" class="">Select Your Location</option>
                                 <?php
 
-                                $sql = "SELECT * FROM locations ORDER BY name ASC ";
+                                $sql = "SELECT * FROM locations ";
                                 $result = $pdo->prepare($sql);
                                 $result->execute();
                                 $locations = $result->fetchAll(); // default value PDO::FETCH_obj
@@ -60,7 +60,7 @@
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
                             <i class="fa fa-plus-circle"></i>
                             <label for="blood">Blood Group :</label>
-                            <select name="blood" id="location" class="form-input" >
+                            <select name="blood" id="blood" class="form-input" >
                                 <option value="">Select Blood Group</option>
                                 <option value="A+">A+</option>
                                 <option value="A-">A-</option>

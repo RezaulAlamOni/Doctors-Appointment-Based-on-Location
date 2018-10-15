@@ -42,7 +42,7 @@ $page_name = "<i class=\"fa fa-hospital-o\"> </i> Hospitals ";
                                     </div>
                                     <div class="doctor-name">
                                         <h4 class="text-capitalize" style="height: 120px">
-                                            <a href=""
+                                            <a href="hospital_details.php?id=<?php echo $hospital->id; ?>"
                                                style="color: #0500e5;font-size: 14px">
                                                 <b> <?php echo $hospital->name; ?></b>
                                                 <p class="text-capitalize" style="font-family: 'Harlow Solid Italic'; color: #0b0b0b">

@@ -1,10 +1,10 @@
 <?php include('include/db.php');?>
 <?php include('include/header.php');?>
-
 <?php require ('class/doctors.php');?>
 <?php require ('class/departments.php');?>
 <?php require ('class/patients.php');?>
 <?php //require ('class/hospitals.php');?>
+
 
 <body>
     <!-- Start Header Section -->
@@ -70,7 +70,7 @@
                                 <li class="mdl-menu__item"><a href="about.php">About</a></li>
                                 <li class="mdl-menu__item"><a href="contact.php">Contact</a></li>
                                 <li class="mdl-menu__item"><a href="service.php">Our Service</a></li>
-                                <li class="mdl-menu__item"><a href="gallery.php">Gallery</a></li>
+<!--                                <li class="mdl-menu__item"><a href="gallery.php">Gallery</a></li>-->
                             </ul>
                         </li>
 
