@@ -196,6 +196,10 @@
     <!-- Start of Copyright Section -->
     <div id="copyright">
         <div class="layer-stretch">
+
+            <div class="paragraph-medium paragraph-white">
+                Developed By : <a href="http://oni.mppmanagement.com/" >Rezaul Alam Oni</a>
+            </div>
             <div class="paragraph-medium paragraph-white">
                 2018 © ALL RIGHTS RESERVED.
             </div>

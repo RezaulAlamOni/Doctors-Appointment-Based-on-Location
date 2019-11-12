@@ -24,7 +24,6 @@
                             <a href="my_appointment.php" class="font-18 text-uppercase color-white"><i class="fa fa-plus-square-o"></i> My Appointment </a>
 
                         <?php }elseif (isset($_SESSION['doctor_email'])){ ?>
-
                             <a href="my_patients.php?id=<?php echo $_SESSION['doctor_id']; ?>" class="font-18 text-uppercase color-white"><i class="fa fa-wheelchair"></i> My Patients </a>
 
                         <?php }else {

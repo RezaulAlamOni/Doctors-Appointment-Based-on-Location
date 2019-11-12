@@ -15,5 +15,5 @@
 //        echo "<h1>we are connected</h1>";
 //    }
 
-$pdo = new PDO("mysql:host=localhost;dbname=doctors",'root','');
-$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+    $pdo = new PDO("mysql:host=localhost;dbname=doctors",'root','');
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);

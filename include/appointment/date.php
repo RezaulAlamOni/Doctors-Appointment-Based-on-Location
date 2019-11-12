@@ -3,15 +3,15 @@
 include ('../db.php');
 if (isset($_POST['doctor_id'])){
     $id = $_POST['doctor_id'];
-    $date = $_POST['date'];
-    $dt = strtotime($date);
-    $day = date("D",$dt);
+    $date  = $_POST['date'];
+    $dt    = strtotime($date);
+    $day   = date("D",$dt);
     $month = date("M",$dt);
-    $year = date("Y",$dt);
-    $day=strtoupper($day);
+    $year  = date("Y",$dt);
+    $day   =strtoupper($day);
     $crnt_year = date("Y");
-    $crnt_month = date("Y");
-    $crnt_day = date("Y");
+    $crnt_month = date("M");
+    $crnt_day = date("D");
 
     $sql = "SELECT * FROM doctors where id = {$_POST['doctor_id']}";
     $result = $pdo->prepare($sql);
